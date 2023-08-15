@@ -11,3 +11,5 @@ Hacer más: tener más comunicación y reuniones (2/3 veces a la semana).
 Continuar haciendo: seguir con las reuniones periódicas y buen clima de equipo.
 Hacer menos: las actividades por separado.
 Dejar de hacer: no dejar las actividades para último momento.
+
+
