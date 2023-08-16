@@ -1,0 +1,23 @@
+{
+  "name": "grupo-03",
+  "version": "1.0.0",
+  "description": "<!-- //2. Definir la temática del Market Place\r ¿Qué productos o servicios brindará nuestro sitio? ¿Quién será nuestra audiencia\r objetivo? ¿Cómo ajustaremos nuestra oferta a ese público?\r Entregable: Crear archivo README.md en el repositiorio con:\r ● Una breve descripción de la oferta de productos y/o servicios ofrecidos por su\r sitio. También agregar una breve descripción del público al que apunta el sitio.\r ● Una breve descripción de los integrantes del equipo. -->",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0623CIFSNCN05LAED/grupo-03.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0623CIFSNCN05LAED/grupo-03/issues"
+  },
+  "homepage": "https://github.com/0623CIFSNCN05LAED/grupo-03#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
