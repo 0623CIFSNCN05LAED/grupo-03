@@ -3,9 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home PY Grupo 3</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="/css/normalize.css" rel="stylesheet"/>
+    <link href="/css/styleHome.css" rel="stylesheet"/>
 </head>
 <body>
-    <p>Primer html</p>
+    <header class="navbar">
+        <h1 class="logo">
+            <a href="/"><img src="/images/logo-mercado-liebre.svg" alt="Proyecto Grupo 3"></a>
+        </h1>
+        <div class="barra-busqueda">
+            <form action="/" class="barra-action">
+                <input class="barra-input" type="text" name="search"
+                    placeholder="Buscá productos por nombre, marcas o palabras clave" />
+                <button type="submit" class="barra-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <nav class="menus">
+            <ul class="menu">
+                <li><a href="#" class="navs">Productos</a></li>
+                <li><a href="#" class="navs">Ofertas</a></li>
+                <li><a href="#" class="navs">Soporte</a></li>
+                <li><a href="#" class="navs"></a><i class="fa-solid fa-basket-shopping"></i></li>
+                <li><a href="#" class="navs"></a><i class="fa-solid fa-user"></i></li>
+            </ul>
+        </nav>  
+        <div class="burger-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>    
+    </header>
+    <main>
+        <section class="productos">  
+            <h2 class="titulares">¡Últimos lanzamientos!</h2>
+            <article class="box-effect-prod prod">
+                <img src="/images/img-cafetera-moulinex.jpg" alt="Cafetera Moulinex">  
+                <div class="info-articulo">
+                    <i class="fa-solid fa-truck icono-envio"></i>
+                    <p class="precios">$6.770</p>
+                    <p class="descuentos">40% OFF</p>
+                    <h3 class="descripciones">Cafetera Moulinex</h3>
+                </div>             
+            </article>
+            <article class="box-effect-prod prod">
+                <img src="/images/img-macbook-pro-2019.jpg" alt="Macbook Pro 2019">               
+                <div class="info-articulo">
+                    <i class="fa-solid fa-truck icono-envio"></i>
+                    <p class="precios">$230.000</p>
+                    <p class="descuentos">20% OFF</p>
+                    <h4 class="descripciones">Macbook Pro 2019</h4>
+                </div>
+            </article>
+            <article class="box-effect-prod prod">
+                <img src="/images/img-samsung-galaxy-s10.jpg" alt="Samsung Galaxy S10">   
+                <div class="info-articulo">
+                    <i class="fa-solid fa-truck icono-envio"></i>
+                    <p class="precios">$70.500</p>
+                    <p class="descuentos">10% OFF</p>
+                    <h4 class="descripciones">Samsung Galaxy S10</h4>
+                </div>            
+            </article>
+            <article class="box-effect-prod prod">
+                <img src="/images/img-tv-samsung-smart.jpg" alt='SmartTv Samsung 43"'>  
+                <div class="info-articulo">
+                    <i class="fa-solid fa-truck icono-envio"></i>
+                    <p class="precios">$23.200</p>
+                    <p class="descuentos">5% OFF</p>
+                    <h4 class="descripciones">SmartTv Samsung 43"</h4>
+                </div>             
+            </article>
+            <article class="box-effect-prod prod">
+                <img src="/images/img-tv-samsung-smart.jpg" alt='SmartTv Samsung 43"'>  
+                <div class="info-articulo">
+                    <i class="fa-solid fa-truck icono-envio"></i>
+                    <p class="precios">$23.200</p>
+                    <p class="descuentos">5% OFF</p>
+                    <h4 class="descripciones">SmartTv Samsung 43"</h4>
+                </div>             
+            </article>
+            <article class="box-effect-prod prod">
+                <img src="/images/img-tv-samsung-smart.jpg" alt='SmartTv Samsung 43"'>  
+                <div class="info-articulo">
+                    <i class="fa-solid fa-truck icono-envio"></i>
+                    <p class="precios">$23.200</p>
+                    <p class="descuentos">5% OFF</p>
+                    <h4 class="descripciones">SmartTv Samsung 43"</h4>
+                </div>             
+            </article>
+        </section>
+        <section class="noticias">
+            <h2 class="titulares">Últimas noticias</h2>
+            <article class="box-effect-not not">
+                <img src="/images/img-tv-samsung-smart.jpg" alt='SmartTv Samsung 43"'>  
+                <div class="info-noticia">
+                    <h4 class="descripciones">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, adipisci excepturi quae quia sequi atque!</h4>
+                </div>             
+            </article>
+            <article class="box-effect-not not">
+                <img src="/images/img-tv-samsung-smart.jpg" alt='SmartTv Samsung 43"'>  
+                <div class="info-noticia">
+                    <h4 class="descripciones">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quas molestias tempora, magni iste dolore hic? Dolorum vel odit cum!</h4>
+                </div>             
+            </article>
+            <article class="box-effect not">
+                <img src="/images/img-tv-samsung-smart.jpg" alt='SmartTv Samsung 43"'>  
+                <div class="info-noticia">
+                    <h4 class="descripciones">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis deserunt expedita pariatur cumque iste sint.</h4>
+                </div>             
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <section class="footer-section">
+            <h4>Proyecto Grupo 3</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste recusandae illo aliquam cum? Hic voluptas saepe reiciendis quis. Tempora, quas!</p>
+        </section>
+        <section class="footer-section">
+            <h4>Contactanos</h4>
+            <div>
+                <a href="">Ubicacion<i class="fa-solid fa-location-dot"></i></a>
+                <a href="">Email<i class="fa-solid fa-envelope"></i></a>
+                <a href="">Telefono<i class="fa-solid fa-phone"></i></a>
+            </div>
+        </section>
+        <section class="footer-section">
+            <div>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <h4>¡Seguinos en nuestras redes!</h4>
+        </section>
+        <section class="footer-section">
+            <h4>Productos y Servicios</h4>
+            <a href=""><p>Productos</p></a>
+            <a href=""><p>Ofertas</p></a>
+            <a href=""><p>Lanzamientos</p></a>
+            <a href=""><p>Soporte</p></a>
+        </section>
+        <section class="footer-section text-copy">
+            <p>Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+        </section>
+    </footer>
 </body>
 </html>
