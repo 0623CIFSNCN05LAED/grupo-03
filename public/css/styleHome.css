@@ -1,0 +1,429 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ebebeb;
+    font-family: 'Roboto', sans-serif;
+    color: #001011;
+}
+
+img {
+    width: 100%;
+}
+
+nav {
+    height: 75px;
+    width: 100%;
+    background-color: #D2D7DF;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulares {
+    font-size: 30px;
+    text-align: center;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin: 0;
+}
+
+.logo {
+    margin-left: 20px;
+    width: 50px;
+}
+
+.logo-text {
+    font-size: 30px;
+    line-height: 70px;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #464CEC;
+    text-align: center;
+}
+
+.menu {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 75px;
+    background: #468EEC;
+    float: right;
+    text-align: center;
+    transition: all .5s;
+}
+
+.menu li {
+    opacity: 0;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+}
+
+.menu li a {
+    color: #D2D7DF;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.menu li a.active,.menu li a:hover {
+    color: #28262C;
+    transition: 0.5s;
+}
+
+.burger-menu {
+    display: block;
+    font-size: 30px;
+    color: #468EEC;
+    float: right;
+    line-height: 75px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .menu {
+    height: 100vh;
+}
+
+#check:checked ~ .menu li {
+    opacity: 1;
+}
+
+.footer {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    background-color: #28262C;
+    color: #D2D7DF;
+    width: 100%;
+    padding: 6% 13% 10% 13%;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.ft-nosotros, .ft-redes, .ft-contacto, .ft-proser {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.ft-titulo {
+    color: #464CEC;
+    font-size: 20px;
+}
+
+.ft-nosotros {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ft-logo {
+    width: 40px;
+    flex-grow: 1;
+    color: #001011;
+}
+
+.ft-t1 {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.ft-nos-txt {
+    padding-top: 15px;
+    flex-grow: 2;
+}
+
+.ft-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.ft-con-div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+.ft-con-a {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0 12px 0;
+    color: #D2D7DF;
+}
+
+.ft-con-a:hover {
+    color: #468EEC;
+}
+
+.ft-con-icon {
+    font-size: 26px;
+    width: 20px;
+    color: #001011;
+}
+
+.ft-con-info {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.ft-redes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.ft-red-div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 45px;
+    padding: 20px;
+    padding-left: 0;
+}
+
+.ft-red-icon {
+    font-size: 26px;
+    width: 20px;
+    color: #001011;
+}
+
+.ft-red-txt {
+    font-size: 18px;
+}
+
+.ft-proser {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.ft-pro-div {
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ft-pro-a {
+    color: #D2D7DF;
+}
+
+.ft-pro-a:hover {
+    color: #468EEC;
+}
+
+.text-copy {
+    padding-top: 50px;
+    left: 0;
+    font-weight: bold;
+}
+
+/*
+.noticias {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.not {
+    box-sizing: border-box;
+    border-top: solid 2px #468EEC;
+}*/
+
+.noticias {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.not {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    height: 300px;
+    background: #D2D7DF;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+.not:hover {
+    height: 400px;
+}
+
+.not-img-box {
+    position: absolute;
+    width: 300px;
+    height: 220px;
+    background: #28262C;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.not:hover .not-img-box {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.not .not-img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-noticia {
+    position: absolute;
+    width: 100%;
+    padding: 0 30px;
+    text-align: center;
+    top: 252px;
+    height: 30px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.not:hover .info-noticia {
+    top: 130px;
+    height: 250px;
+}
+
+.not .info-noticia h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #464CEC;
+}
+
+.not .info-noticia p {
+    padding-top: 10px;
+    color: #28262C;
+}
+
+.not .info-noticia a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    background: #468EEC;
+    color: #28262C;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.not .info-noticia a:hover {
+    color: #ebebeb;
+}
+
+/* movil pequeño */
+@media (min-width: 360px){
+    .logo-text {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 380px){
+    .logo-text {
+        font-size: 30px;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px){
+    .footer {
+        gap: 15%;
+        padding: 5% 8% 5% 8%;
+        flex-direction: row;
+    }
+
+    .ft-nosotros, .ft-redes, .ft-contacto, .ft-proser {
+        width: 42%;
+    }
+
+    .ft-redes, .ft-proser {
+        padding-top: 40px;
+    }
+}
+
+/* desktop */
+@media (min-width: 1280px){
+    .logo-box {
+        margin-left: 25px;
+    }
+
+    .logo-text {
+        width: max-content;
+    }
+
+    nav {
+        height: 100px;
+        background-color: #ebebeb;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .menu {
+        position: relative;
+        height: 100px;
+        top: 0;
+        background: none;
+        float: right;
+        text-align: right;
+        margin-right: 25px;
+        transition: none;
+    }
+
+    .menu li {
+        display: inline-block;
+        opacity: 1;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+
+    .menu li a {
+        color: #468EEC;
+    }
+
+    .menu li a.active, .menu li a:hover {
+        color: #464CEC;
+    }
+
+    .footer {
+        gap: 2%;
+        padding: 5% 8% 5% 8%;
+        flex-direction: row;
+    }
+
+    .ft-nosotros, .ft-redes, .ft-contacto, .ft-proser {
+        width: 22%;
+    }
+}
