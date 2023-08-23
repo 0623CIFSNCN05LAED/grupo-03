@@ -234,19 +234,6 @@ nav {
     font-weight: bold;
 }
 
-/*
-.noticias {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 30px;
-}
-
-.not {
-    box-sizing: border-box;
-    border-top: solid 2px #468EEC;
-}*/
-
 .noticias {
     position: relative;
     display: flex;
