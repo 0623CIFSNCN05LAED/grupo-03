@@ -27,6 +27,7 @@ nav {
 .titulares {
     font-size: 30px;
     text-align: center;
+    padding-top: 35px;
 }
 
 .logo-box {
@@ -171,7 +172,7 @@ nav {
 }
 
 .ft-con-icon {
-    font-size: 26px;
+    font-size: 2em;
     width: 20px;
     color: #001011;
 }
@@ -197,7 +198,7 @@ nav {
 }
 
 .ft-red-icon {
-    font-size: 26px;
+    font-size: 2em;
     width: 20px;
     color: #001011;
 }
@@ -328,6 +329,121 @@ nav {
     color: #ebebeb;
 }
 
+.navbar {
+    top: 0;
+    position: absolute;
+    position: fixed;
+}
+
+.back-video {
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding-top: 75px;
+    width: 100%;
+    height: auto;
+}
+/*
+.dropdown-menu-user {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.icon-nav-user:hover {
+    .dropdown-menu-user {
+        display: block;
+    }
+}*/
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.prod {
+    width: 100%;
+    height: 100%;
+    margin: 15px;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: .4s;
+    background: #D2D7DF;
+    overflow: hidden;
+}
+
+.img-prod {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
+}
+
+.info-articulo {
+    padding-top: 16px;
+}
+
+.titulo-prod {
+    text-align: center;
+    font-size: 28px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.descripcion-prod {
+    text-align: center;
+    color: #001011;
+    padding-top: 0 8px;
+    padding-bottom: 5px;
+}
+
+.precio-prod {
+    font-size: 26px;
+    text-align: center;
+    color: #001011;
+    margin: 0;
+}
+
+.rate-prod {
+    font-size: 20px;
+    color: #ffb900;
+    padding-top: 3px;
+}
+
+.options-prod {
+    margin-bottom: 25px;
+    padding-top: 10px;
+}
+
+.options-prod a {
+    color: #001011;
+    background-color: #468EEC;
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 50px;
+}
+
+.options-prod a:hover {
+    background-color: #464CEC;
+}
+
+.block{
+	display: block;
+}
+
 /* movil pequeño */
 @media (min-width: 360px){
     .logo-text {
@@ -412,5 +528,96 @@ nav {
 
     .ft-nosotros, .ft-redes, .ft-contacto, .ft-proser {
         width: 22%;
+    }
+
+    /*nav user en proceso*/
+    .navbar ul li {
+        display: inline-block;
+    }
+    
+    .navbar li ul{
+        position:absolute;
+        list-style:none;
+        text-align:center;
+        width:400px;
+        left:90%;
+        margin-left:-90px;
+        top:75px;
+        font-size: 10px;
+    
+        
+        max-height:0px;
+        overflow:hidden;
+    
+        -webkit-transition:max-height 0.4s linear;
+        -moz-transition:max-height 0.4s linear;
+        transition:max-height 0.4s linear;
+    }
+    
+    .navbar li:hover ul{
+        max-height:400px;
+    }
+    
+    .navbar li ul li{
+        background-color:#468EEC;
+    }
+    
+    .navbar li ul li a{
+        padding:12px;
+        color:#fff !important;
+        text-decoration:none !important;
+        display:block;
+    }
+    
+    .navbar li ul li:nth-child(odd){ 
+        background-color:#464CEC;
+    }
+    
+    .navbar li ul li:hover{
+        background-color:#444;
+    }
+    
+    .navbar li ul li:first-child{
+        border-radius:3px 3px 0 0;
+        margin-top:25px;
+        position:relative;
+    }
+    
+    .navbar li ul li:first-child:before{ 
+        content:'';
+        position:absolute;
+        width:1px;
+        height:1px;
+        border:5px solid transparent;
+        border-bottom-color:#313131;
+        left:50%;
+        top:-10px;
+        margin-left:-5px;
+    }
+    
+    .navbar li ul li:last-child{
+        border-bottom-left-radius:3px;
+        border-bottom-right-radius:3px;
+    }
+    
+    /* productos en proceso*/
+    .prod {
+        width: 30%;
+        height: 100%;
+        margin: 15px;
+        float: left;
+        box-sizing: border-box;
+        text-align: center;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        transition: .4s;
+        background: #D2D7DF;
+        overflow: hidden;
+    }
+
+    .prod:hover {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        transform: translate(0px -8px);
     }
 }

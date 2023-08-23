@@ -30,67 +30,160 @@
                 <li><a href="#" class="navs">Ofertas</a></li>
                 <li><a href="#" class="navs">Soporte</a></li>
                 <li><a href="#" class="navs"></a><i class="fa-solid fa-magnifying-glass"></i></li>
-                <li><a href="#" class="navs"></a><i class="fa-solid fa-basket-shopping"></i></li>
-                <li><a href="#" class="navs"></a><i class="fa-solid fa-user"></i></li>
+                <li><a href="/productCart" class="navs"></a><i class="fa-solid fa-basket-shopping"></i></li>
+                <li>
+                    <a href="#" class="navs"></a><i class="fa-solid fa-user icon-nav-user"></i>
+                    <ul class="dropwown-menu-user">
+                        <li><a href="/login" class="nav-user">Iniciar Sesión</a></li>
+                        <li><a href="/register" class="nav-user">Registrarse</a></li>
+                    </ul>
+                </li>   
             </ul>
         </nav>      
     </header>
+    <section class="home">
+        <video autoplay loop muted plays-inline class="back-video" src="/images/video_home.mp4"></video>
+    </section>
     <main>
         <h2 class="titulares">¡Últimos lanzamientos!</h2>
         <section class="productos">  
             <article class="box-effect-prod prod">
-                <img src="/images/img-cafetera-moulinex.jpg" alt="Cafetera Moulinex">  
-                <div class="info-articulo">
-                    <i class="fa-solid fa-truck icono-envio"></i>
-                    <p class="precios">$6.770</p>
-                    <p class="descuentos">40% OFF</p>
-                    <h3 class="descripciones">Cafetera Moulinex</h3>
-                </div>             
+                <a class="block" href="/productDetail">
+                    <img class="img-prod" src="/images/zfold5.jpg" alt="Samsung Z Fold 5">
+                </a>
+                <a class="block" href="/productDetail">
+                    <div class="info-articulo">
+                        <h3 class="titulo-prod">Samsung Z Fold 5</h3>
+                        <p class="descripcion-prod">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, iure.</p>
+                        <span class="precio-prod">$123456</span>
+                    </div> 
+                </a>  
+                <div class="rate-prod">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>  
+                <div class="options-prod">
+                    <a href="#">Comprar</a>
+                    <a href="#">Agregar al carrito</a>
+                </div>        
             </article>
             <article class="box-effect-prod prod">
-                <img src="/images/img-macbook-pro-2019.jpg" alt="Macbook Pro 2019">               
-                <div class="info-articulo">
-                    <i class="fa-solid fa-truck icono-envio"></i>
-                    <p class="precios">$230.000</p>
-                    <p class="descuentos">20% OFF</p>
-                    <h4 class="descripciones">Macbook Pro 2019</h4>
+                <a class="block" href="/productDetail">
+                    <img class="img-prod" src="/images/zflip5.jpg" alt="Samsung Z Flip 5">
+                </a>    
+                <a class="block" href="/productDetail">
+                    <div class="info-articulo">
+                        <h3 class="titulo-prod">Samsung Z Flip 5</h3>
+                        <p class="descripcion-prod">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <span class="precio-prod">$123456</span>
+                    </div>
+                </a>               
+                <div class="rate-prod">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>  
+                <div class="options-prod">
+                    <a href="#">Comprar</a>
+                    <a href="#">Agregar al carrito</a>
                 </div>
             </article>
             <article class="box-effect-prod prod">
-                <img src="/images/img-samsung-galaxy-s10.jpg" alt="Samsung Galaxy S10">   
-                <div class="info-articulo">
-                    <i class="fa-solid fa-truck icono-envio"></i>
-                    <p class="precios">$70.500</p>
-                    <p class="descuentos">10% OFF</p>
-                    <h4 class="descripciones">Samsung Galaxy S10</h4>
+                <a class="block" href="/productDetail">
+                    <img class="img-prod" src="/images/s23ultra.jpg" alt="Samsung Galaxy S23 Ultra">
+                </a>
+                <a class="block" href="/productDetail">
+                    <div class="info-articulo">
+                        <h3 class="titulo-prod">Samsung Galaxy S23 Ultra</h3>
+                        <p class="descripcion-prod">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, iure.</p>
+                        <span class="precio-prod">$123456</span>
+                    </div>
+                </a>    
+                <div class="rate-prod">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>  
+                <div class="options-prod">
+                    <a href="#">Comprar</a>
+                    <a href="#">Agregar al carrito</a>
+                </div>
+            </article>    
+            <article class="box-effect-prod prod">
+                <a class="block" href="/productDetail">
+                    <img class="img-prod" src="/images/14promax.jpg" alt='Iphone 14 Pro Max'>
+                </a>  
+                <a class="block" href="/productDetail">
+                    <div class="info-articulo">
+                        <h3 class="titulo-prod">Iphone 14 Pro Max</h3>
+                        <p class="descripcion-prod">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, minus quas esse dignissimos rem porro eius.</p>
+                        <span class="precio-prod">$123456</span>
+                    </div>
+                </a> 
+                <div class="rate-prod">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>  
+                <div class="options-prod">
+                    <a href="#">Comprar</a>
+                    <a href="#">Agregar al carrito</a>
                 </div>            
             </article>
             <article class="box-effect-prod prod">
-                <img src="/images/img-tv-samsung-smart.jpg" alt='SmartTv Samsung 43"'>  
-                <div class="info-articulo">
-                    <i class="fa-solid fa-truck icono-envio"></i>
-                    <p class="precios">$23.200</p>
-                    <p class="descuentos">5% OFF</p>
-                    <h4 class="descripciones">SmartTv Samsung 43"</h4>
-                </div>             
+                <a class="block" href="/productDetail">
+                    <img class="img-prod" src="/images/iPHONE-13.jpg" alt='Iphone 13'>
+                </a> 
+                <a class="block" href="/productDetail">
+                    <div class="info-articulo">
+                        <h3 class="titulo-prod">Iphone 13</h3>
+                        <p class="descripcion-prod">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, iure.</p>
+                        <span class="precio-prod">$123456</span>
+                    </div>
+                </a>
+                <div class="rate-prod">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>  
+                <div class="options-prod">
+                    <a href="#">Comprar</a>
+                    <a href="#">Agregar al carrito</a>
+                </div>            
             </article>
             <article class="box-effect-prod prod">
-                <img src="/images/img-tv-samsung-smart.jpg" alt='SmartTv Samsung 43"'>  
-                <div class="info-articulo">
-                    <i class="fa-solid fa-truck icono-envio"></i>
-                    <p class="precios">$23.200</p>
-                    <p class="descuentos">5% OFF</p>
-                    <h4 class="descripciones">SmartTv Samsung 43"</h4>
-                </div>             
-            </article>
-            <article class="box-effect-prod prod">
-                <img src="/images/img-tv-samsung-smart.jpg" alt='SmartTv Samsung 43"'>  
-                <div class="info-articulo">
-                    <i class="fa-solid fa-truck icono-envio"></i>
-                    <p class="precios">$23.200</p>
-                    <p class="descuentos">5% OFF</p>
-                    <h4 class="descripciones">SmartTv Samsung 43"</h4>
-                </div>             
+                <a class="block" href="/productDetail">
+                    <img class="img-prod" src="/images/motorazr40ultra.jpg" alt='Motorola Razr 40 Ultra'> 
+                </a>
+                <a class="block" href="/productDetail">
+                    <div class="info-articulo">
+                        <h3 class="titulo-prod">Motorola Razr 40 Ultra</h3>
+                        <p class="descripcion-prod">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab?</p>
+                        <span class="precio-prod">$123456</span>
+                    </div>
+                </a> 
+                <div class="rate-prod">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>  
+                <div class="options-prod">
+                    <a href="#">Comprar</a>
+                    <a href="#">Agregar al carrito</a>
+                </div>            
             </article>
         </section>
         <h2 class="titulares">Últimas noticias</h2>
