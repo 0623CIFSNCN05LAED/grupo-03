@@ -1,28 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <%- include("partials/head") %>
+    <title>Product Detail PY Grupo 3</title>
     <link href="/css/styleProductDetail.css" rel="stylesheet"/>
 </head>
 <body>
+    <!--
     <header>
-        <h1> Logo y nombre de la empresa  </h1>
-        <div>
-            <!--Navigation + botón de búsqueda + cartera de compras + loguin/registrate-->
-        </div>
-        <nav>
-            <!--Navigation + botón de búsqueda + cartera de compras + loguin/registrate-->
-        </nav>
-    </header>
+        <%- include("partials/header") %>  
+    </header>    
+    -->
 
     <main>
         <div class="container-img">
@@ -41,32 +29,32 @@
                 </p>
               </form>
               <div class="galery">
-                <img src="/images/iPhone13promaxpink.jpg" alt="iPhone13 pro max">
-                <img src="/images/iPhone13promaxenfrentadogrey.jpg" alt="iPhone13 pro max grey">
-                <img src="/images/iPhone13promaxcamarawhite.jpg" alt="iPhone13 pro max white">                
+                <img src="<%= celular.imagen.img2 %>" alt="<%= celular.nombre %>">
+                <img src="<%= celular.imagen.img4 %>" alt="<%= celular.nombre %>">
+                <img src="<%= celular.imagen.img3 %>" alt="<%= celular.nombre %>">                
             </div>
 
         </div>
         
         <div class="container-info-product">
-            <h3>iPhone 13 pro max</h3>        
+            <h3><%= celular.nombre %></h3>        
           <div >
               <div class="container-product-detail">
                   <div class="form-group">
-                      <label for="colour" name="colur">Colour</label>                    
-                        <input type="radio" name="colour" value="Grey">Grey 
-                        <input type="radio" name="colour" value="Pink">Pink 
-                        <input type="radio" name="colour" value="White">White         
+                      <label for="colour" name="colur">Color</label>                    
+                        <input type="radio" name="colour" value="<%= celular.colores.color1 %> "><%= celular.colores.color1 %> 
+                        <input type="radio" name="colour" value="<%= celular.colores.color2 %> "><%= celular.colores.color2 %> 
+                        <input type="radio" name="colour" value="<%= celular.colores.color3 %> "><%= celular.colores.color3 %>         
                    </div>
                 <div class="form-group">
-                    <label for="capacity" name="capacity">Capacity</label> 
-                        <button>128GB</button>
-                        <button>256GB</button>
-                        <button>512GB</button>       
+                    <label for="capacity" name="capacity">Capacidad</label> 
+                        <button><%= celular.capacidad.cap1 %></button>
+                        <button><%= celular.capacidad.cap2 %></button>
+                        <button><%= celular.capacidad.cap3 %></button>       
                 </div>
             </div>
 
-            <button class="btn-clean"> Clean </button>
+            <button class="btn-clean"> Limpiar </button>
 
             </div>
 
@@ -80,52 +68,36 @@
                 </div>
             </div>
             <div class="container-price"> 
-                <span> $1.619.880 </span>
+                <span> $<%= celular.precio %> </span>
             </div>
             <button class="button-add">
                 <i class="fa-solid fa-plus"></i>
-                Add to cart
+                Agregar al carrito
             </button>
 
             <div class="container-description">
                 <div class="title-description">
-                    <h3>Description</h3>
+                    <h3>Descripción</h3>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="text-description">
-                   <p>iPhone 13 Pro Max The biggest advancement in the Pro camera system yet. 
-                    Super Retina XDR display with ProMotion for faster, smoother response. 
-                    A15 Bionic chip for outstanding performance. Rugged design and the longest 
-                    battery life ever in an iPhone.1</p>
+                   <p><%= celular.descripcionDetalle %></p>
                 </div>
 
             </div>
 
             <div class="container-additional-information">
                 <div class="title-additional-information">
-                    <h3>Information Additional</h3>
+                    <h3>Información Adicional</h3>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="text-additional-information">
-                    <p>
-                        -6.7-inch Super Retina XDR display with ProMotion that provides a
-                        faster and smoother response.
-                        -Cinema mode with shallow depth of field and automatic focus changes
-                        in your videos.
-                        -New 12 MP Pro camera system (telephoto, wide angle and ultra
-                        wide angle), LiDAR scanner, 6x optical zoom range, macro photography,
-                        Photo Styles, ProRes3 video, Smart HDR 4, Night mode,
-                        Apple ProRAW and 4K HDR video recording in Dolby Vision.
-                        -12 MP TrueDepth front camera with Night mode and 4K HDR video recording
-                        in Dolby Vision.
-                        -A15 Bionic chip for outstanding performance.
-                        -Up to 28 hours of video playback, the longest battery life ever on an iPhone.
-                    </p>
+                    <p><%= celular.infoAdicional %></p>
                 </div>
             </div>
 
             <div class="container-social">
-                <span>Share</span>
+                <span>Compartir</span>
                 <div class="container-button-social-network">
                     <a href="#"> <i class="fa-brands fa-instagram"></i></a>
                     <a href="#"> <i class="fa-brands fa-twitter"></i></a>  
@@ -137,37 +109,37 @@
 
     </main>
     <section class="container-technical-characteristics">
-        <h3>iPhone 13 Pro Max</h3>
+        <h3><%= celular.nombre %></h3>
         <form>
         <div class="container-characteristics">
             <table class="content-table">
                 
-            <thead><tr><th> Technical characteristics </th></tr></thead>
+            <thead><tr><th> Características Técnicas </th></tr></thead>
 
             <tbody>
                 <tr>
-                    <td>Brand:</td>
-                    <td>Apple</td>
+                    <td>Marca:</td>
+                    <td><%= celular.marca %></td>
                 </tr>
 
                 <tr>
-                    <td>Model:</td> 
-                    <td>iPhone 13 Pro Max</td>
+                    <td>Modelo:</td> 
+                    <td><%= celular.nombre %></td>
                 </tr>
 
                 <tr>
-                    <td>Screen size:</td> 
-                    <td>6,1''</td>
+                    <td>Tamaño pantalla:</td> 
+                    <td><%= celular.pantalla %></td>
                 </tr>
 
                 <tr>
-                    <td>Storage capacity:</td>
-                    <td>256GB</td>
+                    <td>Cámara principal:</td>
+                    <td><%= celular.camaraPrincipal %></td>
                 </tr>
 
                 <tr>
                     <td>OS:</td>
-                    <td>iOS 16</td>
+                    <td><%= celular.os %></td>
                 </tr>
             </tbody>
             
@@ -177,7 +149,7 @@
     </section>
 
     <section class="container-related-products">
-        <h2>Related Products</h2>
+        <h2>Productos Relacionados</h2>
         <div class="card-list-products">
             <div class="card">
                 <div class="card-img">
@@ -235,7 +207,11 @@
         </div>
       
     </section>
-    <footer><h2>Footer</h2></footer>
+    <footer>
+        <!--
+        <%- include("partials/footer") %>
+        -->
+    </footer>
     
 </body>
 </html>

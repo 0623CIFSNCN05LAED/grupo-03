@@ -1,47 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProductCart PY Grupo 3</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <%- include("partials/head") %>
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link href="../../../grupo-03/public/css/normalize.css" rel="stylesheet"/>
-    <link href="../../../grupo-03/public/css/styleProductCart.css" rel="stylesheet"/>
+    <title>ProductCart PY Grupo 3</title>
+    <link href="/css/styleProductCart.css" rel="stylesheet"/>
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo-box">
-                <a href="/"><img class="logo" src="../../../grupo-03/public/images/logo-proyecto.svg" alt="Proyecto Grupo 3"></a>
-                <label class="logo-text">Proyecto Grupo 3</label>
-            </div>
-            <input type="checkbox" id="check">
-            <label for="check" class="burger-menu">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <ul class="menu">
-                <li><a href="#" class="navs">Productos</a></li>
-                <li><a href="#" class="navs">Ofertas</a></li>
-                <li><a href="#" class="navs">Soporte</a></li>
-                <li><a href="#" class="navs"></a><i class="fa-solid fa-magnifying-glass"></i></li>
-                <li><a href="/productCart" class="navs"></a><i class="fa-solid fa-basket-shopping"></i></li>
-                <li>
-                    <a href="#" class="navs"></a><i class="fa-solid fa-user icon-nav-user"></i>
-                    <ul class="dropwown-menu-user">
-                        <li><a href="/login" class="nav-user">Iniciar Sesión</a></li>
-                        <li><a href="/register" class="nav-user">Registrarse</a></li>
-                    </ul>
-                </li>   
-            </ul>
-        </nav>      
-    </header>
+        <%- include("partials/header") %>  
+    </header>    
+    
     <div class="productos-cont">
         <div class="productos-header">
             <h5 class="productos-title">Tu carrito</h5>
@@ -140,6 +109,12 @@
     </div>
     <script src="app.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <footer>
+        <!--
+        <%- include("partials/footer") %>
+        -->
+    </footer>
     
 </body>
 </html>
