@@ -1,0 +1,10 @@
+[
+    {
+        "id": "1",
+        "nombre": "hola",
+        "apellido": "chau",
+        "email": "holachau@gmail.com",
+        "contraseña": "holachau123",
+        "imagen": "url"
+    }
+]
