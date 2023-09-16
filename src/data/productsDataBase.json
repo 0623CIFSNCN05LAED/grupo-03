@@ -128,9 +128,9 @@
         "id": 5,
         "marca": "Apple",
         "nombre": "iPhone 13",
-        "descripcion": "El iPhone 14 Pro Max te permite captar detalles increíbles gracias a su cámara gran angular de 48 MP.",
-        "descripcionDetalle": "El iPhone 14 Pro Max te permite captar detalles increíbles gracias a su cámara gran angular de 48 MP. Además, trae la Dynamic Island y una pantalla siempre activa, para que puedas interactuar con tu iPhone de una forma completamente nueva.",
-        "infoAdicional": "Dynamic Island, una forma nueva y mágica de interactuar con tu iPhone. Modo Cine ahora en 4K Dolby Vision de hasta 30 cps. Detección de Choques,una funcionalidad de seguridad que pide ayuda cuando tú no puedes. Batería para todo el día y hasta 29 horas de reproducción de video. A16 Bionic,el chip de smartphone en su máxima expresión. Red 5G ultrarrápida.",
+        "descripcion": "El sistema de dos cámaras más avanzado en un iPhone.",
+        "descripcionDetalle": "El sistema de dos cámaras más avanzado en un iPhone. El superrápido chip A15 Bionic. Un gran salto en duración de batería. Un diseño resistente. Y una pantalla Super Retina XDR más brillante.",
+        "infoAdicional": "Una pantalla OLED más brillante que ahorra energía y se ve increíble incluso a pleno sol. Y un diseño duradero resistente al agua y al polvo. Mejoramos las cámaras como nunca para que tus fotos y videos se vean aún más increíbles. La cámara gran angular capta más luz y la cámara ultra gran angular captura más detalle en las zonas oscuras. Además, incluimos una nueva estabilización óptica de imagen por desplazamiento de sensor. Con el chip A15 Bionic, tienes potencia de sobra para disfrutar los juegos más exigentes y las nuevas funcionalidades, como el modo Cine y los Estilos Fotográficos. El iPhone 13 da un gran salto en duración de batería.",
         "imagen": {
             "img1": "/images/iPHONE-13.jpg",
             "img2": "/images/i13-2.jpg",
