@@ -27,4 +27,7 @@ module.exports = {
             celular,
         });
     },
+    productCreation: (req, res) => {
+        res.render("productCreation");
+    }
 }; 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <class head="header"><%- include("partials/head") %>
+    <link rel="stylesheet" href="css/styleProductCreation.css">
+<body>
+    <header class="header">
+    <%- include("partials/header") %>
+    </header>
+    <form action="resultado.html" method="POST" class="formulario">
+        <div class="control-formulario">
+            <input type="text" name="productName" placeholder="Nombre del producto" minlength="3" class="control" required>
+        </div>
+        <div class="control-formulario">
+            <input type="text" name="description" placeholder="Descripción" class="control" required>
+        </div>
+        <div class="control-formulario">
+            <input type="file" name="productPhoto" accept=".png" class="control">
+        </div>
+        <div class="control-formulario">
+            <input type="text" name="category" placeholder="Categoría" class="control" required>
+        </div>
+        <div class="control-formulario">
+            <input type="text" name="colors" placeholder="Colores" class="control" required>
+        </div>
+        <div class="control-formulario">
+            <input type="number" name="price" placeholder="Precio" class="control" required>
+        </div>
+        <button type="submit" class="boton-formulario">Publicar</button>
+        <button type="reset" class="boton-formulario">Borrar</button>
+    </form>
+<footer class="footer">
+    <%- include("partials/footer") %>
+</footer>
+    </body>
+</html>
