@@ -15,21 +15,22 @@ body {
 img {
     width: 100%;
 }
-
+/*
 nav {
     height: 75px;
     width: 100%;
     background-color: #D2D7DF;
     display: flex;
     justify-content: space-between;
-}
+    position: fixed;
+}*/
 
 .titulares {
     font-size: 30px;
     text-align: center;
     padding-top: 35px;
 }
-
+/*
 .logo-box {
     display: flex;
     align-items: center;
@@ -233,7 +234,7 @@ nav {
     padding-top: 50px;
     left: 0;
     font-weight: bold;
-}
+}*/
 
 .noticias {
     position: relative;
@@ -328,12 +329,12 @@ nav {
 .not .info-noticia a:hover {
     color: #ebebeb;
 }
-
+/*
 .navbar {
     top: 0;
     position: absolute;
     position: fixed;
-}
+}*/
 
 .back-video {
     right: 0;
@@ -446,19 +447,22 @@ nav {
 
 /* movil pequeño */
 @media (min-width: 360px){
+    /*
     .logo-text {
         font-size: 20px;
-    }
+    }*/
 }
 
 @media (min-width: 380px){
+    /*
     .logo-text {
         font-size: 30px;
-    }
+    }*/
 }
 
 /* tablet */
 @media (min-width: 768px){
+    /*
     .footer {
         gap: 15%;
         padding: 5% 8% 5% 8%;
@@ -471,11 +475,12 @@ nav {
 
     .ft-redes, .ft-proser {
         padding-top: 40px;
-    }
+    }*/
 }
 
 /* desktop */
 @media (min-width: 1280px){
+    /*
     .logo-box {
         margin-left: 25px;
     }
@@ -528,9 +533,10 @@ nav {
 
     .ft-nosotros, .ft-redes, .ft-contacto, .ft-proser {
         width: 22%;
-    }
+    }*/
 
     /*nav user en proceso*/
+    /*
     .navbar ul li {
         display: inline-block;
     }
@@ -598,7 +604,7 @@ nav {
     .navbar li ul li:last-child{
         border-bottom-left-radius:3px;
         border-bottom-right-radius:3px;
-    }
+    }*/
     
     /* productos en proceso*/
     .prod {

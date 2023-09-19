@@ -12,6 +12,7 @@ nav {
     background-color: #D2D7DF;
     display: flex;
     justify-content: space-between;
+    position: fixed;
 }
 
 .logo-box {
@@ -379,5 +380,15 @@ nav {
     .navbar li ul li:last-child{
         border-bottom-left-radius:3px;
         border-bottom-right-radius:3px;
+    }
+
+    .dropwown-menu-user {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .menu li .dropwown-menu-user li a {
+        font-size: 15px;
     }
 }
