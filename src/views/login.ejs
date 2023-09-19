@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <%- include("partials/head") %>
+    <class><%- include("partials/head") %>
     <title>Login PY Grupo 3</title>
     <link rel="stylesheet" href="css/styleLogin.css">
-</head>
 <body>
-    <!--
     <header>
-        <%- include("partials/header") %>  
-    </header>    
-    -->
-    <div class="formulario">
-    <form action="resultado.html" method="POST">
+        <%- include("partials/header") %> 
+    </header> 
+    <form action="resultado.html" method="POST" class="formulario">
         <h1 class="titulo-formulario">Inicio de sesión</h1>
         <div class="control-formulario">
             <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" class="control" required> 
@@ -28,12 +23,9 @@
         <button type="submit" class="boton-formulario">Iniciar sesión</button>
         <div class="registro">¿No tienes cuenta? <a href="/register">Registrate</a></div>
     </form>
-    </div>
 
-    <footer>
-        <!--
+    <footer class="footer">
         <%- include("partials/footer") %>
-        -->
     </footer>
 </body>
 </html>

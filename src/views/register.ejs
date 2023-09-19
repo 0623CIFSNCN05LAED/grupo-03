@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <%- include("partials/head") %>
+    <class><%- include("partials/head") %>
     <title>Register PY Grupo 3</title>
     <link rel="stylesheet" href="css/styleRegister.css">
-    <link rel="stylesheet" href="css/styleMain.css">
-</head>
-
 <body>
-    
     <header>
         <%- include("partials/header") %>  
     </header>    
-    
-    <div class="formulario">
-    <form action="resultado.html" method="POST">
+    <form action="resultado.html" method="POST" class="formulario">
         <h1 class="titulo-formulario">Registro</h1>
         <div class="control-formulario">
             <h5>Nombre</h5>
@@ -40,12 +33,9 @@
         <button type="reset" class="boton-formulario2">Borrar</button>
         <div class="login">¿Ya tienes cuenta? <a href="/login">Iniciar sesión</a></div>
     </form>
-    </div>
 
-    <footer>
-        
+    <footer class="footer">
         <%- include("partials/footer") %>
-        
     </footer>
 </body>
 </html>

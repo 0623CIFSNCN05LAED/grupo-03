@@ -25,6 +25,14 @@ nav {
     justify-content: space-between;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .navbar {
     top: 0;
     position: relative;
