@@ -13,6 +13,7 @@ nav {
     display: flex;
     justify-content: space-between;
     position: fixed;
+    z-index: 30;
 }
 
 .logo-box {
@@ -45,6 +46,7 @@ nav {
     float: right;
     text-align: center;
     transition: all .5s;
+    z-index: 30;
 }
 
 .menu li {
