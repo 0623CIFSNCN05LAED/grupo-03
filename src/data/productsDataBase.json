@@ -2,7 +2,7 @@
     {
         "id": 1,
         "marca": "Samsung",
-        "nombre": "Samsung Z Fold 5",
+        "nombre": "Samsung Galaxy Z Fold 5",
         "descripcion": "El Galaxy Z Fold5 hace honor a su nombre al plegarse para cerrar, lo que hace que una pantalla enorme quepa en tu bolsillo desafiando a toda lógica.",
         "descripcionDetalle": "Las leyes de la física no tienen nada en este diseño nivelado. El Galaxy Z Fold5 hace honor a su nombre al plegarse para cerrar, lo que hace que una pantalla enorme quepa en tu bolsillo desafiando a toda lógica. Abrilo, plegalo para cerrarlo o dejalo abierto en el ángulo perfecto. La bisagra flexible rediseñada es una maravilla técnica que se dobla a tu gusto.",
         "infoAdicional": "Desplegá una pantalla impresionante e inmersiva, rediseñada para ofrecerte juegos como nunca antes, visualización cinematográfica dondequiera que estés y productividad estilo PC, todo en un dispositivo del tamaño de una tableta. Un smartphone tan impresionante que querrás tenerlo todo el tiempo. Y con un enorme sistema de batería doble de 4400 mAh (típico), podés hacerlo. Junto con un procesador avanzado, ajusta de forma eficiente el uso de la energía a tus hábitos y necesidades, haciendo que una carga dure más que nunca. Impulsá tu camino hacia la victoria con el hardware y el software actualizados de la plataforma móvil Snapdragon® 8 Gen 2 Mobile Platform for Galaxy. Este procesador de alto rendimiento alimenta el juego a nivel profesional.",
@@ -14,6 +14,7 @@
         },
         "categoria": "destacados",
         "precio": 1129.999,
+        "descuento": 10,
         "calificacion": 5,
         "colores": {
             "color1": "Gray",
@@ -33,7 +34,7 @@
     {
         "id": 2,
         "marca": "Samsung",
-        "nombre": "Samsung Z Flip 5",
+        "nombre": "Samsung Galaxy Z Flip 5",
         "descripcion": "El Galaxy Z Flip5 presenta por primera vez la Flex Window de 3,4 pulgadas creado para la autoexpresión. Compacto y atrapante desde todos los ángulos, este plegable es tan versátil como portátil.",
         "descripcionDetalle": "El Galaxy Z Flip5 presenta por primera vez la Flex Window de 3,4 pulgadas creado para la autoexpresión. Compacto y atrapante desde todos los ángulos, este plegable es tan versátil como portátil.",
         "infoAdicional": "Respaldada por un procesador poderoso, esta batería de 3700 mAh (uso típico) es aún más eficiente y permite prolongar la carga para que puedas mirar películas sin parar o jugar hasta tarde en la noche. ¿Necesitás más? Habilitá el modo de bajo consumo para que la diversión siga fluyendo. El nuevo Snapdragon® 8 Gen 2 Mobile Platform for Galaxy te lleva a un nivel completamente nuevo en potencia.Experimentá gráficos más suaves, IA más rápida y funcionamiento de la batería mejorado. Este plegable lleva un traje duro con marco de armazón: Armor Aluminium. Presentando un diseño con doble riel nuevo, durable para nuestras bisagras plegables. Con Galaxy Z Flip5, un poco de humedad no frenará tu día.",
@@ -45,6 +46,7 @@
         },
         "categoria": "destacados",
         "precio": 659.999,
+        "descuento": 10,
         "calificacion": 3,
         "colores": {
             "color1": "Graphite",
@@ -76,6 +78,7 @@
         },
         "categoria": "destacados",
         "precio": 779.999,
+        "descuento": 0,
         "calificacion": 5,
         "colores": {
             "color1": "Cream",
@@ -107,6 +110,7 @@
         },
         "categoria": "destacados",
         "precio": 1184.999,
+        "descuento": 0,
         "calificacion": 5,
         "colores": {
             "color1": "Oro",
@@ -139,6 +143,7 @@
         },
         "categoria": "destacados",
         "precio": 692.999,
+        "descuento": 0,
         "calificacion": 3,
         "colores": {
             "color1": "Azul",
@@ -172,6 +177,7 @@
         },
         "categoria": "destacados",
         "precio": 699.999,
+        "descuento": 0,
         "calificacion": 3.5,
         "colores": {
             "color1": "Negro",

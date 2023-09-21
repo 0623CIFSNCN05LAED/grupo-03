@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+    <title>Products PY Grupo 3</title>
+    <link href="/css/styleProducts.css" rel="stylesheet"/>
+    <link href="/css/styleMain.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <%- include("partials/header") %>  
+    </header>
+
+    <main>
+        <div class = "product-items">
+            <% celulares.forEach(celular => {%>
+            <div class = "product">
+                <div class = "product-content">
+                    <div class = "product-img">
+                        <img src="<%= celular.imagen.img1 %>" alt = "<%= celular.nombre %>">
+                    </div>
+                    <div class = "product-btns">
+                        <button type = "button" class = "btn-cart"> Añadir al carrito
+                            <span><i class = "fas fa-plus"></i></span>
+                        </button>
+                        <button type = "button" class = "btn-buy"> Comprar ahora
+                            <span><i class = "fas fa-shopping-cart"></i></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class = "product-info">
+                    <div class = "product-info-top">
+                        <h2 class = "sm-title"><%= celular.marca %></h2>
+                        <div class = "rating">
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "far fa-star"></i></span>
+                        </div>
+                    </div>
+                    <a href = "#" class = "product-name"><%= celular.nombre %></a>
+                    <p class = "product-price">$ <%= celular.precio %></p>
+                    <p class = "product-price">$ <%= celular.precio %></p>
+                </div>
+                <% if(celular.descuento > 0){ %>
+                <div class = "off-info">
+                    <h2 class = "sm-title"><%= celular.descuento %>% off</h2>
+                </div>
+                <% } %>
+            </div>
+            <%   }) %>
+        </div>  
+    </main>
+
+    <footer class="footer">
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>

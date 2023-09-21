@@ -29,5 +29,10 @@ module.exports = {
     },
     productCreation: (req, res) => {
         res.render("productCreation");
-    }
+    },
+    products: (req, res) => {
+        res.render("products", {
+            celulares: mainServices.celulares,
+        });
+    },
 }; 
