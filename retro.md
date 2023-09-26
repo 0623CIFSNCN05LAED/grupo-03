@@ -13,10 +13,36 @@ Hacer menos: las actividades por separado.
 Dejar de hacer: no dejar las actividades para último momento.
 
 Retrospectiva Sprint 2:
+
 Comenzar a hacer: las actividades del sprint en curso, realizar una reunion semanal.
 Hacer más: tener más comunicación por discord para estar al tanto de que vamos haciendo.
 Continuar haciendo: terminar de maquetar las diferentes páginas de la web, correspondientes al sprint 2.
 Hacer menos: las actividades por separado.
 Dejar de hacer: no dejar las actividades para último momento.
+
+Retrospectiva Sprint 3:
+
+Comenzar a hacer: las actividades del sprint 3, realizar una reunión semanal.
+Hacer más: organizarnos para realizar las actividades y dejarlas plasmadas en el tablero trello, y acordarnos de ir modificando el tablero para que nuestros compañeros estén al tanto de que vamos haciendo.
+Continuar haciendo: terminar de maquetar las diferentes páginas de la web, correspondientes al sprint 3.
+Hacer menos: no comunicarnos.
+Dejar de hacer: no dejar las actividades para último momento.
+
+Retrospectiva Sprint 4:
+
+Comenzar a hacer: los entregables del sprint 4, realizar una reunión semanal.
+Hacer más: revisión de las actividades que vamos haciendo, para que no queden cosas pendientes para el siguiente sprint.
+Hacer menos: comunicarnos con tan poca frecuencia.
+Dejar de hacer: no dejar las actividades para último momento.
+
+
+Retrospectiva Sprint 5:
+
+Comenzar a hacer: las actividades del sprint en curso, realizar una reunión semanal.
+Hacer más: intentar coordinar para tener mas reuniones.
+Continuar haciendo: seguir estando al día con los sprint.
+Hacer menos: no comunicarnos tanto.
+Dejar de hacer: no dejar las actividades para último momento.
+
 
 
