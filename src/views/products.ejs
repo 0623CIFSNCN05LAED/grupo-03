@@ -13,43 +13,45 @@
 
     <main>
         <div class = "product-items">
-            <% products.forEach(celular => {%>
-            <div class = "product">
-                <div class = "product-content">
-                    <div class = "product-img">
-                        <img src="<%= celular.imagen.img1 %>" alt = "<%= celular.nombre %>">
-                    </div>
-                    <div class = "product-btns">
-                        <button type = "button" class = "btn-cart"> Añadir al carrito
-                            <span><i class = "fas fa-plus"></i></span>
-                        </button>
-                        <button type = "button" class = "btn-buy"> Comprar ahora
-                            <span><i class = "fas fa-shopping-cart"></i></span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class = "product-info">
-                    <div class = "product-info-top">
-                        <h2 class = "sm-title"><%= celular.marca %></h2>
-                        <div class = "rating">
-                            <span><i class = "fas fa-star"></i></span>
-                            <span><i class = "fas fa-star"></i></span>
-                            <span><i class = "fas fa-star"></i></span>
-                            <span><i class = "fas fa-star"></i></span>
-                            <span><i class = "far fa-star"></i></span>
+            <% products.forEach(product => {%>
+            <a href="/products/<%= product.id %>"> 
+                <div class = "product">
+                    <div class = "product-content">
+                        <div class = "product-img">
+                            <img src="<%= product.imagen.img1 %>" alt = "<%= product.nombre %>">
+                        </div>
+                        <div class = "product-btns">
+                            <button type = "button" class = "btn-cart"> Añadir al carrito
+                                <span><i class = "fas fa-plus"></i></span>
+                            </button>
+                            <button type = "button" class = "btn-buy"> Comprar ahora
+                                <span><i class = "fas fa-shopping-cart"></i></span>
+                            </button>
                         </div>
                     </div>
-                    <a href = "#" class = "product-name"><%= celular.nombre %></a>
-                    <p class = "product-price">$ <%= celular.precio %></p>
-                    <p class = "product-price">$ <%= getFinalPrice(celular) %></p>
+    
+                    <div class = "product-info">
+                        <div class = "product-info-top">
+                            <h2 class = "sm-title"><%= product.marca %></h2>
+                            <div class = "rating">
+                                <span><i class = "fas fa-star"></i></span>
+                                <span><i class = "fas fa-star"></i></span>
+                                <span><i class = "fas fa-star"></i></span>
+                                <span><i class = "fas fa-star"></i></span>
+                                <span><i class = "far fa-star"></i></span>
+                            </div>
+                        </div>
+                        <a href = "#" class = "product-name"><%= product.nombre %></a>
+                        <p class = "product-price">$ <%= product.precio %></p>
+                        <p class = "product-price">$ <%= product.priceWithDiscount %></p>
+                    </div>
+                    <% if(product.descuento > 0){ %>
+                    <div class = "off-info">
+                        <h2 class = "sm-title"><%= product.descuento %>% off</h2>
+                    </div>
+                    <% } %>
                 </div>
-                <% if(celular.descuento > 0){ %>
-                <div class = "off-info">
-                    <h2 class = "sm-title"><%= celular.descuento %>% off</h2>
-                </div>
-                <% } %>
-            </div>
+            </a>
             <%   }) %>
         </div>  
     </main>

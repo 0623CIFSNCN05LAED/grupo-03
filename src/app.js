@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const mainRouter = require("./routes/main-router");
-const productsRouter = require("./routes/products");
 const viewUtils = require("./utils/view-utils");
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -15,6 +14,5 @@ app.listen(PORT, () => {
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 
-app.locals = viewUtils;
 
 app.use("/", mainRouter);

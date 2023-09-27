@@ -1,6 +1,6 @@
 module.exports = {
-    getFinalPrice: (celular) => {
-        const price = celular.precio - celular.precio * (celular.descuento / 100);
+    getFinalPrice: (product) => {
+        const price = product.precio - product.precio * (product.descuento / 100);
         return price.toLocaleString("es-AR", {
             minimumFractionDigits: 2,
         });

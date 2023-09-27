@@ -17,16 +17,9 @@ module.exports = {
     productCart: (req, res) => {
         res.render("productCart");
     },
-    productDetail: (req, res) => {
-        const id = req.params.id;
-        const celular = productServices.encontrarCelular(id);
-
-        if (!celular) {
-            return res.redirect("/");
-        }
-
-        res.render("productDetail", {
-            celular,
-        });
+    search: (req, res) => {
+        const keywords = req.query.keywords;
+        const foundProducts = productServices.searchProducts(keywords);
+        res.render("results", { foundProducts });
     },
 }; 
