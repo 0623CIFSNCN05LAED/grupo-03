@@ -1,9 +1,11 @@
-const mainServices = require("../services/main-services");
+const productServices = require("../services/product-services");
 
 module.exports = {
     home: (req, res) => {
+        const featuredProducts = productServices.getFeaturedProducts();
+
         res.render("home", {
-            celulares: mainServices.celulares,
+            featuredProducts,
         });
     },
     login: (req, res) => {
@@ -17,7 +19,7 @@ module.exports = {
     },
     productDetail: (req, res) => {
         const id = req.params.id;
-        const celular = mainServices.encontrarCelular(id);
+        const celular = productServices.encontrarCelular(id);
 
         if (!celular) {
             return res.redirect("/");
@@ -25,14 +27,6 @@ module.exports = {
 
         res.render("productDetail", {
             celular,
-        });
-    },
-    productCreation: (req, res) => {
-        res.render("productCreation");
-    },
-    products: (req, res) => {
-        res.render("products", {
-            celulares: mainServices.celulares,
         });
     },
 }; 

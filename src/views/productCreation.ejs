@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <class><%- include("partials/head") %>
-    <link rel="stylesheet" href="css/styleProductCreation.css">
+    <link rel="stylesheet" href="/css/styleProductCreation.css">
 <body>
     <header class="header">
     <%- include("partials/header") %>
     </header>
-    <form action="resultado.html" method="POST" class="formulario">
+    <form action="/products" method="POST" class="formulario">
         <h1 class="titulo-formulario">Identificá tu producto</h1>
         <div class="control-formulario">
             <input type="text" name="productName" placeholder="Nombre del producto" minlength="3" class="control" required>

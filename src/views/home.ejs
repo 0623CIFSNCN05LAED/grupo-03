@@ -25,8 +25,7 @@
     <main>
         <h2 class="titulares">¡Últimos lanzamientos!</h2>
         <section class="productos">  
-            <% celulares.forEach(celular => {%>
-            <% if(celular.categoria == "destacados"){ %>
+            <% featuredProducts.forEach(celular => {%>
                 <article class="box-effect-prod prod">
                     <a class="block" href="/productDetail/<%= celular.id %>">
                         <img class="img-prod" src="<%= celular.imagen.img1 %>" alt="<%= celular.nombre %>">
@@ -50,8 +49,7 @@
                         <a href="#">Agregar al carrito</a>
                     </div>             
                 </article>
-            <% } %>
-            <%   }) %>
+            <%  }) %>
         </section>
         <h2 class="titulares">Últimas noticias</h2>
         <section class="noticias">  

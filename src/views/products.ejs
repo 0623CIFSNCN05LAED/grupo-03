@@ -13,7 +13,7 @@
 
     <main>
         <div class = "product-items">
-            <% celulares.forEach(celular => {%>
+            <% products.forEach(celular => {%>
             <div class = "product">
                 <div class = "product-content">
                     <div class = "product-img">
@@ -42,7 +42,7 @@
                     </div>
                     <a href = "#" class = "product-name"><%= celular.nombre %></a>
                     <p class = "product-price">$ <%= celular.precio %></p>
-                    <p class = "product-price">$ <%= celular.precio %></p>
+                    <p class = "product-price">$ <%= getFinalPrice(celular) %></p>
                 </div>
                 <% if(celular.descuento > 0){ %>
                 <div class = "off-info">
