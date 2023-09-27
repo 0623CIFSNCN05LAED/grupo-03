@@ -25,16 +25,16 @@
     <main>
         <h2 class="titulares">¡Últimos lanzamientos!</h2>
         <section class="productos">  
-            <% featuredProducts.forEach(celular => {%>
+            <% featuredProducts.forEach(product => {%>
                 <article class="box-effect-prod prod">
-                    <a class="block" href="/productDetail/<%= celular.id %>">
-                        <img class="img-prod" src="<%= celular.imagen.img1 %>" alt="<%= celular.nombre %>">
+                    <a class="block" href="/products/<%= product.id %>">
+                        <img class="img-prod" src="<%= product.imagen.img1 %>" alt="<%= product.nombre %>">
                     </a>
-                    <a class="block" href="/productDetail/<%= celular.id %>">
+                    <a class="block" href="/products/<%= product.id %>">
                         <div class="info-articulo">
-                            <h3 class="titulo-prod"><%= celular.nombre %></h3>
-                            <p class="descripcion-prod"><%= celular.descripcion %></p>
-                            <span class="precio-prod">$<%= celular.precio %></span>
+                            <h3 class="titulo-prod"><%= product.nombre %></h3>
+                            <p class="descripcion-prod"><%= product.descripcion %></p>
+                            <span class="precio-prod"><%= product.precio %></span>
                         </div> 
                     </a>  
                     <div class="rate-prod">

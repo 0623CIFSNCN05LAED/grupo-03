@@ -30,28 +30,28 @@
                 </p>
               </form>
               <div class="galery">
-                <img src="<%= celular.imagen.img2 %>" alt="<%= celular.nombre %>">
-                <img src="<%= celular.imagen.img4 %>" alt="<%= celular.nombre %>">
-                <img src="<%= celular.imagen.img3 %>" alt="<%= celular.nombre %>">                
+                <img src="<%= product.imagen.img2 %>" alt="<%= product.nombre %>">
+                <img src="<%= product.imagen.img4 %>" alt="<%= product.nombre %>">
+                <img src="<%= product.imagen.img3 %>" alt="<%= product.nombre %>">                
             </div>
 
         </div>
         
         <div class="container-info-product">
-            <h3><%= celular.nombre %></h3>        
+            <h3><%= product.nombre %></h3>        
           <div >
               <div class="container-product-detail">
                   <div class="form-group">
                       <label for="colour" name="colur">Color</label>                    
-                        <input type="radio" name="colour" value="<%= celular.colores.color1 %> "><%= celular.colores.color1 %> 
-                        <input type="radio" name="colour" value="<%= celular.colores.color2 %> "><%= celular.colores.color2 %> 
-                        <input type="radio" name="colour" value="<%= celular.colores.color3 %> "><%= celular.colores.color3 %>         
+                        <input type="radio" name="colour" value="<%= product.colores.color1 %> "><%= product.colores.color1 %> 
+                        <input type="radio" name="colour" value="<%= product.colores.color2 %> "><%= product.colores.color2 %> 
+                        <input type="radio" name="colour" value="<%= product.colores.color3 %> "><%= product.colores.color3 %>         
                    </div>
                 <div class="form-group">
                     <label for="capacity" name="capacity">Capacidad</label> 
-                        <button><%= celular.capacidad.cap1 %></button>
-                        <button><%= celular.capacidad.cap2 %></button>
-                        <button><%= celular.capacidad.cap3 %></button>       
+                        <button><%= product.capacidad.cap1 %></button>
+                        <button><%= product.capacidad.cap2 %></button>
+                        <button><%= product.capacidad.cap3 %></button>       
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="container-price"> 
-                <span> $<%= celular.precio %> </span>
+                <span> <%= product.precio %> </span>
             </div>
             <button class="button-add">
                 <i class="fa-solid fa-plus"></i>
@@ -82,7 +82,7 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="text-description">
-                   <p><%= celular.descripcionDetalle %></p>
+                   <p><%= product.descripcionDetalle %></p>
                 </div>
 
             </div>
@@ -93,7 +93,7 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="text-additional-information">
-                    <p><%= celular.infoAdicional %></p>
+                    <p><%= product.infoAdicional %></p>
                 </div>
             </div>
 
@@ -110,7 +110,7 @@
 
     </main>
     <section class="container-technical-characteristics">
-        <h3><%= celular.nombre %></h3>
+        <h3><%= product.nombre %></h3>
         <form>
         <div class="container-characteristics">
             <table class="content-table">
@@ -120,27 +120,27 @@
             <tbody>
                 <tr>
                     <td>Marca:</td>
-                    <td><%= celular.marca %></td>
+                    <td><%= product.marca %></td>
                 </tr>
 
                 <tr>
                     <td>Modelo:</td> 
-                    <td><%= celular.nombre %></td>
+                    <td><%= product.nombre %></td>
                 </tr>
 
                 <tr>
                     <td>Tamaño pantalla:</td> 
-                    <td><%= celular.pantalla %></td>
+                    <td><%= product.pantalla %></td>
                 </tr>
 
                 <tr>
                     <td>Cámara principal:</td>
-                    <td><%= celular.camaraPrincipal %></td>
+                    <td><%= product.camaraPrincipal %></td>
                 </tr>
 
                 <tr>
                     <td>OS:</td>
-                    <td><%= celular.os %></td>
+                    <td><%= product.os %></td>
                 </tr>
             </tbody>
             
