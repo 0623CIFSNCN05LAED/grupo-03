@@ -23,6 +23,9 @@ const formatProductPrices = function (product) {
       return db.products.findAll();
     },
     getProduct: (id) => {
+      return db.products.findById(id);
+    },
+    getFormattedProduct: (id) => {
       const product = db.products.findById(id);
       return formatProductPrices(product);
     },

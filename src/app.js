@@ -7,6 +7,8 @@ const mainRouter = require("./routes/main-router");
 
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(methodOverride("_method"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {

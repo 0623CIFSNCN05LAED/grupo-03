@@ -8,7 +8,7 @@ module.exports = {
     },
     detail: (req, res) => {
         const id = req.params.id;
-        const product = productServices.getProduct(id);
+        const product = productServices.getFormattedProduct(id);
         res.render("productDetail", { product });
     },
     create: (req, res) => {
@@ -43,6 +43,9 @@ module.exports = {
     update: (req, res) => {
         const product = req.body;
         const id = req.params.id;
+        const image = req.file
+            ? req.file.filename
+            : productServices.getProduct(id).images;
         productServices.updateProduct(id, product);
         res.redirect("/products");
     },
