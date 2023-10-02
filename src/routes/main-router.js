@@ -8,7 +8,6 @@ router.get("/", mainController.home);
 router.get("/login", mainController.login);
 router.get("/register", mainController.register);
 router.get("/productCart", mainController.productCart);
-//router.get("/productDetail/:id", mainController.productDetail);
 router.get("/search", mainController.search);
 
 const productsRouter =  require("./products");

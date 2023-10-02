@@ -1,13 +1,18 @@
 const fs = require("fs");
 const path = require("path");
+const { v4: uuidv4 } = require("uuid");
 
 module.exports = {
     getProducts: function () {
-        const productsFilePath = path.join(__dirname, "./productsDataBase.json");
-        const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-        return products;
+      const productsFilePath = path.join(__dirname, "./productsDataBase.json");
+      const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+      return products;
     },
-    find: function () {
+    saveProducts: function (products) {
+      const productsFilePath = path.join(__dirname, "./productsDataBase.json"); 
+      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+    },
+    findAll: function () {
       return this.getProducts();
     },
     findById: function (id) {
@@ -16,13 +21,40 @@ module.exports = {
     },
     create: function (product) {
       console.log(`Creating product ${product.name}`);
-      return product;
+      const products = this.getProducts();
+      const newProduct = {
+        id: uuidv4(),
+        ...product,
+      };
+      products.push(newProduct);
+      this.saveProducts(products);
     },
     update: function (id, product) {
       console.log(`Updating product ${product.name}`);
+      const products = this.getProducts();
+      const productToEdit = products.find((product) => product.id == id);
+      productToEdit.brand = product.brand;
+      productToEdit.name = product.name;
+      productToEdit.description = product.description;
+      productToEdit.detail = product.detail;
+      productToEdit.aditional = product.aditional;
+      productToEdit.images = product.images;
+      productToEdit.category = product.category;
+      productToEdit.price = product.price;
+      productToEdit.discount = product.discount;
+      productToEdit.rating = product.rating;
+      productToEdit.colors = product.colors;
+      productToEdit.capacity = product.capacity;
+      productToEdit.os = product.os;
+      productToEdit.screen = product.screen;
+      productToEdit.camera = product.camera;
+      this.saveProducts(products);
       return product;
     },
     delete: function (id) {
       console.log(`Deleting product with id ${id}`);
+      const products = this.getProducts();
+      const nonDeletedProducts = products.filter((product) => product.id != id)
+      this.saveProducts(nonDeletedProducts);
     },
 };

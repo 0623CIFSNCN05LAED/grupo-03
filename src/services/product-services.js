@@ -1,5 +1,4 @@
 const db = require("../data/db");
-const { v4: uuidv4 } = require("uuid");
 
 const formatProductPrices = function (product) {
     const priceWithDiscount = product.precio - product.precio * (product.descuento / 100);
@@ -21,7 +20,7 @@ const formatProductPrices = function (product) {
   
   const productServices = {
     getAllProducts: () => {
-      return db.products.find();
+      return db.products.findAll();
     },
     getProduct: (id) => {
       const product = db.products.findById(id);
@@ -29,17 +28,26 @@ const formatProductPrices = function (product) {
     },
     getFeaturedProducts: () => {
         const products = db.products
-        .find()
+        .findAll()
         .filter((product) => product.categoria == "destacados");
         return formatProductsPrices(products);
     },
     searchProducts: (query) => {
       const products = db.products
-        .find()
+        .findAll()
         .filter((product) =>
           product.name.toLowerCase().includes(query.toLowerCase())
         );
       return formatProductsPrices(products);
+    },
+    createProduct: (product) => {
+      db.products.create(product);
+    },
+    updateProduct: (id, product) => {
+      db.products.update(id, product);
+    },
+    deleteProduct: (id) => {
+      db.products.delete(id);
     },
   };
   

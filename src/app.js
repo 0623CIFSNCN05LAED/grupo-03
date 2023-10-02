@@ -1,9 +1,12 @@
 const path = require("path");
 const express = require("express");
+const methodOverride = require("method-override");
+
 const app = express();
 const mainRouter = require("./routes/main-router");
 
 app.use(express.static(path.join(__dirname, "../public")));
+app.use(methodOverride("_method"));
 
 const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {
