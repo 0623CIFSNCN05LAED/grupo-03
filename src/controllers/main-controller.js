@@ -8,12 +8,28 @@ module.exports = {
             featuredProducts,
         });
     },
-    login: (req, res) => {
+    showLogin: (req, res) => {
         res.render("login");
     },
-    register: (req, res) => {
+    login: (req, res) => {
+        const data = req.body;
+        console.log(data);
+        req.session.userData = data;
+        res.redirect("/");
+    },
+    showRegister: (req, res) => {
         res.render("register");
     },
+    register: (req, res) => {
+        const data = req.body;
+        console.log(data);
+        req.session.userData = data;
+        res.redirect("/login");
+    },
+    /*
+    register: (req, res) => {
+        res.render("register");
+    },*/
     productCart: (req, res) => {
         res.render("productCart");
     },

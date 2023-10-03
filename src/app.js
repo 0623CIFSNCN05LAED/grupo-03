@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const methodOverride = require("method-override");
+const session = require("express-session");
 
 const app = express();
 const mainRouter = require("./routes/main-router");
@@ -9,6 +10,11 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(methodOverride("_method"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(session({
+    secret: "grupo3",
+    resave: false,
+    saveUninitialized: false,
+}));
 
 const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {

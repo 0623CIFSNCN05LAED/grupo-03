@@ -7,14 +7,20 @@
     <header>
         <%- include("partials/header") %> 
     </header> 
-    <form action="resultado.html" method="POST" class="formulario">
+    <form action="/login" method="POST" class="formulario">
         <h1 class="titulo-formulario">Inicio de sesión</h1>
+        <% /* %>
         <div class="control-formulario">
             <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" class="control" required> 
             <i class="fa-solid fa-user"></i>
         </div>
+        <% */ %>
         <div class="control-formulario">
-            <input type="password" name="contrasena" placeholder="Contraseña" class="control" required> 
+            <input type="text" name="email" placeholder="Email" class="control"> 
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="control-formulario">
+            <input type="password" name="contrasena" placeholder="Contraseña" class="control"> 
             <i class="fa-solid fa-lock"></i>
         </div>
         <div class="recordarme">
