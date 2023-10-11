@@ -3,6 +3,7 @@
         "id": "1",
         "nombre": "hola",
         "apellido": "chau",
+        "usuario": "holachau",
         "email": "holachau@gmail.com",
         "contraseña": "holachau123",
         "imagen": "url"

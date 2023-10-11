@@ -7,27 +7,35 @@
     <header>
         <%- include("partials/header") %>  
     </header>    
-    <form action="resultado.html" method="POST" class="formulario">
+    <form action="/register" method="POST" class="formulario">
         <h1 class="titulo-formulario">Registro</h1>
         <div class="control-formulario">
             <h5>Nombre</h5>
-            <input type="text" name="nombre" placeholder="Ingrese su nombre" minlength="3" class="control" required>
+            <input type="text" name="nombre" placeholder="Ingrese su nombre" class="control">
         </div>
         <div class="control-formulario">
             <h5>Apellido</h5>
-            <input type="text" name="nombre" placeholder="Ingrese su apellido" minlength="3" class="control" required>
+            <input type="text" name="apellido" placeholder="Ingrese su apellido" class="control">
+        </div>
+        <div class="control-formulario">
+            <h5>Nombre de usuario</h5>
+            <input type="text" name="usuario" placeholder="Ingrese su nombre de usuario" class="control">
         </div>
         <div class="control-formulario">
             <h5>Email</h5>
-            <input type="email" name="email" placeholder="Ingrese su correo electrónico" class="control" required>
+            <input type="email" name="email" placeholder="Ingrese su correo electrónico" class="control">
         </div>
         <div class="control-formulario">
             <h5>Contraseña</h5>
-            <input type="password" name="contraseña" placeholder="Ingrese su contraseña" class="control" required>
+            <input type="password" name="contraseña" placeholder="Ingrese su contraseña" class="control">
         </div>
         <div class="control-formulario">
             <h5>Confirme su contraseña</h5>
-            <input type="password" name="contraseña2" placeholder="Confirme contraseña" class="control" required>
+            <input type="password" name="contraseña2" placeholder="Confirme contraseña" class="control">
+        </div>
+        <div class="control-formulario">
+            <h5>Suba una imagen</h5>
+            <input type="file" name="images" accept="images/*" class="control">
         </div>
         <button type="submit" class="boton-formulario">Registrarse</button>
         <button type="reset" class="boton-formulario2">Borrar</button>
