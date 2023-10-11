@@ -20,7 +20,8 @@ const formatProductPrices = function (product) {
   
   const productServices = {
     getAllProducts: () => {
-      return db.products.findAll();
+      const products = db.products.findAll()
+      return formatProductsPrices(products);
     },
     getProduct: (id) => {
       return db.products.findById(id);
