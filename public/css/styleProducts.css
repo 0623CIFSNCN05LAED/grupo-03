@@ -150,7 +150,11 @@ img{
     display: inline-block;
 }
 
-.product-price:first-of-type{
+/*.product-price:first-of-type{
+    text-decoration: line-through;
+    color: #468EEC;
+}*/
+.product-price-withoutdiscount{
     text-decoration: line-through;
     color: #468EEC;
 }
