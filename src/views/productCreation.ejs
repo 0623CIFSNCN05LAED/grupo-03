@@ -2,6 +2,25 @@
 <html lang="es">
     <class><%- include("partials/head") %>
     <link rel="stylesheet" href="/css/styleProductCreation.css">
+    <script>
+        var formfield = document.getElementById('color-field');
+
+        function add(){
+        var newField = document.createElement('input');
+        newField.setAttribute('type','text');
+        newField.setAttribute('name','colors');
+        newField.setAttribute('class','control');
+        newField.setAttribute('placeholder','Color');
+        formfield.appendChild(newField);
+        }
+
+        function remove(){
+        var input_tags = formfield.getElementsByTagName('input');
+        if(input_tags.length > 2) {
+            formfield.removeChild(input_tags[(input_tags.length) - 1]);
+        }
+        }
+    </script>
 <body>
     <header class="header">
     <%- include("partials/header") %>
@@ -9,49 +28,69 @@
     <form action="/products" method="POST" enctype="multipart/form-data" class="formulario">
         <h1 class="titulo-formulario">Identificá tu producto</h1>
         <div class="control-formulario">
-            <input type="text" name="brand" placeholder="Marca del producto" class="control" required>
+            <input type="text" name="brand" placeholder="Marca del producto" class="control">
         </div>
         <div class="control-formulario">
-            <input type="text" name="name" placeholder="Nombre del producto" class="control" required>
+            <input type="text" name="name" placeholder="Nombre del producto" class="control">
         </div>
         <div class="control-formulario">
-            <input type="text" name="description" placeholder="Descripción" class="control" required>
+            <input type="text" name="description" placeholder="Descripción" class="control">
         </div>
         <div class="control-formulario">
-            <input type="text" name="detail" placeholder="Descripción detallada" class="control" required>
+            <input type="text" name="detail" placeholder="Descripción detallada" class="control">
         </div>
         <div class="control-formulario">
-            <input type="text" name="aditional" placeholder="Información adicional" class="control" required>
+            <input type="text" name="aditional" placeholder="Información adicional" class="control">
         </div>
         <div class="control-formulario">
             <input type="file" name="images" accept="images/*" class="control">
         </div>
         <div class="control-formulario">
-            <input type="text" name="category" placeholder="Categoría" class="control" required>
+            <!--
+            <input type="text" name="category" placeholder="Categoría" class="control">
+            -->
+            <label for="category">Categoría:</label>
+            <input type="radio" name="category" value="normal" checked>Normal
+            <input type="radio" name="category" value="destacados">Destacado
         </div>
         <div class="control-formulario">
-            <input type="number" name="price" placeholder="Precio" class="control" required>
+            <input type="number" name="price" placeholder="Precio" class="control">
         </div>
         <div class="control-formulario">
-            <input type="number" name="discount" placeholder="Descuento" class="control" required>
+            <input type="number" name="discount" placeholder="Descuento" class="control">
         </div>
         <div class="control-formulario">
-            <input type="number" name="rating" placeholder="Calificación" class="control" required>
+            <input type="number" name="rating" placeholder="Calificación" class="control">
         </div>
         <div class="control-formulario">
-            <input type="text" name="colors" placeholder="Colores" class="control" required>
+        <div class="color-field">
+            <input type="text" name="colors" placeholder="Color" class="control">
+        </div>
+        <div class="controls">
+            <button class="addColor" onclick="add()"><i class="fa fa-plus"></i>Agregar Color</button>
+            <button class="removeColor" onclick="remove()"><i class="fa fa-minus"></i>Quitar Color</button>
+        </div>
         </div>
         <div class="control-formulario">
-            <input type="text" name="capacity" placeholder="Capacidad" class="control" required>
+            <!--
+            <input type="text" name="capacity" placeholder="Capacidad" class="control">
+            -->
+            <label for="capacity">Capacidad:</label>
+            <input type="checkbox" name="capacity" value="32gb">32gb
+            <input type="checkbox" name="capacity" value="64gb">64gb
+            <input type="checkbox" name="capacity" value="128gb">128gb
+            <input type="checkbox" name="capacity" value="256gb">256gb
+            <input type="checkbox" name="capacity" value="512gb">512gb
+            <input type="checkbox" name="capacity" value="1tb">1tb
         </div>
         <div class="control-formulario">
-            <input type="text" name="os" placeholder="Sitema operativo" class="control" required>
+            <input type="text" name="os" placeholder="Sitema operativo" class="control">
         </div>
         <div class="control-formulario">
-            <input type="text" name="screen" placeholder="Dimensiones pantalla" class="control" required>
+            <input type="text" name="screen" placeholder="Dimensiones pantalla" class="control">
         </div>
         <div class="control-formulario">
-            <input type="text" name="camera" placeholder="Camara principal" class="control" required>
+            <input type="text" name="camera" placeholder="Camara principal" class="control">
         </div>
         <button type="submit" class="boton-formulario">Publicar</button>
         <button type="reset" class="boton-formulario">Borrar</button>

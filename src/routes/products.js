@@ -21,7 +21,7 @@ router.get("/", productsController.home);
 
 // Crear un producto
 router.get("/create/", productsController.create);
-router.post("/", upload.array("images", 5), productsController.store);
+router.post("/", upload.single("images"), productsController.store);
 
 // Editar un producto
 router.get("/edit/:id", productsController.edit);

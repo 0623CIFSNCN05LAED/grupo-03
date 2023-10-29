@@ -281,6 +281,38 @@ font-weight: bold;
     background-color: #464CEC;
 }
 
+
+.controls {
+    width: 294px;
+    margin: 15px auto;
+}
+  
+.addColor {
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 25px;
+    cursor: pointer;
+}
+  
+.removeColor {
+    float: right;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.controls button i{
+    margin-right: 5px;
+}
+  
+.removeColor:hover, .addColor:hover{
+    background: #2691d9;
+    color: #e9f4fb;
+    transition: .5s;
+}
+
+
+
 /* movil pequeño */
 @media (min-width: 360px){
     .logo-text {
