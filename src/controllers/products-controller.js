@@ -12,7 +12,7 @@ module.exports = {
         res.render("productDetail", { product });
     },
     create: (req, res) => {
-        res.render("productCreation");
+        res.render("productCreate");
     },
     store: (req, res) => {
         const product = {
@@ -38,7 +38,7 @@ module.exports = {
     edit: (req, res) => {
         const id = req.params.id;
         const product = productServices.getProduct(id);
-        res.render("productEdition", { product });
+        res.render("productEdit", { product });
     },
     update: (req, res) => {
         const product = req.body;
@@ -48,6 +48,9 @@ module.exports = {
             : productServices.getProduct(id).images;
         productServices.updateProduct(id, product);
         res.redirect("/products");
+    },
+    delete: (req, res) => {
+        res.render("productDelete");
     },
     destroy: (req, res) => {
         const id = req.params.id;

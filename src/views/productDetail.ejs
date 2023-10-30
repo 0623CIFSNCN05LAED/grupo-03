@@ -67,7 +67,16 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div> 
                 </div>
+                <div class="button-prod">
+                    <a href="/products/edit/<%= product.id %>">
+                        <button class="btn-edit"> Editar </button>
+                    </a>
+                    <a href="/products/delete/<%= product.id %>">
+                        <button class="btn-delete"> Eliminar </button>
+                    </a>
+                </div>
             </div>
+            
             <div class="container-price"> 
                 <span> <%= product.priceWithDiscount %> </span>
             </div>

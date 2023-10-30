@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+    <class><%- include("partials/head") %>
+    <link rel="stylesheet" href="/css/styleMain.css">
+    <link rel="stylesheet" href="/css/styleProductEdit.css">
+    <script>
+        var formfield = document.getElementById('color-field');
+
+        function add(){
+        var newField = document.createElement('input');
+        newField.setAttribute('type','text');
+        newField.setAttribute('name','colors');
+        newField.setAttribute('class','control');
+        newField.setAttribute('placeholder','Color');
+        formfield.appendChild(newField);
+        }
+
+        function remove(){
+        var input_tags = formfield.getElementsByTagName('input');
+        if(input_tags.length > 2) {
+            formfield.removeChild(input_tags[(input_tags.length) - 1]);
+        }
+        }
+    </script>
+<body>
+    <header class="header">
+    <%- include("partials/header") %>
+    </header>
+    <form action="/products" method="POST" enctype="multipart/form-data" class="formulario">
+        <h1 class="titulo-formulario">Identificá tu producto</h1>
+        <div class="input-form">
+            <input type="text" name="brand" required="required">
+            <label for="">Marca</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="name" required="required">
+            <label for="">Nombre</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="description" required="required">
+            <label for="">Descripción</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="detail" required="required">
+            <label for="">Descripción detalles</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="aditional" required="required">
+            <label for="">Información adicional</label>
+        </div>
+        <div class="control-formulario">
+            <input type="file" name="images" accept="images/*" class="control">
+        </div>
+        <div class="input-form">
+            <input type="number" name="price" required="required">
+            <label for="">Precio</label>
+        </div>
+        <div class="input-form">
+            <input type="number" name="discount" required="required">
+            <label for="">Descuento</label>
+        </div>
+        <div class="input-form">
+            <input type="number" name="rating" required="required">
+            <label for="">Calificación</label>
+        </div>
+        <div class="color-form">
+            <div class="color-field">
+                <input type="text" name="colors" placeholder="Color" class="control">
+            </div>
+            <div class="controls">
+                <button class="addColor" onclick="add()"><i class="fa fa-plus"></i>Agregar Color</button>
+                <button class="removeColor" onclick="remove()"><i class="fa fa-minus"></i>Quitar Color</button>
+            </div>
+        </div>
+        <div class="cap-cat-form">
+            <div class="capacity-form">
+                <label for="capacity" class="cap-text">Capacidad:</label>
+                <div class="checkbox-form">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="capacity" value="32gb">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">32gb</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="capacity" value="64gb">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">64gb</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="capacity" value="128gb">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">128gb</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="capacity" value="256gb">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">256gb</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="capacity" value="512gb">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">512gb</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="capacity" value="1tb">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">1tb</label>
+                    </label>
+                </div>
+            </div>
+            <div class="category-form">
+                <label for="category" class="cat-text">Categoría:</label>
+                <div class="radio-form">
+                    <label class="custom-radio">
+                        <label class="radio-text">Normal</label>
+                        <input type="radio" name="category" value="normal" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="custom-radio">
+                        <label class="radio-text">Destacado</label>
+                        <input type="radio" name="category" value="destacados">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="input-form">
+            <input type="text" name="os" required="required">
+            <label for="">Sistema operativo</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="screen" required="required">
+            <label for="">Dimensiones pantalla</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="camera" required="required">
+            <label for="">Camara principal</label>
+        </div>
+        <button type="submit" class="boton-formulario">Actualizar</button>
+        <button class="boton-formulario">
+            <a href="/products">Volver</a>
+        </button>
+    </form>
+   
+<footer class="footer">
+    <%- include("partials/footer") %>
+</footer>
+
+    </body>
+</html>
