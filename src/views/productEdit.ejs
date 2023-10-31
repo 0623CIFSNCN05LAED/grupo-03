@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
-    <class><%- include("partials/head") %>
-    <link rel="stylesheet" href="/css/styleMain.css">
-    <link rel="stylesheet" href="/css/styleProductEdit.css">
-    <script>
-        var formfield = document.getElementById('color-field');
-
-        function add(){
-        var newField = document.createElement('input');
-        newField.setAttribute('type','text');
-        newField.setAttribute('name','colors');
-        newField.setAttribute('class','control');
-        newField.setAttribute('placeholder','Color');
-        formfield.appendChild(newField);
-        }
-
-        function remove(){
-        var input_tags = formfield.getElementsByTagName('input');
-        if(input_tags.length > 2) {
-            formfield.removeChild(input_tags[(input_tags.length) - 1]);
-        }
-        }
-    </script>
+    <head>
+        <%- include("partials/head") %>
+        <title>Edit Product</title>
+        <link rel="stylesheet" href="/css/styleMain.css">
+        <link rel="stylesheet" href="/css/styleProductEdit.css">
+        <!--
+            <script>
+            var formfield = document.getElementById('color-field');
+    
+            function add(){
+            var newField = document.createElement('input');
+            newField.setAttribute('type','text');
+            newField.setAttribute('name','colors');
+            newField.setAttribute('class','control');
+            newField.setAttribute('placeholder','Color');
+            formfield.appendChild(newField);
+            }
+    
+            function remove(){
+            var input_tags = formfield.getElementsByTagName('input');
+            if(input_tags.length > 2) {
+                formfield.removeChild(input_tags[(input_tags.length) - 1]);
+            }
+            }
+            </script>
+        -->
+    </head>
 <body>
     <header class="header">
     <%- include("partials/header") %>
     </header>
     <form action="/products" method="POST" enctype="multipart/form-data" class="formulario">
-        <h1 class="titulo-formulario">Identificá tu producto</h1>
+        <h1 class="titulo-formulario">Editar el producto:</h1>
         <div class="input-form">
             <input type="text" name="brand" required="required">
             <label for="">Marca</label>
@@ -64,13 +69,47 @@
             <label for="">Calificación</label>
         </div>
         <div class="color-form">
+            <!--
             <div class="color-field">
                 <input type="text" name="colors" placeholder="Color" class="control">
             </div>
+            -->
+            <div class="capacity-form">
+                <label for="colors" class="cap-text">Color:</label>
+                <div class="checkbox-form">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="negro">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Negro</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="blanco">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Blanco</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="rosa">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Rosa</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="dorado">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Dorado</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="verde">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Verde</label>
+                    </label>
+                </div>
+            </div>
+            <!--
             <div class="controls">
                 <button class="addColor" onclick="add()"><i class="fa fa-plus"></i>Agregar Color</button>
                 <button class="removeColor" onclick="remove()"><i class="fa fa-minus"></i>Quitar Color</button>
             </div>
+            -->
         </div>
         <div class="cap-cat-form">
             <div class="capacity-form">

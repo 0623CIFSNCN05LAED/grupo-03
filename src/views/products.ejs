@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <%- include("partials/head") %>
-    <title>Products PY Grupo 3</title>
+    <title>Products</title>
     <link href="/css/styleProducts.css" rel="stylesheet"/>
     <link href="/css/styleMain.css" rel="stylesheet"/>
 </head>
@@ -18,7 +18,7 @@
                 <div class = "product">
                     <div class = "product-content">
                         <div class = "product-img">
-                            <img src="<%= product.imagen.img1 %>" alt = "<%= product.nombre %>">
+                            <img src="<%= product.images[0] %>" alt = "<%= product.name %>">
                         </div>
                         <div class = "product-btns">
                             <button type = "button" class = "btn-cart"> Añadir al carrito
@@ -32,7 +32,7 @@
     
                     <div class = "product-info">
                         <div class = "product-info-top">
-                            <h2 class = "sm-title"><%= product.marca %></h2>
+                            <h2 class = "sm-title"><%= product.brand %></h2>
                             <div class = "rating">
                                 <span><i class = "fas fa-star"></i></span>
                                 <span><i class = "fas fa-star"></i></span>
@@ -41,15 +41,15 @@
                                 <span><i class = "far fa-star"></i></span>
                             </div>
                         </div>
-                        <a href = "#" class = "product-name"><%= product.nombre %></a>
-                        <% if(product.priceWithDiscount != product.precio){ %>
-                        <p class = "product-price product-price-withoutdiscount">$ <%= product.precio %></p>
+                        <a href = "#" class = "product-name"><%= product.name %></a>
+                        <% if(product.priceWithDiscount != product.price){ %>
+                        <p class = "product-price product-price-withoutdiscount">$ <%= product.price %></p>
                         <% } %>
                         <p class = "product-price">$ <%= product.priceWithDiscount %></p>
                     </div>
-                    <% if(product.descuento > 0){ %>
+                    <% if(product.discount > 0){ %>
                     <div class = "off-info">
-                        <h2 class = "sm-title"><%= product.descuento %>% off</h2>
+                        <h2 class = "sm-title"><%= product.discount %>% off</h2>
                     </div>
                     <% } %>
                 </div>

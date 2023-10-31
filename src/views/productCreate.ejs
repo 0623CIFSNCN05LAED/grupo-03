@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-    <class><%- include("partials/head") %>
+<head>
+    <%- include("partials/head") %>
+    <title>Create Product</title>
     <link rel="stylesheet" href="/css/styleMain.css">
     <link rel="stylesheet" href="/css/styleProductCreate.css">
-    <script>
+    <!--
+        <script>
         var formfield = document.getElementById('color-field');
 
         function add(){
@@ -21,7 +24,9 @@
             formfield.removeChild(input_tags[(input_tags.length) - 1]);
         }
         }
-    </script>
+        </script>
+    -->
+</head>
 <body>
     <header class="header">
     <%- include("partials/header") %>
@@ -49,7 +54,7 @@
             <label for="">Información adicional</label>
         </div>
         <div class="control-formulario">
-            <input type="file" name="images" accept="images/*" class="control">
+            <input type="file" multiple name="images" accept="images/*" class="control">
         </div>
         <div class="input-form">
             <input type="number" name="price" required="required">
@@ -64,13 +69,47 @@
             <label for="">Calificación</label>
         </div>
         <div class="color-form">
-            <div class="color-field">
-                <input type="text" name="colors" placeholder="Color" class="control">
+            <!--
+                <div class="color-field">
+                    <input type="text" name="colors" placeholder="Color" class="control">
+                </div>
+            -->
+            <div class="capacity-form">
+                <label for="colors" class="cap-text">Color:</label>
+                <div class="checkbox-form">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="negro">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Negro</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="blanco">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Blanco</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="rosa">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Rosa</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="dorado">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Dorado</label>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="colors" value="verde">
+                        <span class="checkmark"></span>
+                        <label class="checkbox-text">Verde</label>
+                    </label>
+                </div>
             </div>
-            <div class="controls">
-                <button class="addColor" onclick="add()"><i class="fa fa-plus"></i>Agregar Color</button>
-                <button class="removeColor" onclick="remove()"><i class="fa fa-minus"></i>Quitar Color</button>
-            </div>
+            <!--
+                <div class="controls">
+                    <button class="addColor" onclick="add()"><i class="fa fa-plus"></i>Agregar Color</button>
+                    <button class="removeColor" onclick="remove()"><i class="fa fa-minus"></i>Quitar Color</button>
+                </div>
+            -->
         </div>
         <div class="cap-cat-form">
             <div class="capacity-form">

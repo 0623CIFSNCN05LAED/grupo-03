@@ -1,16 +1,16 @@
 const db = require("../data/db");
 
 const formatProductPrices = function (product) {
-    const priceWithDiscount = product.precio - product.precio * (product.descuento / 100);
+    const priceWithDiscount = product.price - product.price * (product.discount / 100);
     product.priceWithDiscount = `$ ${priceWithDiscount.toLocaleString("es", {
       minimumFractionDigits: 2,
     })}`;
   
-    product.precio = `$ ${product.precio.toLocaleString("es", {
+    product.price = `$ ${product.price.toLocaleString("es", {
       minimumFractionDigits: 2,
     })}`;
   
-    product.descuento = product.descuento.toLocaleString("es");
+    product.discount = product.discount.toLocaleString("es");
   
     return product;
   };
@@ -33,7 +33,7 @@ const formatProductPrices = function (product) {
     getFeaturedProducts: () => {
         const products = db.products
         .findAll()
-        .filter((product) => product.categoria == "destacados");
+        .filter((product) => product.category == "destacados");
         return formatProductsPrices(products);
     },
     searchProducts: (query) => {

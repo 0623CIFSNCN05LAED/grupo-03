@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <%- include("partials/head") %>
-    <title>Home PY Grupo 3</title>
+    <title>Home</title>
     <link href="/css/styleHome.css" rel="stylesheet"/>
     <link href="/css/styleMain.css" rel="stylesheet"/>
 </head>
@@ -28,13 +28,13 @@
             <% featuredProducts.forEach(product => {%>
                 <article class="box-effect-prod prod">
                     <a class="block" href="/products/<%= product.id %>">
-                        <img class="img-prod" src="<%= product.imagen.img1 %>" alt="<%= product.nombre %>">
+                        <img class="img-prod" src="<%= product.images[0] %>" alt="<%= product.name %>">
                     </a>
                     <a class="block" href="/products/<%= product.id %>">
                         <div class="info-articulo">
-                            <h3 class="titulo-prod"><%= product.nombre %></h3>
-                            <p class="descripcion-prod"><%= product.descripcion %></p>
-                            <span class="precio-prod"><%= product.precio %></span>
+                            <h3 class="titulo-prod"><%= product.name %></h3>
+                            <p class="descripcion-prod"><%= product.description %></p>
+                            <span class="precio-prod"><%= product.price %></span>
                         </div> 
                     </a>  
                     <div class="rate-prod">
