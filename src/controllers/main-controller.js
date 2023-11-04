@@ -1,4 +1,5 @@
 const productServices = require("../services/product-services");
+const userServices = require("../services/user-services");
 
 module.exports = {
     home: (req, res) => {
@@ -9,34 +10,54 @@ module.exports = {
         });
     },
     showLogin: (req, res) => {
-        res.render("login");
+        const errors = req.session.errors;
+        const oldData = req.session.oldData;
+        req.session.errors = null;
+        req.session.oldData = null;
+        res.render("login", {
+            errors: errors ? errors : null,
+            oldData: oldData ? oldData : null,
+        });
     },
     login: (req, res) => {
         const data = req.body;
         console.log(data);
-        req.session.userData = data;
+        /*req.session.userData = data;*/
+        const email = req.body.email;
+        const contrasena = req.body.contrasena;
+        const dataUser = userServices.validateUserLogin(email, contrasena);
+        if (dataUser != null) {
+            req.session.userData = dataUser;
+        }
         res.redirect("/");
     },
     showRegister: (req, res) => {
-      const errors = req.session.errors;
-      const oldData = req.session.oldData;
-      req.session.errors = null;
-      req.session.oldData = null;
-      res.render("register", {
-        errors: errors ? errors : null,
-        oldData: oldData ? oldData : null,
-      });
+        const errors = req.session.errors;
+        const oldData = req.session.oldData;
+        req.session.errors = null;
+        req.session.oldData = null;
+        res.render("register", {
+            errors: errors ? errors : null,
+            oldData: oldData ? oldData : null,
+        });
     },
     register: (req, res) => {
         const data = req.body;
         console.log(data);
         req.session.userData = data;
+
+        const user = {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            usuario: req.body.usuario,
+            email: req.body.email,
+            contraseña: req.body.contraseña,
+            images: req.file ? file : "default-image.jpg",
+        };
+        userServices.registerUser(user);
+        
         res.redirect("/login");
     },
-    /*
-    register: (req, res) => {
-        res.render("register");
-    },*/
     productCart: (req, res) => {
         res.render("productCart");
     },

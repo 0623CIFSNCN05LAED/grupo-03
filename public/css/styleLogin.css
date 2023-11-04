@@ -298,6 +298,14 @@ font-weight: bold;
     background-color: #464CEC;
 }
 
+.error-msg {
+    color: rgb(210, 33, 63);
+}
+
+.error-field input {
+    border: 2px solid rgb(210, 33, 63);
+}
+
 /* movil pequeño */
 @media (min-width: 360px){
     .logo-text {

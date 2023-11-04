@@ -1,5 +1,4 @@
 const productServices = require("../services/product-services");
-const { push } = require("../validations/login");
 
 module.exports = {
 // Root - Show all products

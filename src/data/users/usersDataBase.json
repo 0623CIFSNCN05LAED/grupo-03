@@ -1,11 +1,20 @@
 [
-    {
-        "id": "1",
-        "nombre": "hola",
-        "apellido": "chau",
-        "usuario": "holachau",
-        "email": "holachau@gmail.com",
-        "contraseña": "holachau123",
-        "imagen": "url"
-    }
+  {
+    "id": "1",
+    "nombre": "hola",
+    "apellido": "chau",
+    "usuario": "holachau",
+    "email": "holachau@gmail.com",
+    "contraseña": "holachau123",
+    "imagen": "url"
+  },
+  {
+    "id": "538d1179-2528-439f-b6c0-70b99b03cfd3",
+    "nombre": "dfgdf",
+    "apellido": "dfgdf",
+    "usuario": "fdg",
+    "email": "dfdfg@gmail.com",
+    "contraseña": "qwer1234",
+    "images": "default-image.jpg"
+  }
 ]
