@@ -18,7 +18,14 @@ module.exports = {
         res.redirect("/");
     },
     showRegister: (req, res) => {
-        res.render("register");
+      const errors = req.session.errors;
+      const oldData = req.session.oldData;
+      req.session.errors = null;
+      req.session.oldData = null;
+      res.render("register", {
+        errors: errors ? errors : null,
+        oldData: oldData ? oldData : null,
+      });
     },
     register: (req, res) => {
         const data = req.body;
