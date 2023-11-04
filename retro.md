@@ -45,4 +45,10 @@ Hacer menos: no comunicarnos tanto.
 Dejar de hacer: no dejar las actividades para último momento.
 
 
+Retrospectiva Sprint 6:
 
+Comenzar a hacer: las actividades pendientes de los sprint anteriores y comenzar las actividades del sprint en curso, realizar una reunión semanal.
+Hacer más: control de los css y coordinar para tener mas reuniones asi nos ponemos al día.
+Continuar haciendo: seguir haciendo, aunque estemos atrasados, no dejar sin hacer nada.
+Hacer menos: no comunicarnos con todos los miembros del grupo.
+Dejar de hacer: no dejar las actividades para último momento.
