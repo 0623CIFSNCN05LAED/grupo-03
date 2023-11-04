@@ -1,196 +1,195 @@
 [
   {
-    "id": 1,
-    "marca": "Samsung",
-    "nombre": "Samsung Galaxy Z Fold 5",
-    "descripcion": "El Galaxy Z Fold5 hace honor a su nombre al plegarse para cerrar, lo que hace que una pantalla enorme quepa en tu bolsillo desafiando a toda lógica.",
-    "descripcionDetalle": "Las leyes de la física no tienen nada en este diseño nivelado. El Galaxy Z Fold5 hace honor a su nombre al plegarse para cerrar, lo que hace que una pantalla enorme quepa en tu bolsillo desafiando a toda lógica. Abrilo, plegalo para cerrarlo o dejalo abierto en el ángulo perfecto. La bisagra flexible rediseñada es una maravilla técnica que se dobla a tu gusto.",
-    "infoAdicional": "Desplegá una pantalla impresionante e inmersiva, rediseñada para ofrecerte juegos como nunca antes, visualización cinematográfica dondequiera que estés y productividad estilo PC, todo en un dispositivo del tamaño de una tableta. Un smartphone tan impresionante que querrás tenerlo todo el tiempo. Y con un enorme sistema de batería doble de 4400 mAh (típico), podés hacerlo. Junto con un procesador avanzado, ajusta de forma eficiente el uso de la energía a tus hábitos y necesidades, haciendo que una carga dure más que nunca. Impulsá tu camino hacia la victoria con el hardware y el software actualizados de la plataforma móvil Snapdragon® 8 Gen 2 Mobile Platform for Galaxy. Este procesador de alto rendimiento alimenta el juego a nivel profesional.",
-    "imagen": {
-      "img1": "/images/products/zfold5.jpg",
-      "img2": "/images/products/zfold5-2.jpg",
-      "img3": "/images/products/zfold5-3.jpg",
-      "img4": "/images/products/zfold5-4.jpg"
-    },
-    "categoria": "destacados",
-    "precio": 1129999,
-    "descuento": 10,
-    "calificacion": 5,
-    "colores": {
-      "color1": "Gray",
-      "color2": "Phatom Black",
-      "color3": "Cream",
-      "color4": "Icy Blue"
-    },
-    "capacidad": {
-      "cap1": "256gb",
-      "cap2": "512gb",
-      "cap3": "1tb"
-    },
+    "id": "b781d57f-a1a2-470a-b242-28b73fd62664",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy Z Fold 5",
+    "description": "El Galaxy Z Fold5 hace honor a su nombre al plegarse para cerrar, lo que hace que una pantalla enorme quepa en tu bolsillo desafiando a toda lógica.",
+    "detail": "Las leyes de la física no tienen nada en este diseño nivelado. El Galaxy Z Fold5 hace honor a su nombre al plegarse para cerrar, lo que hace que una pantalla enorme quepa en tu bolsillo desafiando a toda lógica. Abrilo, plegalo para cerrarlo o dejalo abierto en el ángulo perfecto. La bisagra flexible rediseñada es una maravilla técnica que se dobla a tu gusto.",
+    "aditional": "Desplegá una pantalla impresionante e inmersiva, rediseñada para ofrecerte juegos como nunca antes, visualización cinematográfica dondequiera que estés y productividad estilo PC, todo en un dispositivo del tamaño de una tableta. Un smartphone tan impresionante que querrás tenerlo todo el tiempo. Y con un enorme sistema de batería doble de 4400 mAh (típico), podés hacerlo. Junto con un procesador avanzado, ajusta de forma eficiente el uso de la energía a tus hábitos y necesidades, haciendo que una carga dure más que nunca. Impulsá tu camino hacia la victoria con el hardware y el software actualizados de la plataforma móvil Snapdragon® 8 Gen 2 Mobile Platform for Galaxy. Este procesador de alto rendimiento alimenta el juego a nivel profesional.",
+    "images": [
+      "/images/products/images-1698717543169.jpg",
+      "/images/products/images-1698717543169.jpg",
+      "/images/products/images-1698717543172.jpg",
+      "/images/products/images-1698717543173.jpg"
+    ],
+    "category": "destacados",
+    "price": 1129999,
+    "discount": 10,
+    "rating": 5,
+    "colors": [
+      "negro",
+      "blanco",
+      "rosa"
+    ],
+    "capacity": [
+      "256gb",
+      "512gb",
+      "1tb"
+    ],
     "os": "Android",
-    "pantalla": "192.1mm (7.6')",
-    "camaraPrincipal": "50.0 MP + 12.0 MP + 10.0 MP"
+    "screen": "192.1mm (7.6')",
+    "camera": "50.0 MP + 12.0 MP + 10.0 MP"
   },
   {
-    "id": 2,
-    "marca": "Samsung",
-    "nombre": "Samsung Galaxy Z Flip 5",
-    "descripcion": "El Galaxy Z Flip5 presenta por primera vez la Flex Window de 3,4 pulgadas creado para la autoexpresión. Compacto y atrapante desde todos los ángulos, este plegable es tan versátil como portátil.",
-    "descripcionDetalle": "El Galaxy Z Flip5 presenta por primera vez la Flex Window de 3,4 pulgadas creado para la autoexpresión. Compacto y atrapante desde todos los ángulos, este plegable es tan versátil como portátil.",
-    "infoAdicional": "Respaldada por un procesador poderoso, esta batería de 3700 mAh (uso típico) es aún más eficiente y permite prolongar la carga para que puedas mirar películas sin parar o jugar hasta tarde en la noche. ¿Necesitás más? Habilitá el modo de bajo consumo para que la diversión siga fluyendo. El nuevo Snapdragon® 8 Gen 2 Mobile Platform for Galaxy te lleva a un nivel completamente nuevo en potencia.Experimentá gráficos más suaves, IA más rápida y funcionamiento de la batería mejorado. Este plegable lleva un traje duro con marco de armazón: Armor Aluminium. Presentando un diseño con doble riel nuevo, durable para nuestras bisagras plegables. Con Galaxy Z Flip5, un poco de humedad no frenará tu día.",
-    "imagen": {
-      "img1": "/images/products/zflip5.jpg",
-      "img2": "/images/products/zflip5-2.jpg",
-      "img3": "/images/products/zflip5-3.jpg",
-      "img4": "/images/products/zflip5-4.jpg"
-    },
-    "categoria": "destacados",
-    "precio": 659999,
-    "descuento": 10,
-    "calificacion": 3,
-    "colores": {
-      "color1": "Graphite",
-      "color2": "Cream",
-      "color3": "Mint",
-      "color4": "Lavander"
-    },
-    "capacidad": {
-      "cap1": "256gb",
-      "cap2": "512gb",
-      "cap3": "1tb"
-    },
+    "id": "192c4dc4-0c8d-44e3-9263-fcba55047cf3",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy Z Flip 5",
+    "description": "El Galaxy Z Flip5 presenta por primera vez la Flex Window de 3,4 pulgadas creado para la autoexpresión. Compacto y atrapante desde todos los ángulos, este plegable es tan versátil como portátil.",
+    "detail": "El Galaxy Z Flip5 presenta por primera vez la Flex Window de 3,4 pulgadas creado para la autoexpresión. Compacto y atrapante desde todos los ángulos, este plegable es tan versátil como portátil.",
+    "aditional": "Respaldada por un procesador poderoso, esta batería de 3700 mAh (uso típico) es aún más eficiente y permite prolongar la carga para que puedas mirar películas sin parar o jugar hasta tarde en la noche. ¿Necesitás más? Habilitá el modo de bajo consumo para que la diversión siga fluyendo. El nuevo Snapdragon® 8 Gen 2 Mobile Platform for Galaxy te lleva a un nivel completamente nuevo en potencia.Experimentá gráficos más suaves, IA más rápida y funcionamiento de la batería mejorado. Este plegable lleva un traje duro con marco de armazón: Armor Aluminium. Presentando un diseño con doble riel nuevo, durable para nuestras bisagras plegables. Con Galaxy Z Flip5, un poco de humedad no frenará tu día.",
+    "images": [
+      "/images/products/images-1698717701579.jpg",
+      "/images/products/images-1698717701580.jpg",
+      "/images/products/images-1698717701580.jpg",
+      "/images/products/images-1698717701580.jpg"
+    ],
+    "category": "destacados",
+    "price": 659999,
+    "discount": 10,
+    "rating": 3,
+    "colors": [
+      "negro",
+      "blanco",
+      "rosa",
+      "verde"
+    ],
+    "capacity": [
+      "256gb",
+      "512gb",
+      "1tb"
+    ],
     "os": "Android",
-    "pantalla": "170.3mm (6.7')",
-    "camaraPrincipal": "12.0 MP + 12.0 MP"
+    "screen": "170.3mm (6.7')",
+    "camera": "12.0 MP + 12.0 MP"
   },
   {
-    "id": 3,
-    "marca": "Samsung",
-    "nombre": "Samsung Galaxy S23 Ultra",
-    "descripcion": "Sacá fotos y videos nítidos, desde el anochecer hasta el amanecer. El sensor de cámara más avanzado y el procesador más rápido del Galaxy admiten poca luz y reducen el ruido. E incluso el lente de la cámara borra la captura al atenuar el resplandor.",
-    "descripcionDetalle": "Sacá fotos y videos nítidos, desde el anochecer hasta el amanecer. El sensor de cámara más avanzado y el procesador más rápido del Galaxy admiten poca luz y reducen el ruido. E incluso el lente de la cámara borra la captura al atenuar el resplandor.",
-    "infoAdicional": "Maximizá tu tiempo libre con la plataforma Snapdragon® 8 Gen 2 Mobile para Galaxy, el chip más potente de Snapdragon. Las características mejoradas en todos los ámbitos hacen que todo, desde los juegos hasta la transmisión, esté optimizado y sea perfecto, sin agotar la batería. Dynamic AMOLED 2X ofrece detalles claros y coloridos en la pantalla, ya sea con brillo atenuado bajo o por completo. Y la tecnología de 120 Hz optimiza de manera inteligente la frecuencia de actualización para suavizar la acción y ahorrar en batería. S Pen mantiene vivo el legado de Note. Además, te ayuda a deshacerte de la dependencia de los cuadernos, haciendo que los bocetos y memorandos sean fáciles y ecológicos.",
-    "imagen": {
-      "img1": "/images/products/s23ultra.jpg",
-      "img2": "/images/products/s23ultra-2.jpg",
-      "img3": "/images/products/s23ultra-3.jpg",
-      "img4": "/images/products/s23ultra-4.jpg"
-    },
-    "categoria": "destacados",
-    "precio": 779999,
-    "descuento": 0,
-    "calificacion": 5,
-    "colores": {
-      "color1": "Cream",
-      "color2": "Green",
-      "color3": "Black",
-      "color4": "Lavander"
-    },
-    "capacidad": {
-      "cap1": "256gb",
-      "cap2": "512gb",
-      "cap3": "1tb"
-    },
+    "id": "0b8e2624-d7d5-4214-948c-8502bf9421c0",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy S23 Ultra",
+    "description": "Sacá fotos y videos nítidos, desde el anochecer hasta el amanecer. El sensor de cámara más avanzado y el procesador más rápido del Galaxy admiten poca luz y reducen el ruido. E incluso el lente de la cámara borra la captura al atenuar el resplandor.",
+    "detail": "Sacá fotos y videos nítidos, desde el anochecer hasta el amanecer. El sensor de cámara más avanzado y el procesador más rápido del Galaxy admiten poca luz y reducen el ruido. E incluso el lente de la cámara borra la captura al atenuar el resplandor.",
+    "aditional": "Maximizá tu tiempo libre con la plataforma Snapdragon® 8 Gen 2 Mobile para Galaxy, el chip más potente de Snapdragon. Las características mejoradas en todos los ámbitos hacen que todo, desde los juegos hasta la transmisión, esté optimizado y sea perfecto, sin agotar la batería. Dynamic AMOLED 2X ofrece detalles claros y coloridos en la pantalla, ya sea con brillo atenuado bajo o por completo. Y la tecnología de 120 Hz optimiza de manera inteligente la frecuencia de actualización para suavizar la acción y ahorrar en batería. S Pen mantiene vivo el legado de Note. Además, te ayuda a deshacerte de la dependencia de los cuadernos, haciendo que los bocetos y memorandos sean fáciles y ecológicos.",
+    "images": [
+      "/images/products/images-1698717823761.jpg",
+      "/images/products/images-1698717823761.jpg",
+      "/images/products/images-1698717823761.jpg",
+      "/images/products/images-1698717823762.jpg"
+    ],
+    "category": "destacados",
+    "price": 779999,
+    "discount": 0,
+    "rating": 5,
+    "colors": [
+      "negro",
+      "blanco",
+      "dorado",
+      "verde"
+    ],
+    "capacity": [
+      "256gb",
+      "512gb",
+      "1tb"
+    ],
     "os": "Android",
-    "pantalla": "172.21mm (6.78')",
-    "camaraPrincipal": "200 MP + 12 MP + 10 MP + 10 MP"
+    "screen": "172.21mm (6.78')",
+    "camera": "200 MP + 12 MP + 10 MP + 10 MP"
   },
   {
-    "id": 4,
-    "marca": "Apple",
-    "nombre": "iPhone 14 Pro Max",
-    "descripcion": "El iPhone 14 Pro Max te permite captar detalles increíbles gracias a su cámara gran angular de 48 MP.",
-    "descripcionDetalle": "El iPhone 14 Pro Max te permite captar detalles increíbles gracias a su cámara gran angular de 48 MP. Además, trae la Dynamic Island y una pantalla siempre activa, para que puedas interactuar con tu iPhone de una forma completamente nueva.",
-    "infoAdicional": "Dynamic Island, una forma nueva y mágica de interactuar con tu iPhone. Modo Cine ahora en 4K Dolby Vision de hasta 30 cps. Detección de Choques,una funcionalidad de seguridad que pide ayuda cuando tú no puedes. Batería para todo el día y hasta 29 horas de reproducción de video. A16 Bionic,el chip de smartphone en su máxima expresión. Red 5G ultrarrápida.",
-    "imagen": {
-      "img1": "/images/products/14promax.jpg",
-      "img2": "/images/products/i14promax-2.jpg",
-      "img3": "/images/products/i14promax-3.jpg",
-      "img4": "/images/products/i14promax-4.jpg"
-    },
-    "categoria": "destacados",
-    "precio": 1184999,
-    "descuento": 0,
-    "calificacion": 5,
-    "colores": {
-      "color1": "Oro",
-      "color2": "Negro espacial",
-      "color3": "Plata",
-      "color4": "Morado oscuro"
-    },
-    "capacidad": {
-      "cap1": "128gb",
-      "cap2": "256gb",
-      "cap3": "512gb",
-      "cap4": "1tb"
-    },
+    "id": "da8aedd8-7a96-454b-bde6-3d740e6ffe6e",
+    "brand": "Apple",
+    "name": "iPhone 14 Pro Max",
+    "description": "El iPhone 14 Pro Max te permite captar detalles increíbles gracias a su cámara gran angular de 48 MP.",
+    "detail": "El iPhone 14 Pro Max te permite captar detalles increíbles gracias a su cámara gran angular de 48 MP. Además, trae la Dynamic Island y una pantalla siempre activa, para que puedas interactuar con tu iPhone de una forma completamente nueva.",
+    "aditional": "Dynamic Island, una forma nueva y mágica de interactuar con tu iPhone. Modo Cine ahora en 4K Dolby Vision de hasta 30 cps. Detección de Choques,una funcionalidad de seguridad que pide ayuda cuando tú no puedes. Batería para todo el día y hasta 29 horas de reproducción de video. A16 Bionic,el chip de smartphone en su máxima expresión. Red 5G ultrarrápida.",
+    "images": [
+      "/images/products/images-1698717926470.jpg",
+      "/images/products/images-1698717926470.jpg",
+      "/images/products/images-1698717926470.jpg",
+      "/images/products/images-1698717926470.jpg"
+    ],
+    "category": "destacados",
+    "price": 1184999,
+    "discount": 0,
+    "rating": 5,
+    "colors": [
+      "negro",
+      "blanco",
+      "rosa",
+      "dorado",
+      "verde"
+    ],
+    "capacity": [
+      "128gb",
+      "256gb",
+      "512gb",
+      "1tb"
+    ],
     "os": "iOS",
-    "pantalla": "170.8mm (6.7')",
-    "camaraPrincipal": "48 MP + 12 MP + 12 MP"
+    "screen": "170.8mm (6.7')",
+    "camera": "48 MP + 12 MP + 12 MP"
   },
   {
-    "id": 5,
-    "marca": "Apple",
-    "nombre": "iPhone 13",
-    "descripcion": "El sistema de dos cámaras más avanzado en un iPhone.",
-    "descripcionDetalle": "El sistema de dos cámaras más avanzado en un iPhone. El superrápido chip A15 Bionic. Un gran salto en duración de batería. Un diseño resistente. Y una pantalla Super Retina XDR más brillante.",
-    "infoAdicional": "Una pantalla OLED más brillante que ahorra energía y se ve increíble incluso a pleno sol. Y un diseño duradero resistente al agua y al polvo. Mejoramos las cámaras como nunca para que tus fotos y videos se vean aún más increíbles. La cámara gran angular capta más luz y la cámara ultra gran angular captura más detalle en las zonas oscuras. Además, incluimos una nueva estabilización óptica de imagen por desplazamiento de sensor. Con el chip A15 Bionic, tienes potencia de sobra para disfrutar los juegos más exigentes y las nuevas funcionalidades, como el modo Cine y los Estilos Fotográficos. El iPhone 13 da un gran salto en duración de batería.",
-    "imagen": {
-      "img1": "/images/products/iPHONE-13.jpg",
-      "img2": "/images/products/i13-2.jpg",
-      "img3": "/images/products/i13-3.jpg",
-      "img4": "/images/products/i13-4.jpg"
-    },
-    "categoria": "destacados",
-    "precio": 692999,
-    "descuento": 0,
-    "calificacion": 3,
-    "colores": {
-      "color1": "Azul",
-      "color2": "Blanco estelar",
-      "color3": "Rosa",
-      "color4": "Verde",
-      "color5": "Azul medianoche",
-      "color6": "Rojo"
-    },
-    "capacidad": {
-      "cap1": "128gb",
-      "cap2": "256gb",
-      "cap3": "512gb"
-    },
+    "id": "1a7b1df5-3b76-4c33-bd5a-fba41b743034",
+    "brand": "Apple",
+    "name": "iPhone 13",
+    "description": "El sistema de dos cámaras más avanzado en un iPhone.",
+    "detail": "El sistema de dos cámaras más avanzado en un iPhone. El superrápido chip A15 Bionic. Un gran salto en duración de batería. Un diseño resistente. Y una pantalla Super Retina XDR más brillante.",
+    "aditional": "Una pantalla OLED más brillante que ahorra energía y se ve increíble incluso a pleno sol. Y un diseño duradero resistente al agua y al polvo. Mejoramos las cámaras como nunca para que tus fotos y videos se vean aún más increíbles. La cámara gran angular capta más luz y la cámara ultra gran angular captura más detalle en las zonas oscuras. Además, incluimos una nueva estabilización óptica de imagen por desplazamiento de sensor. Con el chip A15 Bionic, tienes potencia de sobra para disfrutar los juegos más exigentes y las nuevas funcionalidades, como el modo Cine y los Estilos Fotográficos. El iPhone 13 da un gran salto en duración de batería.",
+    "images": [
+      "/images/products/images-1698718023502.jpg",
+      "/images/products/images-1698718023503.jpg",
+      "/images/products/images-1698718023503.jpg",
+      "/images/products/images-1698718023503.jpg"
+    ],
+    "category": "destacados",
+    "price": 692999,
+    "discount": 0,
+    "rating": 3,
+    "colors": [
+      "negro",
+      "blanco",
+      "rosa",
+      "dorado",
+      "verde"
+    ],
+    "capacity": [
+      "128gb",
+      "256gb",
+      "512gb"
+    ],
     "os": "iOS",
-    "pantalla": "154.4mm (6.1')",
-    "camaraPrincipal": "12 MP + 12 MP"
+    "screen": "154.4mm (6.1')",
+    "camera": "12 MP + 12 MP"
   },
   {
-    "id": 6,
-    "marca": "Motorola",
-    "nombre": "Motorola Razr 40 Ultra",
-    "descripcion": "Ahora, la pantalla externa interactiva es mejor que nunca. Disfrutá de una pantalla pOLED de 3.6' más envolvente, personal, útil y divertida. Conocé nuevas maneras de sacar fotos y grabar videos con la Flex view, que hace que el teléfono se sostenga por sí solo en varios ángulos.",
-    "descripcionDetalle": "La Vista flexible, el sistema de cámaras de alta calidad, el seguimiento de rostros con IA y la vista previa en la pantalla externa hacen que crear contenido para las redes sociales sea más fácil que nunca. Abrí tu teléfono y usá la cámara de 32 MP para tomar selfies y hacer videollamadas. La tecnología Quad Pixel ofrece una sensibilidad 4 veces mayor en ambientes con poca luz para tomar imágenes nítidas y reales.",
-    "infoAdicional": "Disfrutá de toda la potencia del procesador Snapdragon® 8+ Gen 1. Posibilita las increíbles funciones de próxima generación y las optimizaciones del desempeño, como la IA avanzada y la velocidad de actualización superrápida. Aprovechá al máximo las conexiones 5G* más rápidas, las increíbles experiencias de juego y las cámaras de calidad profesional que tanto te gustan. Usalo durante el día y la noche con una sola carga gracias a la batería de 3800 mAh. Potenciá tu experiencia de juego con la frecuencia de actualización de 165 Hz. Reduce los cortes y el efecto fantasma en los juegos compatibles para brindar una experiencia optimizada.",
-    "imagen": {
-      "img1": "/images/products/motorazr40ultra.jpg",
-      "img2": "/images/products/motoRazr40U-2.jpg",
-      "img3": "/images/products/motoRazr40U-3.jpg",
-      "img4": "/images/products/motoRazr40U-4.jpg"
-    },
-    "categoria": "destacados",
-    "precio": 699999,
-    "descuento": 0,
-    "calificacion": 3.5,
-    "colores": {
-      "color1": "Negro",
-      "color2": "Azul glaciar",
-      "color3": "Viva magenta"
-    },
-    "capacidad": {
-      "cap1": "512gb",
-      "cap2": "512gb",
-      "cap3": "512gb"
-    },
+    "id": "4fab756b-351a-4010-8287-c7febf730264",
+    "brand": "Motorola",
+    "name": "Motorola Razr 40 Ultra",
+    "description": "Ahora, la pantalla externa interactiva es mejor que nunca. Disfrutá de una pantalla pOLED de 3.6' más envolvente, personal, útil y divertida. Conocé nuevas maneras de sacar fotos y grabar videos con la Flex view, que hace que el teléfono se sostenga por sí solo en varios ángulos.",
+    "detail": "La Vista flexible, el sistema de cámaras de alta calidad, el seguimiento de rostros con IA y la vista previa en la pantalla externa hacen que crear contenido para las redes sociales sea más fácil que nunca. Abrí tu teléfono y usá la cámara de 32 MP para tomar selfies y hacer videollamadas. La tecnología Quad Pixel ofrece una sensibilidad 4 veces mayor en ambientes con poca luz para tomar imágenes nítidas y reales.",
+    "aditional": "Disfrutá de toda la potencia del procesador Snapdragon® 8+ Gen 1. Posibilita las increíbles funciones de próxima generación y las optimizaciones del desempeño, como la IA avanzada y la velocidad de actualización superrápida. Aprovechá al máximo las conexiones 5G* más rápidas, las increíbles experiencias de juego y las cámaras de calidad profesional que tanto te gustan. Usalo durante el día y la noche con una sola carga gracias a la batería de 3800 mAh. Potenciá tu experiencia de juego con la frecuencia de actualización de 165 Hz. Reduce los cortes y el efecto fantasma en los juegos compatibles para brindar una experiencia optimizada.",
+    "images": [
+      "/images/products/images-1698718147300.jpg",
+      "/images/products/images-1698718147300.jpg",
+      "/images/products/images-1698718147300.jpg",
+      "/images/products/images-1698718147300.jpg"
+    ],
+    "category": "destacados",
+    "price": 699999,
+    "discount": 0,
+    "rating": 3.5,
+    "colors": [
+      "negro",
+      "blanco",
+      "rosa"
+    ],
+    "capacity": [
+      "128gb",
+      "256gb",
+      "512gb"
+    ],
     "os": "Android",
-    "pantalla": "175.6mm (6.9')",
-    "camaraPrincipal": "12 MP + 13 MP"
+    "screen": "175.6mm (6.9')",
+    "camera": "12 MP + 13 MP"
   }
 ]

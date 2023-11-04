@@ -30,28 +30,34 @@
                 </p>
               </form>
               <div class="galery">
-                <img src="<%= product.imagen.img2 %>" alt="<%= product.nombre %>">
-                <img src="<%= product.imagen.img4 %>" alt="<%= product.nombre %>">
-                <img src="<%= product.imagen.img3 %>" alt="<%= product.nombre %>">                
+                <% for (let i = 0; i < product.images.length; i++) {  %>
+                    <img src="<%= product.images[i] %>" alt="<%= product.name %>">  
+                <%  } %> 
+                <!--
+                <%  /* %><img src="<%= product.images[1] %>" alt="<%= product.name %>"><%  */ %>
+                <%  /* %><img src="<%= product.images[3] %>" alt="<%= product.name %>"><%  */ %>
+                <%  /* %><img src="<%= product.images[2] %>" alt="<%= product.name %>"><%  */ %>
+                
+                -->             
             </div>
 
         </div>
         
         <div class="container-info-product">
-            <h3><%= product.nombre %></h3>        
+            <h3><%= product.name %></h3>        
           <div >
               <div class="container-product-detail">
                   <div class="form-group">
-                      <label for="colour" name="colur">Color</label>                    
-                        <input type="radio" name="colour" value="<%= product.colores.color1 %> "><%= product.colores.color1 %> 
-                        <input type="radio" name="colour" value="<%= product.colores.color2 %> "><%= product.colores.color2 %> 
-                        <input type="radio" name="colour" value="<%= product.colores.color3 %> "><%= product.colores.color3 %>         
+                      <label for="colour" name="colur">Color</label>   
+                        <% for (let i = 0; i < product.colors.length; i++) {  %>                 
+                            <input type="radio" name="colour" value="<%= product.colors[i] %> "><%= product.colors[i] %> 
+                        <%  } %>         
                    </div>
                 <div class="form-group">
                     <label for="capacity" name="capacity">Capacidad</label> 
-                        <button><%= product.capacidad.cap1 %></button>
-                        <button><%= product.capacidad.cap2 %></button>
-                        <button><%= product.capacidad.cap3 %></button>       
+                        <% for (let i = 0; i < product.capacity.length; i++) {  %>
+                            <button><%= product.capacity[i] %></button> 
+                        <%  } %>    
                 </div>
             </div>
 
@@ -67,7 +73,16 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div> 
                 </div>
+                <div class="button-prod">
+                    <a href="/products/edit/<%= product.id %>">
+                        <button class="btn-edit"> Editar </button>
+                    </a>
+                    <a href="/products/delete/<%= product.id %>">
+                        <button class="btn-delete"> Eliminar </button>
+                    </a>
+                </div>
             </div>
+            
             <div class="container-price"> 
                 <span> <%= product.priceWithDiscount %> </span>
             </div>
@@ -82,7 +97,7 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="text-description">
-                   <p><%= product.descripcionDetalle %></p>
+                   <p><%= product.detail %></p>
                 </div>
 
             </div>
@@ -93,7 +108,7 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="text-additional-information">
-                    <p><%= product.infoAdicional %></p>
+                    <p><%= product.aditional %></p>
                 </div>
             </div>
 
@@ -110,7 +125,7 @@
 
     </main>
     <section class="container-technical-characteristics">
-        <h3><%= product.nombre %></h3>
+        <h3><%= product.name %></h3>
         <form>
         <div class="container-characteristics">
             <table class="content-table">
@@ -120,22 +135,22 @@
             <tbody>
                 <tr>
                     <td>Marca:</td>
-                    <td><%= product.marca %></td>
+                    <td><%= product.brand %></td>
                 </tr>
 
                 <tr>
                     <td>Modelo:</td> 
-                    <td><%= product.nombre %></td>
+                    <td><%= product.name %></td>
                 </tr>
 
                 <tr>
                     <td>Tamaño pantalla:</td> 
-                    <td><%= product.pantalla %></td>
+                    <td><%= product.screen %></td>
                 </tr>
 
                 <tr>
                     <td>Cámara principal:</td>
-                    <td><%= product.camaraPrincipal %></td>
+                    <td><%= product.camera %></td>
                 </tr>
 
                 <tr>

@@ -28,6 +28,7 @@ router.get("/edit/:id", productsController.edit);
 router.put("/:id", productsController.update);
 
 // Eliminar un producto
+router.get("/delete/:id", productsController.delete);
 router.delete("/:id", productsController.destroy);
 
 // Detalle de un producto
