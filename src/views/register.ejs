@@ -12,39 +12,45 @@
         <h1 class="titulo-formulario">Registro</h1>
         <div class="control-formulario">
             <h5>Nombre</h5>
-            <input type="text" name="nombre" placeholder="Ingrese su nombre" class="control" value="<%= oldData ? oldData.nombre : "" %>"/> <% if (errors && errors.nombre) { %>
+            <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" class="control" value="<%= oldData ? oldData.nombre : "" %>"/> <% if (errors && errors.nombre) { %>
             <p class="error-msg"><%= errors.nombre.msg %></p>
             <% } %>
+            <span class="errorMsg" id="nombreError"></span>
         </div>
         <div class="control-formulario">
             <h5>Apellido</h5>
-            <input type="text" name="apellido" placeholder="Ingrese su apellido" class="control" value="<%= oldData ? oldData.apellido : "" %>"/> <% if (errors && errors.apellido) { %>
+            <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido" class="control" value="<%= oldData ? oldData.apellido : "" %>"/> <% if (errors && errors.apellido) { %>
             <p class="error-msg"><%= errors.apellido.msg %></p>
             <% } %>
+            <span class="errorMsg" id="apellidoError"></span>
         </div>
         <div class="control-formulario">
             <h5>Nombre de usuario</h5>
-            <input type="text" name="usuario" placeholder="Ingrese su nombre de usuario" class="control" value="<%= oldData ? oldData.usuario : "" %>"/> <% if (errors && errors.usuario) { %>
+            <input type="text" name="usuario" id="usuario" placeholder="Ingrese su nombre de usuario" class="control" value="<%= oldData ? oldData.usuario : "" %>"/> <% if (errors && errors.usuario) { %>
             <p class="error-msg"><%= errors.usuario.msg %></p>
             <% } %>
+            <span class="errorMsg" id="usuarioError"></span>
         </div>
         <div class="control-formulario">
             <h5>Email</h5>
-            <input type="email" name="email" placeholder="Ingrese su correo electrónico" class="control" value="<%= oldData ? oldData.email : "" %>"/> <% if (errors && errors.email) { %>
+            <input type="email" name="email" id="email" placeholder="Ingrese su correo electrónico" class="control" value="<%= oldData ? oldData.email : "" %>"/> <% if (errors && errors.email) { %>
             <p class="error-msg"><%= errors.email.msg %></p>
             <% } %>
+            <span class="errorMsg" id="emailError"></span>
         </div>
         <div class="control-formulario">
             <h5>Contraseña</h5>
-            <input type="password" name="contraseña" placeholder="Ingrese su contraseña" class="control" value="<%= oldData ? oldData.contraseña : "" %>"/> <% if (errors && errors.contraseña) { %>
+            <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña" class="control" value="<%= oldData ? oldData.contraseña : "" %>"/> <% if (errors && errors.contraseña) { %>
             <p class="error-msg"><%= errors.contraseña.msg %></p>
             <% } %>
+            <span class="errorMsg" id="contraseñaError"></span>
         </div>
         <div class="control-formulario">
             <h5>Confirme su contraseña</h5>
-            <input type="password" name="contraseña2" placeholder="Confirme contraseña" class="control" value="<%= oldData ? oldData.contraseña2 : "" %>"/> <% if (errors && errors.contraseña2) { %>
+            <input type="password" name="contraseña2" id="contraseña2" placeholder="Confirme contraseña" class="control" value="<%= oldData ? oldData.contraseña2 : "" %>"/> <% if (errors && errors.contraseña2) { %>
             <p class="error-msg"><%= errors.contraseña2.msg %></p>
             <% } %>
+            <span class="errorMsg" id="contraseña2Error"></span>
         </div>
         <div class="control-formulario">
             <h5>Suba una imagen</h5>
