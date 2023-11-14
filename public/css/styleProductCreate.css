@@ -247,3 +247,12 @@ body {
          calc((var(--size) - (var(--border) * 2) - (var(--gap) * 2)) / 2), 
       rgba(255, 255, 255, 0) 0);
   }
+
+  .errorMsg {
+    display: none;
+    color: red;
+  }
+
+  .display {
+    display: block;
+  }

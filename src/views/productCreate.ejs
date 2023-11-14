@@ -6,47 +6,57 @@
     <link rel="stylesheet" href="/css/styleMain.css">
     <link rel="stylesheet" href="/css/styleProductCreate.css">
     <!--<script src="/js/addButtonForm.js" defer></script>-->
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="/js/productCreateValidator.js" defer></script>
 </head>
 <body>
     <header class="header">
     <%- include("partials/header") %>
     </header>
-    <form action="/products" method="POST" enctype="multipart/form-data" class="formulario">
+    <form action="/products" method="POST" enctype="multipart/form-data" class="formulario" id="form">
         <h1 class="titulo-formulario">Identificá tu producto</h1>
         <div class="input-form">
-            <input type="text" name="brand" required="required">
+            <input type="text" name="brand" id="brand" required="required">
             <label for="">Marca</label>
+            <span class="errorMsg" id="brandError"></span>
         </div>
         <div class="input-form">
-            <input type="text" name="name" required="required">
+            <input type="text" name="name" id="name" required="required">
             <label for="">Nombre</label>
+            <span class="errorMsg" id="nameError"></span>
         </div>
         <div class="input-form">
-            <input type="text" name="description" required="required">
+            <input type="text" name="description" id="description" required="required">
             <label for="">Descripción</label>
+            <span class="errorMsg" id="descriptionError"></span>
         </div>
         <div class="input-form">
-            <input type="text" name="detail" required="required">
+            <input type="text" name="detail" id="detail" required="required">
             <label for="">Descripción detalles</label>
+            <span class="errorMsg" id="detailError"></span>
         </div>
         <div class="input-form">
-            <input type="text" name="aditional" required="required">
+            <input type="text" name="aditional" id="aditional" required="required">
             <label for="">Información adicional</label>
+            <span class="errorMsg" id="aditionalError"></span>
         </div>
         <div class="control-formulario">
             <input type="file" multiple name="images" accept="images/*" class="control">
         </div>
         <div class="input-form">
-            <input type="number" name="price" required="required">
+            <input type="number" name="price" id="price" required="required">
             <label for="">Precio</label>
+            <span class="errorMsg" id="priceError"></span>
         </div>
         <div class="input-form">
-            <input type="number" name="discount" required="required">
+            <input type="number" name="discount" id="discount" required="required">
             <label for="">Descuento</label>
+            <span class="errorMsg" id="discountError"></span>
         </div>
         <div class="input-form">
-            <input type="number" name="rating" required="required">
+            <input type="number" name="rating" id="rating" required="required">
             <label for="">Calificación</label>
+            <span class="errorMsg" id="ratingError"></span>
         </div>
         <div class="color-form">
             <!--
@@ -145,16 +155,19 @@
             </div>
         </div>
         <div class="input-form">
-            <input type="text" name="os" required="required">
+            <input type="text" name="os" id="os" required="required">
             <label for="">Sistema operativo</label>
+            <span class="errorMsg" id="osError"></span>
         </div>
         <div class="input-form">
-            <input type="text" name="screen" required="required">
+            <input type="text" name="screen" id="screen" required="required">
             <label for="">Dimensiones pantalla</label>
+            <span class="errorMsg" id="screenError"></span>
         </div>
         <div class="input-form">
-            <input type="text" name="camera" required="required">
+            <input type="text" name="camera" id="camera" required="required">
             <label for="">Camara principal</label>
+            <span class="errorMsg" id="cameraError"></span>
         </div>
         <button type="submit" class="boton-formulario">Publicar</button>
         <button type="reset" class="boton-formulario">Borrar</button>
