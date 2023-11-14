@@ -5,8 +5,8 @@
     <title>Create Product</title>
     <link rel="stylesheet" href="/css/styleMain.css">
     <link rel="stylesheet" href="/css/styleProductCreate.css">
-    <!--<script src="/js/addButtonForm.js" defer></script>-->
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <!--<script src="/js/addButtonForm.js" defer></script>-->
     <script src="/js/productCreateValidator.js" defer></script>
 </head>
 <body>
@@ -61,9 +61,10 @@
         <div class="color-form">
             <!--
                 <div class="color-field">
-                    <input type="text" name="colors" placeholder="Color" class="control">
+                    <input type="text" name="colors" id="colors" placeholder="Color" class="control">
                 </div>
             -->
+            
             <div class="capacity-form">
                 <label for="colors" class="cap-text">Color:</label>
                 <div class="checkbox-form">
@@ -97,8 +98,8 @@
             
             <!--
                 <div class="controls">
-                    <button class="addColor" onclick="add()"><i class="fa fa-plus"></i>Agregar Color</button>
-                    <button class="removeColor" onclick="remove()"><i class="fa fa-minus"></i>Quitar Color</button>
+                    <button class="addColor" id="addColor"><i class="fa fa-plus"></i>Agregar Color</button>
+                    <button class="removeColor" id="removeColor"><i class="fa fa-minus"></i>Quitar Color</button>
                 </div>
             -->
         </div>

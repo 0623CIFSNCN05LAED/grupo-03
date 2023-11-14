@@ -26,8 +26,8 @@ const validations = [
     },
     {
       field: "price",
-      check: (input) => input.value.length >= 5 && input.value.length <= 25,
-      message: "Debe contener al menos 5 caracteres y no mas de 25",
+      check: (input) => input.value.length >= 5 && input.value.length <= 15,
+      message: "Debe ser un precio valido (Ej: 12456208.20, sin signo $)",
     },
     {
       field: "discount",
@@ -38,6 +38,21 @@ const validations = [
       field: "rating",
       check: (input) => input.value >= 0 && input.value <= 5 && validator.isNumeric(input.value) /*&& !validator.isDecimal(input.value)*/,
       message: "Debe ser un numero del 0 al 5",
+    },
+    {
+      field: "os",
+      check: (input) => input.value.length >= 2 && input.value.length <= 20,
+      message: "Debe contener al menos 2 caracteres y no mas de 20",
+    },
+    {
+      field: "screen",
+      check: (input) => input.value.length >= 10 && input.value.length <= 40,
+      message: "Debe contener al menos 10 caracteres y no mas de 40",
+    },
+    {
+      field: "camera",
+      check: (input) => input.value.length >= 10 && input.value.length <= 40,
+      message: "Debe contener al menos 10 caracteres y no mas de 40",
     },
   ];
   
