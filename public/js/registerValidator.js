@@ -1,3 +1,4 @@
+/*
 const validations = [
     {
       field: "nombre",
@@ -27,7 +28,7 @@ const validations = [
     {
       field: "contraseña2",
       check: (input) => input.value.length >= 5 && input.value.length <= 15, //revisar que sea igual que la contraseña
-      message: "Debe ser un precio valido (Ej: 12456208.20, sin signo $)",
+      message: "Debe contener al menos 3 caracteres y no mas de 35",
     },
   ];
   
@@ -82,4 +83,6 @@ const validations = [
     inputErrorMsg.classList.remove("display");
     return true;
   }
-  
+*/
+
+

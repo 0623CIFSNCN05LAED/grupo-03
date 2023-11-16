@@ -19,9 +19,10 @@ module.exports = {
         const ArrayImagenes = [];
         const img_filename = "/images/products/";
         for (let i = 0; i < ArrayReqFiles.length; i++) {
-            const url_filename = img_filename.concat(ArrayReqFiles[i].filename)
+            const url_filename = img_filename.concat((Math.floor(Math.random() * 1000)) + "-").concat(ArrayReqFiles[i].filename)
             ArrayImagenes.push(url_filename);
         }
+        console.log(ArrayImagenes);
         const product = {
             brand: req.body.brand,
             name: req.body.name,
