@@ -85,4 +85,82 @@ const validations = [
   }
 */
 
+//const userServices = require("../services/user-services");
 
+const form = document.getElementById('form');
+const nombre = document.getElementById('nombre');
+const apellido = document.getElementById('apellido');
+const usuario = document.getElementById('usuario');
+const email = document.getElementById('email');
+const contraseña = document.getElementById('contraseña');
+const contraseña2 = document.getElementById('contraseña2');
+
+form.addEventListener('submit', event => {
+  event.preventDefault();
+
+  validateInputs();
+});
+
+const setError = (element, message) => {
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector('.error');
+
+  errorDisplay.innerText = message;
+  inputControl.classList.add('error');
+  inputControl.classList.remove('success');
+};
+
+const setSuccess = element => {
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector('.error');
+
+  errorDisplay.innerText = '';
+  inputControl.classList.add('success');
+  inputControl.classList.remove('error');
+};
+
+const validateInputs = () => {
+  const nombreValue = nombre.value.trim();
+  const apellidoValue = apellido.value.trim();
+  const usuarioValue = usuario.value.trim();
+  const emailValue = email.value.trim();
+  const contraseñaValue = contraseña.value.trim();
+  const contraseña2Value = contraseña2.value.trim();
+
+  //name validation
+  if (nombreValue === '') {
+    setError(nombre, 'Debe ingresar un nombre');
+  } else if (!validator.isAlpha(nombreValue)) {
+    setError(nombre, 'El nombre solo puede contener letras');
+  } else if (nombreValue.length < 3 || nombreValue.length > 30) {
+    setError(nombre, 'Debe contener al menos 3 caracteres y no mas de 30');
+  } else {
+    setSuccess(nombre);
+  }
+
+  //last name validation
+  if (apellidoValue === '') {
+    setError(apellido, 'Debe ingresar un apellido');
+  } else if (!validator.isAlpha(apellidoValue)) {
+    setError(apellido, 'El apellido solo puede contener letras');
+  } else if (apellidoValue.length < 3 || apellidoValue.length > 30) {
+    setError(apellido, 'Debe contener al menos 3 caracteres y no mas de 30');
+  } else {
+    setSuccess(apellido);
+  }
+/*
+  //username validation
+  if (usuarioValue === '') {
+    setError(usuario, 'Debe ingresar un usuario');
+  } else if (usuarioValue.length < 3 || usuarioValue.length > 35) {
+    setError(usuario, 'Debe contener al menos 3 caracteres y no mas de 35');
+  } else if (userServices.getUsername(usuario)) {
+    setError(usuario, 'Nombre de usuario no disponible');
+  } else {
+    setSuccess(usuario);
+  }*/
+
+  //password validation (usar isStrongPassword())
+
+  //https://www.youtube.com/watch?v=CYlNJpltjMM
+};
