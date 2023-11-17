@@ -113,6 +113,9 @@ a:hover {
     margin-bottom: 45px;
     text-align: left; 
     margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .control-formulario input {
@@ -316,6 +319,10 @@ font-weight: bold;
 
 .control-formulario .error {
     color: #ff3860;
+}
+
+.control-formulario h5 {
+    margin-left: 15px;
 }
 
 /* movil pequeño */

@@ -85,8 +85,6 @@ const validations = [
   }
 */
 
-//const userServices = require("../services/user-services");
-
 const form = document.getElementById('form');
 const nombre = document.getElementById('nombre');
 const apellido = document.getElementById('apellido');
@@ -94,11 +92,14 @@ const usuario = document.getElementById('usuario');
 const email = document.getElementById('email');
 const contraseña = document.getElementById('contraseña');
 const contraseña2 = document.getElementById('contraseña2');
+const images = document.getElementById('images');
 
 form.addEventListener('submit', event => {
   event.preventDefault();
 
   validateInputs();
+
+  //si no hay errores, enviar el form
 });
 
 const setError = (element, message) => {
@@ -126,6 +127,7 @@ const validateInputs = () => {
   const emailValue = email.value.trim();
   const contraseñaValue = contraseña.value.trim();
   const contraseña2Value = contraseña2.value.trim();
+  const imagesValue = images.value.trim();
 
   //name validation
   if (nombreValue === '') {
@@ -148,19 +150,50 @@ const validateInputs = () => {
   } else {
     setSuccess(apellido);
   }
-/*
+
   //username validation
   if (usuarioValue === '') {
     setError(usuario, 'Debe ingresar un usuario');
   } else if (usuarioValue.length < 3 || usuarioValue.length > 35) {
     setError(usuario, 'Debe contener al menos 3 caracteres y no mas de 35');
-  } else if (userServices.getUsername(usuario)) {
-    setError(usuario, 'Nombre de usuario no disponible');
   } else {
     setSuccess(usuario);
+  }
+
+  //email validation
+  if (emailValue === '') {
+    setError(email, 'Debe ingresar un email');
+  } else if (!validator.isEmail(emailValue)) {
+    setError(email, 'Ingrese un email válido');
+  } else {
+    setSuccess(email);
+  }
+
+  //password validation
+  if (contraseñaValue === '') {
+    setError(contraseña, 'Debe ingresar una contraseña');
+  } else if (contraseñaValue.length < 8 || contraseñaValue.length > 30) {
+    setError(contraseña, 'Debe contener al menos 8 caracteres y no mas de 30');
+  } else if (!validator.isStrongPassword(contraseñaValue)) {
+    setError(contraseña, 'La contraseña es debil. Debe contener por lo menos 1 minuscula, 1 mayuscula, 1 numero y 1 simbolo');
+  } else {
+    setSuccess(contraseña);
+  }
+
+  //repassword validation
+  if (contraseña2Value === '') {
+    setError(contraseña2, 'Debe ingresar una contraseña');
+  } else if (contraseña2Value !== contraseñaValue) {
+    setError(contraseña2, 'Las contraseñas con coinciden');
+  } else {
+    setSuccess(contraseña2);
+  }
+
+  //images validation (revisar que se suba una imagen)
+  /*if (images === null) {
+    setError(images, 'Debe ingresar una imágen');
+  } else {
+    setSuccess(images);
   }*/
 
-  //password validation (usar isStrongPassword())
-
-  //https://www.youtube.com/watch?v=CYlNJpltjMM
 };

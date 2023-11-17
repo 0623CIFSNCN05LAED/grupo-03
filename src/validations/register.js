@@ -53,9 +53,9 @@ module.exports = [
         .notEmpty()
         .withMessage("Debe completar este campo")
         .bail()
-        .isLength({ min: 3 })
-        .isLength({ max: 35 })
-        .withMessage("Ingrese una constraseña válida (min:3, max:35)"),
+        .isLength({ min: 8 })
+        .isLength({ max: 30 })
+        .withMessage("Ingrese una constraseña válida (min:8, max:30)"),
     body('contraseña2')
         .notEmpty()
         .withMessage("Debe completar este campo")
@@ -63,4 +63,13 @@ module.exports = [
         .custom((value, { req }) => {
         return value === req.body.contraseña})
         .withMessage("La contraseña no coincide"),
+    /*body('images')
+    //.notEmpty()
+    //.withMessage("Debe completar este campo")
+    .custom((value, { req }) => {
+        const file = req.file;
+        if (!file) {
+            throw new Error('Debe subir una imágen');
+        }
+    }),*/
 ];
