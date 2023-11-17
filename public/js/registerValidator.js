@@ -85,39 +85,47 @@ const validations = [
   }
 */
 
-const form = document.getElementById('form');
-const nombre = document.getElementById('nombre');
-const apellido = document.getElementById('apellido');
-const usuario = document.getElementById('usuario');
-const email = document.getElementById('email');
-const contraseña = document.getElementById('contraseña');
-const contraseña2 = document.getElementById('contraseña2');
-const images = document.getElementById('images');
+const form = document.getElementById("form");
+const nombre = document.getElementById("nombre");
+const apellido = document.getElementById("apellido");
+const usuario = document.getElementById("usuario");
+const email = document.getElementById("email");
+const contraseña = document.getElementById("contraseña");
+const contraseña2 = document.getElementById("contraseña2");
+const images = document.getElementById("images");
 
-form.addEventListener('submit', event => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  const errors = false;
 
   validateInputs();
 
+  if (errors != true) {
+    console.log("submit");
+    form.submit();
+  }
   //si no hay errores, enviar el form
 });
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector('.error');
+  const errorDisplay = inputControl.querySelector(".error");
 
   errorDisplay.innerText = message;
-  inputControl.classList.add('error');
-  inputControl.classList.remove('success');
+  inputControl.classList.add("error");
+  inputControl.classList.remove("success");
+
+  errors = true;
 };
 
-const setSuccess = element => {
+const setSuccess = (element) => {
   const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector('.error');
+  const errorDisplay = inputControl.querySelector(".error");
 
-  errorDisplay.innerText = '';
-  inputControl.classList.add('success');
-  inputControl.classList.remove('error');
+  errorDisplay.innerText = "";
+  inputControl.classList.add("success");
+  inputControl.classList.remove("error");
 };
 
 const validateInputs = () => {
@@ -130,61 +138,64 @@ const validateInputs = () => {
   const imagesValue = images.value.trim();
 
   //name validation
-  if (nombreValue === '') {
-    setError(nombre, 'Debe ingresar un nombre');
+  if (nombreValue === "") {
+    setError(nombre, "Debe ingresar un nombre");
   } else if (!validator.isAlpha(nombreValue)) {
-    setError(nombre, 'El nombre solo puede contener letras');
+    setError(nombre, "El nombre solo puede contener letras");
   } else if (nombreValue.length < 3 || nombreValue.length > 30) {
-    setError(nombre, 'Debe contener al menos 3 caracteres y no mas de 30');
+    setError(nombre, "Debe contener al menos 3 caracteres y no mas de 30");
   } else {
     setSuccess(nombre);
   }
 
   //last name validation
-  if (apellidoValue === '') {
-    setError(apellido, 'Debe ingresar un apellido');
+  if (apellidoValue === "") {
+    setError(apellido, "Debe ingresar un apellido");
   } else if (!validator.isAlpha(apellidoValue)) {
-    setError(apellido, 'El apellido solo puede contener letras');
+    setError(apellido, "El apellido solo puede contener letras");
   } else if (apellidoValue.length < 3 || apellidoValue.length > 30) {
-    setError(apellido, 'Debe contener al menos 3 caracteres y no mas de 30');
+    setError(apellido, "Debe contener al menos 3 caracteres y no mas de 30");
   } else {
     setSuccess(apellido);
   }
 
   //username validation
-  if (usuarioValue === '') {
-    setError(usuario, 'Debe ingresar un usuario');
+  if (usuarioValue === "") {
+    setError(usuario, "Debe ingresar un usuario");
   } else if (usuarioValue.length < 3 || usuarioValue.length > 35) {
-    setError(usuario, 'Debe contener al menos 3 caracteres y no mas de 35');
+    setError(usuario, "Debe contener al menos 3 caracteres y no mas de 35");
   } else {
     setSuccess(usuario);
   }
 
   //email validation
-  if (emailValue === '') {
-    setError(email, 'Debe ingresar un email');
+  if (emailValue === "") {
+    setError(email, "Debe ingresar un email");
   } else if (!validator.isEmail(emailValue)) {
-    setError(email, 'Ingrese un email válido');
+    setError(email, "Ingrese un email válido");
   } else {
     setSuccess(email);
   }
 
   //password validation
-  if (contraseñaValue === '') {
-    setError(contraseña, 'Debe ingresar una contraseña');
+  if (contraseñaValue === "") {
+    setError(contraseña, "Debe ingresar una contraseña");
   } else if (contraseñaValue.length < 8 || contraseñaValue.length > 30) {
-    setError(contraseña, 'Debe contener al menos 8 caracteres y no mas de 30');
+    setError(contraseña, "Debe contener al menos 8 caracteres y no mas de 30");
   } else if (!validator.isStrongPassword(contraseñaValue)) {
-    setError(contraseña, 'La contraseña es debil. Debe contener por lo menos 1 minuscula, 1 mayuscula, 1 numero y 1 simbolo');
+    setError(
+      contraseña,
+      "La contraseña es debil. Debe contener por lo menos 1 minuscula, 1 mayuscula, 1 numero y 1 simbolo"
+    );
   } else {
     setSuccess(contraseña);
   }
 
   //repassword validation
-  if (contraseña2Value === '') {
-    setError(contraseña2, 'Debe ingresar una contraseña');
+  if (contraseña2Value === "") {
+    setError(contraseña2, "Debe ingresar una contraseña");
   } else if (contraseña2Value !== contraseñaValue) {
-    setError(contraseña2, 'Las contraseñas con coinciden');
+    setError(contraseña2, "Las contraseñas con coinciden");
   } else {
     setSuccess(contraseña2);
   }
@@ -195,5 +206,4 @@ const validateInputs = () => {
   } else {
     setSuccess(images);
   }*/
-
 };
