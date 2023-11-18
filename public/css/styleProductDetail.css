@@ -5,28 +5,29 @@
 
 }
 
-body{
+/* body{
     font-family: 'Roboto';
     max-width: 1200px;
     margin: 0 auto;
-}
+} */
 
 
 img{
     max-width: 100%;
 }
 
-header{
+/* header{
     padding: 30px;
     background-color: #eee;
     margin-top: 10px;
     color: #222;
-}
+} */
 
 main{
     display: flex;
     gap: 30px;
     margin-bottom: 80px;
+    margin-top: 5%;
 }
 
 
@@ -359,9 +360,11 @@ main{
     font-size: 13px;
 }
 
-footer{
+
+
+/* footer{
     padding: 30px;
     background-color: #eee;
     margin-top: 50px;
     color: #222;
-}
+} */
