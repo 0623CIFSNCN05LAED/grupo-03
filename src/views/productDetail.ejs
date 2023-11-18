@@ -1,73 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <%- include("partials/head") %>
-        <title>Product Detail PY Grupo 3</title>
-        <link href="/css/styleProductDetail.css" rel="stylesheet"/>
-        <link href="/css/styleMain.css" rel="stylesheet"/>
-    </head>
-<body>
 
+<head>
+    <%- include("partials/head") %>
+        <title>Product Detail</title>
+        <link href="/css/styleProductDetail.css" rel="stylesheet" />
+        <link href="/css/styleMain.css" rel="stylesheet" />
+</head>
+
+<body>
     <header>
         <%- include("partials/header") %>
     </header>
 
+    <div class="container">
 
-    <main>
-        <div class="container-img">
-            <form class="form-star">
-                <p class="form-p clasificacion">
-                  <input id="radio1" type="radio" name="estrellas" value="5" class="input-start">
-                  <label for="radio1" class="label-start">★</label>
-                  <input id="radio2" type="radio" name="estrellas" value="4" class="input-start">
-                  <label for="radio2" class="label-start">★</label>
-                  <input id="radio3" type="radio" name="estrellas" value="3" class="input-start">
-                  <label for="radio3" class="label-start">★</label>
-                  <input id="radio4" type="radio" name="estrellas" value="2" class="input-start">
-                  <label for="radio4" class="label-start">★</label>
-                  <input id="radio5" type="radio" name="estrellas" value="1" class="input-start">
-                  <label for="radio5" class="label-start">★</label>
-                </p>
-              </form>
-              <div class="galery">
-                <% for (let i = 0; i < product.images.length; i++) {  %>
-                    <img src="<%= product.images[i] %>" alt="<%= product.name %>">
-                <%  } %>
-                <!--
-                <%  /* %><img src="<%= product.images[1] %>" alt="<%= product.name %>"><%  */ %>
-                <%  /* %><img src="<%= product.images[3] %>" alt="<%= product.name %>"><%  */ %>
-                <%  /* %><img src="<%= product.images[2] %>" alt="<%= product.name %>"><%  */ %>
+        <div class="box">
 
-                -->
-            </div>
-
-        </div>
-
-        <div class="container-info-product">
-            <h3><%= product.name %></h3>
-          <div >
-              <div class="container-product-detail">
-                  <div class="form-group">
-                      <label for="colour" name="colur">Color</label>
-                        <% for (let i = 0; i < product.colors.length; i++) {  %>
-                            <input type="radio" name="colour" value="<%= product.colors[i] %> "><%= product.colors[i] %>
-                        <%  } %>
-                   </div>
-                <div class="form-group">
-                    <label for="capacity" name="capacity">Capacidad</label>
-                        <% for (let i = 0; i < product.capacity.length; i++) {  %>
-                            <button><%= product.capacity[i] %></button>
-                        <%  } %>
+            <div class="images">
+                <div class="img-holder active">
+                    <img src="<%= product.images[1] %>" alt="<%= product.name %>">
+                </div>
+                <div class="img-holder">
+                    <img src="<%= product.images[2] %>" alt="<%= product.name %>">
+                </div>
+                <div class="img-holder">
+                    <img src="<%= product.images[3] %>" alt="<%= product.name %>">
+                </div>
+                <div class="img-holder">
+                    <img src="<%= product.images[2] %>" alt="<%= product.name %>">
                 </div>
             </div>
+        </div>
+        <div class="container-info-product">
+            <h3>
+                <%= product.name %>
+            </h3>
 
-            <button class="btn-clean"> Limpiar </button>
+            <form class="form-star">
+                <p class="form-p clasificacion">
+                    <input id="radio1" type="radio" name="estrellas" value="5" class="input-start">
+                    <label for="radio1" class="label-start">★</label>
+                    <input id="radio2" type="radio" name="estrellas" value="4" class="input-start">
+                    <label for="radio2" class="label-start">★</label>
+                    <input id="radio3" type="radio" name="estrellas" value="3" class="input-start">
+                    <label for="radio3" class="label-start">★</label>
+                    <input id="radio4" type="radio" name="estrellas" value="2" class="input-start">
+                    <label for="radio4" class="label-start">★</label>
+                    <input id="radio5" type="radio" name="estrellas" value="1" class="input-start">
+                    <label for="radio5" class="label-start">★</label>
+                </p>
+            </form>
+
+            <div>
+                <div class="container-product-detail">
+                    <div class="form-group">
+                        <label for="colour" name="colur">Color</label>
+                        <% for (let i=0; i < product.colors.length; i++) { %>
+                            <input type="radio" name="colour" value="<%= product.colors[i] %> ">
+                            <%= product.colors[i] %>
+                                <% } %>
+                    </div>
+                    <div class="form-group">
+                        <label for="capacity" name="capacity">Capacidad</label>
+                        <% for (let i=0; i < product.capacity.length; i++) { %>
+                            <button>
+                                <%= product.capacity[i] %>
+                            </button>
+                            <% } %>
+                    </div>
+                </div>
+
+                <button class="btn-clean"> Limpiar </button>
 
             </div>
 
             <div class="container-add-cart">
                 <div class="container-quantity">
-                    <input type="number" placeholder="1" value="1" min="1" class="input-quantity"/>
+                    <input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
                     <div class="btn-increment-decrement">
                         <i class="fa-solid fa-chevron-up"></i>
                         <i class="fa-solid fa-chevron-down"></i>
@@ -84,7 +94,9 @@
             </div>
 
             <div class="container-price">
-                <span> <%= product.priceWithDiscount %> </span>
+                <span>
+                    <%= product.priceWithDiscount %>
+                </span>
             </div>
             <button class="button-add">
                 <i class="fa-solid fa-plus"></i>
@@ -97,7 +109,9 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="text-description">
-                   <p><%= product.detail %></p>
+                    <p>
+                        <%= product.detail %>
+                    </p>
                 </div>
 
             </div>
@@ -108,7 +122,9 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="text-additional-information">
-                    <p><%= product.aditional %></p>
+                    <p>
+                        <%= product.aditional %>
+                    </p>
                 </div>
             </div>
 
@@ -122,46 +138,62 @@
             </div>
 
         </div>
+    </div>
 
-    </main>
     <section class="container-technical-characteristics">
-        <h3><%= product.name %></h3>
+        <h3>
+            <%= product.name %>
+        </h3>
         <form>
-        <div class="container-characteristics">
-            <table class="content-table">
+            <div class="container-characteristics">
+                <table class="content-table">
 
-            <thead><tr><th> Características Técnicas </th></tr></thead>
+                    <thead>
+                        <tr>
+                            <th> Características Técnicas </th>
+                        </tr>
+                    </thead>
 
-            <tbody>
-                <tr>
-                    <td>Marca:</td>
-                    <td><%= product.brand %></td>
-                </tr>
+                    <tbody>
+                        <tr>
+                            <td>Marca:</td>
+                            <td>
+                                <%= product.brand %>
+                            </td>
+                        </tr>
 
-                <tr>
-                    <td>Modelo:</td>
-                    <td><%= product.name %></td>
-                </tr>
+                        <tr>
+                            <td>Modelo:</td>
+                            <td>
+                                <%= product.name %>
+                            </td>
+                        </tr>
 
-                <tr>
-                    <td>Tamaño pantalla:</td>
-                    <td><%= product.screen %></td>
-                </tr>
+                        <tr>
+                            <td>Tamaño pantalla:</td>
+                            <td>
+                                <%= product.screen %>
+                            </td>
+                        </tr>
 
-                <tr>
-                    <td>Cámara principal:</td>
-                    <td><%= product.camera %></td>
-                </tr>
+                        <tr>
+                            <td>Cámara principal:</td>
+                            <td>
+                                <%= product.camera %>
+                            </td>
+                        </tr>
 
-                <tr>
-                    <td>OS:</td>
-                    <td><%= product.os %></td>
-                </tr>
-            </tbody>
+                        <tr>
+                            <td>OS:</td>
+                            <td>
+                                <%= product.os %>
+                            </td>
+                        </tr>
+                    </tbody>
 
-           </table>
-        </div>
-    </form>
+                </table>
+            </div>
+        </form>
     </section>
 
     <section class="container-related-products">
@@ -223,11 +255,11 @@
         </div>
 
     </section>
+
     <footer class="footer">
-
         <%- include("partials/footer") %>
-
     </footer>
 
 </body>
+
 </html>
