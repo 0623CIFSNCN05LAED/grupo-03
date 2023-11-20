@@ -1,5 +1,6 @@
 const { body } = require("express-validator");
 const userServices = require("../services/user-services");
+const bcrypt = require('bcryptjs');
 
 module.exports = [
     body('email')
@@ -25,10 +26,11 @@ module.exports = [
         .bail()
         .custom(async (value, { req }) => {
             const existingUser = await userServices.getUserEmail(req.body.email);
+            const pass = bcrypt.hashSync(value, 10) ;
             if (!existingUser) {
               throw new Error('No existe un usuario con el email dado');
             } else {
-                if (existingUser.contraseña != value) {
+                if (bcrypt.compareSync(value, existingUser.contraseña) == false) {
                     throw new Error('La contraseña es incorrecta');
                 }
             }

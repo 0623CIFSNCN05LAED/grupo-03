@@ -1,20 +1,29 @@
 [
   {
-    "id": "1",
-    "nombre": "hola",
-    "apellido": "chau",
-    "usuario": "holachau",
-    "email": "holachau@gmail.com",
-    "contraseña": "holachau123",
-    "imagen": "url"
+    "id": "7748f102-4b13-4c6f-ae8a-f374cbf84dd3",
+    "nombre": "Franco",
+    "apellido": "Sica",
+    "usuario": "fsica",
+    "email": "fsica@digitalphone.com",
+    "contraseña": "$2a$10$JiaOyxCvrJdf1nwUUtZxUu6eH5zETKkag5bYNqYYfFwAtMUjZ1v9e",
+    "images": "default-image.jpg"
   },
   {
-    "id": "538d1179-2528-439f-b6c0-70b99b03cfd3",
-    "nombre": "dfgdf",
-    "apellido": "dfgdf",
-    "usuario": "fdg",
-    "email": "dfdfg@gmail.com",
-    "contraseña": "qwer1234",
+    "id": "23c7f803-f9c9-4544-a12a-a59a054888cb",
+    "nombre": "Antonella",
+    "apellido": "Pagano",
+    "usuario": "apagano",
+    "email": "quitenga@digitalphone.com",
+    "contraseña": "$2a$10$iRgfOIKvcXZUoroeRtUiH.sv.xo7ZillczaRDw6l.xc4VeZW0CKY2",
+    "images": "default-image.jpg"
+  },
+  {
+    "id": "d04d3ad0-eb1c-487a-821c-ef97f903bd26",
+    "nombre": "Usuario",
+    "apellido": "Prueba",
+    "usuario": "uprueba",
+    "email": "uprueba@gmail.com",
+    "contraseña": "$2a$10$R/x3kPeP4J4rrwwvZ7NDAuu19mSgNtUoEyvBiKncSeDMMi1VDJbiG",
     "images": "default-image.jpg"
   }
 ]
