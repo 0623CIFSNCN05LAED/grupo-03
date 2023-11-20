@@ -27,8 +27,8 @@ module.exports = [
     .withMessage("Debe completar este campo")
     .bail()
     .isLength({ min: 3 })
-    .isLength({ max: 35 })
-    .withMessage("Ingrese un usuario válido (min:3, max:35)")
+    .isLength({ max: 20 })
+    .withMessage("Ingrese un usuario válido (min:3, max:20)")
     .bail()
     .custom(async (value) => {
       const existingUser = await userServices.getUsername(value);
@@ -55,7 +55,10 @@ module.exports = [
     .bail()
     .isLength({ min: 8 })
     .isLength({ max: 30 })
-    .withMessage("Ingrese una constraseña válida (min:8, max:30)"),
+    .withMessage("Ingrese una constraseña válida (min:8, max:30)")
+    .bail()
+    .isStrongPassword()
+    .withMessage("La contraseña es debil. Debe contener por lo menos 1 minuscula, 1 mayuscula, 1 numero y 1 simbolo"),
   body("contraseña2")
     .notEmpty()
     .withMessage("Debe completar este campo")

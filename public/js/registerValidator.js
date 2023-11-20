@@ -142,8 +142,8 @@ const validateInputs = () => {
     setError(nombre, "Debe ingresar un nombre");
   } else if (!validator.isAlpha(nombreValue)) {
     setError(nombre, "El nombre solo puede contener letras");
-  } else if (nombreValue.length < 3 || nombreValue.length > 30) {
-    setError(nombre, "Debe contener al menos 3 caracteres y no mas de 30");
+  } else if (nombreValue.length < 3 || nombreValue.length > 35) {
+    setError(nombre, "Debe contener al menos 3 caracteres y no mas de 35");
   } else {
     setSuccess(nombre);
   }
@@ -153,8 +153,8 @@ const validateInputs = () => {
     setError(apellido, "Debe ingresar un apellido");
   } else if (!validator.isAlpha(apellidoValue)) {
     setError(apellido, "El apellido solo puede contener letras");
-  } else if (apellidoValue.length < 3 || apellidoValue.length > 30) {
-    setError(apellido, "Debe contener al menos 3 caracteres y no mas de 30");
+  } else if (apellidoValue.length < 3 || apellidoValue.length > 35) {
+    setError(apellido, "Debe contener al menos 3 caracteres y no mas de 35");
   } else {
     setSuccess(apellido);
   }
@@ -162,8 +162,8 @@ const validateInputs = () => {
   //username validation
   if (usuarioValue === "") {
     setError(usuario, "Debe ingresar un usuario");
-  } else if (usuarioValue.length < 3 || usuarioValue.length > 35) {
-    setError(usuario, "Debe contener al menos 3 caracteres y no mas de 35");
+  } else if (usuarioValue.length < 3 || usuarioValue.length > 20) {
+    setError(usuario, "Debe contener al menos 3 caracteres y no mas de 20");
   } else {
     setSuccess(usuario);
   }

@@ -1,4 +1,5 @@
 const db = require("../data/db");
+const db2 = require("../database/models/index");
 
 const userServices = {
   getAllUsers: () => {

@@ -1,6 +1,5 @@
 const productServices = require("../services/product-services");
 const userServices = require("../services/user-services");
-const bcrypt = require('bcryptjs');
 
 module.exports = {
   home: (req, res) => {
