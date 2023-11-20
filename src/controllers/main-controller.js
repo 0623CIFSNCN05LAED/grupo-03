@@ -1,5 +1,6 @@
 const productServices = require("../services/product-services");
 const userServices = require("../services/user-services");
+const bcrypt = require('bcryptjs');
 
 module.exports = {
   home: (req, res) => {
@@ -22,12 +23,12 @@ module.exports = {
   login: (req, res) => {
     const data = req.body;
     console.log(data);
-    /*req.session.userData = data;*/
     const email = req.body.email;
     const contrasena = req.body.contrasena;
     const dataUser = userServices.validateUserLogin(email, contrasena);
-    if (dataUser != null) {
+    if (dataUser !== null) {
       req.session.userData = dataUser;
+      console.log('data session');
     }
     res.redirect("/");
   },
@@ -57,7 +58,7 @@ module.exports = {
       usuario: req.body.usuario,
       email: req.body.email,
       contraseña: req.body.contraseña,
-      images: req.file ? imagenURL : "default-image.jpg",
+      images: req.file ? imagenURL : "/images/users/default-image.jpg",
     };
     userServices.registerUser(user);
 

@@ -29,7 +29,7 @@ module.exports = {
             description: req.body.description,
             detail: req.body.detail,
             aditional: req.body.aditional,
-            images: req.files ? ArrayImagenes : "default-image.jpg",
+            images: req.files ? ArrayImagenes : "/images/products/default-image.jpg",
             category: req.body.category,
             price: Number(req.body.price),
             discount: Number(req.body.discount),

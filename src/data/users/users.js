@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const bcrypt = require('bcryptjs');
 
 module.exports = {
     getUsers: function () {
@@ -28,15 +29,19 @@ module.exports = {
       return user;
     },
     findByLogin: function (email, contrasena) {
-      const user = this.getUsers().find((user) => user.email == email && user.contraseña == contrasena);
+      const user = this.getUsers().find((user) => user.email == email && bcrypt.compareSync(contrasena, user.contraseña) == true);
+      console.log('data session');
       return user;
     },
     register: function (user) {
       console.log(`Creating user ${user.nombre}`);
+      const passwordOG = user.contraseña;
+      const encryptedPassword = bcrypt.hashSync(passwordOG, 10);
       const users = this.getUsers();
       const newUser = {
         id: uuidv4(),
         ...user,
+        contraseña: encryptedPassword,
       };
       users.push(newUser);
       this.saveUsers(users);
