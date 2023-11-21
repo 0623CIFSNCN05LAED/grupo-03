@@ -19,17 +19,14 @@
 
             <div class="images">
                 <div class="img-holder active">
-                    <img src="<%= product.images[1] %>" alt="<%= product.name %>">
+                    <img src="<%= product.images[0] %>" alt="<%= product.name %>">
                 </div>
-                <div class="img-holder">
-                    <img src="<%= product.images[2] %>" alt="<%= product.name %>">
-                </div>
-                <div class="img-holder">
-                    <img src="<%= product.images[3] %>" alt="<%= product.name %>">
-                </div>
-                <div class="img-holder">
-                    <img src="<%= product.images[2] %>" alt="<%= product.name %>">
-                </div>
+                <% for (let i=1; i < product.images.length; i++) { %>
+                    <div class="img-holder">
+                        <img src="<%= product.images[i] %>" alt="<%= product.name %>">
+                    </div>
+                    <% } %>
+
             </div>
         </div>
         <div class="container-info-product">
@@ -98,10 +95,14 @@
                     <%= product.priceWithDiscount %>
                 </span>
             </div>
+
             <button class="button-add">
-                <i class="fa-solid fa-plus"></i>
-                Agregar al carrito
+                <a href="/productCart">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar al carrito
+                </a>
             </button>
+
 
             <div class="container-description">
                 <div class="title-description">
