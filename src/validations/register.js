@@ -49,7 +49,7 @@ module.exports = [
         throw new Error("Ya existe un usuario con ese email");
       }
     }),
-  body("contraseña")
+  body("contrasenia")
     .notEmpty()
     .withMessage("Debe completar este campo")
     .bail()
@@ -59,12 +59,12 @@ module.exports = [
     .bail()
     .isStrongPassword()
     .withMessage("La contraseña es debil. Debe contener por lo menos 1 minuscula, 1 mayuscula, 1 numero y 1 simbolo"),
-  body("contraseña2")
+  body("contrasenia2")
     .notEmpty()
     .withMessage("Debe completar este campo")
     .bail()
     .custom((value, { req }) => {
-      return value === req.body.contraseña;
+      return value === req.body.contrasenia;
     })
     .withMessage("La contraseña no coincide"),
   /*body("images")

@@ -90,8 +90,8 @@ const nombre = document.getElementById("nombre");
 const apellido = document.getElementById("apellido");
 const usuario = document.getElementById("usuario");
 const email = document.getElementById("email");
-const contraseña = document.getElementById("contraseña");
-const contraseña2 = document.getElementById("contraseña2");
+const contraseña = document.getElementById("contrasenia");
+const contraseña2 = document.getElementById("contrasenia2");
 const images = document.getElementById("images");
 
 form.addEventListener("submit", (event) => {

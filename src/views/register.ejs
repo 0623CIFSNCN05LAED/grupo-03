@@ -10,7 +10,7 @@
     <header>
         <%- include("partials/header") %>  
     </header>    
-    <form action="/register" method="POST" class="formulario" id="form"><!-- enctype="multipart/form-data" (agregarlo para que guarde la imagen pero al agregarlo deja de funcionar el form y toma todas las validaciones como erroneas)-->
+    <form action="/register" method="POST" class="formulario" id="form" enctype="multipart/form-data">
         <h1 class="titulo-formulario">Registro</h1>
         <div class="control-formulario">
             <h5>Nombre</h5>
@@ -42,15 +42,15 @@
         </div>
         <div class="control-formulario">
             <h5>Contraseña</h5>
-            <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña" class="control" value="<%= oldData ? oldData.contraseña : "" %>"/> <% if (errors && errors.contraseña) { %>
-            <p class="error-msg"><%= errors.contraseña.msg %></p>
+            <input type="password" name="contrasenia" id="contrasenia" placeholder="Ingrese su contraseña" class="control" value="<%= oldData ? oldData.contrasenia : "" %>"/> <% if (errors && errors.contrasenia) { %>
+            <p class="error-msg"><%= errors.contrasenia.msg %></p>
             <% } %>
             <span class="error"></span>
         </div>
         <div class="control-formulario">
             <h5>Confirme su contraseña</h5>
-            <input type="password" name="contraseña2" id="contraseña2" placeholder="Confirme contraseña" class="control" value="<%= oldData ? oldData.contraseña2 : "" %>"/> <% if (errors && errors.contraseña2) { %>
-            <p class="error-msg"><%= errors.contraseña2.msg %></p>
+            <input type="password" name="contrasenia2" id="contrasenia2" placeholder="Confirme contraseña" class="control" value="<%= oldData ? oldData.contrasenia2 : "" %>"/> <% if (errors && errors.contrasenia2) { %>
+            <p class="error-msg"><%= errors.contrasenia2.msg %></p>
             <% } %>
             <span class="error"></span>
         </div>

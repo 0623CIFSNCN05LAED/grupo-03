@@ -29,19 +29,19 @@ module.exports = {
       return user;
     },
     findByLogin: function (email, contrasena) {
-      const user = this.getUsers().find((user) => user.email == email && bcrypt.compareSync(contrasena, user.contraseña) == true);
+      const user = this.getUsers().find((user) => user.email == email && bcrypt.compareSync(contrasena, user.contrasenia) == true);
       console.log('data session');
       return user;
     },
     register: function (user) {
       console.log(`Creating user ${user.nombre}`);
-      const passwordOG = user.contraseña;
+      const passwordOG = user.contrasenia;
       const encryptedPassword = bcrypt.hashSync(passwordOG, 10);
       const users = this.getUsers();
       const newUser = {
         id: uuidv4(),
         ...user,
-        contraseña: encryptedPassword,
+        contrasenia: encryptedPassword,
       };
       users.push(newUser);
       this.saveUsers(users);

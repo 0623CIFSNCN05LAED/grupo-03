@@ -23,7 +23,7 @@ module.exports = {
     const data = req.body;
     console.log(data);
     const email = req.body.email;
-    const contrasena = req.body.contrasena;
+    const contrasena = req.body.contrasenia;
     const dataUser = userServices.validateUserLogin(email, contrasena);
     if (dataUser !== null) {
       req.session.userData = dataUser;
@@ -46,18 +46,15 @@ module.exports = {
     console.log(data);
     req.session.userData = data;
 
-    /*const imagen = req.file;
-    const imagen_file_name = "/images/users/";
-    const imagenURL = imagen_file_name.concat(imagen.filename);
-    console.log(imagenURL);*/
+    const imagen = req.file;
 
     const user = {
       nombre: req.body.nombre,
       apellido: req.body.apellido,
       usuario: req.body.usuario,
       email: req.body.email,
-      contraseña: req.body.contraseña,
-      images: req.file ? imagenURL : "/images/users/default-image.jpg",
+      contrasenia: req.body.contrasenia,
+      images: req.file ? imagen.filename : ["/images/users/default-image.jpg"],
     };
     userServices.registerUser(user);
 

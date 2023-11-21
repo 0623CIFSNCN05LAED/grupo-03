@@ -15,21 +15,15 @@ module.exports = {
         res.render("productCreate");
     },
     store: (req, res) => {
-        const ArrayReqFiles = req.files;
-        const ArrayImagenes = [];
-        const img_filename = "/images/products/";
-        for (let i = 0; i < ArrayReqFiles.length; i++) {
-            const url_filename = img_filename.concat((Math.floor(Math.random() * 1000)) + "-").concat(ArrayReqFiles[i].filename)
-            ArrayImagenes.push(url_filename);
-        }
-        console.log(ArrayImagenes);
+        const ArrayImagenes = req.files.map((file) => `/images/products/${file.filename}`);
+        
         const product = {
             brand: req.body.brand,
             name: req.body.name,
             description: req.body.description,
             detail: req.body.detail,
             aditional: req.body.aditional,
-            images: req.files ? ArrayImagenes : "/images/products/default-image.jpg",
+            images: req.files ? ArrayImagenes : ["/images/products/default-image.jpg"],
             category: req.body.category,
             price: Number(req.body.price),
             discount: Number(req.body.discount),

@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     cb(
       null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+      Math.floor(Math.random() * 1000) + Date.now() + "-" + file.originalname
     );
   },
 });
@@ -37,13 +37,9 @@ router.post(
 router.get("/register", mainController.showRegister);
 router.post(
   "/register",
-  /*upload.single("images"),*/
-  urlencoded({
-    extended: false,
-  }),
+  upload.single("images"),
   validationsRegister,
   validateFormRegister,
-  upload.single("images"),
   mainController.register
 );
 router.get("/productCart", mainController.productCart);

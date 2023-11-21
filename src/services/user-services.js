@@ -1,5 +1,5 @@
 const db = require("../data/db");
-const db2 = require("../database/models/index");
+const { Users } = require("../database/models");
 
 const userServices = {
   getAllUsers: () => {
@@ -20,6 +20,10 @@ const userServices = {
   },
   registerUser: (user) => {
     db.users.register(user);
+  },
+  //funciones db
+  getAllUsers2: () => {
+    return Users.findAll();
   },
 };
 

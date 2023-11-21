@@ -30,7 +30,7 @@ module.exports = [
             if (!existingUser) {
               throw new Error('No existe un usuario con el email dado');
             } else {
-                if (bcrypt.compareSync(value, existingUser.contraseña) == false) {
+                if (bcrypt.compareSync(value, existingUser.contrasenia) == false) {
                     throw new Error('La contraseña es incorrecta');
                 }
             }
