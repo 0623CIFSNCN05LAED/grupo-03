@@ -8,12 +8,43 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: white;
-    padding-top: 50px;
+    padding-top: 100px;
     text-align: center;
 
 }
 
-.contenedor {
+.producto1 {
+    background-color: rgb(92, 92, 94);
+    display: flex;
+}
+
+.producto1 img {
+    width: 5%;
+    height: 5%;
+}
+
+.producto1 h4 {
+    font-size: 20px;
+}
+
+.producto2 {
+    background-color: brown;
+    display: flex;
+}
+
+.producto2 img {
+    width: 5%;
+    height: 5%;
+}
+
+.producto3 {
+    background-color: aqua;
+}
+
+.producto4 {
+    background-color: blue;
+}
+/* .contenedor {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -76,7 +107,7 @@ body {
 }
 
 .carrito {
-    /* filter: invert(100%); */
+    
     width: 45px;
     height: auto;
-}
+} */
