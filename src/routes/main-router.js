@@ -43,7 +43,6 @@ router.post(
   mainController.register
 );
 router.get("/productCart", mainController.productCart);
-router.get("/search", mainController.search);
 
 const productsRouter = require("./products");
 router.use("/products", productsRouter);

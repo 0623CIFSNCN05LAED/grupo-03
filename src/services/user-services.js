@@ -1,8 +1,11 @@
-const db = require("../data/db");
+/*const db = require("../data/db");*/
+//db
 const { Users } = require("../database/models");
+const { v4: uuidv4 } = require("uuid");
+const bcrypt = require('bcryptjs');
 
 const userServices = {
-  getAllUsers: () => {
+  /*getAllUsers: () => {
     const users = db.users.findAll();
     return users;
   },
@@ -20,10 +23,64 @@ const userServices = {
   },
   registerUser: (user) => {
     db.users.register(user);
-  },
+  },*/
   //funciones db
-  getAllUsers2: () => {
+  getAllUsers: () => {
     return Users.findAll();
+  },
+  getUser: (id) => {
+    return Users.findByPk(id);
+  },
+  /*getUserEmail: (email) => {
+    return findByEmail(email);
+  },
+  getUsername: (usuario) => {
+    return findByUsername(usuario);
+  },*/
+  getAdmin: (email) => {
+    const isAdmin = 0;
+    if (email.includes("@digitalphone.com")) {
+      isAdmin = 1;
+    }
+    return isAdmin;
+  },
+  findByEmail: (email) => {
+    return Users.findOne({
+      where: {
+        email: email
+      }
+    });
+  },
+  findByUsername: (usuario) => {
+    return Users.findOne({
+      where: {
+        username: usuario
+      }
+    });
+  },
+  validateUserLogin: (email, contrasena) => {
+    return Users.findOne({
+      where: {
+        email: email,
+      } && bcrypt.compareSync(contrasena, Users.password) == true
+    });
+  },
+  registerUser: (data, imagen) => {
+    console.log(`Creating user ${data.nombre}`);
+    const passwordOG = data.contrasenia;
+    const encryptedPassword = bcrypt.hashSync(passwordOG, 10);
+    const adm = getAdmin(data.email);
+
+    return Users.create({
+      id_user: uuidv4(),
+      name: data.nombre,
+      last_name: data.apellido,
+      username: data.usuario,
+      email: data.email,
+      password: encryptedPassword,
+      profile_picture: req.file ? imagen.filename : ["/images/users/default-image.jpg"],
+      admin: adm,
+    });
   },
 };
 

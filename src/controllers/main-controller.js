@@ -47,7 +47,7 @@ module.exports = {
     req.session.userData = data;
 
     const imagen = req.file;
-
+/*
     const user = {
       nombre: req.body.nombre,
       apellido: req.body.apellido,
@@ -55,17 +55,12 @@ module.exports = {
       email: req.body.email,
       contrasenia: req.body.contrasenia,
       images: req.file ? imagen.filename : ["/images/users/default-image.jpg"],
-    };
-    userServices.registerUser(user);
+    };*/
+    userServices.registerUser(data, imagen);
 
     res.redirect("/login");
   },
   productCart: (req, res) => {
     res.render("productCart");
-  },
-  search: (req, res) => {
-    const keywords = req.query.keywords;
-    const foundProducts = productServices.searchProducts(keywords);
-    res.render("results", { foundProducts });
   },
 };

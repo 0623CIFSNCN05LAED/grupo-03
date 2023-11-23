@@ -60,4 +60,9 @@ module.exports = {
         productServices.deleteProduct(id);
         res.redirect("/products");
     },
+    search: (req, res) => {
+        const keywords = req.query.keywords;
+        const foundProducts = productServices.searchProducts(keywords);
+        res.render("results", { foundProducts });
+      },
 };

@@ -11,7 +11,7 @@ module.exports = [
         .withMessage("Debe ingresar un email válido")
         .bail()
         .custom(async value => {
-            const existingUser = await userServices.getUserEmail(value);
+            const existingUser = await userServices.findByUsername(value);
             if (!existingUser) {
               throw new Error('No existe un usuario con ese email');
             }
@@ -25,7 +25,7 @@ module.exports = [
         .withMessage("Ingrese una constraseña válida (min:3, max:35)")
         .bail()
         .custom(async (value, { req }) => {
-            const existingUser = await userServices.getUserEmail(req.body.email);
+            const existingUser = await userServices.findByEmail(req.body.email);
             const pass = bcrypt.hashSync(value, 10) ;
             if (!existingUser) {
               throw new Error('No existe un usuario con el email dado');

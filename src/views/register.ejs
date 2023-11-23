@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/styleRegister.css">
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="/js/registerValidator.js" defer></script>
-    <!--<script src="/js/errorsForm.js" defer></script>-->
+    <script src="/js/errorsForm.js" defer></script>
 <body>
     <header>
         <%- include("partials/header") %>  
@@ -56,7 +56,10 @@
         </div>
         <div class="control-formulario">
             <h5>Suba una imagen</h5>
-            <input type="file" name="images" id="images" accept="images/*" class="control">
+            <input type="file" name="images" id="images" accept="images/*" class="control" value="<%= oldData ? oldData.images : "" %>"/> <% if (errors && errors.images) { %>
+            <p class="error-msg"><%= errors.images.msg %></p>
+            <% } %>
+            <span class="error"></span>
         </div>
         <button type="submit" class="boton-formulario">Registrarse</button>
         <button type="reset" class="boton-formulario2">Borrar</button>

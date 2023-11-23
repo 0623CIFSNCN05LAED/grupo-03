@@ -105,7 +105,6 @@ form.addEventListener("submit", (event) => {
     console.log("submit");
     form.submit();
   }
-  //si no hay errores, enviar el form
 });
 
 const setError = (element, message) => {
@@ -200,10 +199,10 @@ const validateInputs = () => {
     setSuccess(contraseña2);
   }
 
-  //images validation (revisar que se suba una imagen)
-  /*if (images === null) {
+  //images validation
+  if (images === null) {
     setError(images, 'Debe ingresar una imágen');
   } else {
     setSuccess(images);
-  }*/
+  }
 };

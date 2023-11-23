@@ -31,7 +31,7 @@ module.exports = [
     .withMessage("Ingrese un usuario válido (min:3, max:20)")
     .bail()
     .custom(async (value) => {
-      const existingUser = await userServices.getUsername(value);
+      const existingUser = await userServices.findByUsername(value);
       if (existingUser) {
         throw new Error("Nombre de usuario no disponible");
       }
@@ -44,7 +44,7 @@ module.exports = [
     .withMessage("Debe ingresar un email válido")
     .bail()
     .custom(async (value) => {
-      const existingUser = await userServices.getUserEmail(value);
+      const existingUser = await userServices.findByEmail(value);
       if (existingUser) {
         throw new Error("Ya existe un usuario con ese email");
       }
@@ -67,13 +67,11 @@ module.exports = [
       return value === req.body.contrasenia;
     })
     .withMessage("La contraseña no coincide"),
-  /*body("images")
-    //.notEmpty()
-    //.withMessage("Debe completar este campo")
+  body("images")
     .custom((value, { req }) => {
       const file = req.file;
       if (!file) {
         throw new Error("Debe subir una imágen");
       }
-    }),*/
+    }),
 ];
