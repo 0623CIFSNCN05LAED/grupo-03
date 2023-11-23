@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+    <title>Home</title>
+    <link href="/css/styleHome.css" rel="stylesheet"/>
+    <link href="/css/styleMain.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <%- include("partials/header") %>  
+    </header>
+    <section class="home">
+        <video autoplay loop muted plays-inline class="back-video" src="/images/video_home.mp4"></video>
+        <div class="text-banner">
+            <h1>¡Nuevos Samsung Galaxy Z!</h1>
+            <p>Llevate los nuevos Samsung Galaxy Z Flip 5 y Samsung Galaxy Z Fold 5, con hasta 12 CSI y envío gratis.</p>
+            <div class="btn-banner">
+                <a>Más información</a>
+                <a>Comprar</a>
+            </div>
+        </div>
+        
+    </section>
+    <main>
+        <h2 class="titulares">¡Últimos lanzamientos!</h2>
+        <section class="productos">  
+            <% featuredProducts.forEach(product => {%>
+                <article class="box-effect-prod prod">
+                    <a class="block" href="/products/<%= product.id %>">
+                        <img class="img-prod" src="<%= product.images[0] %>" alt="<%= product.name %>">
+                    </a>
+                    <a class="block" href="/products/<%= product.id %>">
+                        <div class="info-articulo">
+                            <h3 class="titulo-prod"><%= product.name %></h3>
+                            <p class="descripcion-prod"><%= product.description %></p>
+                            <span class="precio-prod"><%= product.price %></span>
+                        </div> 
+                    </a>  
+                    <div class="rate-prod">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>  
+                    <div class="options-prod">
+                        <a href="#">Comprar</a>
+                        <a href="#">Agregar al carrito</a>
+                    </div>             
+                </article>
+            <%  }) %>
+        </section>
+        <h2 class="titulares">Últimas noticias</h2>
+        <section class="noticias">  
+            <article class="box-effect-not not">
+                <img class="not-img-box" src="/images/noticia1.jpg" alt='noticia1'>  
+                <div class="info-noticia">
+                    <h3>Titulo Noticia 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi ducimus fugit placeat, nemo quos mollitia.</p>
+                    <a href="#">Leer más</a>
+                </div>             
+            </article>
+            <article class="box-effect-not not">
+                <img class="not-img-box" src="/images/noticia2.jpg" alt='noticia2'>  
+                <div class="info-noticia">
+                    <h3>Titulo Noticia 2</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi ducimus fugit placeat, nemo quos mollitia.</p>
+                    <a href="#">Leer más</a>
+                </div>             
+            </article>
+            <article class="box-effect not">
+                <img class="not-img-box" src="/images/noticia3.jpg" alt='noticia3'>  
+                <div class="info-noticia">
+                    <h3>Titulo Noticia 3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi ducimus fugit placeat, nemo quos mollitia.</p>
+                    <a href="#">Leer más</a>
+                </div>             
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>
