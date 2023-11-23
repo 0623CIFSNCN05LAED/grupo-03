@@ -1,6 +1,8 @@
 const productServices = require("../services/product-services");
 const userServices = require("../services/user-services");
 
+const bcrypt = require('bcryptjs');
+
 module.exports = {
   home: (req, res) => {
     const featuredProducts = productServices.getFeaturedProducts();
@@ -19,7 +21,7 @@ module.exports = {
       oldData: oldData ? oldData : null,
     });
   },
-  login: (req, res) => {
+  /*login: (req, res) => {
     const data = req.body;
     console.log(data);
     const email = req.body.email;
@@ -30,6 +32,32 @@ module.exports = {
       console.log('data session');
     }
     res.redirect("/");
+  },*/
+  login: async (req, res) => {
+    const data = req.body;
+    console.log(data);
+
+    const user = await userServices.findByEmail(req.body.email)
+
+    if(!user){
+        return res.render("login", {
+            errors: {
+                email: {msg: "Ese email no esta registrado" }
+            }
+        })
+    }
+
+    if(!bcrypt.compareSync(req.body.password, user.password)){
+        return res.render("login", {
+            errors: {
+                password: {msg: "Contraseña incorrecta"}
+            }
+        })
+    } else {
+        req.session.userData = data;
+        console.log('data session');
+        return res.redirect("/");
+    }
   },
   showRegister: (req, res) => {
     const errors = req.session.errors;

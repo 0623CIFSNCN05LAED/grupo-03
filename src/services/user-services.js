@@ -30,17 +30,17 @@ const userServices = {
       }
     });
   },
-  validateUserLogin: (email, password) => {
-    /*return Users.findOne({
+  /*validateUserLogin: (email, password) => {
+    return Users.findOne({
       where: {
         email: email,
       } && bcrypt.compareSync(password, Users.password) == true
-    });*/
-    const user = [Users.findOne({
+    });
+    const user = Users.findOne({
       where: {
         email: email,
       }
-    })];
+    });
     console.log(user);
 
     console.log(user.password);
@@ -51,7 +51,7 @@ const userServices = {
     } else {
       return null;
     }
-  },
+  },*/
   registerUser: (data, imagen, admin) => {
     console.log(`Creating user ${data.name}`);
     const passwordOG = data.password;

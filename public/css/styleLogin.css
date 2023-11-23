@@ -306,6 +306,22 @@ font-weight: bold;
     border: 2px solid rgb(210, 33, 63);
 }
 
+.control-formulario.success input {
+    border-color: #09c372;
+}
+
+.control-formulario.error input {
+    border-color: #ff3860;
+}
+
+.control-formulario .error {
+    color: #ff3860;
+}
+
+.control-formulario h5 {
+    margin-left: 15px;
+}
+
 /* movil pequeño */
 @media (min-width: 360px){
     .logo-text {

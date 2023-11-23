@@ -3,6 +3,7 @@
     <class><%- include("partials/head") %>
     <title>Login</title>
     <link rel="stylesheet" href="css/styleLogin.css">
+    <script src="/js/loginValidator.js"></script>
     <!--<script src="/js/errorsForm.js" defer></script>-->
 <body>
     <header>
@@ -14,11 +15,13 @@
             <input type="text" name="email" placeholder="Email" class="control" value="<%= oldData ? oldData.email : "" %>"/> > <i class="fa-solid fa-user"></i> <% if (errors && errors.email) { %>
             <p class="error-msg"><%= errors.email.msg %></p>
             <% } %> 
+            <span class="error"></span>
         </div>
         <div class="control-formulario">
             <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= oldData ? oldData.password : "" %>"/> > <i class="fa-solid fa-lock"></i> <% if (errors && errors.password) { %>
             <p class="error-msg"><%= errors.password.msg %></p>
             <% } %>
+            <span class="error"></span>
         </div>
         <div class="recordarme">
             <label><input type="checkbox" name="Recordarme">Recordarme</label>
