@@ -45,18 +45,10 @@ module.exports = {
     const data = req.body;
     console.log(data);
     req.session.userData = data;
-
-    const imagen = req.file;
-/*
-    const user = {
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      usuario: req.body.usuario,
-      email: req.body.email,
-      contrasenia: req.body.contrasenia,
-      images: req.file ? imagen.filename : ["/images/users/default-image.jpg"],
-    };*/
-    userServices.registerUser(data, imagen);
+    const img = req.file;
+    const imagen = `/images/products/${img.filename}`
+    const admin = userServices.getAdmin(data.email);
+    userServices.registerUser(data, imagen, admin);
 
     res.redirect("/login");
   },

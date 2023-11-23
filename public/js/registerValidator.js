@@ -200,9 +200,9 @@ const validateInputs = () => {
   }
 
   //images validation
-  if (images === null) {
+  /*if (images === null) {
     setError(images, 'Debe ingresar una imágen');
   } else {
     setSuccess(images);
-  }
+  }*/
 };

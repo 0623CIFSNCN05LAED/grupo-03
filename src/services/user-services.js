@@ -65,11 +65,10 @@ const userServices = {
       } && bcrypt.compareSync(contrasena, Users.password) == true
     });
   },
-  registerUser: (data, imagen) => {
+  registerUser: (data, imagen, admin) => {
     console.log(`Creating user ${data.nombre}`);
     const passwordOG = data.contrasenia;
     const encryptedPassword = bcrypt.hashSync(passwordOG, 10);
-    const adm = getAdmin(data.email);
 
     return Users.create({
       id_user: uuidv4(),
@@ -78,8 +77,8 @@ const userServices = {
       username: data.usuario,
       email: data.email,
       password: encryptedPassword,
-      profile_picture: req.file ? imagen.filename : ["/images/users/default-image.jpg"],
-      admin: adm,
+      profile_picture: imagen ? imagen : ["/images/users/default-image.jpg"],
+      admin: admin,
     });
   },
 };
