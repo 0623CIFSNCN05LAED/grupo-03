@@ -16,9 +16,9 @@
             <% } %> 
         </div>
         <div class="control-formulario">
-            <input type="password" name="contrasena" placeholder="Contraseña" class="control" value="<%= oldData ? oldData.contrasena : "" %>"/> > <i class="fa-solid fa-lock"></i> <% if (errors && errors.contrasena) { %>
-                <p class="error-msg"><%= errors.contrasena.msg %></p>
-                <% } %>
+            <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= oldData ? oldData.password : "" %>"/> > <i class="fa-solid fa-lock"></i> <% if (errors && errors.password) { %>
+            <p class="error-msg"><%= errors.password.msg %></p>
+            <% } %>
         </div>
         <div class="recordarme">
             <label><input type="checkbox" name="Recordarme">Recordarme</label>

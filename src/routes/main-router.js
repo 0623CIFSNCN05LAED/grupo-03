@@ -37,7 +37,7 @@ router.post(
 router.get("/register", mainController.showRegister);
 router.post(
   "/register",
-  upload.single("images"),
+  upload.single("profile_picture"),
   validationsRegister,
   validateFormRegister,
   mainController.register

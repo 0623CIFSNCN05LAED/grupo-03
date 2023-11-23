@@ -23,8 +23,8 @@ module.exports = {
     const data = req.body;
     console.log(data);
     const email = req.body.email;
-    const contrasena = req.body.contrasenia;
-    const dataUser = userServices.validateUserLogin(email, contrasena);
+    const password = req.body.password;
+    const dataUser = userServices.validateUserLogin(email, password);
     if (dataUser !== null) {
       req.session.userData = dataUser;
       console.log('data session');
