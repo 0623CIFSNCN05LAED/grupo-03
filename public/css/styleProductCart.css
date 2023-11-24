@@ -13,101 +13,60 @@ body {
 
 }
 
-.producto1 {
-    background-color: rgb(92, 92, 94);
+.contenedor {
     display: flex;
-}
-
-.producto1 img {
-    width: 5%;
-    height: 5%;
-}
-
-.producto1 h4 {
-    font-size: 20px;
-}
-
-.producto2 {
-    background-color: brown;
-    display: flex;
-}
-
-.producto2 img {
-    width: 5%;
-    height: 5%;
-}
-
-.producto3 {
-    background-color: aqua;
-}
-
-.producto4 {
-    background-color: blue;
-}
-/* .contenedor {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    margin-bottom: 20px;
-    padding-top: 170px;
-    box-shadow: none;
+    justify-content: space-around;
 }
 
 .contenedor img {
-    width: 320px;
-    height: 470px;
-    object-fit: contain;
-    border-radius: 20px 20px 0px 0px;
-
-}
-
-.contenedor div {
-    box-shadow: 0px 0px 5px 0px rgb(201, 199, 199);
-    background-color: #bbc2ca;
-    border-radius: 20px;
-    text-align: center;
-}
-
-.informacion {
     height: 150px;
+    width: 200px;
+}
+
+.nombre,
+.color,
+.precio,
+.cantidad {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.input-group-btn {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.btn {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.btn-default {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.control {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.eliminar {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.final {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 15px;
-    border-radius: 20px 20px 0px 0px;
-}
-
-.informacion h3 {
-    font-family: 'Roboto', sans-serif;
+    justify-content:space-around;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 400;
+    margin-top: 2%;
+    margin: auto;
 }
-
-.informacion .precio {
-    font-size: 20px;
-    font-weight: bold;
-
-}
-
-.informacion button {
-    background-color:  white;
-    width: 100px;
-    height: 35;
-    border-radius: 10px;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.informacion button:hover {
-    background-color: #2D4263;
-}
-
-.carrito {
-    
-    width: 45px;
-    height: auto;
-} */

@@ -3,10 +3,10 @@
 
 <head>
     <%- include("partials/head") %>
-        <title>ProductCart PY Grupo 3</title>
+        <title>Product Cart</title>
+        <link href="/css/styleProductCart.css" rel="stylesheet">
         <link href="/css/styleMain.css" rel="stylesheet" />
-        <link href="/css/styleProductCart.css" rel="stylesheet" />
-        <title>Carrito de compras</title>
+
 </head>
 
 <body>
@@ -16,76 +16,96 @@
 
     <div>
 
-        <div class="producto1">
-            <img class="carrito" src="/images/products/iPhone12enfrentado.jpg" alt="producto 1">
-            <h4>iPhone12</h4>
-            <p>Color</p>
-            <p class="precio">$149.999</p>
+        <div class="contenedor">
+            <img src="/images/products/iPhone12enfrentado.jpg" alt="producto 1">
+            <p class="nombre">iPhone 12</p>
+            <p class="color">Purple</p>
 
-        </div>
-        <div class="producto2">
-            <img class="carrito" src="/images/products/i14promax-2.jpg" alt="producto 2">
-            <h1>i14promax</h1>
-            <p>Color</p>
-            <p class="precio">$189.000</p>
-        </div>
-        <div class="producto3">
-            <img src="/images/products/iPHONE-13.jpg" alt="producto 3">
-            <h1>iPHONE-13</h1>
-            <p>Color</p>
+            <p class="cantidad">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="menos" type="button">-</button>
+                </span>
+                <input type="text" style="width:50px;text-align: center;" id="contador" class="control" value="1">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="mas" type="button">+</button>
+                </span>
+            </p>
             <p class="precio">$150.000</p>
+            <p class="eliminar">
+                <i class="fa-solid fa-trash-can"></i>
+            </p>
         </div>
-        <div class="producto4">
-            <img src="/images/products/iPhoneSEenfrentado.jpg" alt="producto 4">
-            <h1>iPhoneSE</h1>
-            <p>Color</p>
+
+        <div class="contenedor">
+            <img src="/images/products/i14promax-2.jpg" alt="producto 2">
+            <p class="nombre">iPhone 14</p>
+            <p class="color">White</p>
+            <p class="cantidad">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="menos" type="button">-</button>
+                </span>
+                <input type="text" style="width:50px;text-align: center;" id="contador" class="control" value="1">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="mas" type="button">+</button>
+                </span>
+            </p>
             <p class="precio">$200.000</p>
+            <p class="eliminar">
+                <i class="fa-solid fa-trash-can"></i>
+            </p>
         </div>
-        <!--<section>
-             <div class="contenedor">
-                <div>
-                    <img class="carrito" src="/images/products/iPhone12enfrentado.jpg" alt="producto 1">
-                    <div class="informacion">
-                        <h3>iPhone12</h3>
-                        <p class="precio">$149.999</p>
-                        <button>Comprar</button>
-                    </div>
-                </div>
 
-                <div>
-                    <img class="carrito" src="/images/products/i14promax-2.jpg" alt="producto 2">
-                    <div class="informacion">
-                        <h3>iPhone14promax</h3>
-                        <p class="precio">$189.000</p>
-                        <button>Comprar</button>
-                    </div>
-                </div>
+        <div class="contenedor">
+            <img src="/images/products/iPHONE-13.jpg" alt="producto 3">
+            <p class="nombre">iPhone 13</p>
+            <p class="color">Pink</p>
+            <p class="cantidad">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="menos" type="button">-</button>
+                </span>
+                <input type="text" style="width:50px;text-align: center;" id="contador" class="control" value="1">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="mas" type="button">+</button>
+                </span>
+            </p>
+            <p class="precio">$180.000</p>
+            <p class="eliminar">
+                <i class="fa-solid fa-trash-can"></i>
+            </p>
+        </div>
 
-                <div>
-                    <img src="/images/products/iPHONE-13.jpg" alt="producto 3">
-                    <div class="informacion">
-                        <h3>iPhone13</h3>
-                        <p class="precio">$150.000</p>
-                        <button>Comprar</button>
-                    </div>
-                </div>
-
-                <div>
-                    <img src="/images/products/iPhoneSEenfrentado.jpg" alt="producto 4">
-                    <div class="informacion">
-                        <h3>iPhoneS</h3>
-                        <p class="precio">$200.000</p>
-                        <button>Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
+        <div class="contenedor">
+            <img src="/images/products/iPhoneSEenfrentado.jpg" alt="producto 4">
+            <p class="nombre">iPhone SE</p>
+            <p class="color">Pink</p>
+            <p class="cantidad">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="menos" type="button">-</button>
+                </span>
+                <input type="text" style="width:50px;text-align: center;" id="contador" class="control" value="1">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="mas" type="button">+</button>
+                </span>
+            </p>
+            <p class="precio">$120.000</p>
+            <p class="eliminar">
+                <i class="fa-solid fa-trash-can"></i>
+            </p>
+        </div>
+    </div>
+    <div class="final">
+        <a href="/products">
+            <p>
+                <i class="fa-solid fa-circle-arrow-left"></i>Volver
+            </p>
+        </a>
+        <p>Subtotal: <input></p>
     </div>
 
     <footer class="footer">
         <%- include("partials/footer") %>
     </footer>
+
 </body>
 
 </html>
