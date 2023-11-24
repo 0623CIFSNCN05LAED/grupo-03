@@ -1,4 +1,7 @@
-const validations = [
+window.addEventListener('load', (event) => {
+  event.preventDefault();
+
+  const validations = [
     {
       field: "brand",
       check: (input) => input.value.length >= 3,
@@ -107,4 +110,6 @@ const validations = [
     inputErrorMsg.classList.remove("display");
     return true;
   }
+});
+
   
