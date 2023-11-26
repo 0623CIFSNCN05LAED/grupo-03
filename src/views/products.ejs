@@ -13,12 +13,12 @@
 
     <main>
         <div class = "product-items">
-            <% products.forEach(product => {%>
-            <a href="/products/<%= product.id %>"> 
+            <% for (let i = 0; i < products.length; i++) { %>  
+            <a href="/products/<%= products[i].id_product %>"> 
                 <div class = "product">
                     <div class = "product-content">
                         <div class = "product-img">
-                            <img src="<%= product.images[0] %>" alt = "<%= product.name %>">
+                            <img src="<%= products[i].image[0].url_image %>" alt = "<%= products[i].name %>">
                         </div>
                         <div class = "product-btns">
                             <button type = "button" class = "btn-cart"> Añadir al carrito
@@ -32,7 +32,7 @@
     
                     <div class = "product-info">
                         <div class = "product-info-top">
-                            <h2 class = "sm-title"><%= product.brand %></h2>
+                            <h2 class = "sm-title"><%= products[i].brand.brand %></h2>
                             <div class = "rating">
                                 <span><i class = "fas fa-star"></i></span>
                                 <span><i class = "fas fa-star"></i></span>
@@ -41,20 +41,25 @@
                                 <span><i class = "far fa-star"></i></span>
                             </div>
                         </div>
-                        <a href = "#" class = "product-name"><%= product.name %></a>
-                        <% if(product.priceWithDiscount != product.price){ %>
-                        <p class = "product-price product-price-withoutdiscount">$ <%= product.price %></p>
-                        <% } %>
-                        <p class = "product-price">$ <%= product.priceWithDiscount %></p>
+                        <a href = "#" class = "product-name"><%= products[i].name %></a>
+                        <div>
+                            <% if(products[i].discount == 0){ %>
+                                <p class = "product-price"><%= products[i].price %></p>
+                            <% } else {%>
+                                <p class = "product-price product-price-withoutdiscount"><%= products[i].price %></p>
+                                <p class = "product-price"><%= products[i].priceWithDiscount %></p>
+                            <% } %>
+                        </div>
+                       
                     </div>
-                    <% if(product.discount > 0){ %>
+                    <% if(products[i].discount > 0){ %>
                     <div class = "off-info">
-                        <h2 class = "sm-title"><%= product.discount %>% off</h2>
+                        <h2 class = "sm-title"><%= products[i].discount %>% off</h2>
                     </div>
                     <% } %>
                 </div>
             </a>
-            <%   }) %>
+            <%   } %>
         </div>  
     </main>
 

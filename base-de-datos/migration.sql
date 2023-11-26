@@ -49,6 +49,7 @@ IF
           , `featured_desc` varchar(300) DEFAULT null NULL
           , `featured` tinyint(1) DEFAULT '0' NOT NULL
           , `price` DECIMAL unsigned NOT NULL
+          , `priceWithDiscount` DECIMAL unsigned DEFAULT null NULL
           , `discount` DECIMAL unsigned DEFAULT null NULL
           , `rating` DECIMAL unsigned NOT NULL
           , `os` varchar(50) NOT NULL

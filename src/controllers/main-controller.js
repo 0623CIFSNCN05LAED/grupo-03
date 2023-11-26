@@ -4,9 +4,9 @@ const userServices = require("../services/user-services");
 const bcrypt = require('bcryptjs');
 
 module.exports = {
-  home: (req, res) => {
-    const featuredProducts = productServices.getFeaturedProducts();
-
+  home: async (req, res) => {
+    const featuredProducts = await productServices.getFeaturedProducts();
+    /*console.log(featuredProducts);*/
     res.render("home", {
       featuredProducts,
     });

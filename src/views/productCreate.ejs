@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="/css/styleMain.css">
     <link rel="stylesheet" href="/css/styleProductCreate.css">
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
-    <script src="/js/addButtonForm.js" defer></script>
-    <script src="/js/productCreateValidator.js" defer></script>
+    <!--<script src="/js/addButtonForm.js" defer></script>
+    <script src="/js/productCreateValidator.js" defer></script>-->
 </head>
 <body>
     <header class="header">
@@ -17,140 +17,91 @@
         <h1 class="titulo-formulario">Identificá tu producto</h1>
         <div class="input-form">
             <input type="text" name="brand" id="brand" required="required">
-            <label for="">Marca</label>
+            <label for="brand">Marca</label>
             <span class="errorMsg" id="brandError"></span>
         </div>
         <div class="input-form">
             <input type="text" name="name" id="name" required="required">
-            <label for="">Nombre</label>
+            <label for="name">Nombre</label>
             <span class="errorMsg" id="nameError"></span>
         </div>
         <div class="input-form">
             <input type="text" name="description" id="description" required="required">
-            <label for="">Descripción</label>
+            <label for="description">Descripción</label>
             <span class="errorMsg" id="descriptionError"></span>
         </div>
         <div class="input-form">
-            <input type="text" name="detail" id="detail" required="required">
-            <label for="">Descripción detalles</label>
+            <input type="text" name="featured_desc" id="featured_desc">
+            <label for="featured_desc">Descripción destacada</label>
             <span class="errorMsg" id="detailError"></span>
-        </div>
-        <div class="input-form">
-            <input type="text" name="aditional" id="aditional" required="required">
-            <label for="">Información adicional</label>
-            <span class="errorMsg" id="aditionalError"></span>
         </div>
         <div class="control-formulario">
             <input type="file" multiple name="images" accept="images/*" class="control">
         </div>
         <div class="input-form">
             <input type="number" name="price" id="price" required="required">
-            <label for="">Precio</label>
+            <label for="price">Precio</label>
             <span class="errorMsg" id="priceError"></span>
         </div>
         <div class="input-form">
             <input type="number" name="discount" id="discount" required="required">
-            <label for="">Descuento</label>
+            <label for="discount">Descuento</label>
             <span class="errorMsg" id="discountError"></span>
         </div>
         <div class="input-form">
             <input type="number" name="rating" id="rating" required="required">
-            <label for="">Calificación</label>
+            <label for="rating">Calificación</label>
             <span class="errorMsg" id="ratingError"></span>
         </div>
         <div class="color-form">
-            
+            <!--
                 <div class="color-field">
                     <input type="text" name="colors" id="colors" placeholder="Color" class="control">
                 </div>
-            
-            <!--
-            <div class="capacity-form">
-                <label for="colors" class="cap-text">Color:</label>
-                <div class="checkbox-form">
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="negro">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Negro</label>
+            -->
+            <label for="color" class="cap-text">Color:</label>
+            <div class="color-form2">
+                <div class="checkbox-form2">
+                    <% for (let i = 0; i < colors.length; i++) {  %>
+                    <label class="custom-checkbox2">
+                        <input type="checkbox2" name="color" value="<%= colors[i].color %> ">
+                        <span class="checkmark2"></span>
+                        <label class="checkbox-text2">"<%= colors[i].color %> "</label>
                     </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="blanco">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Blanco</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="rosa">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Rosa</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="dorado">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Dorado</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="verde">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Verde</label>
-                    </label>
+                    <%  } %>
                 </div>
             </div>
-            -->
-            
-            
+            <!--
                 <div class="controls">
                     <button class="addColor" id="addColor"><i class="fa fa-plus"></i>Agregar Color</button>
                     <button class="removeColor" id="removeColor"><i class="fa fa-minus"></i>Quitar Color</button>
                 </div>
-            
+            -->
         </div>
         <div class="cap-cat-form">
             <div class="capacity-form">
                 <label for="capacity" class="cap-text">Capacidad:</label>
                 <div class="checkbox-form">
+                    <% for (let i = 0; i < capacities.length; i++) {  %>
                     <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="32gb">
+                        <input type="checkbox" name="capacity" value="<%= capacities[i].capacity %> ">
                         <span class="checkmark"></span>
-                        <label class="checkbox-text">32gb</label>
+                        <label class="checkbox-text"><%= capacities[i].capacity %></label>
                     </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="64gb">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">64gb</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="128gb">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">128gb</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="256gb">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">256gb</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="512gb">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">512gb</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="1tb">
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">1tb</label>
-                    </label>
+                    <%  } %>
                 </div>
             </div>
             <div class="category-form">
-                <label for="category" class="cat-text">Categoría:</label>
+                <label for="featured" class="cat-text">Categoría:</label>
                 <div class="radio-form">
                     <label class="custom-radio">
                         <label class="radio-text">Normal</label>
-                        <input type="radio" name="category" value="normal" checked>
+                        <input type="radio" name="featured" value="0" checked>
                         <span class="checkmark"></span>
                     </label>
                     <label class="custom-radio">
                         <label class="radio-text">Destacado</label>
-                        <input type="radio" name="category" value="destacados">
+                        <input type="radio" name="featured" value="1">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -158,17 +109,17 @@
         </div>
         <div class="input-form">
             <input type="text" name="os" id="os" required="required">
-            <label for="">Sistema operativo</label>
+            <label for="os">Sistema operativo</label>
             <span class="errorMsg" id="osError"></span>
         </div>
         <div class="input-form">
             <input type="text" name="screen" id="screen" required="required">
-            <label for="">Dimensiones pantalla</label>
+            <label for="screen">Dimensiones pantalla</label>
             <span class="errorMsg" id="screenError"></span>
         </div>
         <div class="input-form">
             <input type="text" name="camera" id="camera" required="required">
-            <label for="">Camara principal</label>
+            <label for="camera">Camara principal</label>
             <span class="errorMsg" id="cameraError"></span>
         </div>
         <button type="submit" class="boton-formulario">Publicar</button>

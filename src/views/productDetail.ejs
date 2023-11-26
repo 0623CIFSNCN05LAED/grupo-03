@@ -30,15 +30,9 @@
                 </p>
               </form>
               <div class="galery">
-                <% for (let i = 0; i < product.images.length; i++) {  %>
-                    <img src="<%= product.images[i] %>" alt="<%= product.name %>">
+                <% for (let i = 0; i < product.image.length; i++) {  %>
+                    <img src="<%= product.image[i].url_image %>" alt="<%= product.name %>">
                 <%  } %>
-                <!--
-                <%  /* %><img src="<%= product.images[1] %>" alt="<%= product.name %>"><%  */ %>
-                <%  /* %><img src="<%= product.images[3] %>" alt="<%= product.name %>"><%  */ %>
-                <%  /* %><img src="<%= product.images[2] %>" alt="<%= product.name %>"><%  */ %>
-
-                -->
             </div>
 
         </div>
@@ -48,15 +42,15 @@
           <div >
               <div class="container-product-detail">
                   <div class="form-group">
-                      <label for="colour" name="colur">Color</label>
+                      <label for="color" name="color">Color</label>
                         <% for (let i = 0; i < product.colors.length; i++) {  %>
-                            <input type="radio" name="colour" value="<%= product.colors[i] %> "><%= product.colors[i] %>
+                            <input type="radio" name="color" value="<%= product.colors[i].color %> "><%= product.colors[i].color %>
                         <%  } %>
                    </div>
                 <div class="form-group">
                     <label for="capacity" name="capacity">Capacidad</label>
-                        <% for (let i = 0; i < product.capacity.length; i++) {  %>
-                            <button><%= product.capacity[i] %></button>
+                        <% for (let i = 0; i < product.capacities.length; i++) {  %>
+                            <button><%= product.capacities[i].capacity %></button>
                         <%  } %>
                 </div>
             </div>
@@ -74,17 +68,17 @@
                     </div>
                 </div>
                 <div class="button-prod">
-                    <a href="/products/edit/<%= product.id %>">
+                    <a href="/products/edit/<%= product.id_product %>">
                         <button class="btn-edit"> Editar </button>
                     </a>
-                    <a href="/products/delete/<%= product.id %>">
+                    <a href="/products/delete/<%= product.id_product %>">
                         <button class="btn-delete"> Eliminar </button>
                     </a>
                 </div>
             </div>
 
             <div class="container-price">
-                <span> <%= product.priceWithDiscount %> </span>
+                <span> <%= product.price %> </span>
             </div>
             <button class="button-add">
                 <i class="fa-solid fa-plus"></i>
@@ -97,19 +91,9 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="text-description">
-                   <p><%= product.detail %></p>
+                   <p><%= product.description %></p>
                 </div>
 
-            </div>
-
-            <div class="container-additional-information">
-                <div class="title-additional-information">
-                    <h3>Información Adicional</h3>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="text-additional-information">
-                    <p><%= product.aditional %></p>
-                </div>
             </div>
 
             <div class="container-social">

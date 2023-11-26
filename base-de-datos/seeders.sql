@@ -94,6 +94,7 @@ VALUES
     , 'El Galaxy Z Fold5 hace honor a su nombre al plegarse para cerrar, lo que hace que una pantalla enorme quepa en tu bolsillo desafiando a toda lógica.'
     , 1
     , 1129999
+    , 1016999.1
     , 10
     , 5
     , 'Android'
@@ -108,6 +109,7 @@ VALUES
     , 'El Galaxy Z Flip5 presenta por primera vez la Flex Window de 3,4 pulgadas creado para la autoexpresión. Compacto y atrapante desde todos los ángulos, este plegable es tan versátil como portátil.'
     , 1
     , 659999
+    , 593999.1
     , 10
     , 3
     , 'Android'
@@ -123,6 +125,7 @@ VALUES
     , 1
     , 779999
     , 0
+    , 0
     , 5
     , 'Android'
     , '172.21mm (6.78")'
@@ -136,6 +139,7 @@ VALUES
     , 'El iPhone 14 Pro Max te permite captar detalles increíbles gracias a su cámara gran angular de 48 MP.'
     , 1
     , 1184999
+    , 0
     , 0
     , 5
     , 'iOS'
@@ -151,6 +155,7 @@ VALUES
     , 1
     , 692999
     , 0
+    , 0
     , 3
     , 'iOS'
     , '154.4mm (6.1")'
@@ -164,6 +169,7 @@ VALUES
     , 'Ahora, la pantalla externa interactiva es mejor que nunca. Disfrutá de una pantalla pOLED de 3.6" más envolvente, personal, útil y divertida. Conocé nuevas maneras de sacar fotos y grabar videos con la Flex view, que hace que el teléfono se sostenga por sí solo en varios ángulos.'
     , 1
     , 699999
+    , 0
     , 0
     , 3.5
     , 'Android'

@@ -256,3 +256,61 @@ body {
   .display {
     display: block;
   }
+
+  .color-form {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    height: 100%;
+    border: 2px solid #28262C;
+  }
+
+  .color-form2 {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    justify-content: flex-start;
+    border-top: 2px solid #28262C;
+  }
+
+  .checkbox-form2 {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 70vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.checkbox-text2 {
+    margin-left: 10px;
+    width: 100%;
+}
+
+.custom-checkbox2 {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    margin: 10px 0;
+    width: 20%;
+}
+
+.custom-checkbox2 .checkmark2 {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #28262C;
+    display: inline-block;
+    border-radius: 3px;
+    background: #468EEC
+    url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+    transition: background-size 0.2s ease;
+}
+
+.custom-checkbox2 input:checked + .checkmark2 {
+    background-size: 60%;
+    transition: background-size 0.25s cubic-bezier(0.7, 0, 0.18, 1.24);
+}
+
+.custom-checkbox2 input {
+    display: none;
+}

@@ -29,6 +29,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DECIMAL.UNSIGNED,
             allowNull: false,
         },
+        priceWithDiscount: {
+            type: DataTypes.DECIMAL.UNSIGNED,
+            allowNull: true,
+            defaultValue: '0',
+        },
         discount: {
             type: DataTypes.DECIMAL.UNSIGNED,
             allowNull: true,

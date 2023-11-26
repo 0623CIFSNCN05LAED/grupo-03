@@ -25,16 +25,22 @@
     <main>
         <h2 class="titulares">¡Últimos lanzamientos!</h2>
         <section class="productos">  
-            <% featuredProducts.forEach(product => {%>
+            <% for (let i = 0; i < featuredProducts.length; i++) {  %>
+          
                 <article class="box-effect-prod prod">
-                    <a class="block" href="/products/<%= product.id %>">
-                        <img class="img-prod" src="<%= product.images[0] %>" alt="<%= product.name %>">
+                    <a class="block" href="/products/<%= featuredProducts[i].id_product %>">
+                        <img class="img-prod" src="<%= featuredProducts[i].image[0].url_image %>" alt="<%= featuredProducts[i].name %>">
                     </a>
-                    <a class="block" href="/products/<%= product.id %>">
+                    <a class="block" href="/products/<%= featuredProducts[i].id_product %>">
                         <div class="info-articulo">
-                            <h3 class="titulo-prod"><%= product.name %></h3>
-                            <p class="descripcion-prod"><%= product.description %></p>
-                            <span class="precio-prod"><%= product.price %></span>
+                            <h3 class="titulo-prod"><%= featuredProducts[i].name %></h3>
+                            <p class="descripcion-prod"><%= featuredProducts[i].featured_desc %></p>
+                            <% if(featuredProducts[i].discount == 0){ %>
+                                <span class="precio-prod product-price"><%= featuredProducts[i].price %></span>
+                            <% } else {%>
+                                <span class="precio-prod product-price product-price-withoutdiscount"><%= featuredProducts[i].price %></span>
+                                <span class="precio-prod product-price"><%= featuredProducts[i].priceWithDiscount %></span>
+                            <% } %>
                         </div> 
                     </a>  
                     <div class="rate-prod">
@@ -49,7 +55,7 @@
                         <a href="#">Agregar al carrito</a>
                     </div>             
                 </article>
-            <%  }) %>
+            <%  } %>
         </section>
         <h2 class="titulares">Últimas noticias</h2>
         <section class="noticias">  

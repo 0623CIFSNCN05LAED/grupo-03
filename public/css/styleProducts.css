@@ -148,6 +148,7 @@ img{
     padding-top: 0.6rem;
     padding-right: 0.6rem;
     display: inline-block;
+    text-decoration: none;
 }
 
 /*.product-price:first-of-type{

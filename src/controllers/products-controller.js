@@ -1,18 +1,21 @@
 const productServices = require("../services/product-services");
 
 module.exports = {
-// Root - Show all products
-    home: (req, res) => { 
-        const products = productServices.getAllProducts();
+    home: async (req, res) => { 
+        const products = await productServices.getAllProducts();
+        /*console.log(products);*/
         res.render("products", { products });
     },
-    detail: (req, res) => {
+    detail: async (req, res) => {
         const id = req.params.id;
-        const product = productServices.getFormattedProduct(id);
+        /*const product = await productServices.getFormattedProduct(id);*/
+        const product = await productServices.getProduct(id);
         res.render("productDetail", { product });
     },
-    create: (req, res) => {
-        res.render("productCreate");
+    create: async (req, res) => {
+        const colors = await productServices.getColors();
+        const capacities = await productServices.getCapacities();
+        res.render("productCreate", { capacities, colors });
     },
     store: (req, res) => {
         const ArrayImagenes = req.files.map((file) => `/images/products/${file.filename}`);
@@ -21,10 +24,9 @@ module.exports = {
             brand: req.body.brand,
             name: req.body.name,
             description: req.body.description,
-            detail: req.body.detail,
-            aditional: req.body.aditional,
+            featured_desc: req.body.featured_desc,
             images: req.files ? ArrayImagenes : ["/images/products/default-image.jpg"],
-            category: req.body.category,
+            featured: req.body.featured,
             price: Number(req.body.price),
             discount: Number(req.body.discount),
             rating: Number(req.body.rating),

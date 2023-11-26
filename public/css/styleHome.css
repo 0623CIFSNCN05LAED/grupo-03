@@ -499,6 +499,18 @@ nav {
     cursor: pointer;
 }
 
+.product-price{
+    padding-top: 0.6rem;
+    padding-right: 0.6rem;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.product-price-withoutdiscount{
+    text-decoration: line-through;
+    color: #468EEC;
+}
+
 /* movil pequeño */
 @media (min-width: 360px){
     /*

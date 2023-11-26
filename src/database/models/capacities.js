@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             primaryKey: true,
         },
-        capcity: {
+        capacity: {
             type: DataTypes.STRING(10),
             allowNull: false,
             unique: true,
