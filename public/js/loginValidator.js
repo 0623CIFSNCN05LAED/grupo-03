@@ -8,14 +8,6 @@ window.addEventListener('load', () => {
   
       let errors = false;
   
-      validateInputs();
-  
-      if (errors != true) {
-        console.log("submit");
-        form.submit();
-      }
-    });
-  
     const setError = (element, message) => {
       const inputControl = element.parentElement;
       const errorDisplay = inputControl.querySelector(".error");
@@ -64,6 +56,13 @@ window.addEventListener('load', () => {
       }
 
     };
+    validateInputs();
+  
+      if (errors != true) {
+        console.log("submit");
+        form.submit();
+      }
+  });
 });
   
   

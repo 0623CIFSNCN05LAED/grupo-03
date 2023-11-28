@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false,
             primaryKey: true,
+            autoIncrement: true,
         },
         url_image: {
             type: DataTypes.STRING(100),

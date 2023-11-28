@@ -10,17 +10,8 @@ window.addEventListener('load', () => {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-
     let errors = false;
-
-    validateInputs();
-
-    if (errors != true) {
-      console.log("submit");
-      form.submit();
-    }
-  });
-
+    
   const setError = (element, message) => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector(".error");
@@ -29,6 +20,7 @@ window.addEventListener('load', () => {
     inputControl.classList.add("error");
     inputControl.classList.remove("success");
 
+    console.log(errors);
     errors = true;
   };
 
@@ -114,11 +106,19 @@ window.addEventListener('load', () => {
     }
 
     //images validation
-    /*if (images === null) {
+    if (images === null) {
       setError(images, 'Debe ingresar una imágen');
     } else {
       setSuccess(images);
-    }*/
+    }
   };
+
+    validateInputs();
+    
+    if (errors != true) {
+      console.log("submit");
+      form.submit();
+    }
+  });
 });
 

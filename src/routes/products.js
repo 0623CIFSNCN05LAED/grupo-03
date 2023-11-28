@@ -34,6 +34,9 @@ router.delete("/:id", productsController.destroy);
 //Busqueda de productos
 router.get("/search", productsController.search);
 
+//CRUD productos
+router.get("/crud/", productsController.crud);
+
 // Detalle de un producto
 router.get("/:id/", productsController.detail);
 

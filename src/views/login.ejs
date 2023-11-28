@@ -4,21 +4,21 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/styleLogin.css">
     <script src="/js/loginValidator.js"></script>
-    <!--<script src="/js/errorsForm.js" defer></script>-->
+    <script src="/js/errorsForm.js" defer></script>
 <body>
     <header>
         <%- include("partials/header") %> 
     </header> 
-    <form action="/login" method="POST" class="formulario">
+    <form action="/login" method="POST" class="formulario" id="form">
         <h1 class="titulo-formulario">Inicio de sesión</h1>
         <div class="control-formulario">
-            <input type="text" name="email" placeholder="Email" class="control" value="<%= oldData ? oldData.email : "" %>"/> > <i class="fa-solid fa-user"></i> <% if (errors && errors.email) { %>
+            <input type="text" name="email" placeholder="Email" id="email" class="control" value="<%= oldData ? oldData.email : "" %>"/> > <i class="fa-solid fa-user"></i> <% if (errors && errors.email) { %>
             <p class="error-msg"><%= errors.email.msg %></p>
             <% } %> 
             <span class="error"></span>
         </div>
         <div class="control-formulario">
-            <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= oldData ? oldData.password : "" %>"/> > <i class="fa-solid fa-lock"></i> <% if (errors && errors.password) { %>
+            <input type="password" name="password" id="password" placeholder="Contraseña" class="control" value="<%= oldData ? oldData.password : "" %>"/> > <i class="fa-solid fa-lock"></i> <% if (errors && errors.password) { %>
             <p class="error-msg"><%= errors.password.msg %></p>
             <% } %>
             <span class="error"></span>

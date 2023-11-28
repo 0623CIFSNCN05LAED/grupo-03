@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="/css/styleMain.css">
     <link rel="stylesheet" href="/css/styleProductCreate.css">
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
-    <!--<script src="/js/addButtonForm.js" defer></script>
-    <script src="/js/productCreateValidator.js" defer></script>-->
+    <!--<script src="/js/productCreateValidator.js" defer></script>-->
 </head>
 <body>
     <header class="header">
@@ -16,9 +15,13 @@
     <form action="/products" method="POST" enctype="multipart/form-data" class="formulario" id="form">
         <h1 class="titulo-formulario">Identificá tu producto</h1>
         <div class="input-form">
-            <input type="text" name="brand" id="brand" required="required">
-            <label for="brand">Marca</label>
-            <span class="errorMsg" id="brandError"></span>
+            <div class="custom-select">
+                <select name="brand" id="brand">
+                    <% for (let i = 0; i < capacities.length; i++) {  %>
+                    <option value="<%= brands[i].id_brand %>"><%= brands[i].brand %></option>
+                    <%  } %>
+                </select>
+            </div>
         </div>
         <div class="input-form">
             <input type="text" name="name" id="name" required="required">
@@ -54,29 +57,18 @@
             <span class="errorMsg" id="ratingError"></span>
         </div>
         <div class="color-form">
-            <!--
-                <div class="color-field">
-                    <input type="text" name="colors" id="colors" placeholder="Color" class="control">
-                </div>
-            -->
             <label for="color" class="cap-text">Color:</label>
             <div class="color-form2">
                 <div class="checkbox-form2">
                     <% for (let i = 0; i < colors.length; i++) {  %>
                     <label class="custom-checkbox2">
-                        <input type="checkbox2" name="color" value="<%= colors[i].color %> ">
+                        <input type="checkbox" name="color" value="<%= colors[i].color %> ">
                         <span class="checkmark2"></span>
-                        <label class="checkbox-text2">"<%= colors[i].color %> "</label>
+                        <label class="checkbox-text2"><%= colors[i].color %></label>
                     </label>
                     <%  } %>
                 </div>
             </div>
-            <!--
-                <div class="controls">
-                    <button class="addColor" id="addColor"><i class="fa fa-plus"></i>Agregar Color</button>
-                    <button class="removeColor" id="removeColor"><i class="fa fa-minus"></i>Quitar Color</button>
-                </div>
-            -->
         </div>
         <div class="cap-cat-form">
             <div class="capacity-form">

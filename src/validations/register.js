@@ -67,11 +67,11 @@ module.exports = [
       return value === req.body.password;
     })
     .withMessage("La contraseña no coincide"),
-  /*body("profile_picture")
+  body("profile_picture")
     .custom((value, { req }) => {
       const file = req.file;
       if (!file) {
         throw new Error("Debe subir una imágen");
       }
-    }),*/
+    }),
 ];

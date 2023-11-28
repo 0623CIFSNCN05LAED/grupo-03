@@ -1,25 +1,5 @@
-/*const db = require("../data/db");*/
-const products = require("../data/products/products");
 const { Products, Brands, Capacities, Colors, Images } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
-
-const formatProductPrices = function (product) {
-    const priceWithDiscount = product.price - product.price * (product.discount / 100);
-    product.priceWithDiscount = `$ ${priceWithDiscount.toLocaleString("es", {
-      minimumFractionDigits: 2,
-    })}`;
-  
-    product.price = `$ ${product.price.toLocaleString("es", {
-      minimumFractionDigits: 2,
-    })}`;
-  
-    product.discount = product.discount.toLocaleString("es");
-  
-    return product;
-};
-const formatProductsPrices = function (products) {
-  return products.map((product) => formatProductPrices(product));
-};
 
 
 const formatPrice =  
@@ -66,11 +46,7 @@ const productServices = {
   },*/
 
   //db
-  /*getAllProducts: async () => {
-    return await Products.findAll();
-  },*/
   getAllProducts: async () => {
-    /*return Products.findAll({include: ["brand", "image"],});*/
     const products = await Products.findAll({include: ["brand", "image"],});
     for (let i = 0; i < products.length; i++) {
       products[i].price = formatPrice.format(products[i].price)
@@ -114,38 +90,31 @@ const productServices = {
             id_capacity: capacity.id_capacity,
             capacity: capacity.capacity,
           };
-        }),
+        }),      
       }
     });
   },
-  getFormattedProduct: async (id) => {
-    /*const product = await this.getProduct(id);
-    return formatProductPrices(product);*/
-    
-  },
   getFeaturedProducts: async () => {
-    /*const products = getAllProducts().filter((product) => product.featured == 1);*/
     const products = await Products.findAll({include: ["brand", "image"],
       where: {
         featured: 1
       },
     })
-    /*console.log(formatPrice.format(products[0].price));*/
-    /*return formatProductsPrices(products);*/
     for (let i = 0; i < products.length; i++) {
       products[i].price = formatPrice.format(products[i].price)
       products[i].priceWithDiscount = formatPrice.format(products[i].priceWithDiscount)
     }
-    return products/*.map((product) => formatPrice.format(product.price))*/;
+    return products;
   },
   searchProducts: (query) => {
     const products = getAllProducts().filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
     return formatProductsPrices(products);
   },
   getBrand: (brand) => {
+    const brandUp = brand.charAt(0).toUpperCase() + brand.slice(1);
     Brands.findOne({
       where: {
-        brand: brand.toLowerCase(),
+        brand: brandUp,
       }
     });
     return Brands.id_brand;
@@ -156,41 +125,48 @@ const productServices = {
   getCapacities: () => {
     return Capacities.findAll();
   },
-  createProduct: (product) => {
+  getBrands: () => {
+    return Brands.findAll();
+  },
+  
+  createProduct: async (product) => {
     console.log(`Creating product ${product.name}`);
-    return Products.create({
+
+    function getPriceWithDiscount (price, discount) {
+      let priceWithDiscount = 0;
+      if (discount != 0) {
+        priceWithDiscount = price - price * (discount / 100);
+      } else {
+        priceWithDiscount = 0;
+      }
+      return priceWithDiscount;
+    }
+
+    let pwd = getPriceWithDiscount(product.price, product.discount);
+
+    const prod = await Products.create({
       id_product: uuidv4(),
       name: product.name,
       description: product.description,
       featured_desc: product.featured_desc,
       featured: product.featured,
       price: product.price,
-      priceWithDiscount: product.price - product.price * (product.discount / 100),
+      priceWithDiscount: pwd,
       discount: product.discount,
       rating: product.rating,
       os: product.os,
       screen: product.screen,
       camera: product.camera,
-      id_brand: this.getBrand(product.brand),
+      id_brand: product.brand,
     });
+
+    for (let i = 0; i < product.images.length; i++) {
+      Images.create({
+          url_image: product.images[i],
+          id_product: prod.id_product,
+      })
+    }
   },
-  createProductImage: (image, id_prod) => {
-    return Images.create({
-      id_image: uuidv4(),
-      url_image: image,
-      id_product: id_prod,
-    });
-  },
-  /*createProductColor: () => {
-    return ProductsColors.create({
-      id_
-    })
-  },
-  createProductCapacity: () => {
-    return ProductsCapacities.create({
-      id_
-    })
-  },*/
 };
   
 module.exports = productServices;

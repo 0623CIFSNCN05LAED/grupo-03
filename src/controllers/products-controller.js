@@ -3,19 +3,18 @@ const productServices = require("../services/product-services");
 module.exports = {
     home: async (req, res) => { 
         const products = await productServices.getAllProducts();
-        /*console.log(products);*/
         res.render("products", { products });
     },
     detail: async (req, res) => {
         const id = req.params.id;
-        /*const product = await productServices.getFormattedProduct(id);*/
         const product = await productServices.getProduct(id);
         res.render("productDetail", { product });
     },
     create: async (req, res) => {
         const colors = await productServices.getColors();
         const capacities = await productServices.getCapacities();
-        res.render("productCreate", { capacities, colors });
+        const brands = await productServices.getBrands();
+        res.render("productCreate", { capacities, colors, brands });
     },
     store: (req, res) => {
         const ArrayImagenes = req.files.map((file) => `/images/products/${file.filename}`);
@@ -30,14 +29,14 @@ module.exports = {
             price: Number(req.body.price),
             discount: Number(req.body.discount),
             rating: Number(req.body.rating),
-            colors: req.body.colors,
+            colors: req.body.color,
             capacity: req.body.capacity,
             os: req.body.os,
             screen: req.body.screen,
             camera: req.body.camera
         };
         productServices.createProduct(product);
-        res.redirect("/products");
+        res.redirect("/products/crud");
     },
     edit: (req, res) => {
         const id = req.params.id;
@@ -66,5 +65,9 @@ module.exports = {
         const keywords = req.query.keywords;
         const foundProducts = productServices.searchProducts(keywords);
         res.render("results", { foundProducts });
-      },
+    },
+    crud: async (req, res) => {
+        const products = await productServices.getAllProducts();
+        res.render("productCRUD", { products });
+    },
 };
