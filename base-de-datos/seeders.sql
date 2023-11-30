@@ -236,121 +236,121 @@ INSERT INTO
 VALUES
   (
     1
-    , '/images/products/zfold5.jpg'
+    , '/images/products/zfold5-n1.jpg'
     , 'b781d57f-a1a2-470a-b242-28b73fd62664'
   )
   , (
     2
-    , '/images/products/zfold5-2.jpg'
+    , '/images/products/zfold5-n2.jpg'
     , 'b781d57f-a1a2-470a-b242-28b73fd62664'
   )
   , (
     3
-    , '/images/products/zfold5-3.jpg'
+    , '/images/products/zfold5-n3.jpg'
     , 'b781d57f-a1a2-470a-b242-28b73fd62664'
   )
   , (
     4
-    , '/images/products/zfold5-4.jpg'
+    , '/images/products/zfold5-n4.jpg'
     , 'b781d57f-a1a2-470a-b242-28b73fd62664'
   )
   , (
     5
-    , '/images/products/zflip5.jpg'
+    , '/images/products/zflip5-n1.jpg'
     , '192c4dc4-0c8d-44e3-9263-fcba55047cf3'
   )
   , (
     6
-    , '/images/products/zflip5-2.jpg'
+    , '/images/products/zflip5-n2.jpg'
     , '192c4dc4-0c8d-44e3-9263-fcba55047cf3'
   )
   , (
     7
-    , '/images/products/zflip5-3.jpg'
+    , '/images/products/zflip5-n3.jpg'
     , '192c4dc4-0c8d-44e3-9263-fcba55047cf3'
   )
   , (
     8
-    , '/images/products/zflip5-4.jpg'
+    , '/images/products/zflip5-n4.jpg'
     , '192c4dc4-0c8d-44e3-9263-fcba55047cf3'
   )
   , (
     9
-    , '/images/products/s23ultra.jpg'
+    , '/images/products/s23ultra-n1.jpg'
     , '0b8e2624-d7d5-4214-948c-8502bf9421c0'
   )
   , (
     10
-    , '/images/products/s23ultra-2.jpg'
+    , '/images/products/s23ultra-n2.jpg'
     , '0b8e2624-d7d5-4214-948c-8502bf9421c0'
   )
   , (
     11
-    , '/images/products/s23ultra-3.jpg'
+    , '/images/products/s23ultra-n3.jpg'
     , '0b8e2624-d7d5-4214-948c-8502bf9421c0'
   )
   , (
     12
-    , '/images/products/s23ultra-4.jpg'
+    , '/images/products/s23ultra-n4.jpg'
     , '0b8e2624-d7d5-4214-948c-8502bf9421c0'
   )
   , (
     13
-    , '/images/products/14promax.jpg'
+    , '/images/products/i14promax-n1.jpg'
     , 'da8aedd8-7a96-454b-bde6-3d740e6ffe6e'
   )
   , (
     14
-    , '/images/products/i14promax-2.jpg'
+    , '/images/products/i14promax-n2.jpg'
     , 'da8aedd8-7a96-454b-bde6-3d740e6ffe6e'
   )
   , (
     15
-    , '/images/products/i14promax-3.jpg'
+    , '/images/products/i14promax-n3.jpg'
     , 'da8aedd8-7a96-454b-bde6-3d740e6ffe6e'
   )
   , (
     16
-    , '/images/products/i14promax-4.jpg'
+    , '/images/products/i14promax-n4.jpg'
     , 'da8aedd8-7a96-454b-bde6-3d740e6ffe6e'
   )
   , (
     17
-    , '/images/products/iPHONE-13.jpg'
+    , '/images/products/i13-n1.jpg'
     , '1a7b1df5-3b76-4c33-bd5a-fba41b743034'
   )
   , (
     18
-    , '/images/products/i13-2.jpg'
+    , '/images/products/i13-n2.jpg'
     , '1a7b1df5-3b76-4c33-bd5a-fba41b743034'
   )
   , (
     19
-    , '/images/products/i13-3.jpg'
+    , '/images/products/i13-n3.jpg'
     , '1a7b1df5-3b76-4c33-bd5a-fba41b743034'
   )
   , (
     20
-    , '/images/products/i13-4.jpg'
+    , '/images/products/i13-n4.jpg'
     , '1a7b1df5-3b76-4c33-bd5a-fba41b743034'
   )
   , (
     21
-    , '/images/products/motorazr40ultra.jpg'
+    , '/images/products/razr40ultra-n1.jpg'
     , '4fab756b-351a-4010-8287-c7febf730264'
   )
   , (
     22
-    , '/images/products/motoRazr40U-2.jpg'
+    , '/images/products/razr40ultra-n2.jpg'
     , '4fab756b-351a-4010-8287-c7febf730264'
   )
   , (
     23
-    , '/images/products/motoRazr40U-3.jpg'
+    , '/images/products/razr40ultra-n3.jpg'
     , '4fab756b-351a-4010-8287-c7febf730264'
   )
   , (
     24
-    , '/images/products/motoRazr40U-4.jpg'
+    , '/images/products/razr40ultra-n4.jpg'
     , '4fab756b-351a-4010-8287-c7febf730264'
   );

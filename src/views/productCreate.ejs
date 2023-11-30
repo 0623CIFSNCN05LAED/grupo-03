@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="/css/styleProductCreate.css">
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <!--<script src="/js/productCreateValidator.js" defer></script>-->
+    <!--<script src="https://cdn.tailwindcss.com"></script>-->
+    <script src="/js/burgerMenu.js" defer></script>
 </head>
 <body>
     <header class="header">
     <%- include("partials/header") %>
     </header>
-    <form action="/products" method="POST" enctype="multipart/form-data" class="formulario" id="form">
+    <form action="/products/store" method="POST" enctype="multipart/form-data" class="formulario" id="form">
         <h1 class="titulo-formulario">Identificá tu producto</h1>
         <div class="input-form">
             <div class="custom-select">
                 <select name="brand" id="brand">
-                    <% for (let i = 0; i < capacities.length; i++) {  %>
+                    <% for (let i = 0; i < brands.length; i++) {  %>
                     <option value="<%= brands[i].id_brand %>"><%= brands[i].brand %></option>
                     <%  } %>
                 </select>
@@ -40,6 +42,28 @@
         </div>
         <div class="control-formulario">
             <input type="file" multiple name="images" accept="images/*" class="control">
+            <!--<div class="flex justify-center mt-8">
+                <div class="max-w-2xl rounded-lg shadow-xl bg-gray-50">
+                    <div class="m-4">
+                        <label class="inline-block mb-2 text-gray-500">Imagenes del producto</label>
+                        <div class="flex items-center justify-center w-full">
+                            <label
+                                class="flex flex-col w-full h-32 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300">
+                                <div class="flex flex-col items-center justify-center pt-7">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400 group-hover:text-gray-600"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                    </svg>
+                                    <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                                        Subir Imagenes</p>
+                                </div>
+                                <input type="file" multiple name="images" accept="images/*" class="control opacity-0">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>--> 
         </div>
         <div class="input-form">
             <input type="number" name="price" id="price" required="required">
@@ -117,7 +141,7 @@
         <button type="submit" class="boton-formulario">Publicar</button>
         <button type="reset" class="boton-formulario">Borrar</button>
         <button class="boton-formulario">
-            <a href="/products">Volver</a>
+            <a href="/products/crud">Volver</a>
         </button>
     </form>
    

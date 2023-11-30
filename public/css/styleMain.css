@@ -77,15 +77,11 @@ nav {
     cursor: pointer;
 }
 
-#check {
-    display: none;
-}
-
-#check:checked ~ .menu {
+.mostrarMenu {
     height: 100vh;
 }
 
-#check:checked ~ .menu li {
+.mostrarMenu li {
     opacity: 1;
 }
 
@@ -224,8 +220,6 @@ nav {
 
 .navbar {
     top: 0;
-    position: absolute;
-    position: fixed;
 }
 
 /* movil pequeño */
@@ -266,6 +260,10 @@ nav {
 
     .logo-text {
         width: max-content;
+    }
+
+    .logo-box {
+        width: 50%;
     }
 
     nav {

@@ -5,6 +5,7 @@
     <title>Products CRUD</title>
     <link href="/css/styleProductCRUD.css" rel="stylesheet"/>
     <link href="/css/styleMain.css" rel="stylesheet"/>
+    <script src="/js/burgerMenu.js" defer></script>
 </head>
 <body>
     <header>
@@ -49,7 +50,7 @@
                       <div class="col col-5"><%= products[i].price %></div>
                       <div class="col col-6"><%= products[i].discount %></div>
                       <div class="col col-7">
-                        <a href="/products/<%= products[i].id_product %>">
+                        <a href="/products/detail/<%= products[i].id_product %>">
                             <button type="button" class="btn-detail">Ver
                                 <span><i class="fa-regular fa-pen-to-square"></i></span>
                             </button>

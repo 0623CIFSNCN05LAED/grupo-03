@@ -38,28 +38,38 @@ module.exports = {
         productServices.createProduct(product);
         res.redirect("/products/crud");
     },
-    edit: (req, res) => {
+    edit: async (req, res) => {
         const id = req.params.id;
-        const product = productServices.getProduct(id);
-        res.render("productEdit", { product });
+        const product = await productServices.getProductNoFormat(id);
+        res.render("productEdit", { id, product });
     },
     update: (req, res) => {
-        const product = req.body;
+        const product = {
+            name: req.body.name,
+            description: req.body.description,
+            featured_desc: req.body.featured_desc,
+            featured: req.body.featured,
+            price: Number(req.body.price),
+            discount: Number(req.body.discount),
+            rating: Number(req.body.rating),
+            os: req.body.os,
+            screen: req.body.screen,
+            camera: req.body.camera
+        };
         const id = req.params.id;
-        const image = req.file
-            ? req.file.filename
-            : productServices.getProduct(id).images;
         productServices.updateProduct(id, product);
-        res.redirect("/products");
+        res.redirect("/products/crud");
     },
-    delete: (req, res) => {
-        res.render("productDelete");
-    },
-    destroy: (req, res) => {
+    delete: async (req, res) => {
         const id = req.params.id;
-        console.log(`deleting product id: ${id}`);
-        productServices.deleteProduct(id);
-        res.redirect("/products");
+        const product = await productServices.getProductNoFormat(id);
+        res.render("productDelete", { id, product });
+    },
+    destroy: async (req, res) => {
+        const id = req.params.id;
+        const product = await productServices.getProductNoFormat(id);
+        await productServices.deleteProduct(id, product);
+        res.redirect("/products/crud");
     },
     search: (req, res) => {
         const keywords = req.query.keywords;

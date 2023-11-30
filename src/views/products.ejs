@@ -5,6 +5,7 @@
     <title>Products</title>
     <link href="/css/styleProducts.css" rel="stylesheet"/>
     <link href="/css/styleMain.css" rel="stylesheet"/>
+    <script src="/js/burgerMenu.js" defer></script>
 </head>
 <body>
     <header>
@@ -14,7 +15,7 @@
     <main>
         <div class = "product-items">
             <% for (let i = 0; i < products.length; i++) { %>  
-            <a href="/products/<%= products[i].id_product %>"> 
+            <a href="/products/detail/<%= products[i].id_product %>"> 
                 <div class = "product">
                     <div class = "product-content">
                         <div class = "product-img">

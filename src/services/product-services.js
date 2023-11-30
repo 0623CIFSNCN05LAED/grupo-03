@@ -10,42 +10,6 @@ const formatPrice =
 
   
 const productServices = {
-  /*getAllProducts: () => {
-    const products = db.products.findAll()
-    return formatProductsPrices(products);
-  },
-  getProduct: (id) => {
-    return db.products.findById(id);
-  },
-  getFormattedProduct: (id) => {
-    const product = db.products.findById(id);
-    return formatProductPrices(product);
-  },
-  getFeaturedProducts: () => {
-      const products = db.products
-      .findAll()
-      .filter((product) => product.category == "destacados");
-      return formatProductsPrices(products);
-  },
-  searchProducts: (query) => {
-    const products = db.products
-      .findAll()
-      .filter((product) =>
-        product.name.toLowerCase().includes(query.toLowerCase())
-      );
-    return formatProductsPrices(products);
-  },
-  createProduct: (product) => {
-    db.products.create(product);
-  },
-  updateProduct: (id, product) => {
-    db.products.update(id, product);
-  },
-  deleteProduct: (id) => {
-    db.products.delete(id);
-  },*/
-
-  //db
   getAllProducts: async () => {
     const products = await Products.findAll({include: ["brand", "image"],});
     for (let i = 0; i < products.length; i++) {
@@ -66,6 +30,46 @@ const productServices = {
         featured: product.featured,
         price: formatPrice.format(product.price),
         priceWithDiscount: formatPrice.format(product.priceWithDiscount),
+        discount: product.discount, 
+        rating: product.rating,
+        os: product.os,
+        screen: product.screen,
+        camera: product.camera,
+        id_brand: product.id_brand,
+        brand: product.brand?.brand ?? "No tiene marca",
+        image: product.image.map((image) => {
+          return {
+            id_image: image.id_image,
+            url_image: image.url_image,
+          };
+        }),
+        colors: product.colors.map((color) => {
+          return {
+            id_color: color.id_color,
+            color: color.color,
+          };
+        }),
+        capacities: product.capacities.map((capacity) => {
+          return {
+            id_capacity: capacity.id_capacity,
+            capacity: capacity.capacity,
+          };
+        }),      
+      }
+    });
+  },
+  getProductNoFormat: (id) => {
+    return Products.findByPk(id, {
+      include: ["brand", "image", "colors", "capacities"],
+    }).then((product) => {
+      return {
+        id_product: product.id_product,
+        name: product.name,
+        description: product.description,
+        featured_desc: product.featured_desc,
+        featured: product.featured,
+        price: product.price,
+        priceWithDiscount: product.priceWithDiscount,
         discount: product.discount, 
         rating: product.rating,
         os: product.os,
@@ -167,6 +171,55 @@ const productServices = {
       })
     }
   },
+  updateProduct: async (id, product) => {
+    console.log(`Updating product ${product.name}`);
+
+    function getPriceWithDiscount (price, discount) {
+      let priceWithDiscount = 0;
+      if (discount != 0) {
+        priceWithDiscount = price - price * (discount / 100);
+      } else {
+        priceWithDiscount = 0;
+      }
+      return priceWithDiscount;
+    }
+
+    let pwd = getPriceWithDiscount(product.price, product.discount);
+
+    const prod = await Products.update({
+      name: product.name,
+      description: product.description,
+      featured_desc: product.featured_desc,
+      featured: product.featured,
+      price: product.price,
+      priceWithDiscount: pwd,
+      discount: product.discount,
+      rating: product.rating,
+      os: product.os,
+      screen: product.screen,
+      camera: product.camera,
+    },
+    {
+      where: { id_product: id },
+    });
+  },
+  deleteProduct: async (id, product) => {
+    console.log(`Deleting product ${product.name}`);
+
+    const productImages = Images.findAll({
+      where: {id_product: id}
+    }).then((image) => {
+      return image.map((img) => {
+        return Images.destroy({where: {id_product: id}});
+      });
+    });
+
+    return Promise.all([productImages]).then(() => {
+      return Products.destroy({
+        where: { id_product: id },
+      });
+    });
+  },
 };
-  
+
 module.exports = productServices;
