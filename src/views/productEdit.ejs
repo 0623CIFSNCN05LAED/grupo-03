@@ -5,18 +5,23 @@
     <title>Edit Product</title>
     <link rel="stylesheet" href="/css/styleMain.css">
     <link rel="stylesheet" href="/css/styleProductEdit.css">
-    <!--<script src="/js/addButtonForm.js" defer></script>-->
+    <script src="/js/burgerMenu.js" defer></script>
 </head>
 <body>
     <header class="header">
     <%- include("partials/header") %>
     </header>
-    <form action="/products" method="POST" enctype="multipart/form-data" class="formulario">
+    <form action="/products/update/<%= product.id_product %>?_method=PUT" method="POST" class="formulario">
         <h1 class="titulo-formulario">Editar el producto:</h1>
+        <% /* %>
         <div class="input-form">
-            <input type="text" name="brand" required="required" value="<%= product.brand %>">
-            <label for="">Marca</label>
+            <select name="brand" id="brand">
+                <% for (let i = 0; i < brands.length; i++) {  %>
+                <option value="<%= brands[i].id_brand %>"><%= brands[i].brand %></option>
+                <%  } %>
+            </select>
         </div>
+        <% */ %>
         <div class="input-form">
             <input type="text" name="name" required="required" value="<%= product.name %>">
             <label for="">Nombre</label>
@@ -26,16 +31,14 @@
             <label for="">Descripción</label>
         </div>
         <div class="input-form">
-            <input type="text" name="detail" required="required" value="<%= product.detail %>">
-            <label for="">Descripción detalles</label>
+            <input type="text" name="featured_desc" id="featured_desc" value="<%= product.featured_desc %>">
+            <label for="featured_desc">Descripción destacada</label>
         </div>
-        <div class="input-form">
-            <input type="text" name="aditional" required="required" value="<%= product.aditional %>">
-            <label for="">Información adicional</label>
-        </div>
+        <% /* %>
         <div class="control-formulario">
             <input type="file" multiple name="images" accept="images/*" class="control" value="<%= product.images %>">
         </div>
+        <% */ %>
         <div class="input-form">
             <input type="number" name="price" required="required" value="<%= product.price %>">
             <label for="">Precio</label>
@@ -48,102 +51,57 @@
             <input type="number" name="rating" required="required" value="<%= product.rating %>">
             <label for="">Calificación</label>
         </div>
+        <% /* %>
         <div class="color-form">
-            <!--
-                <div class="color-field">
-                    <input type="text" name="colors" placeholder="Color" class="control">
-                </div>
-            -->
-            <div class="capacity-form">
-                <label for="colors" class="cap-text">Color:</label>
-                <div class="checkbox-form">
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="negro" <%= product.colors.includes("negro") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Negro</label>
+            <label for="color" class="cap-text">Color:</label>
+            <div class="color-form2">
+                <div class="checkbox-form2">
+                    <% for (let i = 0; i < colors.length; i++) {  %>
+                    <label class="custom-checkbox2">
+                        <input type="checkbox" name="color" value="<%= colors[i].color %> ">
+                        <!--colors[i].color-->
+                        <!--product.colors[i].color.includes("colors[i].color") ? "checked" : ""-->
+                        <span class="checkmark2"></span>
+                        <label class="checkbox-text2"><%= colors[i].color %></label>
                     </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="blanco" <%= product.colors.includes("blanco") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Blanco</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="rosa" <%= product.colors.includes("rosa") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Rosa</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="dorado" <%= product.colors.includes("dorado") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Dorado</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="colors" value="verde" <%= product.colors.includes("verde") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">Verde</label>
-                    </label>
+                    <%  } %>
                 </div>
             </div>
-            
-            <!--
-                <div class="controls">
-                    <button class="addColor" onclick="add()"><i class="fa fa-plus"></i>Agregar Color</button>
-                    <button class="removeColor" onclick="remove()"><i class="fa fa-minus"></i>Quitar Color</button>
-                </div>
-            -->
         </div>
+        <% */ %>
+        <% /* %>
         <div class="cap-cat-form">
             <div class="capacity-form">
                 <label for="capacity" class="cap-text">Capacidad:</label>
                 <div class="checkbox-form">
+                    <% for (let i = 0; i < capacities.length; i++) {  %>
                     <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="32gb" <%= product.capacity.includes("32gb") ? "checked" : "" %>>
+                        <input type="checkbox" name="capacity" value="<%= capacities[i].capacity %> ">
                         <span class="checkmark"></span>
-                        <label class="checkbox-text">32gb</label>
+                        <label class="checkbox-text"><%= capacities[i].capacity %></label>
                     </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="64gb" <%= product.capacity.includes("64gb") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">64gb</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="128gb" <%= product.capacity.includes("128gb") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">128gb</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="256gb" <%= product.capacity.includes("256gb") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">256gb</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="512gb" <%= product.capacity.includes("512gb") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">512gb</label>
-                    </label>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="1tb" <%= product.capacity.includes("1tb") ? "checked" : "" %>>
-                        <span class="checkmark"></span>
-                        <label class="checkbox-text">1tb</label>
-                    </label>
+                    <%  } %>
                 </div>
             </div>
+        <% */ %>
             <div class="category-form">
                 <label for="category" class="cat-text">Categoría:</label>
                 <div class="radio-form">
                     <label class="custom-radio">
                         <label class="radio-text">Normal</label>
-                        <input type="radio" name="category" value="normal" <%= product.category.includes("normal") ? "checked" : "" %>>
+                        <input type="radio" name="featured" value="0" <%= checked=" (product.featured == false) { checked }" %>>
                         <span class="checkmark"></span>
                     </label>
                     <label class="custom-radio">
                         <label class="radio-text">Destacado</label>
-                        <input type="radio" name="category" value="destacados" <%= product.category.includes("destacados") ? "checked" : "" %>>
+                        <input type="radio" name="featured" value="1" <%= checked=" (product.featured == true) { checked }" %>>
                         <span class="checkmark"></span>
                     </label>
                 </div>
             </div>
+        <% /* %>
         </div>
+        <% */ %>
         <div class="input-form">
             <input type="text" name="os" required="required" value="<%= product.os %>">
             <label for="">Sistema operativo</label>
@@ -158,7 +116,7 @@
         </div>
         <button type="submit" class="boton-formulario">Actualizar</button>
         <button class="boton-formulario">
-            <a href="/products">Volver</a>
+            <a href="/products/crud">Volver</a>
         </button>
     </form>
    

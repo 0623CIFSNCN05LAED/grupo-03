@@ -31,6 +31,8 @@ app.set("views", "./src/views");
 const mainRouter = require("./routes/main-router"); // Rutas main
 app.use("/", mainRouter);
 
+const productsRoutes = require("./routes/products"); // Rutas products
+app.use(productsRoutes);
 
 // ************ catch 404 and forward to error handler ************
 app.use((req, res, next) => next(createError(404)));

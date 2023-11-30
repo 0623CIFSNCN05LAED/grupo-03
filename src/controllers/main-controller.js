@@ -1,11 +1,12 @@
 const productServices = require("../services/product-services");
 const userServices = require("../services/user-services");
+
 const bcrypt = require('bcryptjs');
 
 module.exports = {
-  home: (req, res) => {
-    const featuredProducts = productServices.getFeaturedProducts();
-
+  home: async (req, res) => {
+    const featuredProducts = await productServices.getFeaturedProducts();
+    /*console.log(featuredProducts);*/
     res.render("home", {
       featuredProducts,
     });
@@ -20,17 +21,43 @@ module.exports = {
       oldData: oldData ? oldData : null,
     });
   },
-  login: (req, res) => {
+  /*login: (req, res) => {
     const data = req.body;
     console.log(data);
     const email = req.body.email;
-    const contrasena = req.body.contrasena;
-    const dataUser = userServices.validateUserLogin(email, contrasena);
+    const password = req.body.password;
+    const dataUser = userServices.validateUserLogin(email, password);
     if (dataUser !== null) {
       req.session.userData = dataUser;
       console.log('data session');
     }
     res.redirect("/");
+  },*/
+  login: async (req, res) => {
+    const data = req.body;
+    console.log(data);
+
+    const user = await userServices.findByEmail(req.body.email)
+
+    if(!user){
+        return res.render("login", {
+            errors: {
+                email: {msg: "Ese email no esta registrado" }
+            }
+        })
+    }
+
+    if(!bcrypt.compareSync(req.body.password, user.password)){
+        return res.render("login", {
+            errors: {
+                password: {msg: "Contraseña incorrecta"}
+            }
+        })
+    } else {
+        req.session.userData = data;
+        console.log('data session');
+        return res.redirect("/");
+    }
   },
   showRegister: (req, res) => {
     const errors = req.session.errors;
@@ -46,30 +73,14 @@ module.exports = {
     const data = req.body;
     console.log(data);
     req.session.userData = data;
-
-    /*const imagen = req.file;
-    const imagen_file_name = "/images/users/";
-    const imagenURL = imagen_file_name.concat(imagen.filename);
-    console.log(imagenURL);*/
-
-    const user = {
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      usuario: req.body.usuario,
-      email: req.body.email,
-      contraseña: req.body.contraseña,
-      images: req.file ? imagenURL : "/images/users/default-image.jpg",
-    };
-    userServices.registerUser(user);
+    const img = req.file;
+    const imagen = `/images/products/${img.filename}`
+    const admin = userServices.getAdmin(data.email);
+    userServices.registerUser(data, imagen, admin);
 
     res.redirect("/login");
   },
   productCart: (req, res) => {
     res.render("productCart");
-  },
-  search: (req, res) => {
-    const keywords = req.query.keywords;
-    const foundProducts = productServices.searchProducts(keywords);
-    res.render("results", { foundProducts });
   },
 };

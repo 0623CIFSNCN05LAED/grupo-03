@@ -1,69 +1,83 @@
 const productServices = require("../services/product-services");
 
 module.exports = {
-// Root - Show all products
-    home: (req, res) => { 
-        const products = productServices.getAllProducts();
+    home: async (req, res) => { 
+        const products = await productServices.getAllProducts();
         res.render("products", { products });
     },
-    detail: (req, res) => {
+    detail: async (req, res) => {
         const id = req.params.id;
-        const product = productServices.getFormattedProduct(id);
+        const product = await productServices.getProduct(id);
         res.render("productDetail", { product });
     },
-    create: (req, res) => {
-        res.render("productCreate");
+    create: async (req, res) => {
+        const colors = await productServices.getColors();
+        const capacities = await productServices.getCapacities();
+        const brands = await productServices.getBrands();
+        res.render("productCreate", { capacities, colors, brands });
     },
     store: (req, res) => {
-        const ArrayReqFiles = req.files;
-        const ArrayImagenes = [];
-        const img_filename = "/images/products/";
-        for (let i = 0; i < ArrayReqFiles.length; i++) {
-            const url_filename = img_filename.concat((Math.floor(Math.random() * 1000)) + "-").concat(ArrayReqFiles[i].filename)
-            ArrayImagenes.push(url_filename);
-        }
-        console.log(ArrayImagenes);
+        const ArrayImagenes = req.files.map((file) => `/images/products/${file.filename}`);
+        
         const product = {
             brand: req.body.brand,
             name: req.body.name,
             description: req.body.description,
-            detail: req.body.detail,
-            aditional: req.body.aditional,
-            images: req.files ? ArrayImagenes : "/images/products/default-image.jpg",
-            category: req.body.category,
+            featured_desc: req.body.featured_desc,
+            images: req.files ? ArrayImagenes : ["/images/products/default-image.jpg"],
+            featured: req.body.featured,
             price: Number(req.body.price),
             discount: Number(req.body.discount),
             rating: Number(req.body.rating),
-            colors: req.body.colors,
+            colors: req.body.color,
             capacity: req.body.capacity,
             os: req.body.os,
             screen: req.body.screen,
             camera: req.body.camera
         };
         productServices.createProduct(product);
-        res.redirect("/products");
+        res.redirect("/products/crud");
     },
-    edit: (req, res) => {
+    edit: async (req, res) => {
         const id = req.params.id;
-        const product = productServices.getProduct(id);
-        res.render("productEdit", { product });
+        const product = await productServices.getProductNoFormat(id);
+        res.render("productEdit", { id, product });
     },
     update: (req, res) => {
-        const product = req.body;
+        const product = {
+            name: req.body.name,
+            description: req.body.description,
+            featured_desc: req.body.featured_desc,
+            featured: req.body.featured,
+            price: Number(req.body.price),
+            discount: Number(req.body.discount),
+            rating: Number(req.body.rating),
+            os: req.body.os,
+            screen: req.body.screen,
+            camera: req.body.camera
+        };
         const id = req.params.id;
-        const image = req.file
-            ? req.file.filename
-            : productServices.getProduct(id).images;
         productServices.updateProduct(id, product);
-        res.redirect("/products");
+        res.redirect("/products/crud");
     },
-    delete: (req, res) => {
-        res.render("productDelete");
-    },
-    destroy: (req, res) => {
+    delete: async (req, res) => {
         const id = req.params.id;
-        console.log(`deleting product id: ${id}`);
-        productServices.deleteProduct(id);
-        res.redirect("/products");
+        const product = await productServices.getProductNoFormat(id);
+        res.render("productDelete", { id, product });
+    },
+    destroy: async (req, res) => {
+        const id = req.params.id;
+        const product = await productServices.getProductNoFormat(id);
+        await productServices.deleteProduct(id, product);
+        res.redirect("/products/crud");
+    },
+    search: (req, res) => {
+        const keywords = req.query.keywords;
+        const foundProducts = productServices.searchProducts(keywords);
+        res.render("results", { foundProducts });
+    },
+    crud: async (req, res) => {
+        const products = await productServices.getAllProducts();
+        res.render("productCRUD", { products });
     },
 };

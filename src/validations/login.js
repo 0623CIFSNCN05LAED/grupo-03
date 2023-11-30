@@ -11,12 +11,12 @@ module.exports = [
         .withMessage("Debe ingresar un email válido")
         .bail()
         .custom(async value => {
-            const existingUser = await userServices.getUserEmail(value);
+            const existingUser = await userServices.findByEmail(value);
             if (!existingUser) {
               throw new Error('No existe un usuario con ese email');
             }
         }),
-    body('contrasena')
+    body('password')
         .notEmpty()
         .withMessage("Debe completar este campo")
         .bail()
@@ -25,12 +25,12 @@ module.exports = [
         .withMessage("Ingrese una constraseña válida (min:3, max:35)")
         .bail()
         .custom(async (value, { req }) => {
-            const existingUser = await userServices.getUserEmail(req.body.email);
+            const existingUser = await userServices.findByEmail(req.body.email);
             const pass = bcrypt.hashSync(value, 10) ;
             if (!existingUser) {
               throw new Error('No existe un usuario con el email dado');
             } else {
-                if (bcrypt.compareSync(value, existingUser.contraseña) == false) {
+                if (bcrypt.compareSync(value, existingUser.password) == false) {
                     throw new Error('La contraseña es incorrecta');
                 }
             }

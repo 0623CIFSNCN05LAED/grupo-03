@@ -4,32 +4,33 @@
     <title>Register PY Grupo 3</title>
     <link rel="stylesheet" href="css/styleRegister.css">
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
-    <script src="/js/registerValidator.js" defer></script>
-    <!--<script src="/js/errorsForm.js" defer></script>-->
+    <script src="/js/registerValidator.js"></script>
+    <script src="/js/errorsForm.js" defer></script>
+    <script src="/js/burgerMenu.js" defer></script>
 <body>
     <header>
         <%- include("partials/header") %>  
     </header>    
-    <form action="/register" method="POST" class="formulario" id="form"><!-- enctype="multipart/form-data" (agregarlo para que guarde la imagen pero al agregarlo deja de funcionar el form y toma todas las validaciones como erroneas)-->
+    <form action="/register" method="POST" class="formulario" id="form" enctype="multipart/form-data">
         <h1 class="titulo-formulario">Registro</h1>
         <div class="control-formulario">
             <h5>Nombre</h5>
-            <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" class="control" value="<%= oldData ? oldData.nombre : "" %>"/> <% if (errors && errors.nombre) { %>
-            <p class="error-msg"><%= errors.nombre.msg %></p>
+            <input type="text" name="name" id="name" placeholder="Ingrese su nombre" class="control" value="<%= oldData ? oldData.name : "" %>"/> <% if (errors && errors.name) { %>
+            <p class="error-msg"><%= errors.name.msg %></p>
             <% } %>
             <span class="error"></span>
         </div>
         <div class="control-formulario">
             <h5>Apellido</h5>
-            <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido" class="control" value="<%= oldData ? oldData.apellido : "" %>"/> <% if (errors && errors.apellido) { %>
-            <p class="error-msg"><%= errors.apellido.msg %></p>
+            <input type="text" name="last_name" id="last_name" placeholder="Ingrese su apellido" class="control" value="<%= oldData ? oldData.last_name : "" %>"/> <% if (errors && errors.last_name) { %>
+            <p class="error-msg"><%= errors.last_name.msg %></p>
             <% } %>
             <span class="error"></span>
         </div>
         <div class="control-formulario">
             <h5>Nombre de usuario</h5>
-            <input type="text" name="usuario" id="usuario" placeholder="Ingrese su nombre de usuario" class="control" value="<%= oldData ? oldData.usuario : "" %>"/> <% if (errors && errors.usuario) { %>
-            <p class="error-msg"><%= errors.usuario.msg %></p>
+            <input type="text" name="username" id="username" placeholder="Ingrese su nombre de usuario" class="control" value="<%= oldData ? oldData.username : "" %>"/> <% if (errors && errors.username) { %>
+            <p class="error-msg"><%= errors.username.msg %></p>
             <% } %>
             <span class="error"></span>
         </div>
@@ -42,21 +43,24 @@
         </div>
         <div class="control-formulario">
             <h5>Contraseña</h5>
-            <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña" class="control" value="<%= oldData ? oldData.contraseña : "" %>"/> <% if (errors && errors.contraseña) { %>
-            <p class="error-msg"><%= errors.contraseña.msg %></p>
+            <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" class="control" value="<%= oldData ? oldData.password : "" %>"/> <% if (errors && errors.password) { %>
+            <p class="error-msg"><%= errors.password.msg %></p>
             <% } %>
             <span class="error"></span>
         </div>
         <div class="control-formulario">
             <h5>Confirme su contraseña</h5>
-            <input type="password" name="contraseña2" id="contraseña2" placeholder="Confirme contraseña" class="control" value="<%= oldData ? oldData.contraseña2 : "" %>"/> <% if (errors && errors.contraseña2) { %>
-            <p class="error-msg"><%= errors.contraseña2.msg %></p>
+            <input type="password" name="password2" id="password2" placeholder="Confirme contraseña" class="control" value="<%= oldData ? oldData.password2 : "" %>"/> <% if (errors && errors.password2) { %>
+            <p class="error-msg"><%= errors.password2.msg %></p>
             <% } %>
             <span class="error"></span>
         </div>
         <div class="control-formulario">
             <h5>Suba una imagen</h5>
-            <input type="file" name="images" id="images" accept="images/*" class="control">
+            <input type="file" name="profile_picture" id="profile_picture" accept="images/*" class="control" value="<%= oldData ? oldData.profile_picture : "" %>"/> <% if (errors && errors.profile_picture) { %>
+            <p class="error-msg"><%= errors.profile_picture.msg %></p>
+            <% } %>
+            <span class="error"></span>
         </div>
         <button type="submit" class="boton-formulario">Registrarse</button>
         <button type="reset" class="boton-formulario2">Borrar</button>
