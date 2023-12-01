@@ -13,55 +13,37 @@
     </header>
 
     <main>
-        <div class = "product-items">
-            <% for (let i = 0; i < products.length; i++) { %>  
-            <a href="/products/detail/<%= products[i].id_product %>"> 
-                <div class = "product">
-                    <div class = "product-content">
-                        <div class = "product-img">
+        <h1>Listado de Productos</h1>
+        <div class="products-list">
+            <% for (let i = 0; i < products.length; i++) { %>
+                <div class="product-card">
+                    <% if(products[i].discount > 0){ %>
+                        <div class="badge"><%= products[i].discount %>% off</div>
+                    <% } %>
+                    <a href="/products/detail/<%= products[i].id_product %>">
+                    <div class="product-tumb">
                             <img src="<%= products[i].image[0].url_image %>" alt = "<%= products[i].name %>">
-                        </div>
-                        <div class = "product-btns">
-                            <button type = "button" class = "btn-cart"> Añadir al carrito
-                                <span><i class = "fas fa-plus"></i></span>
-                            </button>
-                            <button type = "button" class = "btn-buy"> Comprar ahora
-                                <span><i class = "fas fa-shopping-cart"></i></span>
-                            </button>
-                        </div>
                     </div>
-    
-                    <div class = "product-info">
-                        <div class = "product-info-top">
-                            <h2 class = "sm-title"><%= products[i].brand.brand %></h2>
-                            <div class = "rating">
-                                <span><i class = "fas fa-star"></i></span>
-                                <span><i class = "fas fa-star"></i></span>
-                                <span><i class = "fas fa-star"></i></span>
-                                <span><i class = "fas fa-star"></i></span>
-                                <span><i class = "far fa-star"></i></span>
+                    </a>
+                    <div class="product-details">
+                        <span class="product-catagory"><%= products[i].brand.brand %></span>
+                        <h4><a href="/products/detail/<%= products[i].id_product %>"><%= products[i].name %></a></h4>
+                        <p><%= products[i].description.slice(0, 200)+'...' %><a href="/products/detail/<%= products[i].id_product %>"> Leer más</a></p>
+                        <div class="product-bottom-details">
+                            <% if(products[i].discount == 0){ %>
+                                <div class="product-price"><%= products[i].price %></div>
+                            <% } else {%>
+                                <div class="product-price"><small><%= products[i].priceWithDiscount %></small><%= products[i].price %></div>
+                            <% } %>    
+                            <div class="product-links">
+                                <a href=""><i class="fa fa-heart"></i></a>
+                                <a href=""><i class="fa fa-shopping-cart"></i></a>
                             </div>
                         </div>
-                        <a href = "#" class = "product-name"><%= products[i].name %></a>
-                        <div>
-                            <% if(products[i].discount == 0){ %>
-                                <p class = "product-price"><%= products[i].price %></p>
-                            <% } else {%>
-                                <p class = "product-price product-price-withoutdiscount"><%= products[i].price %></p>
-                                <p class = "product-price"><%= products[i].priceWithDiscount %></p>
-                            <% } %>
-                        </div>
-                       
                     </div>
-                    <% if(products[i].discount > 0){ %>
-                    <div class = "off-info">
-                        <h2 class = "sm-title"><%= products[i].discount %>% off</h2>
-                    </div>
-                    <% } %>
                 </div>
-            </a>
             <%   } %>
-        </div>  
+        </div>
     </main>
 
     <footer class="footer">
