@@ -110,6 +110,15 @@ const productServices = {
     }
     return products;
   },
+  getFeaturedQuantity: async () => {
+    const products = await Products.findAll({
+        where: {
+          featured: 1
+      },
+    })
+    const qty = products.length;
+    return qty;
+  },
   searchProducts: (query) => {
     const products = getAllProducts().filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
     return formatProductsPrices(products);

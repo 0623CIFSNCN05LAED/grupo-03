@@ -70,7 +70,7 @@ module.exports = [
   body("profile_picture")
     .custom((value, { req }) => {
       const file = req.file;
-      if (!file) {
+      if (!file == null) {
         throw new Error("Debe subir una imágen");
       }
     }),

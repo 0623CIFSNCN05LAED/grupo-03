@@ -6,7 +6,6 @@ const bcrypt = require('bcryptjs');
 module.exports = {
   home: async (req, res) => {
     const featuredProducts = await productServices.getFeaturedProducts();
-    /*console.log(featuredProducts);*/
     res.render("home", {
       featuredProducts,
     });
@@ -21,18 +20,6 @@ module.exports = {
       oldData: oldData ? oldData : null,
     });
   },
-  /*login: (req, res) => {
-    const data = req.body;
-    console.log(data);
-    const email = req.body.email;
-    const password = req.body.password;
-    const dataUser = userServices.validateUserLogin(email, password);
-    if (dataUser !== null) {
-      req.session.userData = dataUser;
-      console.log('data session');
-    }
-    res.redirect("/");
-  },*/
   login: async (req, res) => {
     const data = req.body;
     console.log(data);

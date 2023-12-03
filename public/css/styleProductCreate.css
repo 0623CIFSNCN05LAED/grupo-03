@@ -350,3 +350,23 @@ select {
     border-top: var(--size) solid black;
     top: 55%;
   }
+
+  .error-msg {
+    color: rgb(210, 33, 63);
+}
+
+.error-field input {
+    border: 2px solid rgb(210, 33, 63);
+}
+
+.control-formulario.success input {
+    border-color: #09c372;
+}
+
+.control-formulario.error input {
+    border-color: #ff3860;
+}
+
+.control-formulario .error {
+    color: #ff3860;
+}

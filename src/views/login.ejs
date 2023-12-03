@@ -2,34 +2,43 @@
 <html lang="es">
     <class><%- include("partials/head") %>
     <title>Login</title>
-    <link rel="stylesheet" href="css/styleLogin.css">
+    <link href="/css/styleLogin.css" rel="stylesheet"/>
+    <link href="/css/styleMain.css" rel="stylesheet"/>
     <script src="/js/loginValidator.js"></script>
     <script src="/js/errorsForm.js" defer></script>
     <script src="/js/burgerMenu.js" defer></script>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
 <body>
     <header>
         <%- include("partials/header") %> 
     </header> 
-    <form action="/login" method="POST" class="formulario" id="form">
-        <h1 class="titulo-formulario">Inicio de sesión</h1>
-        <div class="control-formulario">
-            <input type="text" name="email" placeholder="Email" id="email" class="control" value="<%= oldData ? oldData.email : "" %>"/> > <i class="fa-solid fa-user"></i> <% if (errors && errors.email) { %>
-            <p class="error-msg"><%= errors.email.msg %></p>
-            <% } %> 
-            <span class="error"></span>
-        </div>
-        <div class="control-formulario">
-            <input type="password" name="password" id="password" placeholder="Contraseña" class="control" value="<%= oldData ? oldData.password : "" %>"/> > <i class="fa-solid fa-lock"></i> <% if (errors && errors.password) { %>
-            <p class="error-msg"><%= errors.password.msg %></p>
-            <% } %>
-            <span class="error"></span>
-        </div>
-        <div class="recordarme">
-            <label><input type="checkbox" name="Recordarme">Recordarme</label>
-        <a a href="#">Olvidé mi contraseña</a></div>
-        <button type="submit" class="boton-formulario">Iniciar sesión</button>
-        <div class="registro">¿No tienes cuenta? <a href="/register">Registrate</a></div>
+    
+    <main>
+    <form action="/login" method="POST" class="form my-form" id="form">
+        <h1>Iniciar Sesión</h1>
+        <div class="full-input-div">
+            <div class="control-formulario">
+            <input type="text" name="email" id="email" class="full-input" placeholder="Email" value="<%= oldData ? oldData.email : "" %>"/> <% if (errors && errors.email) { %>
+                <p class="error-msg"><%= errors.email.msg %></p>
+                <% } %> 
+                <span class="error"></span>
+            </div>
+            <div class="control-formulario">
+            <input type="password" name="password" id="password" class="full-input" placeholder="Contraseña" value="<%= oldData ? oldData.password : "" %>"/> <% if (errors && errors.password) { %>
+                <p class="error-msg"><%= errors.password.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            </div>
+            <div class="recordarme">
+                <label><input type="checkbox" name="recordarme"> Recordarme</label>
+                <a href="#">Olvidé mi contraseña</a>
+            </div>
+            <p class="full-input"><input type="checkbox" name="terms" id="terms" required> Acepto los <a href="#">Términos de Uso</a> y las <a href="#">Políticas de Privacidad</a></p>
+            <button type="submit" class="full-input" id="login">Iniciar Sesión</button>
+        </div> 
     </form>
+    <p id="sign-in">¿No tienes una cuenta? <a href="/register">Registrate</a></p>
+    </main>
 
     <footer class="footer">
         <%- include("partials/footer") %>

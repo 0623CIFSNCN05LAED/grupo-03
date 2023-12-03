@@ -6,6 +6,7 @@
     <link href="/css/styleProducts.css" rel="stylesheet"/>
     <link href="/css/styleMain.css" rel="stylesheet"/>
     <script src="/js/burgerMenu.js" defer></script>
+    <script src="/js/favoriteProduct.js" defer></script>
 </head>
 <body>
     <header>
@@ -36,7 +37,7 @@
                                 <div class="product-price"><small><%= products[i].priceWithDiscount %></small><%= products[i].price %></div>
                             <% } %>    
                             <div class="product-links">
-                                <a href=""><i class="fa fa-heart"></i></a>
+                                <i class="fa fa-heart"></i>
                                 <a href=""><i class="fa fa-shopping-cart"></i></a>
                             </div>
                         </div>

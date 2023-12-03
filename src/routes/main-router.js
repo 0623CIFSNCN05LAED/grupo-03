@@ -34,6 +34,7 @@ router.post(
   validateForm,
   mainController.login
 );
+
 router.get("/register", mainController.showRegister);
 router.post(
   "/register",
@@ -42,6 +43,7 @@ router.post(
   validateFormRegister,
   mainController.register
 );
+
 router.get("/productCart", mainController.productCart);
 
 const productsRouter = require("./products");

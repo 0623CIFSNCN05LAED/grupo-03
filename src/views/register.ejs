@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
     <class><%- include("partials/head") %>
-    <title>Register PY Grupo 3</title>
-    <link rel="stylesheet" href="css/styleRegister.css">
+    <title>Register</title>
+    <link href="/css/styleRegister.css" rel="stylesheet"/>
+    <link href="/css/styleMain.css" rel="stylesheet"/>
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="/js/registerValidator.js"></script>
     <script src="/js/errorsForm.js" defer></script>
@@ -11,61 +12,61 @@
     <header>
         <%- include("partials/header") %>  
     </header>    
-    <form action="/register" method="POST" class="formulario" id="form" enctype="multipart/form-data">
-        <h1 class="titulo-formulario">Registro</h1>
-        <div class="control-formulario">
-            <h5>Nombre</h5>
-            <input type="text" name="name" id="name" placeholder="Ingrese su nombre" class="control" value="<%= oldData ? oldData.name : "" %>"/> <% if (errors && errors.name) { %>
-            <p class="error-msg"><%= errors.name.msg %></p>
-            <% } %>
-            <span class="error"></span>
-        </div>
-        <div class="control-formulario">
-            <h5>Apellido</h5>
-            <input type="text" name="last_name" id="last_name" placeholder="Ingrese su apellido" class="control" value="<%= oldData ? oldData.last_name : "" %>"/> <% if (errors && errors.last_name) { %>
-            <p class="error-msg"><%= errors.last_name.msg %></p>
-            <% } %>
-            <span class="error"></span>
-        </div>
-        <div class="control-formulario">
-            <h5>Nombre de usuario</h5>
-            <input type="text" name="username" id="username" placeholder="Ingrese su nombre de usuario" class="control" value="<%= oldData ? oldData.username : "" %>"/> <% if (errors && errors.username) { %>
-            <p class="error-msg"><%= errors.username.msg %></p>
-            <% } %>
-            <span class="error"></span>
-        </div>
-        <div class="control-formulario">
-            <h5>Email</h5>
-            <input type="text" name="email" id="email" placeholder="Ingrese su correo electrónico" class="control" value="<%= oldData ? oldData.email : "" %>"/> <% if (errors && errors.email) { %>
-            <p class="error-msg"><%= errors.email.msg %></p>
-            <% } %>
-            <span class="error"></span>
-        </div>
-        <div class="control-formulario">
-            <h5>Contraseña</h5>
-            <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" class="control" value="<%= oldData ? oldData.password : "" %>"/> <% if (errors && errors.password) { %>
-            <p class="error-msg"><%= errors.password.msg %></p>
-            <% } %>
-            <span class="error"></span>
-        </div>
-        <div class="control-formulario">
-            <h5>Confirme su contraseña</h5>
-            <input type="password" name="password2" id="password2" placeholder="Confirme contraseña" class="control" value="<%= oldData ? oldData.password2 : "" %>"/> <% if (errors && errors.password2) { %>
-            <p class="error-msg"><%= errors.password2.msg %></p>
-            <% } %>
-            <span class="error"></span>
-        </div>
-        <div class="control-formulario">
-            <h5>Suba una imagen</h5>
-            <input type="file" name="profile_picture" id="profile_picture" accept="images/*" class="control" value="<%= oldData ? oldData.profile_picture : "" %>"/> <% if (errors && errors.profile_picture) { %>
-            <p class="error-msg"><%= errors.profile_picture.msg %></p>
-            <% } %>
-            <span class="error"></span>
-        </div>
-        <button type="submit" class="boton-formulario">Registrarse</button>
-        <button type="reset" class="boton-formulario2">Borrar</button>
-        <div class="login">¿Ya tienes cuenta? <a href="/login">Iniciar sesión</a></div>
-    </form>
+    
+    <main>
+        <form action="/register" method="POST" class="form my-form" id="form" enctype="multipart/form-data">
+            <h1>Registrarse</h1>
+            <div class="full-input-div">
+                <div class="control-formulario">
+                    <input type="text" name="name" id="name" class="full-input" placeholder="Nombre" value="<%= oldData ? oldData.name : "" %>"/> <% if (errors && errors.name) { %>
+                        <p class="error-msg"><%= errors.name.msg %></p>
+                        <% } %>
+                        <span class="error"></span>
+                </div>
+                <div class="control-formulario">
+                    <input type="text" name="last_name" id="last_name" class="full-input" placeholder="Apellido" value="<%= oldData ? oldData.last_name : "" %>"/> <% if (errors && errors.last_name) { %>
+                        <p class="error-msg"><%= errors.last_name.msg %></p>
+                        <% } %>
+                        <span class="error"></span>
+                </div>
+                <div class="control-formulario">
+                    <input type="text" name="username" id="username" class="full-input" placeholder="Nombre de usuario" value="<%= oldData ? oldData.username : "" %>"/> <% if (errors && errors.username) { %>
+                        <p class="error-msg"><%= errors.username.msg %></p>
+                        <% } %>
+                        <span class="error"></span>
+                </div>
+                <div class="control-formulario">
+                    <input type="text" name="email" id="email" class="full-input" placeholder="Email" value="<%= oldData ? oldData.email : "" %>"/> <% if (errors && errors.email) { %>
+                        <p class="error-msg"><%= errors.email.msg %></p>
+                        <% } %>
+                        <span class="error"></span>
+                </div>
+                <div class="control-formulario">
+                    <input type="password" name="password" id="password" class="full-input" placeholder="Contraseña" value="<%= oldData ? oldData.password : "" %>"/> <% if (errors && errors.password) { %>
+                        <p class="error-msg"><%= errors.password.msg %></p>
+                        <% } %>
+                        <span class="error"></span>
+                </div>
+                <div class="control-formulario">
+                    <input type="password" name="password2" id="password2" class="full-input" placeholder="Confirme su contraseña" value="<%= oldData ? oldData.password2 : "" %>"/> <% if (errors && errors.password2) { %>
+                        <p class="error-msg"><%= errors.password2.msg %></p>
+                        <% } %>
+                        <span class="error"></span>
+                </div>
+                <div class="control-formulario">
+                    <input type="file" name="profile_picture" id="profile_picture" accept="images/*" class="full-input" placeholder="Nombre de usuario" value="<%= oldData ? oldData.profile_picture : "" %>"/> <% if (errors && errors.profile_picture) { %>
+                        <p class="error-msg"><%= errors.profile_picture.msg %></p>
+                        <% } %>
+                        <span class="error"></span>
+                </div>
+            <p class="full-input"><input type="checkbox" name="terms" id="terms" required> Acepto los <a href="#">Términos de Uso</a> y las <a href="#">Políticas de Privacidad</a></p>
+            <button type="submit" class="full-input" id="register">Registrarse</button>
+            </div>
+        
+        </form>
+        
+        <p id="sign-in">¿Ya tienes una cuenta? <a href="/login">Inicia Sesión</a></p>
+    </main>
 
     <footer class="footer">
         <%- include("partials/footer") %>

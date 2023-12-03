@@ -1,5 +1,8 @@
-const heartIcon = document.querySelector('.fa-heart');
+const heartIcon = document.querySelectorAll('.fa-heart');
 
-heartIcon.addEventListener('click', () => {
-  heartIcon.classList.toggle('full');
-});
+for (let i = 0; i < heartIcon.length; i++) {
+  heartIcon[i].addEventListener('click', () => {
+    heartIcon[i].classList.toggle('full');
+  });
+  
+}
