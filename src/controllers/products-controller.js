@@ -47,9 +47,17 @@ module.exports = {
         res.redirect("/products/crud");
     },
     edit: async (req, res) => {
+        const errors = req.session.errors;
+        const oldData = req.session.oldData;
         const id = req.params.id;
         const product = await productServices.getProductNoFormat(id);
-        res.render("productEdit", { id, product });
+        req.session.errors = null;
+        req.session.oldData = null;
+        res.render("productEdit", {
+            errors: errors ? errors : null,
+            oldData: oldData ? oldData : null,
+            id, product
+        });
     },
     update: (req, res) => {
         const product = {

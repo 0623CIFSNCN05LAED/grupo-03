@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
     if (!errors.isEmpty()) {
         req.session.errors = errors.mapped();
         req.session.oldData = req.body;
-        res.redirect("/productEdit");
+        res.redirect("/products/edit/:id");
     } else {
         next();
     }

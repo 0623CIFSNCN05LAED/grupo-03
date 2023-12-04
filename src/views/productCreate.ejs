@@ -18,9 +18,9 @@
         <h1 class="titulo-formulario">Identificá tu producto</h1>
         <div class="input-form">
             <div class="custom-select">
-                <select name="brand" id="brand" value="<%= oldData ? oldData.brand : "" %>">
+                <select name="brand" id="brand">
                     <% for (let i = 0; i < brands.length; i++) {  %>
-                    <option value="<%= brands[i].id_brand %>"><%= brands[i].brand %></option>
+                    <option value="<%= brands[i].id_brand %>" <%= oldData && oldData.brand === brands[i].id_brand ? "selected" : "" %>><%= brands[i].brand %></option>
                     <%  } %>
                 </select>
                 <% if (errors && errors.brand) { %>
@@ -104,7 +104,7 @@
                 <div class="checkbox-form2">
                     <% for (let i = 0; i < colors.length; i++) {  %>
                     <label class="custom-checkbox2">
-                        <input type="checkbox" name="color" value="<%= colors[i].color %> ">
+                        <input type="checkbox" name="color" value="<%= colors[i].color %> " <%= oldData && oldData.color === colors[i].color ? "checked" : "" %>>
                         <span class="checkmark2"></span>
                         <label class="checkbox-text2"><%= colors[i].color %></label>
                     </label>
@@ -122,7 +122,7 @@
                 <div class="checkbox-form">
                     <% for (let i = 0; i < capacities.length; i++) {  %>
                     <label class="custom-checkbox">
-                        <input type="checkbox" name="capacity" value="<%= capacities[i].capacity %> ">
+                        <input type="checkbox" name="capacity" value="<%= capacities[i].capacity %> " <%= oldData && oldData.capacity === capacities[i].capacity ? "checked" : "" %>>
                         <span class="checkmark"></span>
                         <label class="checkbox-text"><%= capacities[i].capacity %></label>
                     </label>
@@ -138,12 +138,12 @@
                 <div class="radio-form">
                     <label class="custom-radio">
                         <label class="radio-text">Normal</label>
-                        <input type="radio" name="featured" value="0" checked>
+                        <input type="radio" name="featured" value="0" <%= oldData && oldData.featured === "0" ? "checked" : "" %>>
                         <span class="checkmark"></span>
                     </label>
                     <label class="custom-radio">
                         <label class="radio-text">Destacado</label>
-                        <input type="radio" name="featured" value="1">
+                        <input type="radio" name="featured" value="1" <%= oldData && oldData.featured === "1" ? "checked" : "" %>>
                         <span class="checkmark"></span>
                     </label>
                     <% if (errors && errors.featured) { %>

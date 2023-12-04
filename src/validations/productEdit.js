@@ -2,15 +2,14 @@ const { body } = require("express-validator");
 const productServices = require("../services/product-services");
 
 module.exports = [
-  body("brand")
-    .notEmpty()
-    .withMessage("Debe completar este campo"),
-  body("capacity")
-    .notEmpty()
-    .withMessage("Debe completar este campo"),
-  body("color")
-    .notEmpty()
-    .withMessage("Debe completar este campo"),
+  /*
+  //validar si hubo cambios en el form
+  body()
+  .custom(async (value, { req }) => {
+    if () {
+      throw new Error("");
+    } 
+  }),*/
   body("name")
     .notEmpty()
     .withMessage("Debe completar este campo")
@@ -56,16 +55,6 @@ module.exports = [
         }
       }
     }),
-  /*
-  body("images")
-    //Checkear que se suba por lo menos una imagen, y luego que no sean mas de 5
-    .custom((value, { req }) => {
-      const file = req.file;
-      if (!file == null) {
-        throw new Error("Debe subir por lo menos una imágen");
-      }
-    }), 
-  */
   body("price")
     .notEmpty()
     .withMessage("Debe completar este campo")
