@@ -52,3 +52,13 @@ Hacer más: control de los css y coordinar para tener mas reuniones asi nos pone
 Continuar haciendo: seguir haciendo, aunque estemos atrasados, no dejar sin hacer nada.
 Hacer menos: no comunicarnos con todos los miembros del grupo.
 Dejar de hacer: no dejar las actividades para último momento.
+
+
+Retrospectiva Sprint 7:
+
+Comenzar a hacer: ponernos al día con las actividades de los sprint anteriores.
+Hacer más: control de los css,organizarnos asi nos ponemos al día.
+Continuar haciendo: seguir haciendo, aunque estemos atrasados, no dejar sin hacer nada.
+Hacer menos: no comunicarnos entre los miembros del grupo.
+Dejar de hacer: no dejar las actividades para último momento.
+
