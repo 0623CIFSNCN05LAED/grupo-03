@@ -62,3 +62,10 @@ Continuar haciendo: seguir haciendo, aunque estemos atrasados, no dejar sin hace
 Hacer menos: no comunicarnos entre los miembros del grupo.
 Dejar de hacer: no dejar las actividades para último momento.
 
+Retrospectiva Sprint 8:
+
+Comenzar a hacer: ponernos al día con las actividades de los sprint anteriores, para poder terminar el proyecto en tiempo y forma.
+Hacer más: verificar que todos los sprint anteriores estén completos.
+Continuar haciendo: seguir haciendo, aunque estemos atrasados, no dejar sin hacer nada.
+Hacer menos: no comunicarnos entre los miembros del grupo.
+Dejar de hacer: no dejar las actividades para último momento.
