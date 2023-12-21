@@ -54,7 +54,7 @@
                         <span class="error"></span>
                 </div>
                 <div class="control-formulario">
-                    <input type="file" name="profile_picture" id="profile_picture" accept="images/*" class="full-input" placeholder="Nombre de usuario" value="<%= oldData ? oldData.profile_picture : "" %>"/> <% if (errors && errors.profile_picture) { %>
+                    <input type="file" name="profile_picture" id="profile_picture" accept="images/*" class="full-input" value="<%= oldData ? oldData.profile_picture : "" %>"/> <% if (errors && errors.profile_picture) { %>
                         <p class="error-msg"><%= errors.profile_picture.msg %></p>
                         <% } %>
                         <span class="error"></span>

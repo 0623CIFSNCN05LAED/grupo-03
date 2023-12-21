@@ -56,16 +56,16 @@ module.exports = [
         }
       }
     }),
-  /*
+  
   body("images")
     //Checkear que se suba por lo menos una imagen, y luego que no sean mas de 5
     .custom((value, { req }) => {
       const file = req.file;
-      if (!file == null) {
+      if (file == undefined) {
         throw new Error("Debe subir por lo menos una imágen");
       }
     }), 
-  */
+  
   body("price")
     .notEmpty()
     .withMessage("Debe completar este campo")
@@ -107,7 +107,7 @@ module.exports = [
       .bail()
       .custom(async (value) => {
         if (value != 0 && value && 0.5 && value != 1 && value != 1.5 && value != 2 && value != 2.5 && value != 3 && value != 3.5 && value != 4 && value != 4.5 && value != 5) {
-          throw new Error("El descuento no puede ser menor a 0 o mayor a 5, y solo puede tener .5 de decimal");
+          throw new Error("La calificacion no puede ser menor a 0 o mayor a 5, y solo puede tener .5 de decimal");
         }
       }),
     body("os")
@@ -119,7 +119,7 @@ module.exports = [
       .withMessage("Ingrese un sistema operativo válido (min:3, max:50)")
       .bail()
       .isAlpha()
-      .withMessage("El nombre del producto solo puede contener letras"),  
+      .withMessage("El sistema operativo del producto solo puede contener letras"),  
     body("screen")
       .notEmpty()
       .withMessage("Debe completar este campo")

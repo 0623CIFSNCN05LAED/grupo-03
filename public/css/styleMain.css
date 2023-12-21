@@ -222,6 +222,18 @@ nav {
     top: 0;
 }
 
+li a button {
+    text-decoration: none;
+    border: none;
+    appearance: none;
+    background: transparent;
+    color: #D2D7DF;
+    font-size: 20px;
+    text-transform: uppercase;
+    font: inherit;
+    cursor: pointer;
+}
+
 /* movil pequeño */
 @media (min-width: 360px){
     .logo-text {

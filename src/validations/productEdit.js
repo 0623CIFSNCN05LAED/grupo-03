@@ -2,14 +2,7 @@ const { body } = require("express-validator");
 const productServices = require("../services/product-services");
 
 module.exports = [
-  /*
   //validar si hubo cambios en el form
-  body()
-  .custom(async (value, { req }) => {
-    if () {
-      throw new Error("");
-    } 
-  }),*/
   body("name")
     .notEmpty()
     .withMessage("Debe completar este campo")

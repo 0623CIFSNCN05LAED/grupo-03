@@ -20,7 +20,7 @@ body {
     gap: 20px;
     width: 100%;
     padding-top: 120px;
-    padding-bottom: 40px;
+    padding-bottom: 22px;
 }
 
 .controls {
@@ -101,6 +101,16 @@ body {
     border-radius: 50px;
     margin-bottom: 20px;
     transition: all 450ms;
+}
+
+.btn-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #D2D7DF;
+    width: 100%;
+    padding-bottom: 40px;
 }
 
 .boton-formulario a {

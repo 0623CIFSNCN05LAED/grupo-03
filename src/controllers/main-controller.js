@@ -46,6 +46,10 @@ module.exports = {
         return res.redirect("/");
     }
   },
+  logout: (req, res) => {
+    req.session.destroy();
+    res.redirect("/");
+  },
   showRegister: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;

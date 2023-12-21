@@ -36,6 +36,8 @@ router.post(
   mainController.login
 );
 
+router.post("/logout", mainController.logout);
+
 router.get("/register", mainController.showRegister);
 router.post(
   "/register",

@@ -55,6 +55,12 @@ router.get("/search", productsController.search);
 //CRUD productos
 router.get("/products/crud/", adminGuard, productsController.crud);
 
+// Productos favoritos
+/*router.get("/products/favorites",productsController.favoritesProducts);*/
+
+//logout
+router.post("/logout", productsController.logout);
+
 // Detalle de un producto
 router.get("/products/detail/:id/", productsController.detail);
 

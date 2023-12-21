@@ -12,7 +12,7 @@
     <header class="header">
     <%- include("partials/header") %>
     </header>
-    <form action="/products/update/<%= product.id_product %>?_method=PUT" method="POST" class="formulario">
+    <form action="/products/update/<%= product.id_product %>?_method=PUT" method="POST" class="formulario" id="form">
         <h1 class="titulo-formulario">Editar el producto:</h1>
         <div class="input-form">
             <input type="text" name="name" value="<%= oldData ? oldData.name : product.name %>"/> <% if (errors && errors.name) { %>
@@ -97,10 +97,12 @@
             <label for="">Camara principal</label>
         </div>
         <button type="submit" class="boton-formulario">Actualizar</button>
+    </form>
+    <div class="btn-back">
         <button class="boton-formulario">
             <a href="/products/crud">Volver</a>
         </button>
-    </form>
+    </div> 
    
 <footer class="footer">
     <%- include("partials/footer") %>

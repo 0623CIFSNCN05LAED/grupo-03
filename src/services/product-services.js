@@ -18,6 +18,14 @@ const productServices = {
     }
     return products;
   },
+  getAllFavorites: async (ids) => {
+    const products = await Products.findAll({include: ["brand", "image"], where: {id_product: ids},});
+    for (let i = 0; i < products.length; i++) {
+      products[i].price = formatPrice.format(products[i].price)
+      products[i].priceWithDiscount = formatPrice.format(products[i].priceWithDiscount)
+    }
+    return products;
+  },
   getProduct: (id) => {
     return Products.findByPk(id, {
       include: ["brand", "image", "colors", "capacities"],

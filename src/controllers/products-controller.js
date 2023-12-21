@@ -96,4 +96,12 @@ module.exports = {
         const products = await productServices.getAllProducts();
         res.render("productCRUD", { products });
     },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect("/");
+    },/*
+    favoritesProducts: async (req, res) => { 
+        const products = await productServices.getAllProducts();
+        res.render("favoritesProducts", { products });
+    },*/
 };

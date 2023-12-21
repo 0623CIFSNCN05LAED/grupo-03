@@ -50,7 +50,7 @@
             <label for="featured_desc">Descripción destacada</label>
         </div>
         <div class="control-formulario">
-            <input type="file" multiple name="images" accept="images/*" class="control" value="<%= oldData ? oldData.images : "" %>"/> <% if (errors && errors.images) { %>
+            <input type="file" multiple name="images" accept="images/*" id="images" class="control" value="<%= oldData ? oldData.images : "" %>"/> <% if (errors && errors.images) { %>
                 <p class="error-msg"><%= errors.images.msg %></p>
                 <% } %>
                 <span class="error"></span>
@@ -176,10 +176,13 @@
         </div>
         <button type="submit" class="boton-formulario">Publicar</button>
         <button type="reset" class="boton-formulario">Borrar</button>
+        
+    </form>
+    <div class="btn-back">
         <button class="boton-formulario">
             <a href="/products/crud">Volver</a>
         </button>
-    </form>
+    </div>
    
 <footer class="footer">
     <%- include("partials/footer") %>
