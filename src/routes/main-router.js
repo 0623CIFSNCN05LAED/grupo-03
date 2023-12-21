@@ -1,55 +1,8 @@
-const { Router, urlencoded } = require("express");
-const router = Router();
-const multer = require("multer");
-const path = require("path");
+const express = require('express');
+const router = express.Router();
+const mainController = require ("../controllers/main-controller");
 
-const mainController = require("../controllers/main-controller");
-const validationsLogin = require("../validations/login");
-const validationsRegister = require("../validations/register");
-const validateForm = require("../middlewares/validate-form");
-const validateFormRegister = require("../middlewares/validate-form-register");
-const userGuard = require("../middlewares/user-guard");
-
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../../public/images/users"),
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      Math.floor(Math.random() * 1000) + Date.now() + "-" + file.originalname
-    );
-  },
-});
-
-const upload = multer({
-  storage: storage,
-});
-
-router.get("/", mainController.home);
-router.get("/login", mainController.showLogin);
-router.post(
-  "/login",
-  urlencoded({
-    extended: false,
-  }),
-  validationsLogin,
-  validateForm,
-  mainController.login
-);
-
-router.post("/logout", mainController.logout);
-
-router.get("/register", mainController.showRegister);
-router.post(
-  "/register",
-  upload.single("profile_picture"),
-  validationsRegister,
-  validateFormRegister,
-  mainController.register
-);
-
-router.get("/productCart", userGuard, mainController.productCart);
-
-const productsRouter = require("./products");
-router.use("/products", productsRouter);
+router.get('/', mainController.home)
+router.get('/users',mainController.users)
 
 module.exports = router;
