@@ -15,8 +15,8 @@ module.exports = {
   //agregado
   users: async (req, res) => {
     userServices.getAllUsers().then((users) => {
-      res.json(users)
-      // return res.render("/users", { getAllUsers: users });
+      // res.json(users)
+      return res.render("/users", { getAllUsers: users });
     });
   },
 

@@ -40,8 +40,14 @@ app.use(usersRoutes);
 const productsRoutesApi = require("./routes/api/api-products-router"); //Rutas para API de products
 app.use("/api/products", productsRoutesApi);
 
-// const usersRoutesApi = require("./routes/api/api-users-router"); //Rutas para API de users
-// app.use("/api/users",usersRoutesApi);
+const usersRoutesApi = require("./routes/api/api-users-router"); //Rutas para API de users
+app.use("/api/users",usersRoutesApi);
+
+// const productsRouterApiId = require("./routes/api/api-products-router"); //Rutas para API de id products
+// app.use("/api/products/:id",productsRouterApiId);
+
+// const usersRouterApiId = require("./routes/api/api-users-router"); //Rutas para API con id users
+// app.user("/api/users/:id",usersRouterApiId);
 
 // ************ catch 404 and forward to error handler ************
 app.use((req, res, next) => next(createError(404)));

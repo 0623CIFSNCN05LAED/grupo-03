@@ -14,17 +14,9 @@ const storage = multer.diskStorage({
     storage: storage,
   });
 
-// const productsController = require("../controllers/products-controller");
-
-// router.get("/products", productsController.home);
-// router.get("/products/detail/:id/", productsController.detail);
-
-
 const apiProductsController = require("../../controllers/api/api-products-controller");
 
 router.get("/",apiProductsController.home);
-
-
-
+router.get("/:id",apiProductsController.detail);
 
 module.exports = router;

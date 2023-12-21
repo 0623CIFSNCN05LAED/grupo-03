@@ -1,4 +1,6 @@
-const router = Router();
+const { Router, urlencoded } = require("express");
+const express = require("express");
+const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 
@@ -16,11 +18,9 @@ const storage = multer.diskStorage({
     storage: storage,
   });
 
-  const mainController = require("../controllers/main-controller");
-  router.get("/users", mainController.users); //agregada
-
   const apiUsersController = require("../../controllers/api/api-users-controller");
 
-  router.get("/",apiUsersController.home);
+  router.get("/",apiUsersController.users);
+  router.get("/:id",apiUsersController.detail);
 
   module.exports = router;

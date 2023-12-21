@@ -6,9 +6,34 @@ const userServices = {
   getAllUsers: () => {
     return Users.findAll();
   },
-  getUser: (id) => {
+  getUserById: (id) => {
     return Users.findByPk(id);
   },
+
+  getUserLimit: async function (offset, limit) {
+    const users = await Users.findAll({
+      include: ["users"],
+      offset,
+      limit,
+    });
+    return users;
+  },
+  getCountTotalUser: async function (){
+    const count = await Users.count();
+    return count;
+  },
+
+  // //Paginación
+  // getAllUsersAndCount: ({
+  //   pageSize, offset, 
+  // }) => {
+  //   return Users.findAndCountAll({
+  //     limit: pageSize,
+  //     offset: offset
+
+  //   })
+  // },
+
   getAdmin: (email) => {
     const isAdmin = 0;
     if (email.includes("@digitalphone.com")) {

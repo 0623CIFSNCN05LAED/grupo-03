@@ -1,4 +1,5 @@
-const { Products, Brands, Capacities, Colors, Images } = require("../database/models");
+const { Products } = require("../database/models");
+const { Brands } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 
 const formatPrice =
@@ -9,29 +10,49 @@ const formatPrice =
 
 
 const productServices = {
-  getAllProducts: async () => {
+  getAllProducts: async function () {
+
     const products = await Products.findAll({ include: ["brand", "image"], });
     for (let i = 0; i < products.length; i++) {
       products[i].price = formatPrice.format(products[i].price)
       products[i].priceWithDiscount = formatPrice.format(products[i].priceWithDiscount)
     }
+
+    return products
+  },
+
+  getCountTotalProducts: async () => {
+    const count = await Products.count();
+    return count;
+  },
+
+  getProductsLimit: async (offset, limit) => {
+    const products = await Products.findAll({
+      include: ["brand"],
+      offset,
+      limit,
+    });
+
     return products;
   },
 
-  //Paginación
-  getAllProductsAndCount: ({
-    page, offset
-  }) => {
-    return Products.findAndCountAll({
-      limit: page,
-      offset: offset
-    })
+  getProductsByBrand: async function (brand) {
+    const productsByBrand = await Products.findAll({
+      where: {
+        id_brand: brand,
+      },
+      include: ["brand"],
+    });
+    return productsByBrand;
   },
 
   getProduct: (id) => {
     return Products.findByPk(id, {
       include: ["brand", "image", "colors", "capacities"],
     }).then((product) => {
+      if (!product) {
+        return null;
+      }
       return {
         id_product: product.id_product,
         name: product.name,
@@ -68,6 +89,29 @@ const productServices = {
       }
     });
   },
+
+  findById: async function (id) {
+    const product = await Products.findByPk(id, {
+      include: ["brand"],
+    });
+    return products;
+  },
+
+
+  //HASTA ACA EL AGREGADO
+
+  //Paginación
+  getAllProductsAndCount: ({
+    page, offset
+  }) => {
+    return Products.findAndCountAll(
+      { include: ["brand"] },
+      {
+        limit: page,
+        offset: offset,
+      })
+  },
+
   getProductNoFormat: (id) => {
     return Products.findByPk(id, {
       include: ["brand", "image", "colors", "capacities"],
@@ -121,19 +165,13 @@ const productServices = {
     }
     return products;
   },
+
+
   searchProducts: (query) => {
     const products = getAllProducts().filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
     return formatProductsPrices(products);
   },
-  getBrand: (brand) => {
-    const brandUp = brand.charAt(0).toUpperCase() + brand.slice(1);
-    Brands.findOne({
-      where: {
-        brand: brandUp,
-      }
-    });
-    return Brands.id_brand;
-  },
+
   getColors: () => {
     return Colors.findAll();
   },
@@ -231,6 +269,7 @@ const productServices = {
       });
     });
   },
+
 };
 
 module.exports = productServices;
