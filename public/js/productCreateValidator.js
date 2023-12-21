@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
     const precioValue = precio.value.trim();
     const descuentovalue = descuento.value.trim();
     const calificacionValue = calificacion.value.trim();
-    const destacadoValue = destacado.value.trim();
+    //const destacadoValue = destacado.value.trim();
     const sistemaValue = sistema.value.trim();
     const pantallaValue = pantalla.value.trim();
     const camaraValue = camara.value.trim();
@@ -72,7 +72,7 @@ window.addEventListener('load', () => {
     }
 
     //featured_desc validation
-    if (destacadoValue === '1') {
+    if (destacado === '1') {
       if (descripcion_destacadaValue === "") {
         setError(descripcion_destacada, "Debe ingresar una descripcion destacada");
       } else if (descripcion_destacadaValue.length < 15 || descripcion_destacadaValue.length > 300) {
@@ -83,9 +83,9 @@ window.addEventListener('load', () => {
     }
 
     //featured validation
-    if (destacadoValue === "") {
+    if (destacado === "") {
       setError(destacado, "Debe ingresar una categoria");
-    } else if (destacadoValue === '0' && descripcion_destacadaValue !== "") {
+    } else if (destacado === '0' && descripcion_destacadaValue !== "") {
       setError(descripcion_destacada, "Debe ingresar una categoria para poder usar una descripcion destacada");
     } else {
       setSuccess(destacado);

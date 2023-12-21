@@ -1,5 +1,4 @@
-const { Products } = require("../database/models");
-const { Brands } = require("../database/models");
+const { Products, Brands, Capacities, Colors, Images } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 
 const formatPrice =
@@ -92,7 +91,7 @@ const productServices = {
     const product = await Products.findByPk(id, {
       include: ["brand"],
     });
-    return products;
+    return product;
   },
 
   //Paginación
