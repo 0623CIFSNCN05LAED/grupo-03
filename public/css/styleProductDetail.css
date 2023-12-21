@@ -389,3 +389,45 @@ img{
     color: #252525;
     font-size: 13px;
 } 
+
+
+
+.icon-container {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    gap: 10px;
+    padding-top: 15px;
+}
+  
+.icon-container i{
+    display: inline-block;
+    margin-left: 5px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.icon-container i:hover {
+    color: #468EEC;
+}
+
+.fa-heart {
+    display: inline-block;
+    margin-left: 5px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.fa-heart:hover {
+    color: #468EEC;
+}
+
+.fa-heart.full {
+    color: #468EEC;
+}
+
+.idProdHidden {
+    display: none;
+}

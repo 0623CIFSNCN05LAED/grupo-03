@@ -55,6 +55,14 @@ const userServices = {
       }
     });
   },
+  isAdmin: (email) => {
+    return Users.findOne({
+      where: {
+        email: email,
+        admin: 1
+      }
+    });
+  },
   /*validateUserLogin: (email, password) => {
     return Users.findOne({
       where: {

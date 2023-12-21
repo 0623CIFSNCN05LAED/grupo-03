@@ -26,21 +26,21 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: '0',
         },
         price: {
-            type: DataTypes.DECIMAL.UNSIGNED,
+            type: DataTypes.FLOAT.UNSIGNED,
             allowNull: false,
         },
         priceWithDiscount: {
-            type: DataTypes.DECIMAL.UNSIGNED,
+            type: DataTypes.FLOAT.UNSIGNED,
             allowNull: true,
             defaultValue: '0',
         },
         discount: {
-            type: DataTypes.DECIMAL.UNSIGNED,
+            type: DataTypes.FLOAT.UNSIGNED,
             allowNull: true,
             defaultValue: null,
         },
         rating: {
-            type: DataTypes.DECIMAL.UNSIGNED,
+            type: DataTypes.FLOAT.UNSIGNED,
             allowNull: false,
         },
         os: {

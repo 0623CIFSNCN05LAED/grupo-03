@@ -11,13 +11,11 @@ const formatPrice =
 
 const productServices = {
   getAllProducts: async function () {
-
     const products = await Products.findAll({ include: ["brand", "image"], });
     for (let i = 0; i < products.length; i++) {
       products[i].price = formatPrice.format(products[i].price)
       products[i].priceWithDiscount = formatPrice.format(products[i].priceWithDiscount)
     }
-
     return products
   },
 
@@ -97,9 +95,6 @@ const productServices = {
     return products;
   },
 
-
-  //HASTA ACA EL AGREGADO
-
   //Paginación
   getAllProductsAndCount: ({
     page, offset
@@ -166,6 +161,15 @@ const productServices = {
     return products;
   },
 
+  getFeaturedQuantity: async () => {
+    const products = await Products.findAll({
+        where: {
+          featured: 1
+      },
+    })
+    const qty = products.length;
+    return qty;
+  },
 
   searchProducts: (query) => {
     const products = getAllProducts().filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));

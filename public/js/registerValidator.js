@@ -106,11 +106,25 @@ window.addEventListener('load', () => {
     }
 
     //images validation
+    /*
     if (images === null) {
       setError(images, 'Debe ingresar una imágen');
     } else {
       setSuccess(images);
-    }
+    }*/
+    images.addEventListener("change", (e) => {
+      console.log(e.target.files[0]);
+      let archivo = e.target.files[0];
+      if (archivo) {
+        if (archivo.name.includes(".png") || archivo.name.includes(".jpg")) {
+          setSuccess(images);
+        } else {
+          setError(images, "La imagen debe ser .png o .jpg");
+        }
+      } else {
+        setError(images, "Debe subir una imagen de perfil");
+      }
+    })
   };
 
     validateInputs();

@@ -48,10 +48,10 @@ IF
           , `description` TEXT NOT NULL
           , `featured_desc` varchar(300) DEFAULT null NULL
           , `featured` tinyint(1) DEFAULT '0' NOT NULL
-          , `price` DECIMAL unsigned NOT NULL
-          , `priceWithDiscount` DECIMAL unsigned DEFAULT null NULL
-          , `discount` DECIMAL unsigned DEFAULT null NULL
-          , `rating` DECIMAL unsigned NOT NULL
+          , `price` DECIMAL(10, 2) unsigned NOT NULL
+          , `priceWithDiscount` DECIMAL(10, 2) unsigned DEFAULT null NULL
+          , `discount` DECIMAL(10, 2) unsigned DEFAULT null NULL
+          , `rating` DECIMAL(10, 2) unsigned NOT NULL
           , `os` varchar(50) NOT NULL
           , `screen` varchar(80) NOT NULL
           , `camera` varchar(50) NOT NULL

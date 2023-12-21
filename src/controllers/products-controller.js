@@ -11,10 +11,18 @@ module.exports = {
         res.render("productDetail", { product });
     },
     create: async (req, res) => {
+        const errors = req.session.errors;
+        const oldData = req.session.oldData;
         const colors = await productServices.getColors();
         const capacities = await productServices.getCapacities();
         const brands = await productServices.getBrands();
-        res.render("productCreate", { capacities, colors, brands });
+        req.session.errors = null;
+        req.session.oldData = null;
+        res.render("productCreate", {
+            errors: errors ? errors : null,
+            oldData: oldData ? oldData : null,
+            capacities, colors, brands
+        });
     },
     store: (req, res) => {
         const ArrayImagenes = req.files.map((file) => `/images/products/${file.filename}`);
@@ -26,9 +34,9 @@ module.exports = {
             featured_desc: req.body.featured_desc,
             images: req.files ? ArrayImagenes : ["/images/products/default-image.jpg"],
             featured: req.body.featured,
-            price: Number(req.body.price),
-            discount: Number(req.body.discount),
-            rating: Number(req.body.rating),
+            price: req.body.price,
+            discount: req.body.discount,
+            rating: req.body.rating,
             colors: req.body.color,
             capacity: req.body.capacity,
             os: req.body.os,
@@ -39,9 +47,17 @@ module.exports = {
         res.redirect("/products/crud");
     },
     edit: async (req, res) => {
+        const errors = req.session.errors;
+        const oldData = req.session.oldData;
         const id = req.params.id;
         const product = await productServices.getProductNoFormat(id);
-        res.render("productEdit", { id, product });
+        req.session.errors = null;
+        req.session.oldData = null;
+        res.render("productEdit", {
+            errors: errors ? errors : null,
+            oldData: oldData ? oldData : null,
+            id, product
+        });
     },
     update: (req, res) => {
         const product = {
@@ -49,9 +65,9 @@ module.exports = {
             description: req.body.description,
             featured_desc: req.body.featured_desc,
             featured: req.body.featured,
-            price: Number(req.body.price),
-            discount: Number(req.body.discount),
-            rating: Number(req.body.rating),
+            price: req.body.price,
+            discount: req.body.discount,
+            rating: req.body.rating,
             os: req.body.os,
             screen: req.body.screen,
             camera: req.body.camera
@@ -80,4 +96,12 @@ module.exports = {
         const products = await productServices.getAllProducts();
         res.render("productCRUD", { products });
     },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect("/");
+    },/*
+    favoritesProducts: async (req, res) => { 
+        const products = await productServices.getAllProducts();
+        res.render("favoritesProducts", { products });
+    },*/
 };

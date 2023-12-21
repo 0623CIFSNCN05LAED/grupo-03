@@ -8,7 +8,6 @@ module.exports = {
     res.render("users", { users });
 
   },
-
   showLogin: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
@@ -19,18 +18,6 @@ module.exports = {
       oldData: oldData ? oldData : null,
     });
   },
-  /*login: (req, res) => {
-    const data = req.body;
-    console.log(data);
-    const email = req.body.email;
-    const password = req.body.password;
-    const dataUser = userServices.validateUserLogin(email, password);
-    if (dataUser !== null) {
-      req.session.userData = dataUser;
-      console.log('data session');
-    }
-    res.redirect("/");
-  },*/
   login: async (req, res) => {
     const data = req.body;
     console.log(data);
@@ -57,6 +44,10 @@ module.exports = {
       return res.redirect("/");
     }
   },
+  logout: (req, res) => {
+    req.session.destroy();
+    res.redirect("/");
+  },
   showRegister: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;
@@ -78,5 +69,4 @@ module.exports = {
 
     res.redirect("/login");
   },
-
 };

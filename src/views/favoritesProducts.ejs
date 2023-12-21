@@ -2,12 +2,11 @@
 <html lang="es">
 <head>
     <%- include("partials/head") %>
-    <title>Products</title>
-    <link href="/css/styleProducts.css" rel="stylesheet"/>
+    <title>Favorite Products</title>
+    <link href="/css/styleFavoritesProducts.css" rel="stylesheet"/>
     <link href="/css/styleMain.css" rel="stylesheet"/>
     <script src="/js/burgerMenu.js" defer></script>
-    <script src="/js/favoriteProduct.js" defer></script>
-    <!--<script src="/js/searchBar.js" defer></script>-->
+    <script src="/js/removeFavoriteProduct.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,11 +14,7 @@
     </header>
 
     <main>
-        <h1>Listado de Productos</h1>
-        <!--<div class="search-bar">
-            <label for="search">Busqueda de Productos</label>
-            <input type="search" id="search">
-        </div>-->
+        <h1>Productos Favoritos</h1>
         <div class="products-list">
             <% for (let i = 0; i < products.length; i++) { %>
                 <div class="product-card">
@@ -33,7 +28,7 @@
                     </a>
                     <div class="product-details">
                         <span class="product-catagory"><%= products[i].brand.brand %></span>
-                        <h4><a href="/products/detail/<%= products[i].id_product %>" class="prod-name"><%= products[i].name %></a></h4>
+                        <h4><a href="/products/detail/<%= products[i].id_product %>"><%= products[i].name %></a></h4>
                         <p><%= products[i].description.slice(0, 200)+'...' %><a href="/products/detail/<%= products[i].id_product %>"> Leer más</a></p>
                         <div class="product-bottom-details">
                             <% if(products[i].discount == 0){ %>
@@ -42,7 +37,7 @@
                                 <div class="product-price"><small><%= products[i].priceWithDiscount %></small><%= products[i].price %></div>
                             <% } %>    
                             <div class="product-links">
-                                <i class="fa fa-heart"></i>
+                                <i class="fa fa-heart full"></i>
                                 <a href=""><i class="fa fa-shopping-cart"></i></a>
                             </div>
                         </div>

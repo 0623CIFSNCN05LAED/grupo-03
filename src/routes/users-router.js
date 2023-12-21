@@ -10,6 +10,7 @@ const validationsLogin = require("../validations/login");
 const validationsRegister = require("../validations/register");
 const validateForm = require("../middlewares/validate-form");
 const validateFormRegister = require("../middlewares/validate-form-register");
+const userGuard = require("../middlewares/user-guard");
 
 const storage = multer.diskStorage({
   destination: path.join(__dirname, "../../public/images/users"),
@@ -26,7 +27,7 @@ const upload = multer({
 });
 
 router.get("/", mainController.home);
-router.get("/users", mainController.users); //agregada
+router.get("/users", mainController.users);
 router.get("/login", userController.showLogin);
 router.post(
   "/login",
@@ -45,9 +46,6 @@ router.post(
   validateFormRegister,
   userController.register
 );
-// router.get("/productCart", mainController.productCart);
-
-// const productsRouter = require("./products-router");
-// router.use("/products", productsRouter);
+router.get("/productCart", userGuard, mainController.productCart);
 
 module.exports = router;
