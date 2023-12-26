@@ -7,7 +7,6 @@
     <link href="/css/styleMain.css" rel="stylesheet"/>
     <script src="/js/burgerMenu.js" defer></script>
     <script src="/js/favoriteProduct.js" defer></script>
-    <!--<script src="/js/searchBar.js" defer></script>-->
 </head>
 <body>
     <header>
@@ -16,10 +15,19 @@
 
     <main>
         <h1>Listado de Productos</h1>
-        <!--<div class="search-bar">
-            <label for="search">Busqueda de Productos</label>
-            <input type="search" id="search">
-        </div>-->
+        <!--<form action="/products/search" method="get">
+            <input type="search" name="search" id="search">
+            <button type="submit">Buscar productos</button>
+        </form>-->
+        <form action="/products/search" method="get" class="form-sb">
+            <div class="search-sb">
+                <input type="search" name="search" id="search" class="search" placeholder="Buscar un producto">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </form>
+
         <div class="products-list">
             <% for (let i = 0; i < products.length; i++) { %>
                 <div class="product-card">
