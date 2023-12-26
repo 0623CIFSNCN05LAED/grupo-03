@@ -7,15 +7,24 @@ window.addEventListener('load', () => {
   const precio = document.getElementById("price");
   const descuento = document.getElementById("discount");
   const calificacion = document.getElementById("rating");
-  const destacado = document.getElementById("featured");
+  const destacado = document.querySelectorAll('input[name="featured"]');
+  let a = 0;
+  const capacity = document.querySelectorAll('input[name="capacity"]');
+  let b = 0;
+  const color = document.querySelectorAll('input[name="color"]');
+  let c = 0;
   const sistema = document.getElementById("os");
   const pantalla = document.getElementById("screen");
   const camara = document.getElementById("camera");
 
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     let errors = false;
-    
+    let errors2 = false;
+    let errors3 = false;
+    let errors4 = false;
+
   const setError = (element, message) => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector(".error");
@@ -28,9 +37,72 @@ window.addEventListener('load', () => {
     errors = true;
   };
 
+  const setError2 = (element, message) => {
+    const inputControl = document.querySelector(".cap-cat-form");
+    const errorDisplay = document.querySelector(".error2");
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add("error");
+    inputControl.classList.remove("success");
+
+    console.log(errors2);
+    errors2 = true;
+  };
+
+  const setError3 = (element, message) => {
+    const inputControl = document.querySelector(".cap-cat-form");
+    const errorDisplay = document.querySelector(".error3");
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add("error");
+    inputControl.classList.remove("success");
+
+    console.log(errors3);
+    errors3 = true;
+  };
+
+  const setError4 = (element, message) => {
+    const inputControl = document.querySelector(".color-form");
+    const errorDisplay = document.querySelector(".error4");
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add("error");
+    inputControl.classList.remove("success");
+
+    console.log(errors4);
+    errors4 = true;
+  };
+
   const setSuccess = (element) => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector(".error");
+
+    errorDisplay.innerText = "";
+    inputControl.classList.add("success");
+    inputControl.classList.remove("error");
+  };
+
+  const setSuccess2 = (element) => {
+    const inputControl = document.querySelector(".cap-cat-form");
+    const errorDisplay = document.querySelector(".error2");
+
+    errorDisplay.innerText = "";
+    inputControl.classList.add("success");
+    inputControl.classList.remove("error");
+  };
+
+  const setSuccess3 = (element) => {
+    const inputControl = document.querySelector(".cap-cat-form");
+    const errorDisplay = document.querySelector(".error3");
+
+    errorDisplay.innerText = "";
+    inputControl.classList.add("success");
+    inputControl.classList.remove("error");
+  };
+
+  const setSuccess4 = (element) => {
+    const inputControl = document.querySelector(".color-form");
+    const errorDisplay = document.querySelector(".error4");
 
     errorDisplay.innerText = "";
     inputControl.classList.add("success");
@@ -41,15 +113,12 @@ window.addEventListener('load', () => {
     const nombreValue = nombre.value.trim();
     const descripcionValue = descripcion.value.trim();
     const descripcion_destacadaValue = descripcion_destacada.value.trim();
-    const imagesValue = images.value.trim();
     const precioValue = precio.value.trim();
     const descuentovalue = descuento.value.trim();
     const calificacionValue = calificacion.value.trim();
-    //const destacadoValue = destacado.value.trim();
     const sistemaValue = sistema.value.trim();
     const pantallaValue = pantalla.value.trim();
     const camaraValue = camara.value.trim();
-    
 
     //name validation
     if (nombreValue === "") {
@@ -71,26 +140,55 @@ window.addEventListener('load', () => {
       setSuccess(descripcion);
     }
 
+    //color validation
+    for (let i = 0; i < color.length; i++) {
+      if (color[i].checked) {
+          setSuccess4(color);
+          c = 1;
+          break;
+      }
+    }
+    if (c == 0) {
+      setError4(color, "Debe ingresar un color");
+    }
+
+    //capacity validation
+    for (let i = 0; i < capacity.length; i++) {
+      if (capacity[i].checked) {
+          setSuccess3(capacity);
+          b = 1;
+          break;
+      }
+    }
+    if (b == 0) {
+      setError3(capacity, "Debe ingresar una capacidad");
+    }
+
+    //featured validation
+    for (let i = 0; i < destacado.length; i++) {
+      if (destacado[i].checked) {
+          setSuccess2(destacado);
+          a = 1;
+          break;
+      }
+    }
+    if (a == 0) {
+      setError2(destacado, "Debe ingresar una categoria");
+    }
+
     //featured_desc validation
-    if (destacado === '1') {
-      if (descripcion_destacadaValue === "") {
+    if (destacado[0].checked || destacado[1].checked) {
+      if (destacado[1].checked && descripcion_destacadaValue === "") {
         setError(descripcion_destacada, "Debe ingresar una descripcion destacada");
-      } else if (descripcion_destacadaValue.length < 15 || descripcion_destacadaValue.length > 300) {
+      } else if (destacado[1].checked && descripcion_destacadaValue.length < 15 || descripcion_destacadaValue.length > 300) {
         setError(descripcion_destacada, "Debe contener al menos 15 caracteres y no mas de 300");
+      } else if (destacado[0].checked && descripcion_destacadaValue !== "") {
+        setError(descripcion_destacada, "Debe seleccionar destacado para poder usar una descripcion destacada");
       } else {
         setSuccess(descripcion_destacada);
       }
     }
-
-    //featured validation
-    if (destacado === "") {
-      setError(destacado, "Debe ingresar una categoria");
-    } else if (destacado === '0' && descripcion_destacadaValue !== "") {
-      setError(descripcion_destacada, "Debe ingresar una categoria para poder usar una descripcion destacada");
-    } else {
-      setSuccess(destacado);
-    }
-
+      
     //price validation
     if (precioValue === "") {
       setError(precio, "Debe ingresar un precio");
@@ -114,12 +212,6 @@ window.addEventListener('load', () => {
     }
 
     //images validation
-    /*
-    if (!validator.isEmpty(imagesValue)) {
-      setError(images, 'Debe ingresar una imágen');
-    } else {
-      setSuccess(images);
-    }*/
     images.addEventListener("change", (e) => {
       console.log(e.target.files[0]);
       let archivo = e.target.files[0];
@@ -179,7 +271,7 @@ window.addEventListener('load', () => {
 
     validateInputs();
     
-    if (errors != true) {
+    if (errors != true && errors2 != true && errors3 != true && errors4 != true) {
       console.log("submit");
       form.submit();
     }

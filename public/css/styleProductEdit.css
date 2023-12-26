@@ -56,6 +56,8 @@ body {
     position: relative;
     /*margin: 20px 0;*/
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .input-form label {
@@ -370,14 +372,27 @@ select {
     border: 2px solid rgb(210, 33, 63);
 }
 
-.control-formulario.success input {
+.input-form.success input {
     border-color: #09c372;
 }
 
-.control-formulario.error input {
+.input-form.error input {
     border-color: #ff3860;
 }
 
-.control-formulario .error {
+.input-form .error {
     color: #ff3860;
+}
+
+.category-form.success  {
+    border-color: #09c372;
+}
+
+.category-form.error  {
+    border-color: #ff3860;
+}
+
+.category-form .error2 {
+    color: #ff3860;
+    
 }
