@@ -13,7 +13,7 @@ module.exports = {
         // pageSize
       );
 
-      console.log("totalUserCount",allUsers);
+      console.log("totalUserCount", allUsers);
       // const totalPages = Math.ceil(totalUserCount / pageSize);
 
       const response = {
@@ -55,4 +55,19 @@ module.exports = {
     });
   },
 
+  ultimoUsuario: async (req, res) => {
+    const ultimoUsuario = await userService.findUltimoUsuarioCreado();
+    const imagesPath = "http://localhost:3030/images/users/";
+    const imageUrl = `${imagesPath}${lastUser.avatar}`;
+    const userToApi = {
+      id: ultimoUsuario.id_user,
+      name: ultimoUsuario.name,
+      last_name: ultimoUsuario.last_name,
+      email: ultimoUsuario.email,
+      profile_picture: "localhost:3030" + user.profile_picture,
+    };
+    let respuesta = { ultimoUsuario: userToApi };
+    res.json(respuesta);
+  },
 };
+

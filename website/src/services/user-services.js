@@ -18,21 +18,10 @@ const userServices = {
     });
     return users;
   },
-  getCountTotalUser: async function (){
+  getCountTotalUser: async function () {
     const count = await Users.count();
     return count;
   },
-
-  // //Paginación
-  // getAllUsersAndCount: ({
-  //   pageSize, offset, 
-  // }) => {
-  //   return Users.findAndCountAll({
-  //     limit: pageSize,
-  //     offset: offset
-
-  //   })
-  // },
 
   getAdmin: (email) => {
     const isAdmin = 0;
@@ -100,6 +89,14 @@ const userServices = {
       profile_picture: imagen ? imagen : ["/images/users/default-image.jpg"],
       admin: admin,
     });
+  },
+
+  getUltimoUsuarioCreado: async function () {
+    const ultimoUsuarioCreado = await User.findOne({
+      order: [["created_at", "DESC"]],
+      limit: 1,
+    });
+    return ultimoUsuarioCreado;
   },
 };
 

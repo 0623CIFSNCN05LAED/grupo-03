@@ -273,6 +273,20 @@ const productServices = {
     });
   },
 
+  // getUltimoProductoCreado: async function () {
+  //   try {
+  //     const ultimoProductoCreado = await Product.findOne({
+  //       order: [["created_at", "DESC"]],
+  //       limit: 1,
+  //       include: ["productBrand"],
+  //     });
+  //     return ultimoProductoCreado;
+  //   } catch (error) {
+  //     console.error("Error al obtener el último producto:", error);
+  //     throw error;
+  //   }
+  // },
+
 };
 
 module.exports = productServices;
