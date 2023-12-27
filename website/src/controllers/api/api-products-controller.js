@@ -47,7 +47,6 @@ module.exports = {
                     status: 200,
                     count: totalProductsCount,
                     countByBrand: Brands,
-                    // countProductsByBrand(totalProducts)
                     url: req.headers.host + req.originalUrl,
                 },
                 products: productsToApi,
@@ -65,7 +64,7 @@ module.exports = {
         const response = {
             meta: {
                 status: 200,
-                total: product.length,
+                total: products.length,
                 url: "/api/products/:id"
             },
             data: {

@@ -12,7 +12,7 @@ export default function Sidebar() {
         <h3>Opciones</h3>
         <ul>
           <li>
-            <Link to="/search">
+            <Link to="/buscar">
               <i className="bi bi-search" style={iconStyle}></i>- Buscar
             </Link>
           </li>

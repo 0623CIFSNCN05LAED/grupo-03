@@ -6,6 +6,7 @@ import UltimoUsuario from "./Content/UltimoUsuario";
 import Marcas from "./Content/Marcas";
 import Products from "./Content/Productos";
 import OneProduct from "./Content/OneProduct";
+import ProductsSearch from "./ProductsSearch";
 
 
 export default function ContentWrap() {
@@ -15,9 +16,9 @@ export default function ContentWrap() {
       }
     >
       <Switch>
-        {/* <Route path="/buscar">
-          <Buscar />
-        </Route> */}
+        <Route path="/buscar">
+          <ProductsSearch />
+        </Route>
         <Route path="/phones">
           <Preventa />
         </Route>
@@ -43,10 +44,6 @@ export default function ContentWrap() {
           <p>404 - página no encontrada</p>
         </Route>
       </Switch>
-      {/* <div className="col-6">
-        <h2 className="mt-3">Producto Seleccionado:</h2>
-        <Route path="/products/:name" component={OneProduct} />
-      </div> */}
     </main>
   );
 }
