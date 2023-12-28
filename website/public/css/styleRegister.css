@@ -1,0 +1,224 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+    color: #001011;
+}
+
+main {
+    margin-top: 120px;
+    margin-bottom: 70px;
+}
+
+.my-form h1{
+    text-align: center;
+    color: #636363;
+    position: relative;
+}
+  
+.my-form h1::before, .my-form h1::after{
+    content: "";
+    height: 3px;
+    width: 12%;
+    background-color: #ccc;
+    position: absolute;
+    top: 50%;
+}
+  
+.my-form h1::before{
+    left: 5%;
+}
+  
+.my-form h1::after{
+    right: 5%;
+}
+  
+.my-form, #sign-in{
+    width: 300px;
+    margin: 0 auto;
+}
+  
+.my-form{
+    background-color: #f2f3f7;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+  
+#sign-in{
+    color: #999;
+    text-align: center;
+    margin-top: 10px;
+}
+  
+.full-input-div{
+    margin: 0 20px;
+}
+  
+p.full-input{
+    color: #999;
+}
+  
+#first-name{
+    float: left;
+}
+  
+#last-name{
+    float: right;
+}
+  
+.full-input{
+    margin: 10px 0;
+    height: 45px;
+    padding: 15px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #555;
+    transition: border 0.15s ease-in-out, box-shadow 0.15s ease-in-out; 
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+.full-input:focus{
+    border: 1px solid #464CEC;
+    box-shadow: 1px 1px 5px #464CEC;
+}
+  
+#register, #register:hover{
+    border: 0;
+    margin-bottom: 40px;
+    color: #fff;
+    height: 50px;
+    border-radius: 3px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+}
+  
+#register{
+    background-image: linear-gradient(to bottom, #468EEC 0, #464CEC 100%);
+}
+  
+#register:hover{
+    background-color: #464CEC;
+    background-image: none;
+}
+  
+p.full-input{
+    border: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+  
+p.full-input a:link, p.full-input a:visited{
+    color: #468EEC;
+    text-decoration: none;
+}
+  
+p.full-input a:hover{
+    color: #464CEC;
+    text-decoration: none;
+}
+  
+#register{
+    border: 0;
+}
+  
+#sign-in a{
+    color: #468EEC;
+}
+
+.error-msg {
+    color: rgb(210, 33, 63);
+}
+
+.error-field input {
+    border: 2px solid rgb(210, 33, 63);
+}
+
+.control-formulario.success input {
+    border-color: #09c372;
+}
+
+.control-formulario.error input {
+    border-color: #ff3860;
+}
+
+.control-formulario .error {
+    color: #ff3860;
+}
+  
+/*Animacion*/
+.my-form{
+    position: relative;
+    top: -700px;
+    animation: drop 0.7s ease forwards;
+}
+  
+#sign-in{
+    opacity: 0;
+    animation: appear 0.5s ease forwards 0.7s;
+}
+  
+@keyframes drop{
+    0%{ opacity: 0; }
+    70%{ transform: translateY(720px); }
+    100%{ transform: translateY(700px);
+          opacity: 1; }
+}
+  
+@keyframes appear{
+    0%{}
+    100%{ opacity: 1; }
+}
+
+/* movil pequeño */
+@media (min-width: 360px){
+    
+}
+
+@media (min-width: 380px){
+    
+}
+
+/* tablet */
+@media (min-width: 768px){
+    main {
+        margin-top: 115px;
+        margin-bottom: 75px;
+    }
+
+    .my-form, #sign-in{
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    .my-form h1::before, .my-form h1::after{
+        width: 22%;
+    }
+}
+
+/* desktop */
+@media (min-width: 1280px){
+    main {
+        margin-top: 190px;
+        margin-bottom: 150px;
+    }
+
+    .my-form, #sign-in{
+        width: 850px;
+        margin: 0 auto;
+    }
+
+    .my-form h1::before, .my-form h1::after{
+        width: 28%;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <class><%- include("partials/head") %>
+    <title>Login</title>
+    <link href="/css/styleLogin.css" rel="stylesheet"/>
+    <link href="/css/styleMain.css" rel="stylesheet"/>
+    <script src="/js/loginValidator.js"></script>
+    <script src="/js/errorsForm.js" defer></script>
+    <script src="/js/burgerMenu.js" defer></script>
+    <script src="/js/rememberMe.js" defer></script>
+    <!--<script src="/js/goBack.js" defer></script>-->
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+<body>
+    <header>
+        <%- include("partials/header") %> 
+    </header> 
+    
+    <main>
+    <form action="/login" method="POST" class="form my-form" id="form">
+        <h1>Iniciar Sesión</h1>
+        <div class="full-input-div">
+            <div class="control-formulario">
+            <input type="text" name="email" id="email" class="full-input" placeholder="Email" value="<%= oldData ? oldData.email : "" %>"/> <% if (errors && errors.email) { %>
+                <p class="error-msg"><%= errors.email.msg %></p>
+                <% } %> 
+                <span class="error"></span>
+            </div>
+            <div class="control-formulario">
+            <input type="password" name="password" id="password" class="full-input" placeholder="Contraseña" value="<%= oldData ? oldData.password : "" %>"/> <% if (errors && errors.password) { %>
+                <p class="error-msg"><%= errors.password.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            </div>
+            <div class="recordarme">
+                <label><input type="checkbox" name="recordarme" value="IsRememberMe" id="rememberMe"> Recordarme</label>
+                <a href="#">Olvidé mi contraseña</a>
+            </div>
+            <button type="submit" class="full-input" id="login" onclick="RememberMe()">Iniciar Sesión</button>
+        </div> 
+    </form>
+    <p id="sign-in">¿No tienes una cuenta? <a href="/register">Registrate</a></p>
+    </main>
+
+    <footer class="footer">
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>

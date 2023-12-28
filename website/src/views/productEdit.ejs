@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="/css/styleMain.css">
+    <link rel="stylesheet" href="/css/styleProductEdit.css">
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="/js/productEditValidator.js" defer></script>
+    <script src="/js/errorsForm.js" defer></script>
+    <script src="/js/burgerMenu.js" defer></script>
+</head>
+<body>
+    <header class="header">
+    <%- include("partials/header") %>
+    </header>
+    <form action="/products/update/<%= product.id_product %>?_method=PUT" method="POST" class="formulario" id="form">
+        <h1 class="titulo-formulario">Editar el producto:</h1>
+        <div class="input-form">
+            <input type="text" name="name" value="<%= oldData ? oldData.name : product.name %>"/> <% if (errors && errors.name) { %>
+                <p class="error-msg"><%= errors.name.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            <label for="">Nombre</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="description" value="<%= oldData ? oldData.description : product.description %>"/> <% if (errors && errors.description) { %>
+                <p class="error-msg"><%= errors.description.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            <label for="">Descripción</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="featured_desc" id="featured_desc" value="<%= oldData ? oldData.featured_desc : product.featured_desc %>"/> <% if (errors && errors.featured_desc) { %>
+                <p class="error-msg"><%= errors.featured_desc.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            <label for="featured_desc">Descripción destacada</label>
+        </div>
+        <div class="input-form">
+            <input type="number" name="price" value="<%= oldData ? oldData.price : product.price %>"/> <% if (errors && errors.price) { %>
+                <p class="error-msg"><%= errors.price.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            <label for="">Precio</label>
+        </div>
+        <div class="input-form">
+            <input type="number" name="discount" value="<%= oldData ? oldData.discount : product.discount %>"/> <% if (errors && errors.discount) { %>
+                <p class="error-msg"><%= errors.discount.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            <label for="">Descuento</label>
+        </div>
+        <div class="input-form">
+            <input type="number" name="rating" value="<%= oldData ? oldData.rating : product.rating %>"/> <% if (errors && errors.rating) { %>
+                <p class="error-msg"><%= errors.rating.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            <label for="">Calificación</label>
+        </div>       
+        <div class="category-form">
+            <label for="category" class="cat-text">Categoría:</label>
+            <div class="radio-form">
+                <label class="custom-radio">
+                    <label class="radio-text">Normal</label>
+                    <input type="radio" name="featured" value="0" <%= oldData && oldData.featured === "0" ? "checked" : "" %>>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="custom-radio">
+                    <label class="radio-text">Destacado</label>
+                    <input type="radio" name="featured" value="1" <%= oldData && oldData.featured === "1" ? "checked" : "" %>>
+                    <span class="checkmark"></span>
+                </label>
+                <% if (errors && errors.featured) { %>
+                <p class="error-msg"><%= errors.featured.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            </div>
+        </div>
+        <div class="input-form">
+            <input type="text" name="os" value="<%= oldData ? oldData.os : product.os %>"/> <% if (errors && errors.os) { %>
+                <p class="error-msg"><%= errors.os.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            <label for="">Sistema operativo</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="screen" value="<%= oldData ? oldData.screen : product.screen %>"/> <% if (errors && errors.screen) { %>
+                <p class="error-msg"><%= errors.screen.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            <label for="">Dimensiones pantalla</label>
+        </div>
+        <div class="input-form">
+            <input type="text" name="camera" value="<%= oldData ? oldData.camera : product.camera %>"/> <% if (errors && errors.camera) { %>
+                <p class="error-msg"><%= errors.camera.msg %></p>
+                <% } %>
+                <span class="error"></span>
+            <label for="">Camara principal</label>
+        </div>
+        <button type="submit" class="boton-formulario">Actualizar</button>
+    </form>
+    <div class="btn-back">
+        <button class="boton-formulario">
+            <a href="/products/crud">Volver</a>
+        </button>
+    </div> 
+   
+<footer class="footer">
+    <%- include("partials/footer") %>
+</footer>
+
+    </body>
+</html>

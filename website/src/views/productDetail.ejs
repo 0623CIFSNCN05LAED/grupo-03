@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <%- include("partials/head") %>
+        <title>Product Detail PY Grupo 3</title>
+        <link href="/css/styleProductDetail.css" rel="stylesheet"/>
+        <link href="/css/styleMain.css" rel="stylesheet"/>
+        <script src="/js/burgerMenu.js" defer></script>
+        <script src="/js/productDetail.js" defer></script>
+        <script src="/js/favoriteProductDetail.js" defer></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+<body>
+
+    <header>
+        <%- include("partials/header") %>
+    </header>
+
+    <main>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <div class="pd-wrap">
+            <div class="container">
+                <div class="heading-section">
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="slider" class="owl-carousel product-slider">
+                            <% for (let i = 0; i < product.image.length; i++) {  %>
+                                <div class="item">
+                                    <img src="<%= product.image[i].url_image %>" alt="<%= product.name %>">
+                            </div>
+                            <%  } %>
+                        </div>
+                        <div id="thumb" class="owl-carousel product-thumb">
+                            <% for (let i = 0; i < product.image.length; i++) {  %>
+                                <div class="item">
+                                    <img src="<%= product.image[i].url_image %>" alt="<%= product.name %>">
+                            </div>
+                            <%  } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product-dtl">
+                            <div class="product-info">
+                                <div class="product-name"><%= product.name %></div>
+                                <div class="reviews-counter">
+                                    <div class="rate">
+                                        <input type="radio" id="star5" name="rate" value="5" checked />
+                                        <label for="star5" title="text">5 estrellas</label>
+                                        <input type="radio" id="star4" name="rate" value="4" checked />
+                                        <label for="star4" title="text">4 estrellas</label>
+                                        <input type="radio" id="star3" name="rate" value="3" checked />
+                                        <label for="star3" title="text">3 estrellas</label>
+                                        <input type="radio" id="star2" name="rate" value="2" />
+                                        <label for="star2" title="text">2 estrellas</label>
+                                        <input type="radio" id="star1" name="rate" value="1" />
+                                        <label for="star1" title="text">1 estrellas</label>
+                                    </div>
+                                    <span>3 Reviews</span>
+                                </div>
+                                <div class="icon-container">
+                                    <i class="fas fa-heart"></i>
+                                  </div>
+                                <% if(product.discount == 0){ %>
+                                    <div class="product-price-discount"><span><%= product.price %></span></div>
+                                <% } else {%>
+                                    <div class="product-price-discount"><span><%= product.priceWithDiscount %></span><span class="line-through"><%= product.price %></span></div>
+                                <% } %>
+                            </div>
+                            <p><%= product.description %></p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="capacity">Capacidad</label>
+                                    <select id="capacity" name="capacity" class="form-control">
+                                        <option>32gb</option>
+                                        <option>64gb</option>
+                                        <option>128gb</option>
+                                        <option>256gb</option>
+                                        <option>512gb</option>
+                                        <option>1tb</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="color">Color</label>
+                                    <select id="color" name="color" class="form-control">
+                                        <option>Blue</option>
+                                        <option>Green</option>
+                                        <option>Red</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="product-count">
+                                <label for="size">Cantidad</label>
+                                <form action="#" class="display-flex">
+                                    <div class="qtyminus">-</div>
+                                    <input type="text" name="quantity" value="1" class="qty">
+                                    <div class="qtyplus">+</div>
+                                </form>
+                                <a href="/productCart" class="round-black-btn">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info-tabs">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Características tecnicas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reseñas (0)</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                            <section class="container-technical-characteristics">
+                                <h3><%= product.name %></h3>
+                                <form>
+                                <div class="container-characteristics">
+                                    <table class="content-table">
+                        
+                                    <thead><tr><th> Características Técnicas </th></tr></thead>
+                        
+                                    <tbody>
+                                        <tr>
+                                            <td>Marca:</td>
+                                            <td><%= product.brand %></td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td>Modelo:</td>
+                                            <td><%= product.name %></td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td>Tamaño pantalla:</td>
+                                            <td><%= product.screen %></td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td>Cámara principal:</td>
+                                            <td><%= product.camera %></td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td>OS:</td>
+                                            <td><%= product.os %></td>
+                                        </tr>
+                                    </tbody>
+                        
+                                </table>
+                                </div>
+                                </form>
+                            </section>
+                        </div>
+                        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                            <div class="review-heading">RESEÑAS</div>
+                            <p class="mb-20">Aun no hay reseñas.</p>
+                            <form class="review-form">
+                                <div class="form-group">
+                                    <label>Tu calificacion</label>
+                                    <div class="reviews-counter">
+                                        <div class="rate">
+                                            <input type="radio" id="star5" name="rate" value="5" />
+                                            <label for="star5" title="text">5 estrellas</label>
+                                            <input type="radio" id="star4" name="rate" value="4" />
+                                            <label for="star4" title="text">4 estrellas</label>
+                                            <input type="radio" id="star3" name="rate" value="3" />
+                                            <label for="star3" title="text">3 estrellas</label>
+                                            <input type="radio" id="star2" name="rate" value="2" />
+                                            <label for="star2" title="text">2 estrellas</label>
+                                            <input type="radio" id="star1" name="rate" value="1" />
+                                            <label for="star1" title="text">1 estrellas</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tu mensaje</label>
+                                    <textarea class="form-control" rows="10"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="" class="form-control" placeholder="Nombre*">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="" class="form-control" placeholder="Email*">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="round-black-btn">Publicar reseña</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+        <div class="idProdHidden">
+            <div class="idProd">
+                <%= product.id_product %>
+            </div>
+        </div>
+    </main>
+
+    <section class="container-related-products">
+        <h2>Productos Relacionados</h2>
+        <div class="card-list-products">
+            <div class="card">
+                <div class="card-img">
+                    <img src="/images/products/iPhone14Proenfrentado.jpg" alt="iPhone14 pro">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>iPhone14 Pro</h3>
+                    </div>
+                    <div class="container-price">
+                        $ 1.206.490
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="/images/products/iPhoneSEenfrentado.jpg" alt="iPhone SE">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>iPhone SE</h3>
+                    </div>
+                    <div class="container-price">
+                        $ 659.009
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="/images/products/iPhone14enfrentado.jpg" alt="iPhone 14">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>iPhone 14</h3>
+                    </div>
+                    <div class="container-price">
+                        $ 1.149.990
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="/images/products/iPhone12enfrentado.jpg" alt="iPhone 12">
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>iPhone 12</h3>
+                    </div>
+                    <div class="container-price">
+
+                        $ 669.999
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+
+        <%- include("partials/footer") %>
+
+    </footer>
+
+</body>
+</html>

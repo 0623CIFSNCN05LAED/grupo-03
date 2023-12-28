@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+    <title>Favorite Products</title>
+    <link href="/css/styleFavoritesProducts.css" rel="stylesheet"/>
+    <link href="/css/styleMain.css" rel="stylesheet"/>
+    <script src="/js/burgerMenu.js" defer></script>
+    <script src="/js/removeFavoriteProduct.js" defer></script>
+</head>
+<body>
+    <header>
+        <%- include("partials/header") %>  
+    </header>
+
+    <main>
+        <h1>Productos Favoritos</h1>
+        <div class="products-list">
+            <% for (let i = 0; i < products.length; i++) { %>
+                <div class="product-card">
+                    <% if(products[i].discount > 0){ %>
+                        <div class="badge"><%= products[i].discount %>% off</div>
+                    <% } %>
+                    <a href="/products/detail/<%= products[i].id_product %>">
+                    <div class="product-tumb">
+                            <img src="<%= products[i].image[0].url_image %>" alt = "<%= products[i].name %>">
+                    </div>
+                    </a>
+                    <div class="product-details">
+                        <span class="product-catagory"><%= products[i].brand.brand %></span>
+                        <h4><a href="/products/detail/<%= products[i].id_product %>"><%= products[i].name %></a></h4>
+                        <p><%= products[i].description.slice(0, 200)+'...' %><a href="/products/detail/<%= products[i].id_product %>"> Leer más</a></p>
+                        <div class="product-bottom-details">
+                            <% if(products[i].discount == 0){ %>
+                                <div class="product-price"><%= products[i].price %></div>
+                            <% } else {%>
+                                <div class="product-price"><small><%= products[i].priceWithDiscount %></small><%= products[i].price %></div>
+                            <% } %>    
+                            <div class="product-links">
+                                <i class="fa fa-heart full"></i>
+                                <a href=""><i class="fa fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <%   } %>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>
