@@ -73,5 +73,6 @@ module.exports = [
       if (file === undefined) {
         throw new Error("Debe subir una imágen");
       }
+      return true;  
     }),
 ];
