@@ -87,10 +87,18 @@ module.exports = {
         await productServices.deleteProduct(id, product);
         res.redirect("/products/crud");
     },
-    search: (req, res) => {
-        const keywords = req.query.keywords;
-        const foundProducts = productServices.searchProducts(keywords);
-        res.render("results", { foundProducts });
+    search: async (req, res) => {
+        const query = req.query.search;
+        console.log(query);
+        const foundProducts = await productServices.searchProducts(query);
+        if (foundProducts) {
+            res.render("productDetail", { product: foundProducts });
+        } else {
+            //crear pagina de prod no encontrado
+            //res.send("404");
+            const products = await productServices.getAllProducts();
+            res.render("products", { products });
+        }
     },
     crud: async (req, res) => {
         const products = await productServices.getAllProducts();
