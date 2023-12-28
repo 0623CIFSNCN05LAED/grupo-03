@@ -5,13 +5,13 @@ export default function UltimoProducto() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("http://localhost:3030/api/products/ultimo");
+            const response = await fetch("http://localhost:3030/api/products/last");
             const result = await response.json();
             setUltimoProducto(result.data);
         };
         fetchData();
     }, []);
-    console.log("ultimo Producto ", ultimoProducto);
+    console.log("ultimoProducto ", ultimoProducto);
 
     return (
         <div className="container mt-4">
@@ -41,7 +41,7 @@ export default function UltimoProducto() {
                     </div>
 
                     <div className="card-footer">
-                        <small className="text-muted">ID: {ultimoProducto.id}</small>
+                        <small className="text-muted">ID: {ultimoProducto.id_product}</small>
                     </div>
                 </div>
             )}

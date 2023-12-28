@@ -273,18 +273,22 @@ const productServices = {
     });
   },
 
-  // getUltimoProductoCreado: async function () {
-  //   try {
-  //     const ultimoProductoCreado = await Product.findOne({
-  //       order: [["created_at", "DESC"]],
-  //       limit: 1,
-  //       include: ["productBrand"],
-  //     });
-  //     return ultimoProductoCreado;
-  //   } catch (error) {
-  //     console.error("Error al obtener el último producto:", error);
-  //     throw error;
-  //   }
+  // getLastProduct: async () => {
+  //   return Products.findAll({
+  //     attributes: [
+  //       "id","created_at"
+  //     ],
+  //     where: {
+  //       is_active: 1
+  //     },
+  //     order: [
+  //       ['created_at', 'DESC']
+  //   ],
+  //     limit: 1,
+  //     raw: true
+  //   }).then((product) => {
+  //     return product
+  //   });
   // },
 
 };

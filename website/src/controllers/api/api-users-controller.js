@@ -55,19 +55,23 @@ module.exports = {
     });
   },
 
-  ultimoUsuario: async (req, res) => {
-    const ultimoUsuario = await userService.findUltimoUsuarioCreado();
+  LastUser: async (req, res) => {
+    // const users = await userService.getUsers();
+    // const usersCount = users.length;
+    // const lastUserIndex = usersCount - 1;
+    const lastUser = await userServices.findLastUserCreated();
     const imagesPath = "http://localhost:3030/images/users/";
     const imageUrl = `${imagesPath}${lastUser.avatar}`;
     const userToApi = {
-      id: ultimoUsuario.id_user,
-      name: ultimoUsuario.name,
-      last_name: ultimoUsuario.last_name,
-      email: ultimoUsuario.email,
-      profile_picture: "localhost:3030" + user.profile_picture,
+      id: lastUser.id_user,
+      name: lastUser.name,
+      last_name: lastUser.last_name,
+      email: lastUser.email,
+      urlImage: imageUrl,
     };
-    let respuesta = { ultimoUsuario: userToApi };
+    let respuesta = { lastUser: userToApi };
     res.json(respuesta);
   },
+
 };
 

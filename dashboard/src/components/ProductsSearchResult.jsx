@@ -23,7 +23,7 @@ function ProductsSearchResult({ products }) {
                         />
                         <div className="card-body">
                             <h4>{product.name}</h4>
-                            <p>Marca: {product.band} </p>
+                            <p>Marca: {product.brand} </p>
                         </div>
                     </li>
                 );

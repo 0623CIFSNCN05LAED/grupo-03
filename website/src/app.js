@@ -5,6 +5,7 @@ const logger = require ("morgan");
 const path = require("path");
 const methodOverride = require ("method-override");
 const session = require("express-session");
+const cors = require('cors');
 
 const app = express();
 
@@ -20,6 +21,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
+
+//*****cors******/
+app.use(cors());
 
 
 // ************ Template Engine ************
@@ -51,6 +55,8 @@ app.use("/api/users",usersRoutesApi);
 
 // ************ catch 404 and forward to error handler ************
 app.use((req, res, next) => next(createError(404)));
+
+
 
 // ************ error handler ************
 app.use((err, req, res, next) => {

@@ -27,7 +27,7 @@ export default function Sidebar() {
             </Link>
           </li>
           <li>
-            <Link to="/ultimo-usuario">
+            <Link to="/lastUser">
               <i className="bi bi-person-up" style={iconStyle}></i>- Último Usuario
             </Link>
           </li>
@@ -41,6 +41,7 @@ export default function Sidebar() {
               <i className="bi bi-laptop" style={iconStyle}></i>- Productos
             </Link>
           </li>
+          
         </ul>
       </section>
     </nav>

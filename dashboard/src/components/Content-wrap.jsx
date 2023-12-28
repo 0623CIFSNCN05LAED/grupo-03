@@ -2,10 +2,10 @@ import { Route, Switch } from "react-router-dom";
 import Preventa from "./Content/Preventa";
 import Estadisticas from "./Content/Estadisticas";
 import UltimoProducto from "./Content/UltimoProducto";
-import UltimoUsuario from "./Content/UltimoUsuario";
+import LastUser from "./Content/LastUser";
 import Marcas from "./Content/Marcas";
 import Products from "./Content/Productos";
-import OneProduct from "./Content/OneProduct";
+// import OneProduct from "./Content/OneProduct";
 import ProductsSearch from "./ProductsSearch";
 
 
@@ -28,8 +28,8 @@ export default function ContentWrap() {
         <Route path="/ultimo-producto">
           <UltimoProducto />
         </Route>
-        <Route path="/ultimo-usuario">
-          <UltimoUsuario />
+        <Route path="/last">
+          <LastUser />
         </Route>
         <Route path="/marcas">
           <Marcas />
@@ -37,9 +37,9 @@ export default function ContentWrap() {
         <Route path="/products">
           <Products />
         </Route>
-        <Route path="/products/:productId">
+        {/* <Route path="/products/:productId">
           <OneProduct />
-        </Route>
+        </Route> */}
         <Route path="*">
           <p>404 - página no encontrada</p>
         </Route>

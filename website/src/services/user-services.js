@@ -91,12 +91,13 @@ const userServices = {
     });
   },
 
-  getUltimoUsuarioCreado: async function () {
-    const ultimoUsuarioCreado = await User.findOne({
+  getLastUserCreated: async function () {
+    const lastUserCreated = await Users.findOne({
       order: [["created_at", "DESC"]],
       limit: 1,
+      // include: ["users_br"],
     });
-    return ultimoUsuarioCreado;
+    return lastUserCreated;
   },
 };
 

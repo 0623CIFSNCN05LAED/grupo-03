@@ -16,11 +16,11 @@ export default function Brands() {
 
   const myStats = [];
 
-  Object.entries(brands).forEach(([brand, index]) => {
+  Object.entries(brands).forEach(([title, index]) => {
     myStats.push({
       key: index + 1,
-      title: brand,
-      value: brands[brand],
+      title: title,
+      value: brands[title],
       color: "cornflowerblue",
       icon: "bi bi-tag",
     });
