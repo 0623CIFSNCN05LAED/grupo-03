@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/styleProductCreate.css">
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="/js/productCreateValidator.js" defer></script>
+    <script src="/js/errorsForm.js" defer></script>
     <script src="/js/burgerMenu.js" defer></script>
 </head>
 <body>
@@ -25,6 +26,7 @@
                 <% if (errors && errors.brand) { %>
                     <p class="error-msg"><%= errors.brand.msg %></p>
                 <% } %>
+                <span class="error"></span>
             </div>
         </div>
         <div class="input-form">
@@ -48,8 +50,8 @@
                 <span class="error"></span>
             <label for="featured_desc">Descripción destacada</label>
         </div>
-        <div class="control-formulario">
-            <input type="file" multiple name="images" accept="images/*" id="images" class="control" value="<%= oldData ? oldData.images : "" %>"/> <% if (errors && errors.images) { %>
+        <div class="input-form">
+            <input type="file" multiple name="images" accept=".png, .jpg, .jpeg" id="images" class="control" value="<%= oldData ? oldData.images : "" %>"/> <% if (errors && errors.images) { %>
                 <p class="error-msg"><%= errors.images.msg %></p>
                 <% } %>
                 <span class="error"></span>
@@ -89,7 +91,7 @@
                     <% if (errors && errors.color) { %>
                     <p class="error-msg"><%= errors.color.msg %></p>
                     <% } %>
-                    <span class="error"></span>
+                    <span class="error4"></span>
                 </div>
             </div>
         </div>
@@ -107,7 +109,7 @@
                     <% if (errors && errors.capacity) { %>
                     <p class="error-msg"><%= errors.capacity.msg %></p>
                     <% } %>
-                    <span class="error"></span>
+                    <span class="error3"></span>
                 </div>
             </div>
             <div class="category-form">
@@ -126,7 +128,7 @@
                     <% if (errors && errors.featured) { %>
                     <p class="error-msg"><%= errors.featured.msg %></p>
                     <% } %>
-                    <span class="error"></span>
+                    <span class="error2"></span>
                 </div>
             </div>
         </div>

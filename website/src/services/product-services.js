@@ -1,4 +1,4 @@
-const { Products, Brands, Capacities, Colors, Images } = require("../database/models");
+const { Products, Brands, Capacities, Colors, Images, Sequelize } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 
 const formatPrice =
@@ -170,9 +170,20 @@ const productServices = {
     return qty;
   },
 
-  searchProducts: (query) => {
-    const products = getAllProducts().filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
-    return formatProductsPrices(products);
+  searchProducts: async (query) => {
+    const product = await Products.findOne({
+      where: {
+        name: {
+          [Sequelize.Op.like]: "%" + query + "%",
+        },
+      },
+      include: ["brand", "image"] 
+    });
+    if (product) {
+      product.price = formatPrice.format(product.price)
+      product.priceWithDiscount = formatPrice.format(product.priceWithDiscount)
+    }
+    return product;
   },
 
   getColors: () => {

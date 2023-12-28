@@ -7,7 +7,8 @@ window.addEventListener('load', () => {
   const precio = document.getElementById("price");
   const descuento = document.getElementById("discount");
   const calificacion = document.getElementById("rating");
-  const destacado = document.getElementById("featured");
+  const destacado = document.querySelectorAll('input[name="featured"]');
+  let a = 0;
   const sistema = document.getElementById("os");
   const pantalla = document.getElementById("screen");
   const camara = document.getElementById("camera");
@@ -15,6 +16,7 @@ window.addEventListener('load', () => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     let errors = false;
+    let errors2 = false;
     
   const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -28,9 +30,30 @@ window.addEventListener('load', () => {
     errors = true;
   };
 
+  const setError2 = (element, message) => {
+    const inputControl = document.querySelector(".category-form");
+    const errorDisplay = document.querySelector(".error2");
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add("error");
+    inputControl.classList.remove("success");
+
+    console.log(errors2);
+    errors2 = true;
+  };
+
   const setSuccess = (element) => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector(".error");
+
+    errorDisplay.innerText = "";
+    inputControl.classList.add("success");
+    inputControl.classList.remove("error");
+  };
+
+  const setSuccess2 = (element) => {
+    const inputControl = document.querySelector(".category-form");
+    const errorDisplay = document.querySelector(".error2");
 
     errorDisplay.innerText = "";
     inputControl.classList.add("success");
@@ -41,11 +64,9 @@ window.addEventListener('load', () => {
     const nombreValue = nombre.value.trim();
     const descripcionValue = descripcion.value.trim();
     const descripcion_destacadaValue = descripcion_destacada.value.trim();
-    const imagesValue = images.value.trim();
     const precioValue = precio.value.trim();
     const descuentovalue = descuento.value.trim();
     const calificacionValue = calificacion.value.trim();
-    const destacadoValue = destacado.value.trim();
     const sistemaValue = sistema.value.trim();
     const pantallaValue = pantalla.value.trim();
     const camaraValue = camara.value.trim();
@@ -72,23 +93,28 @@ window.addEventListener('load', () => {
     }
 
     //featured_desc validation
-    if (destacadoValue === '1') {
-      if (descripcion_destacadaValue === "") {
+    if (destacado[0].checked || destacado[1].checked) {
+      if (destacado[1].checked && descripcion_destacadaValue === "") {
         setError(descripcion_destacada, "Debe ingresar una descripcion destacada");
-      } else if (descripcion_destacadaValue.length < 15 || descripcion_destacadaValue.length > 300) {
+      } else if (destacado[1].checked && descripcion_destacadaValue.length < 15 || descripcion_destacadaValue.length > 300) {
         setError(descripcion_destacada, "Debe contener al menos 15 caracteres y no mas de 300");
+      } else if (destacado[0].checked && descripcion_destacadaValue !== "") {
+        setError(descripcion_destacada, "Debe seleccionar destacado para poder usar una descripcion destacada");
       } else {
         setSuccess(descripcion_destacada);
       }
     }
 
     //featured validation
-    if (destacadoValue === "") {
-      setError(destacado, "Debe ingresar una categoria");
-    } else if (destacadoValue === '0' && descripcion_destacadaValue !== "") {
-      setError(descripcion_destacada, "Debe ingresar una categoria para poder usar una descripcion destacada");
-    } else {
-      setSuccess(destacado);
+    for (let i = 0; i < destacado.length; i++) {
+      if (destacado[i].checked) {
+          setSuccess2(destacado);
+          a = 1;
+          break;
+      }
+    }
+    if (a == 0) {
+      setError2(destacado, "Debe ingresar una categoria");
     }
 
     //price validation
@@ -114,11 +140,19 @@ window.addEventListener('load', () => {
     }
 
     //images validation
-    if (images === null) {
-      setError(images, 'Debe ingresar una imágen');
-    } else {
-      setSuccess(images);
-    }
+    images.addEventListener("change", (e) => {
+      console.log(e.target.files[0]);
+      let archivo = e.target.files[0];
+      if (archivo) {
+        if (archivo.name.includes(".png") || archivo.name.includes(".jpg")) {
+          setSuccess(images);
+        } else {
+          setError(images, "La imagen debe ser .png o .jpg");
+        }
+      } else {
+        setError(images, "Debe subir una imagen de perfil");
+      }
+    })
 
     //rating validation
     if (calificacionValue === "") {
@@ -165,7 +199,7 @@ window.addEventListener('load', () => {
 
     validateInputs();
     
-    if (errors != true) {
+    if (errors != true && errors2 != true) {
       console.log("submit");
       form.submit();
     }

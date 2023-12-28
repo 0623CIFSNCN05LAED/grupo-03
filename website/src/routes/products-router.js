@@ -50,7 +50,7 @@ router.get("/products/delete/:id", adminGuard, productsController.delete);
 router.delete("/products/destroy/:id", adminGuard, productsController.destroy);
 
 //Busqueda de productos
-router.get("/search", productsController.search);
+router.get("/products/search", productsController.search);
 
 //CRUD productos
 router.get("/products/crud/", adminGuard, productsController.crud);
