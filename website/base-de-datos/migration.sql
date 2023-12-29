@@ -18,6 +18,8 @@ IF
       , `password` varchar(100) NOT NULL
       , `profile_picture` varchar(100) NOT NULL
       , `admin` tinyint(1) DEFAULT '0' NOT NULL
+      , `created_at` timestamp NULL DEFAULT NULL
+      , `updated_at` timestamp NULL DEFAULT NULL
       , CONSTRAINT `users_pk` PRIMARY KEY (`id_user`)
       , CONSTRAINT `users_email_unique` UNIQUE KEY (`email`)
       , CONSTRAINT `users_username_unique` UNIQUE KEY (`username`)
@@ -56,6 +58,8 @@ IF
           , `screen` varchar(80) NOT NULL
           , `camera` varchar(50) NOT NULL
           , `id_brand` int(10) unsigned NOT NULL
+          , `created_at` timestamp NULL DEFAULT NULL
+          , `updated_at` timestamp NULL DEFAULT NULL
           , CONSTRAINT `products_pk` PRIMARY KEY (`id_product`)
           , CONSTRAINT `products_id_brands_fk` FOREIGN KEY (`id_brand`) REFERENCES `brands`(`id_brand`)
         ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;

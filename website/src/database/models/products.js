@@ -61,11 +61,12 @@ module.exports = (sequelize, DataTypes) => {
             },
         },
         {
-            tableName: 'products',
-            timestamps: false,
-            // createdAt: 'created_at',
-            // updatedAt: 'updated_at',
-        });
+        tableName: 'products',
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false,
+    });
 
     Model.associate = (db) => {
         Model.belongsTo(db.Brands, {

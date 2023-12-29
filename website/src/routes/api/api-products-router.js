@@ -18,6 +18,6 @@ const apiProductsController = require("../../controllers/api/api-products-contro
 
 router.get("/",apiProductsController.home);
 router.get("/:id",apiProductsController.detail);
-// router.get("/last",apiProductsController.lastProduct);
+router.get("/last",apiProductsController.last_product);
 
 module.exports = router;

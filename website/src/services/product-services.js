@@ -17,7 +17,14 @@ const productServices = {
     }
     return products
   },
-
+  //last product
+  getLastProduct: () => {
+    return Products.findOne({
+      order: [
+        ['created_at', 'DESC']
+      ]
+    });
+  },
   getCountTotalProducts: async () => {
     const count = await Products.count();
     return count;
@@ -284,19 +291,6 @@ const productServices = {
     });
   },
 
-  // getLastProductCreated: async function () {
-  //   try {
-  //     const lastProductCreated = await Products.findOne({
-  //       order: [["createdAt", "DESC"]],
-  //       limit: 1,
-  //       include: ["productBrand"],
-  //     });
-  //     return lastProductCreated;
-  //   } catch (error) {
-  //     console.error("Error al obtener el último producto:", error);
-  //     throw error;
-  //   }
-  // },
 };
 
 

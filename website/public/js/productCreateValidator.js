@@ -222,7 +222,7 @@ window.addEventListener('load', () => {
           setError(images, "La imagen debe ser .png o .jpg");
         }
       } else {
-        setError(images, "Debe subir una imagen de perfil");
+        setError(images, "Debe subir una imagen");
       }
     })
 

@@ -8,6 +8,11 @@ module.exports = {
     res.render("users", { users });
 
   },
+  //last user
+  last: async (req, res) => {
+    const last_user = await userServices.getLastUser();
+    res.render("users", { last_user })
+  },
   showLogin: (req, res) => {
     const errors = req.session.errors;
     const oldData = req.session.oldData;

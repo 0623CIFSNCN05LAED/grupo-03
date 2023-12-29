@@ -28,6 +28,10 @@ const upload = multer({
 
 router.get("/", mainController.home);
 router.get("/users", mainController.users);
+
+//last user
+router.get("/users/last", userController.last);
+
 router.get("/login", userController.showLogin);
 router.post(
   "/login",

@@ -52,27 +52,16 @@ module.exports = {
         res.json(response)
     },
 
-    // lastProduct: async (req, res) => {
-    //     const lastProduct = await productServices.getLastProductCreated();
-    //     const imagesPath = "http://localhost:3030/images/products/";
-    //     const imageUrl = `${imagesPath}${lastProduct.image}`;
-    
-    //     const productToApi = {
-    //       id: lastProduct.id,
-    //       name: lastProduct.name,
-    //       price: lastProduct.price,
-    //       description: lastProduct.description,
-    //       image: lastProduct.image,
-    //       brand_id: lastProduct.brand_id,
-    //       others: [
-    //         { brand: lastProduct.productBrand.name },
-    //       ],
-    //       urlImage: imageUrl,
-    //     };
-    
-    //     let respuesta = {
-    //       data: productToApi,
-    //     };
-    //     res.json(respuesta);
-    //   },
+    last_product: async (req, res) => {
+        const last_product = await productServices.getLastProduct();
+        const response = {
+            meta: {
+                status: 200,
+                url: `http://localhost:3030/api/products/last`
+            },
+            data: last_product
+        }
+        res.json(response)
+    }
 };
+
