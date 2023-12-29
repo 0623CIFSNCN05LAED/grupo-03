@@ -14,13 +14,6 @@ export default function Statistics() {
   }, []);
 
   const countProducts = products.count;
-  const countCategories = () => {
-    if (products && products.countByCategory) {
-      const categories = Object.values(products.countByCategory);
-      return categories.length;
-    }
-    return 0;
-  };
 
   const countBrands = () => {
     if (products && products.countByBrand) {
@@ -52,20 +45,13 @@ export default function Statistics() {
     },
     {
       id: 2,
-      title: "Categorías de Productos",
-      value: countCategories(),
-      color: "orange",
-      icon: "bi bi-tags-fill",
-    },
-    {
-      id: 3,
       title: "Marcas de Productos",
       value: countBrands(),
       color: "orange",
-      icon: "bi bi-award",
+      icon: "bi bi-tags",
     },
     {
-      id: 4,
+      id: 3,
       title: "Total de Usuarios",
       value: countUsers,
       color: "green",

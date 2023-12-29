@@ -57,14 +57,14 @@ module.exports = [
       }
     }),
   
-  body("images")
-    //Checkear que se suba por lo menos una imagen, y luego que no sean mas de 5
-    .custom((value, { req }) => {
-      const file = req.file;
-      if (file === undefined) {
-        throw new Error("Debe subir por lo menos una imágen");
-      }
-    }), 
+  // body("images")
+  //   //Checkear que se suba por lo menos una imagen, y luego que no sean mas de 5
+  //   .custom((value, { req }) => {
+  //     const file = req.file;
+  //     if (file === undefined) {
+  //       throw new Error("Debe subir por lo menos una imágen");
+  //     }
+  //   }), 
   
   body("price")
     .notEmpty()
