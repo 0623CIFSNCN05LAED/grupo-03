@@ -17,7 +17,14 @@ const productServices = {
     }
     return products
   },
-
+  //last product
+  getLastProduct: () => {
+    return Products.findOne({
+      order: [
+        ['created_at', 'DESC']
+      ]
+    });
+  },
   getCountTotalProducts: async () => {
     const count = await Products.count();
     return count;

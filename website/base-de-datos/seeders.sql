@@ -11,6 +11,8 @@ VALUES
     , '$2a$10$JiaOyxCvrJdf1nwUUtZxUu6eH5zETKkag5bYNqYYfFwAtMUjZ1v9e'
     , '/images/users/default-image.jpg'
     , 1
+    , '2023-12-29 18:28:10'
+    , NULL
   )
   , (
     '23c7f803-f9c9-4544-a12a-a59a054888cb'
@@ -21,6 +23,8 @@ VALUES
     , '$2a$10$iRgfOIKvcXZUoroeRtUiH.sv.xo7ZillczaRDw6l.xc4VeZW0CKY2'
     , '/images/users/default-image.jpg'
     , 1
+    , '2023-12-29 18:28:15'
+    , NULL
   )
   , (
     'd04d3ad0-eb1c-487a-821c-ef97f903bd26'
@@ -31,8 +35,10 @@ VALUES
     , '$2a$10$R/x3kPeP4J4rrwwvZ7NDAuu19mSgNtUoEyvBiKncSeDMMi1VDJbiG'
     , '/images/users/default-image.jpg'
     , 0
+    , '2023-12-29 18:28:20'
+    , NULL
   );
-						
+				
 						
 INSERT INTO
   `colors`
@@ -101,6 +107,8 @@ VALUES
     , '192.1mm (7.6")'
     , '50.0 MP + 12.0 MP + 10.0 MP'
     , 1
+    , '2023-12-29 18:28:10'
+    , NULL
   )
   , (
     '192c4dc4-0c8d-44e3-9263-fcba55047cf3'
@@ -116,6 +124,8 @@ VALUES
     , '170.3mm (6.7")'
     , '12.0 MP + 12.0 MP'
     , 1
+    , '2023-12-29 18:28:15'
+    , NULL
   )
   , (
     '0b8e2624-d7d5-4214-948c-8502bf9421c0'
@@ -131,6 +141,8 @@ VALUES
     , '172.21mm (6.78")'
     , '200 MP + 12 MP + 10 MP + 10 MP'
     , 1
+    , '2023-12-29 18:28:20'
+    , NULL
   )
   , (
     'da8aedd8-7a96-454b-bde6-3d740e6ffe6e'
@@ -146,6 +158,8 @@ VALUES
     , '170.8mm (6.7")'
     , '48 MP + 12 MP + 12 MP'
     , 2
+    , '2023-12-29 18:28:25'
+    , NULL
   )
   , (
     '1a7b1df5-3b76-4c33-bd5a-fba41b743034'
@@ -161,6 +175,8 @@ VALUES
     , '154.4mm (6.1")'
     , '12 MP + 12 MP'
     , 2
+    , '2023-12-29 18:28:30'
+    , NULL
   )
   , (
     '4fab756b-351a-4010-8287-c7febf730264'
@@ -176,6 +192,8 @@ VALUES
     , '175.6mm (6.9")'
     , '12 MP + 13 MP'
     , 3
+    , '2023-12-29 18:28:35'
+    , NULL
   );
 							
 							

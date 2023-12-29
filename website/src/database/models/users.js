@@ -40,7 +40,10 @@ module.exports = (sequelize, DataTypes) => {
         },
     }, {
         tableName: 'users',
-        timestamps: false,
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false,
     });
 
     return Model;

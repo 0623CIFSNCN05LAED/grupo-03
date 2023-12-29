@@ -6,10 +6,17 @@ const userServices = {
   getAllUsers: () => {
     return Users.findAll();
   },
+  //last user
+  getLastUser: () => {
+    return Users.findOne({
+      order: [
+        ['created_at', 'DESC']
+      ]
+    });
+  },
   getUserById: (id) => {
     return Users.findByPk(id);
   },
-
   getUserLimit: async function (offset, limit) {
     const users = await Users.findAll({
       include: ["users"],

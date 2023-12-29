@@ -5,6 +5,11 @@ module.exports = {
         const products = await productServices.getAllProducts();
         res.render("products", { products });
     },
+    //last product
+    last: async (req, res) => {
+        const last_product = await productServices.getLastProduct();
+        res.render("lastProduct", { last_product })
+    },
     detail: async (req, res) => {
         const id = req.params.id;
         const product = await productServices.getProduct(id);

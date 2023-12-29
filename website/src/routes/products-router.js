@@ -26,6 +26,9 @@ const productsController = require("../controllers/products-controller");
 // Recibir todos los productos
 router.get("/products", productsController.home);
 
+//last product
+router.get("/products/last", productsController.last);
+
 // Crear un producto
 router.get("/products/create", adminGuard, productsController.create);
 router.post(
