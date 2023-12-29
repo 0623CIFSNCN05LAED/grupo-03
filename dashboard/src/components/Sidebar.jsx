@@ -22,7 +22,7 @@ export default function Sidebar() {
             </Link>
           </li>
           <li>
-            <Link to="/ultimo-producto">
+            <Link to="/lastProduct">
               <i className="bi bi-star" style={iconStyle}></i>- Último Producto
             </Link>
           </li>

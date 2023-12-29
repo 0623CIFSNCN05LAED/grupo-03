@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import Preventa from "./Content/Preventa";
 import Estadisticas from "./Content/Estadisticas";
-import UltimoProducto from "./Content/UltimoProducto";
+import LastProduct from "./Content/LastProduct";
 import LastUser from "./Content/LastUser";
 import Marcas from "./Content/Marcas";
 import Products from "./Content/Productos";
@@ -25,10 +25,10 @@ export default function ContentWrap() {
         <Route path="/estadisticas">
           <Estadisticas />
         </Route>
-        <Route path="/ultimo-producto">
-          <UltimoProducto />
+        <Route path="/lastProduct">
+          <LastProduct />
         </Route>
-        <Route path="/last">
+        <Route path="/lastUser">
           <LastUser />
         </Route>
         <Route path="/marcas">

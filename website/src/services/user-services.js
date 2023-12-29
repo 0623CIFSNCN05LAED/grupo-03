@@ -91,14 +91,7 @@ const userServices = {
     });
   },
 
-  getLastUserCreated: async function () {
-    const lastUserCreated = await Users.findOne({
-      order: [["created_at", "DESC"]],
-      limit: 1,
-      // include: ["users_br"],
-    });
-    return lastUserCreated;
-  },
 };
+
 
 module.exports = userServices;

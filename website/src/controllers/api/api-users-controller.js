@@ -55,23 +55,20 @@ module.exports = {
     });
   },
 
-  LastUser: async (req, res) => {
-    // const users = await userService.getUsers();
-    // const usersCount = users.length;
-    // const lastUserIndex = usersCount - 1;
-    const lastUser = await userServices.findLastUserCreated();
-    const imagesPath = "http://localhost:3030/images/users/";
-    const imageUrl = `${imagesPath}${lastUser.avatar}`;
-    const userToApi = {
-      id: lastUser.id_user,
-      name: lastUser.name,
-      last_name: lastUser.last_name,
-      email: lastUser.email,
-      urlImage: imageUrl,
-    };
-    let respuesta = { lastUser: userToApi };
-    res.json(respuesta);
-  },
-
+  // lastUser: async (req, res) => {
+  //   const lastUser = await userServices.getLastUserCreated();
+  //   const imagesPath = "http://localhost:3030/images/users/";
+  //   const imageUrl = `${imagesPath}${lastUser.avatar}`;
+  //   const userToApi = {
+  //     id: lastUser.id,
+  //     first_name: lastUser.first_name,
+  //     last_name: lastUser.last_name,
+  //     email: lastUser.email,
+  //     urlImage: imageUrl,
+  //   };
+  //   let respuesta = { lastUser: userToApi };
+  //   res.json(respuesta);
+  // },
 };
+
 

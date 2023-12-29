@@ -284,24 +284,21 @@ const productServices = {
     });
   },
 
-  // getLastProduct: async () => {
-  //   return Products.findAll({
-  //     attributes: [
-  //       "id","created_at"
-  //     ],
-  //     where: {
-  //       is_active: 1
-  //     },
-  //     order: [
-  //       ['created_at', 'DESC']
-  //   ],
-  //     limit: 1,
-  //     raw: true
-  //   }).then((product) => {
-  //     return product
-  //   });
+  // getLastProductCreated: async function () {
+  //   try {
+  //     const lastProductCreated = await Products.findOne({
+  //       order: [["createdAt", "DESC"]],
+  //       limit: 1,
+  //       include: ["productBrand"],
+  //     });
+  //     return lastProductCreated;
+  //   } catch (error) {
+  //     console.error("Error al obtener el último producto:", error);
+  //     throw error;
+  //   }
   // },
-
 };
+
+
 
 module.exports = productServices;

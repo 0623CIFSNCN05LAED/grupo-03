@@ -12,23 +12,23 @@ module.exports = {
                 meta: {
                     status: 200,
                     count: totalProductsCount,
-                    countByBrand : {
-                        Samsung : totalProducts.filter((product) => product.brand.brand === "Samsung").length,
-                        Apple : totalProducts.filter((product) => product.brand.brand === "Apple").length,
-                        Motorola : totalProducts.filter((product) => product.brand.brand === "Motorola").length,
-                        Oppo : totalProducts.filter((product) => product.brand.brand === "Oppo").length,
-                        Huawei : totalProducts.filter((product) => product.brand.brand === "Huawei").length,
-                        Xiaomi : totalProducts.filter((product) => product.brand.brand === "Xiaomi").length,
-                        Google : totalProducts.filter((product) => product.brand.brand === "Google").length,
+                    countByBrand: {
+                        Samsung: totalProducts.filter((product) => product.brand.brand === "Samsung").length,
+                        Apple: totalProducts.filter((product) => product.brand.brand === "Apple").length,
+                        Motorola: totalProducts.filter((product) => product.brand.brand === "Motorola").length,
+                        Oppo: totalProducts.filter((product) => product.brand.brand === "Oppo").length,
+                        Huawei: totalProducts.filter((product) => product.brand.brand === "Huawei").length,
+                        Xiaomi: totalProducts.filter((product) => product.brand.brand === "Xiaomi").length,
+                        Google: totalProducts.filter((product) => product.brand.brand === "Google").length,
 
                     }
                 },
-                products: totalProducts.map(product =>({
-                    id : product.id_product,
-                    name : product.name,
+                products: totalProducts.map(product => ({
+                    id: product.id_product,
+                    name: product.name,
                     description: product.description,
                     brand: product.brand,
-                    detail : `http://localhost:3030/api/products/${product.id_product}`
+                    detail: `http://localhost:3030/api/products/${product.id_product}`
                 }))
             };
 
@@ -52,22 +52,27 @@ module.exports = {
         res.json(response)
     },
 
-    // last: async(req, res) => {
-    //     const response = await productServices.getLastProduct();
-    //     const id = response.map((atribute) => {
-    //       return atribute.id
-    //     }
-    //     )
-    //     console.log(req)
-    //     res.json({
-    //       meta: {
-    //         status: 200,
-    //         id: id[0],
-    //         url: req.originalUrl,
-    //         urlDetail: req.headers.host + req.baseUrl + "/detail/" +id[0],
-    //       },
-    //     });
-    //   },
+    // lastProduct: async (req, res) => {
+    //     const lastProduct = await productServices.getLastProductCreated();
+    //     const imagesPath = "http://localhost:3030/images/products/";
+    //     const imageUrl = `${imagesPath}${lastProduct.image}`;
     
-
+    //     const productToApi = {
+    //       id: lastProduct.id,
+    //       name: lastProduct.name,
+    //       price: lastProduct.price,
+    //       description: lastProduct.description,
+    //       image: lastProduct.image,
+    //       brand_id: lastProduct.brand_id,
+    //       others: [
+    //         { brand: lastProduct.productBrand.name },
+    //       ],
+    //       urlImage: imageUrl,
+    //     };
+    
+    //     let respuesta = {
+    //       data: productToApi,
+    //     };
+    //     res.json(respuesta);
+    //   },
 };

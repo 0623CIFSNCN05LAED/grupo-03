@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SmallCard from "./SmallCard";
 
 export default function Brands() {
-  const [brands, setBrands] = useState({});
+  const [brands, setBrands] = useState({countByBrands: []});
 
   useEffect(() => {
     const fetchData = async () => {
