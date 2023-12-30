@@ -19,12 +19,12 @@ function Products() {
 
   return (
     <section className="content">
-      <h2 className="mt-3">Productos</h2>
+      <h3 className="mt-3">Productos</h3>
       <div className="list-group shadow-sm p-3 mb-5 bg-body-tertiary rounded">
         {products.products ?
           products.products.map((product) => (
             <div key={product.id}>
-              <h4> {product.name}</h4> 
+              <h5> {product.name}</h5> 
             </div>
           )) : (
             <p>Cargando productos...</p>

@@ -22,6 +22,6 @@ const storage = multer.diskStorage({
 
   router.get("/",apiUsersController.users);
   router.get("/:id",apiUsersController.detail);
-  // router.get("/last",apiUsersController.lastUser);
+ 
 
   module.exports = router;

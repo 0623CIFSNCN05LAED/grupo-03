@@ -12,7 +12,7 @@ export async function searchApi() {
 
 
 export async function lastProductApi(){
-  const response = await fetch(`${PRODUCTS_URL}products/lastproduct`)
+  const response = await fetch(`${PRODUCTS_URL}products?options=last`)
   const result = await response.json()
   if(result.meta.status === 200){
     const id = result.meta.id

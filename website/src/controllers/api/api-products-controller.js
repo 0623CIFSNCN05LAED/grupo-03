@@ -7,32 +7,46 @@ module.exports = {
         try {
             const totalProductsCount = await productServices.getCountTotalProducts();
             const totalProducts = await productServices.getAllProducts();
+            const { options } = req.query;
 
-            let respuesta = {
-                meta: {
-                    status: 200,
-                    count: totalProductsCount,
-                    countByBrand: {
-                        Samsung: totalProducts.filter((product) => product.brand.brand === "Samsung").length,
-                        Apple: totalProducts.filter((product) => product.brand.brand === "Apple").length,
-                        Motorola: totalProducts.filter((product) => product.brand.brand === "Motorola").length,
-                        Oppo: totalProducts.filter((product) => product.brand.brand === "Oppo").length,
-                        Huawei: totalProducts.filter((product) => product.brand.brand === "Huawei").length,
-                        Xiaomi: totalProducts.filter((product) => product.brand.brand === "Xiaomi").length,
-                        Google: totalProducts.filter((product) => product.brand.brand === "Google").length,
+            if (options) {
+                const last_product = await productServices.getLastProduct();
+                console.log("CONTROLLER", last_product)
+                const response = {
+                    meta: {
+                        status: 200,
+                        url: `http://localhost:3030/api/products?options=last`
+                    },
+                    data: last_product,
+                }
+                res.json(response)
+            } else {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        count: totalProductsCount,
+                        countByBrand: {
+                            Samsung: totalProducts.filter((product) => product.brand.brand === "Samsung").length,
+                            Apple: totalProducts.filter((product) => product.brand.brand === "Apple").length,
+                            Motorola: totalProducts.filter((product) => product.brand.brand === "Motorola").length,
+                            Oppo: totalProducts.filter((product) => product.brand.brand === "Oppo").length,
+                            Huawei: totalProducts.filter((product) => product.brand.brand === "Huawei").length,
+                            Xiaomi: totalProducts.filter((product) => product.brand.brand === "Xiaomi").length,
+                            Google: totalProducts.filter((product) => product.brand.brand === "Google").length,
 
-                    }
-                },
-                products: totalProducts.map(product => ({
-                    id: product.id_product,
-                    name: product.name,
-                    description: product.description,
-                    brand: product.brand,
-                    detail: `http://localhost:3030/api/products/${product.id_product}`
-                }))
-            };
+                        }
+                    },
+                    products: totalProducts.map(product => ({
+                        id: product.id_product,
+                        name: product.name,
+                        description: product.description,
+                        brand: product.brand,
+                        detail: `http://localhost:3030/api/products/${product.id_product}`
+                    }))
+                };
 
-            return res.json(respuesta);
+                return res.json(respuesta);
+            }
         }
         catch (error) {
             res.status(500).json({ error: "Error al obtener los productos" });
@@ -52,16 +66,5 @@ module.exports = {
         res.json(response)
     },
 
-    last_product: async (req, res) => {
-        const last_product = await productServices.getLastProduct();
-        const response = {
-            meta: {
-                status: 200,
-                url: `http://localhost:3030/api/products/last`
-            },
-            data: last_product
-        }
-        res.json(response)
-    }
 };
 

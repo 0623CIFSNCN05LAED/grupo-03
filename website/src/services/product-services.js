@@ -18,12 +18,17 @@ const productServices = {
     return products
   },
   //last product
-  getLastProduct: () => {
-    return Products.findOne({
-      order: [
-        ['created_at', 'DESC']
-      ]
-    });
+  getLastProduct: async () => {
+    try {
+      const data = await Products.findOne({
+        order: [['created_at', 'DESC']],
+      });
+      console.log("SERVICE", data)
+      return data;
+    } catch (error) {
+      console.error('Error al obtener el último producto:', error);
+      throw error;
+    }
   },
   getCountTotalProducts: async () => {
     const count = await Products.count();

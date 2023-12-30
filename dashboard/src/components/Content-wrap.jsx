@@ -3,10 +3,10 @@ import Preventa from "./Content/Preventa";
 import Estadisticas from "./Content/Estadisticas";
 import LastProduct from "./Content/LastProduct";
 import LastUser from "./Content/LastUser";
-import Marcas from "./Content/Marcas";
 import Products from "./Content/Productos";
 // import OneProduct from "./Content/OneProduct";
 import ProductsSearch from "./ProductsSearch";
+import Brands from "./Content/Marcas";
 
 
 export default function ContentWrap() {
@@ -32,7 +32,7 @@ export default function ContentWrap() {
           <LastUser />
         </Route>
         <Route path="/marcas">
-          <Marcas />
+          <Brands />
         </Route>
         <Route path="/products">
           <Products />

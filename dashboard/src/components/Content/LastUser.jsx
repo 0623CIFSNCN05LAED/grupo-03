@@ -1,23 +1,41 @@
 import { useEffect, useState } from "react";
 
 export default function LastUser() {
-  const [lastUser, setLastUser] = useState(null);
+  const [lastUser, setLastUser] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:3030/api/users/last");
-      const result = await response.json();
-      setLastUser(result.lastUser);
+      const response = await fetch("http://localhost:3030/api/users?options=last");
+
+      setLastUser(response);
     };
     fetchData();
   }, []);
+
   console.log("last User ", lastUser);
 
   return (
-    <div className="container mt-4">
-      <h2>Último Usuario Creado</h2>
+    <div className="card">
+      <h4 className="title">Último Usuario Creado</h4>
 
-      {lastUser && (
+      <div>
+        {/* <img
+          src={lastUser.urlImage}
+          className="card-img-top"
+          alt={`imagen de ${lastUser.name}`}
+          style={{ width: "200px", height: "auto" }}
+        /> */}
+
+        <p className="name">Nombre:{lastUser.name}</p>
+        <p className="last_name">Apellido:{lastUser.last_name}</p>
+        <p className="email">Email:{lastUser.email}</p>
+        <p className="create_date">Fecha de creacion: <span className="bold">{LastUser.created_at} </span></p>
+
+
+
+      </div>
+
+      {/* {lastUser && (
         <div className="card">
           <img
             src={lastUser.urlImage}
@@ -27,9 +45,9 @@ export default function LastUser() {
           />
 
           <div className="card-body">
-            <h4 className="card-title">
+            <p className="card-title">
               {lastUser.name} {lastUser.name}
-            </h4>
+            </p>
 
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
@@ -48,7 +66,7 @@ export default function LastUser() {
             <small className="text-muted">ID: {lastUser.id}</small>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

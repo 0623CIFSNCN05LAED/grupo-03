@@ -1,45 +1,37 @@
 import { useEffect, useState } from "react";
-import SmallCard from "./SmallCard";
 
-export default function Brands() {
-  const [brands, setBrands] = useState({countByBrands: []});
+function Brands() {
+
+  const [brands, setBrands] = useState({ count: 0, countByBrand: 0, products: [] });
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("http://localhost:3030/api/products");
-      const result = await response.json();
-      setBrands(result.meta.countByBrands);
-    };
-    fetchData();
-  }, []);
-  console.log(brands);
-
-  const myStats = [];
-
-  Object.entries(brands).forEach(([title, index]) => {
-    myStats.push({
-      key: index + 1,
-      title: title,
-      value: brands[title],
-      color: "cornflowerblue",
-      icon: "bi bi-tag",
+    fetch("http://localhost:3030/api/products")
+    .then(response => response.json())
+    .then(result => {
+      setProducts({
+        count: result.meta.count,
+        countByCategory: result.meta.countByBrand,
+        brands: result.brands
     });
+
   });
+  },[])
 
   return (
     <section className="content">
-      <h2 className="mt-3">Marcas</h2>
-      <div className="info-boxes">
-        {myStats.map((stat) => (
-          <SmallCard
-            key={stat.id}
-            title={stat.title}
-            value={stat.value}
-            icon={stat.icon}
-            color={stat.color}
-          />
-        ))}
+      <h3 className="mt-3">Marcas</h3>
+      <div className="list-group shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+        {brands.brands ?
+          brands.brands.map((brand) => (
+            <div key={brand.id}>
+              <h5> {brand.brand}</h5> 
+            </div>
+          )) : (
+            <p>Cargando marcas...</p>
+          )}
       </div>
     </section>
   );
+
 }
+export default Brands;
