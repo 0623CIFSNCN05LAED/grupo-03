@@ -18,7 +18,7 @@ const apiProductsController = require("../../controllers/api/api-products-contro
 
 router.get("/",apiProductsController.home);
 router.get("/last",apiProductsController.last_product);
-router.get("/brands",apiProductsController.brands);
+// router.get("/brands",apiProductsController.brands);
 router.get("/:id",apiProductsController.detail);
 
 

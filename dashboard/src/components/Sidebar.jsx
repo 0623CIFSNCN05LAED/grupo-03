@@ -11,11 +11,11 @@ export default function Sidebar() {
       <section className="dicover">
         <h3>Opciones</h3>
         <ul>
-          <li>
+          {/* <li>
             <Link to="/buscar">
               <i className="bi bi-search" style={iconStyle}></i>- Buscar
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/estadisticas">
               <i className="bi bi-graph-up"></i>- Estadísticas

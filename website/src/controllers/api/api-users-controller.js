@@ -59,20 +59,20 @@ module.exports = {
     const last_user = await userServices.getLastUser();
     console.log("CONTROLLER", last_user)
     const response = {
-      meta: {
-        status: 200,
-        url: `http://localhost:3030/api/users/last`
-      },
-      data: {
-        name: last_user.name,
-        last_name: last_user.last_name,
-        email: last_user.email,
-        created_at_: new Date(last_user.created_at)
-      }
+        meta: {
+            status: 200,
+            url: `http://localhost:3030/api/users/last`
+        },
+        data: {
+            // profile_picture: last_user.profile_picture,
+            name: last_user.name,
+            last_name: last_user.last_name,
+            email: last_user.email,
+            created_at: new Date(last_user.created_at)
+        },
     }
     res.json(response)
-  }
-
+},
 };
 
 
