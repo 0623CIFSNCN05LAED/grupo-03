@@ -17,6 +17,8 @@ const storage = multer.diskStorage({
 const apiProductsController = require("../../controllers/api/api-products-controller");
 
 router.get("/",apiProductsController.home);
+router.get("/last",apiProductsController.last_product);
+router.get("/brands",apiProductsController.brands);
 router.get("/:id",apiProductsController.detail);
 
 

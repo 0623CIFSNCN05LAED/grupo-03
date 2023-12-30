@@ -59,6 +59,7 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER.UNSIGNED,
                 allowNull: false,
             },
+            // created_at: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
         },
         {
         tableName: 'products',

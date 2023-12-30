@@ -22,6 +22,7 @@ const productServices = {
     try {
       const data = await Products.findOne({
         order: [['created_at', 'DESC']],
+        include: [{association:'brand'}],
       });
       console.log("SERVICE", data)
       return data;
