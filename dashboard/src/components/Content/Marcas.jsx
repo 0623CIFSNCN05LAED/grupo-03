@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 
 function Brands() {
 
-  const [brands, setBrands] = useState({ count: 0, countByBrand: 0, products: [] });
+  const [brands, setBrands] = useState({ count: 0, countByBrand: 0, brands: [] });
 
   useEffect(() => {
     fetch("http://localhost:3030/api/products")
     .then(response => response.json())
     .then(result => {
-      setProducts({
-        count: result.meta.count,
+      setBrands({
+        // count: result.meta.count,
         countByCategory: result.meta.countByBrand,
         brands: result.brands
     });
