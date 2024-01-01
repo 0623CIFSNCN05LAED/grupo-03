@@ -31,7 +31,7 @@ export default function ContentWrap() {
         <Route path="/lastUser">
           <LastUser />
         </Route>
-        <Route path="/marcas">
+        <Route path="/brands">
           <Brands />
         </Route>
         <Route path="/products">

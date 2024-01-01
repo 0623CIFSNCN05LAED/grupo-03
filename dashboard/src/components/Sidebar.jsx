@@ -32,7 +32,7 @@ export default function Sidebar() {
             </Link>
           </li>
           <li>
-            <Link to="/marcas">
+            <Link to="/brands">
               <i className="bi bi-tags" style={iconStyle}></i>- Marcas
             </Link>
           </li>

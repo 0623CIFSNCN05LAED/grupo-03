@@ -87,53 +87,48 @@ module.exports = {
         res.json(response)
     },
 
-    // brands: async (req, res) => {
+    brands: async (req, res) => {
+        try {
+            const pageSize = 10;
+            const page = req.query.page || 1;
+            const totalProductsCount = await productServices.getCountTotalProducts();
+            const offset = (page - 1) * pageSize;
+            const totalProducts = await productServices.getAllProducts();
+            const allProducts = await productServices.getProductsLimit(
+                offset,
+                pageSize
+            );
+            const Brands = await productServices.getBrands();
 
-    //     try {
-    //         const brands = await productServices.getBrands();
-    //         const allProducts = await productServices.getProductsLimit(
-    //             offset,
-    //             pageSize
-    //         );
+            function countProductsByBrand(allProducts) {
+                const prodsByBrand = {};
+                allProducts.forEach((product) => {
+                    const brand = product.id_brand;
+                    if (!prodsByBrand[brand]) {
+                        prodsByBrand[brand] = 1;
+                    } else {
+                        prodsByBrand[brand] += 1;
+                    }
+                });
+                return prodsByBrand;
+            }
 
-    //         function countProductsByBrand(allProducts) {
-    //             const prodsByBrand = {};
-    //             allProducts.forEach((product) => {
-    //                 const brand = product.id_brand;
-    //                 if (!prodsByBrand[brand]) {
-    //                     prodsByBrand[brand] = 1;
-    //                 } else {
-    //                     prodsByBrand[brand] += 1;
-    //                 }
-    //             });
-    //             return prodsByBrand;
-    //         }
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    url: req.headers.host + req.originalUrl,
+                },
+                data: {
+                    countByBrand: Brands,
+                    
+                }
+            };
 
-    //         const productsToApi = allProducts.map(
-    //             ({ id_product, name, brand }) => ({
-    //                 id_product,
-    //                 name,
-    //                 // description,
-    //                 brands: [{ brand: brand }],
-    //                 // detail: req.headers.host + "/api/products/" + id_product,
-    //             })
-    //         );
+            res.json(respuesta);
+        }
+        catch (error) {
+            res.status(500).json({ error: "Error al obtener las marcas" });
+        }
+    }
 
-
-    //         let respuesta = {
-    //             meta: {
-    //                 status: 200,
-    //                 count: totalProductsCount,
-    //                 countByBrand: Brands,
-    //                 url: req.headers.host + req.originalUrl,
-    //             },
-    //             products: productsToApi,
-    //         };
-
-    //         res.json(respuesta);
-    //     }
-    //     catch (error) {
-    //         res.status(500).json({ error: "Error al obtener los productos" });
-    //     }
-    // }
 }
