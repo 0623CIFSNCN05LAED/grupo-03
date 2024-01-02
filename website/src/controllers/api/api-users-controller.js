@@ -4,17 +4,10 @@ module.exports = {
   users: async (req, res) => {
 
     try {
-      // const pageSize = 5;
-      // const page = req.query.page || 1;
       const totalUserCount = await userServices.getCountTotalUser();
-      // const offset = (page - 1) * pageSize;
-      const allUsers = await userServices.getAllUsers(
-        // offset,
-        // pageSize
-      );
+      const allUsers = await userServices.getAllUsers();
 
-      console.log("totalUserCount",allUsers);
-      // const totalPages = Math.ceil(totalUserCount / pageSize);
+      console.log("totalUserCount", allUsers);
 
       const response = {
         meta: {
@@ -30,29 +23,56 @@ module.exports = {
 
       };
       return res.json(response);
+
     }
     catch (error) {
-      res.status(500).json({ error: "Error al obtener los usuarios" });
+      res.status(500).json({ error: "Error al obtener los productos" });
     }
   },
 
   detail: async (req, res) => {
-    const user = await userServices.getUserById(req.params.id);
-    res.json({
-      meta: {
-        status: 200,
-        url: req.originalUrl,
-      },
-      data: {
-        id_user: user.id_user,
-        name: user.name,
-        last_name: user.last_name,
-        username: user.username,
-        email: user.email,
-        profile_picture: "localhost:3030" + user.profile_picture,
+    const id = req.params.id
+    const user = await userServices.getUserById(id);
+    console.log("user", user)
+    if (user) {
+      res.json({
+        meta: {
+          status: 200,
+          url: req.originalUrl,
+        },
+        data: {
+          id_user: user.id_user,
+          name: user.name,
+          last_name: user.last_name,
+          username: user.username,
+          email: user.email,
+          profile_picture: "localhost:3030" + user.profile_picture,
 
-      },
-    });
+        },
+      });
+    } else {
+      throw new Error('User not found')
+    }
   },
 
+  last_user: async (req, res) => {
+    const last_user = await userServices.getLastUser();
+    console.log("CONTROLLER", last_user)
+    const response = {
+        meta: {
+            status: 200,
+            url: `http://localhost:3030/api/users/last`
+        },
+        data: {
+            // profile_picture: last_user.profile_picture,
+            name: last_user.name,
+            last_name: last_user.last_name,
+            email: last_user.email,
+            created_at: new Date(last_user.created_at)
+        },
+    }
+    res.json(response)
+},
 };
+
+

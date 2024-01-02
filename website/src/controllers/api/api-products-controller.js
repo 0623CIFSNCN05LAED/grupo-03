@@ -16,12 +16,10 @@ module.exports = {
             );
             const Brands = await productServices.getBrands();
 
-            // const totalPages = Math.ceil(totalProductsCount / pageSize);
-
             function countProductsByBrand(allProducts) {
                 const prodsByBrand = {};
                 allProducts.forEach((product) => {
-                    const brand = product.brand_id;
+                    const brand = product.id_brand;
                     if (!prodsByBrand[brand]) {
                         prodsByBrand[brand] = 1;
                     } else {
@@ -47,7 +45,6 @@ module.exports = {
                     status: 200,
                     count: totalProductsCount,
                     countByBrand: Brands,
-                    // countProductsByBrand(totalProducts)
                     url: req.headers.host + req.originalUrl,
                 },
                 products: productsToApi,
@@ -65,46 +62,80 @@ module.exports = {
         const response = {
             meta: {
                 status: 200,
-                total: product.length,
-                url: "/api/products/:id"
+                // total: products.length,
+                url: `http://localhost:3030/api/products/${req.params.id}`
             },
-            data: {
-                id_product: product.id_product,
-                name: product.name,
-                description: product.description,
-                featured_desc: product.featured_desc,
-                featured: product.featured,
-                price: product.price,
-                priceWithDiscount: product.priceWithDiscount,
-                discount: product.discount,
-                rating: product.rating,
-                os: product.os,
-                screen: product.screen,
-                camera: product.camera,
-                id_brand: product.id_brand,
-                brand: product.brand,
-                image: product.image.map((image) => {
-                    return {
-                        id_image: image.id_image,
-                        url_image: "localhost:3030" + image.url_image,
-                    };
-                }),
-                colors: product.colors.map((color) => {
-                    return {
-                        id_color: color.id_color,
-                        color: color.color,
-                    };
-                }),
-                capacities: product.capacities.map((capacity) => {
-                    return {
-                        id_capacity: capacity.id_capacity,
-                        capacity: capacity.capacity,
-                    };
-                }),
-            }
+            data: product
         }
         res.json(response)
-    }
+    },
 
-};
+    last_product: async (req, res) => {
+        const last_product = await productServices.getLastProduct();
+        console.log("CONTROLLER", last_product)
+        const response = {
+            meta: {
+                status: 200,
+                url: `http://localhost:3030/api/products/last`
+            },
+            data: {
+                name: last_product.name,
+                brand: last_product.brand.brand,
+                created_at: new Date(last_product.created_at)
+            },
+        }
+        res.json(response)
+    },
 
+
+    brands: async (req, res) => {
+        try {
+            const pageSize = 10;
+            const page = req.query.page || 1;
+            const offset = (page - 1) * pageSize;
+            const allProducts = await productServices.getProductsLimit(
+                offset,
+                pageSize
+            );
+            const Brands = await productServices.getBrands();
+            console.log(Brands);
+
+            function countProductsByBrand(allProducts, Brands) {
+                const prodsByBrand = {};
+                allProducts.forEach((product) => {
+                    const brandId = product.id_brand;
+                    const brand = Brands.find((b) => b.id_brand === brandId);
+
+                    if (brand) {
+                        const brandName = brand.brand;
+                        if (!prodsByBrand[brandName]) {
+                            prodsByBrand[brandName] = 1;
+                        } else {
+                            prodsByBrand[brandName] += 1;
+                        }
+                    }
+                });
+                return prodsByBrand;
+            }
+
+            const countByBrand = countProductsByBrand(allProducts, Brands);
+
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    url: req.headers.host + req.originalUrl,
+                },
+                data: {
+                    countByBrand: countByBrand,
+                },
+            };
+
+            res.json(respuesta);
+        } catch (error) {
+            console.error("Error getting brands:", error);
+            res.status(500).json({ error: "Error al obtener las marcas" });
+        }
+    },
+
+
+}

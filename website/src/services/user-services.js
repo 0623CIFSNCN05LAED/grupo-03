@@ -25,21 +25,10 @@ const userServices = {
     });
     return users;
   },
-  getCountTotalUser: async function (){
+  getCountTotalUser: async function () {
     const count = await Users.count();
     return count;
   },
-
-  // //Paginación
-  // getAllUsersAndCount: ({
-  //   pageSize, offset, 
-  // }) => {
-  //   return Users.findAndCountAll({
-  //     limit: pageSize,
-  //     offset: offset
-
-  //   })
-  // },
 
   getAdmin: (email) => {
     const isAdmin = 0;
@@ -108,6 +97,8 @@ const userServices = {
       admin: admin,
     });
   },
+
 };
+
 
 module.exports = userServices;

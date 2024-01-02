@@ -187,4 +187,4 @@ INSERT INTO `images` VALUES (1, '/images/products/zfold5-n1.jpg', 'b781d57f-a1a2
 							(17, '/images/products/i13-n1.jpg', '1a7b1df5-3b76-4c33-bd5a-fba41b743034'), (18, '/images/products/i13-n2.jpg', '1a7b1df5-3b76-4c33-bd5a-fba41b743034'), (19, '/images/products/i13-n3.jpg', '1a7b1df5-3b76-4c33-bd5a-fba41b743034'), (20, '/images/products/i13-n4.jpg', '1a7b1df5-3b76-4c33-bd5a-fba41b743034'),
 							(21, '/images/products/razr40ultra-n1.jpg', '4fab756b-351a-4010-8287-c7febf730264'), (22, '/images/products/razr40ultra-n2.jpg', '4fab756b-351a-4010-8287-c7febf730264'), (23, '/images/products/razr40ultra-n3.jpg', '4fab756b-351a-4010-8287-c7febf730264'), (24, '/images/products/razr40ultra-n4.jpg', '4fab756b-351a-4010-8287-c7febf730264'); 
 							 
-							 
+						
