@@ -91,9 +91,7 @@ module.exports = {
         try {
             const pageSize = 10;
             const page = req.query.page || 1;
-            const totalProductsCount = await productServices.getCountTotalProducts();
             const offset = (page - 1) * pageSize;
-            const totalProducts = await productServices.getAllProducts();
             const allProducts = await productServices.getProductsLimit(
                 offset,
                 pageSize
@@ -119,8 +117,8 @@ module.exports = {
                     url: req.headers.host + req.originalUrl,
                 },
                 data: {
-                    countByBrand: Brands,
-                    
+                    countByBrand: countProductsByBrand(allProducts),
+
                 }
             };
 
