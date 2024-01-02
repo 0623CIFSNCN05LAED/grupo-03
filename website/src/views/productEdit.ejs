@@ -14,17 +14,17 @@
     <header class="header">
     <%- include("partials/header") %>
     </header>
-    <form action="/products/update/<%= product.id_product %>?_method=PUT" method="POST" class="formulario" id="form">
+    <form action="/products/update/<%= id %>?_method=PUT" method="POST" class="formulario" id="form">
         <h1 class="titulo-formulario">Editar el producto:</h1>
         <div class="input-form">
-            <input type="text" name="name" value="<%= oldData ? oldData.name : product.name %>"/> <% if (errors && errors.name) { %>
+            <input type="text" name="name" id="name" value="<%= oldData ? oldData.name : product.name %>"/> <% if (errors && errors.name) { %>
                 <p class="error-msg"><%= errors.name.msg %></p>
                 <% } %>
                 <span class="error"></span>
             <label for="">Nombre</label>
         </div>
         <div class="input-form">
-            <input type="text" name="description" value="<%= oldData ? oldData.description : product.description %>"/> <% if (errors && errors.description) { %>
+            <input type="text" name="description" id="description" value="<%= oldData ? oldData.description : product.description %>"/> <% if (errors && errors.description) { %>
                 <p class="error-msg"><%= errors.description.msg %></p>
                 <% } %>
                 <span class="error"></span>
@@ -38,21 +38,21 @@
             <label for="featured_desc">Descripción destacada</label>
         </div>
         <div class="input-form">
-            <input type="number" name="price" value="<%= oldData ? oldData.price : product.price %>"/> <% if (errors && errors.price) { %>
+            <input type="number" name="price" id="price" value="<%= oldData ? oldData.price : product.price %>"/> <% if (errors && errors.price) { %>
                 <p class="error-msg"><%= errors.price.msg %></p>
                 <% } %>
                 <span class="error"></span>
             <label for="">Precio</label>
         </div>
         <div class="input-form">
-            <input type="number" name="discount" value="<%= oldData ? oldData.discount : product.discount %>"/> <% if (errors && errors.discount) { %>
+            <input type="number" name="discount" id="discount" value="<%= oldData ? oldData.discount : product.discount %>"/> <% if (errors && errors.discount) { %>
                 <p class="error-msg"><%= errors.discount.msg %></p>
                 <% } %>
                 <span class="error"></span>
             <label for="">Descuento</label>
         </div>
         <div class="input-form">
-            <input type="number" name="rating" value="<%= oldData ? oldData.rating : product.rating %>"/> <% if (errors && errors.rating) { %>
+            <input type="number" name="rating" id="rating" value="<%= oldData ? oldData.rating : product.rating %>"/> <% if (errors && errors.rating) { %>
                 <p class="error-msg"><%= errors.rating.msg %></p>
                 <% } %>
                 <span class="error"></span>
@@ -63,36 +63,36 @@
             <div class="radio-form">
                 <label class="custom-radio">
                     <label class="radio-text">Normal</label>
-                    <input type="radio" name="featured" value="0" <%= oldData && oldData.featured === "0" ? "checked" : "" %>>
+                    <input type="radio" name="featured" value="<%= oldData && oldData.featured === "0" ? "checked" : "" %>">
                     <span class="checkmark"></span>
                 </label>
                 <label class="custom-radio">
                     <label class="radio-text">Destacado</label>
-                    <input type="radio" name="featured" value="1" <%= oldData && oldData.featured === "1" ? "checked" : "" %>>
+                    <input type="radio" name="featured" value="<%= oldData && oldData.featured === "1" ? "checked" : "" %>">
                     <span class="checkmark"></span>
                 </label>
                 <% if (errors && errors.featured) { %>
                 <p class="error-msg"><%= errors.featured.msg %></p>
                 <% } %>
-                <span class="error"></span>
+                <span class="error2"></span>
             </div>
         </div>
         <div class="input-form">
-            <input type="text" name="os" value="<%= oldData ? oldData.os : product.os %>"/> <% if (errors && errors.os) { %>
+            <input type="text" name="os" id="os" value="<%= oldData ? oldData.os : product.os %>"/> <% if (errors && errors.os) { %>
                 <p class="error-msg"><%= errors.os.msg %></p>
                 <% } %>
                 <span class="error"></span>
             <label for="">Sistema operativo</label>
         </div>
         <div class="input-form">
-            <input type="text" name="screen" value="<%= oldData ? oldData.screen : product.screen %>"/> <% if (errors && errors.screen) { %>
+            <input type="text" name="screen" id="screen" value="<%= oldData ? oldData.screen : product.screen %>"/> <% if (errors && errors.screen) { %>
                 <p class="error-msg"><%= errors.screen.msg %></p>
                 <% } %>
                 <span class="error"></span>
             <label for="">Dimensiones pantalla</label>
         </div>
         <div class="input-form">
-            <input type="text" name="camera" value="<%= oldData ? oldData.camera : product.camera %>"/> <% if (errors && errors.camera) { %>
+            <input type="text" name="camera" id="camera" value="<%= oldData ? oldData.camera : product.camera %>"/> <% if (errors && errors.camera) { %>
                 <p class="error-msg"><%= errors.camera.msg %></p>
                 <% } %>
                 <span class="error"></span>

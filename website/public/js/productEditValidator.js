@@ -92,6 +92,18 @@ window.addEventListener('load', () => {
       setSuccess(descripcion);
     }
 
+    //featured validation
+    for (let i = 0; i < destacado.length; i++) {
+      if (destacado[i].checked) {
+          setSuccess2(destacado);
+          a = 1;
+          break;
+      }
+    }
+    if (a == 0) {
+      setError2(destacado, "Debe ingresar una categoria");
+    }
+
     //featured_desc validation
     if (destacado[0].checked || destacado[1].checked) {
       if (destacado[1].checked && descripcion_destacadaValue === "") {
@@ -103,18 +115,6 @@ window.addEventListener('load', () => {
       } else {
         setSuccess(descripcion_destacada);
       }
-    }
-
-    //featured validation
-    for (let i = 0; i < destacado.length; i++) {
-      if (destacado[i].checked) {
-          setSuccess2(destacado);
-          a = 1;
-          break;
-      }
-    }
-    if (a == 0) {
-      setError2(destacado, "Debe ingresar una categoria");
     }
 
     //price validation
@@ -139,26 +139,11 @@ window.addEventListener('load', () => {
       setSuccess(descuento);
     }
 
-    //images validation
-    images.addEventListener("change", (e) => {
-      console.log(e.target.files[0]);
-      let archivo = e.target.files[0];
-      if (archivo) {
-        if (archivo.name.includes(".png") || archivo.name.includes(".jpg")) {
-          setSuccess(images);
-        } else {
-          setError(images, "La imagen debe ser .png o .jpg");
-        }
-      } else {
-        setError(images, "Debe subir una imagen de perfil");
-      }
-    })
-
     //rating validation
     if (calificacionValue === "") {
       setError(calificacion, "Debe ingresar una calificacion");
-    } else if (calificacionValue.length > 3) {
-      setError(calificacion, 'La calificacion debe ser de max 3 caracteres');
+    } else if (calificacionValue.length > 4) {
+      setError(calificacion, 'La calificacion debe ser de max 4 caracteres');
     } else if (!validator.isDecimal(calificacionValue)) {
       setError(calificacion, 'La calificacion debe ser formato "4.5"');
     } else if (calificacionValue != 0 && calificacionValue && 0.5 && calificacionValue != 1 && calificacionValue != 1.5 && calificacionValue != 2 && calificacionValue != 2.5 && calificacionValue != 3 && calificacionValue != 3.5 && calificacionValue != 4 && calificacionValue != 4.5 && calificacionValue != 5) {

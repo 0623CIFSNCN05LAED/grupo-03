@@ -241,7 +241,7 @@ const productServices = {
       })
     }
   },
-  updateProduct: async (id, product) => {
+  updateProduct:  (id, product) => {
     console.log(`Updating product ${product.name}`);
 
     function getPriceWithDiscount(price, discount) {
@@ -256,7 +256,7 @@ const productServices = {
 
     let pwd = getPriceWithDiscount(product.price, product.discount);
 
-    const prod = await Products.update({
+    return Products.update({
       name: product.name,
       description: product.description,
       featured_desc: product.featured_desc,

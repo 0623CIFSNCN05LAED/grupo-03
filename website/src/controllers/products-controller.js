@@ -55,7 +55,8 @@ module.exports = {
         const errors = req.session.errors;
         const oldData = req.session.oldData;
         const id = req.params.id;
-        const product = await productServices.getProductNoFormat(id);
+        //const product = await productServices.getProductNoFormat(id);
+        const product = await productServices.findById(id);
         req.session.errors = null;
         req.session.oldData = null;
         res.render("productEdit", {

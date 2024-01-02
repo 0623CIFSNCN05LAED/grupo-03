@@ -1,9 +1,13 @@
 const userServices = require("../services/user-services");
 
-module.exports = (req, res, next) => {
+module.exports = async (req, res, next) => {
     if (req.session.userData) {
-        if (userServices.isAdmin(req.session.userData.email)) {
+        const user = await userServices.isAdmin(req.session.userData.email)
+        if (user) {
             next();
+        }
+        else {
+            res.redirect("/login");
         }
     } else {
         res.redirect("/login");
