@@ -87,6 +87,7 @@ module.exports = {
         res.json(response)
     },
 
+
     brands: async (req, res) => {
         try {
             const pageSize = 10;
@@ -97,19 +98,27 @@ module.exports = {
                 pageSize
             );
             const Brands = await productServices.getBrands();
+            console.log(Brands);
 
-            function countProductsByBrand(allProducts) {
+            function countProductsByBrand(allProducts, Brands) {
                 const prodsByBrand = {};
                 allProducts.forEach((product) => {
-                    const brand = product.id_brand;
-                    if (!prodsByBrand[brand]) {
-                        prodsByBrand[brand] = 1;
-                    } else {
-                        prodsByBrand[brand] += 1;
+                    const brandId = product.id_brand;
+                    const brand = Brands.find((b) => b.id_brand === brandId);
+
+                    if (brand) {
+                        const brandName = brand.brand;
+                        if (!prodsByBrand[brandName]) {
+                            prodsByBrand[brandName] = 1;
+                        } else {
+                            prodsByBrand[brandName] += 1;
+                        }
                     }
                 });
                 return prodsByBrand;
             }
+
+            const countByBrand = countProductsByBrand(allProducts, Brands);
 
             let respuesta = {
                 meta: {
@@ -117,16 +126,16 @@ module.exports = {
                     url: req.headers.host + req.originalUrl,
                 },
                 data: {
-                    countByBrand: countProductsByBrand(allProducts),
-
-                }
+                    countByBrand: countByBrand,
+                },
             };
 
             res.json(respuesta);
-        }
-        catch (error) {
+        } catch (error) {
+            console.error("Error getting brands:", error);
             res.status(500).json({ error: "Error al obtener las marcas" });
         }
-    }
+    },
+
 
 }
